@@ -21,10 +21,19 @@ const Map = () => {
       concertsData.forEach((concert) => {
         const concertLocation = new naverMaps.LatLng(concert.lat, concert.lng);
 
+        const today = new Date();
+        const concertDate = new Date(concert.date);
+        const isPast = concertDate < today;
+
+        const markerStyle = isPast ? 'filter: grayscale(100%) brightness(40%);' : '';
+
         const marker = new naverMaps.Marker({
           position: concertLocation,
           map: map,
           title: concert.name,
+          icon: {
+            content: `<img src="/image/nfimap.png" style="width: 40px; height: 40px; ${markerStyle}">`,
+          },
         });
 
         const infoWindowContent = `
@@ -60,7 +69,7 @@ const Map = () => {
           infoWindow.open(map, marker);
           setCurrentInfoWindow(infoWindow);
 
-          // 닫기 버튼에 이벤트 리스너 추가
+          // Add event listener to close button
           setTimeout(() => {
             const closeButton = document.getElementById("closeInfoWindow");
             if (closeButton) {
@@ -73,7 +82,7 @@ const Map = () => {
         });
       });
     }
-  }, []);
+  }, [currentInfoWindow]);
 
   return (
     <div
