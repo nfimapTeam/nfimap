@@ -7,10 +7,8 @@ const Header = () => {
     <Box 
       p="10px" 
       bg="white" 
-      borderBottomRadius="15px" 
       borderBottom="1px solid black" 
-      borderLeft="1px solid black" 
-      borderRight="1px solid black"
+      height="70px"
     >
       <Flex justifyContent="center" alignItems="center">
         <Link to="/">

@@ -17,12 +17,10 @@ const Footer = () => {
       py={2}
       bg="white"
       borderTop="1px solid black"
-      borderLeft="1px solid black"
-      borderRight="1px solid black"
-      borderTopRadius="15px"
       position="fixed"
       bottom="0"
       width="100%"
+      height="50px"
     >
       <Flex justify="space-between">
         <Flex
