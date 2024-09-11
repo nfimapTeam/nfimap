@@ -22,10 +22,13 @@ const Map = () => {
         const concertLocation = new naverMaps.LatLng(concert.lat, concert.lng);
 
         const today = new Date();
-        const concertDate = new Date(concert.date);
+        const dateString = concert.date.split("(")[0];
+        const concertDate = new Date(dateString);
         const isPast = concertDate < today;
 
-        const markerStyle = isPast ? 'filter: grayscale(100%) brightness(40%);' : '';
+        const markerStyle = isPast
+          ? "filter: grayscale(100%) brightness(40%);"
+          : "";
 
         const marker = new naverMaps.Marker({
           position: concertLocation,
