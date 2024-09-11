@@ -1,0 +1,141 @@
+import React, { useEffect, useRef, useState } from "react";
+import { concertsData } from "../datas/concerts";
+
+const NaverMap = () => {
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+  const mapRef = useRef<any>(null);
+  const [currentInfoWindow, setCurrentInfoWindow] = useState<any>(null);
+
+  useEffect(() => {
+    const mapContainer = mapContainerRef.current;
+
+    if (mapContainer && (window as any).naver && !mapRef.current) {
+      const naverMaps = (window as any).naver.maps;
+      const map = new naverMaps.Map(mapContainer, {
+        center: new naverMaps.LatLng(37.5665, 126.978),
+        zoom: 10,
+      });
+
+      mapRef.current = map;
+
+      concertsData.forEach((concert) => {
+        const concertLocation = new naverMaps.LatLng(concert.lat, concert.lng);
+
+        const today = new Date();
+        let isToday = false;
+        let isPast = false;
+
+        concert.date.forEach((dateString) => {
+          const concertDate = new Date(dateString.split("(")[0]);
+
+          if (concertDate.toDateString() === today.toDateString()) {
+            isToday = true;
+          } else if (concertDate < today) {
+            isPast = true;
+          }
+        });
+
+        let markerImage = "/image/nfimap.png";
+        let markerStyle = "";
+
+        if (isToday) {
+          markerImage = "/image/heart.png";
+        } else if (isPast) {
+          markerStyle = "filter: grayscale(100%) brightness(40%);";
+        }
+
+        const marker = new naverMaps.Marker({
+          position: concertLocation,
+          map: map,
+          title: concert.name,
+          icon: {
+            content: `
+              <div style="position: relative;">
+                <img src="${markerImage}" 
+                     style="width: 30px; height: 30px; ${markerStyle}" 
+                     class="marker-image">
+              </div>
+            `,
+          },
+        });
+
+        const infoWindowContent = `
+  <div style="width: 300px; font-family: Arial, sans-serif; padding: 10px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 4px;">
+    <div style="display: flex; align-items: center;">
+      <div style="width: 70px; height: 70px; margin-right: 15px; border-radius: 4px; overflow: hidden;">
+        <img src="${concert.poster || "/api/placeholder/150/150"}" alt="${concert.name}" 
+             style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+      </div>
+      <div style="flex-grow: 1;">
+        <h3 style="margin: 0; font-size: 16px; font-weight: bold; color: #333;">${concert.name}</h3>
+        <p style="margin: 5px 0 0; font-size: 14px; color: #666;">${concert.location}</p>
+      </div>
+    </div>
+    <button style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #fff; color: #333; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
+      상세보기
+    </button>
+  </div>
+  
+  `;
+
+        const infoWindow = new naverMaps.InfoWindow({
+          content: infoWindowContent,
+        });
+
+        naverMaps.Event.addListener(marker, "click", () => {
+          if (currentInfoWindow) {
+            currentInfoWindow.close();
+          }
+          infoWindow.open(map, marker);
+          setCurrentInfoWindow(infoWindow);
+        });
+      });
+
+      // 기존 맵을 클릭하면 현재 열려 있는 infoWindow를 닫음
+      naverMaps.Event.addListener(map, "click", () => {
+        if (currentInfoWindow) {
+          currentInfoWindow.close();
+          setCurrentInfoWindow(null);
+        }
+      });
+    }
+
+    // 맵 외부를 클릭할 경우 infoWindow를 닫는 기능
+    const handleClickOutside = (event: MouseEvent) => {
+      if (currentInfoWindow) {
+        currentInfoWindow.close();
+        setCurrentInfoWindow(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [currentInfoWindow]);
+
+  return (
+    <div
+      ref={mapContainerRef}
+      style={{
+        width: "100%",
+        height: "calc(100vh - 120px)",
+        overflow: "hidden",
+      }}
+    >
+      <style>{`
+        .marker-image:hover {
+          animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default NaverMap;

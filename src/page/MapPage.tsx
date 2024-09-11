@@ -1,102 +1,43 @@
-import React, { useEffect, useRef, useState } from "react";
+import { Box } from "@chakra-ui/react";
+import Sidebar from "../components/SideBar";
 import { concertsData } from "../datas/concerts";
+import NaverMap from "../components/NaverMap";
+type Concert = {
+  name: string;
+  location: string;
+  type: string;
+  durationMinutes: number;
+  date: string[];
+  startTime: string;
+  artists: string[];
+  ticketLink: string;
+  poster: string;
+  lat: string;
+  lng: string;
+};
 
-const Map = () => {
-  const mapContainerRef = useRef<HTMLDivElement | null>(null);
-  const mapRef = useRef<any>(null);
-  const [currentInfoWindow, setCurrentInfoWindow] = useState<any>(null);
-
-  useEffect(() => {
-    const mapContainer = mapContainerRef.current;
-
-    if (mapContainer && (window as any).naver && !mapRef.current) {
-      const naverMaps = (window as any).naver.maps;
-      const map = new naverMaps.Map(mapContainer, {
-        center: new naverMaps.LatLng(37.5665, 126.978),
-        zoom: 10,
-      });
-
-      mapRef.current = map;
-
-      concertsData.forEach((concert) => {
-        const concertLocation = new naverMaps.LatLng(concert.lat, concert.lng);
-
-        const today = new Date();
-        const dateString = concert.date.split("(")[0];
-        const concertDate = new Date(dateString);
-        const isPast = concertDate < today;
-
-        const markerStyle = isPast
-          ? "filter: grayscale(100%) brightness(40%);"
-          : "";
-
-        const marker = new naverMaps.Marker({
-          position: concertLocation,
-          map: map,
-          title: concert.name,
-          icon: {
-            content: `<img src="/image/nfimap.png" style="width: 40px; height: 40px; ${markerStyle}">`,
-          },
-        });
-
-        const infoWindowContent = `
-          <div style="width: 300px; font-family: Arial, sans-serif;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <h3 style="margin: 0;">${concert.name}</h3>
-              <button id="closeInfoWindow" style="background: none; border: none; cursor: pointer; font-size: 20px; padding: 5px;">&times;</button>
-            </div>
-            <div style="display: flex;">
-              <div style="flex: 1; margin-right: 10px;">
-                <img src="${concert.poster || "/api/placeholder/150/150"}" alt="${concert.name}" style="width: 100%; max-width: 150px; height: auto;">
-              </div>
-              <div style="flex: 2;">
-                <p><strong>Location:</strong> ${concert.location}</p>
-                <p><strong>Date:</strong> ${concert.date}</p>
-                <p><strong>Start Time:</strong> ${concert.startTime}</p>
-                <p><strong>Duration:</strong> ${concert.durationMinutes} minutes</p>
-                <p><strong>Artists:</strong> ${concert.artists.join(", ")}</p>
-                <a href="${concert.ticketLink}" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 10px; padding: 5px 10px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px;">Get Tickets</a>
-              </div>
-            </div>
-          </div>
-        `;
-
-        const infoWindow = new naverMaps.InfoWindow({
-          content: infoWindowContent,
-        });
-
-        naverMaps.Event.addListener(marker, "click", () => {
-          if (currentInfoWindow) {
-            currentInfoWindow.close();
-          }
-          infoWindow.open(map, marker);
-          setCurrentInfoWindow(infoWindow);
-
-          // Add event listener to close button
-          setTimeout(() => {
-            const closeButton = document.getElementById("closeInfoWindow");
-            if (closeButton) {
-              closeButton.addEventListener("click", () => {
-                infoWindow.close();
-                setCurrentInfoWindow(null);
-              });
-            }
-          }, 100);
-        });
-      });
-    }
-  }, [currentInfoWindow]);
+type SidebarProps = {
+  concerts: Concert[];
+  onConcertSelect: (concert: Concert) => void;
+};
+const MapPage: React.FC = () => {
+  const handleConcertSelect = (concert: Concert) => {
+    console.log(concert);
+  };
 
   return (
-    <div
-      ref={mapContainerRef}
-      style={{
-        width: "100%",
-        height: "calc(100vh - 120px)",
-        overflow: "hidden",
-      }}
-    ></div>
+    <Box display={{ base: "block", md: "flex" }}>
+      <Box display={{ base: "none", md: "block" }} width="340px">
+        <Sidebar
+          concerts={concertsData}
+          onConcertSelect={handleConcertSelect}
+        />
+      </Box>
+      <Box flex="1">
+        <NaverMap />
+      </Box>
+    </Box>
   );
 };
 
-export default Map;
+export default MapPage;
