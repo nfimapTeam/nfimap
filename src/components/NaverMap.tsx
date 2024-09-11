@@ -40,6 +40,7 @@ const NaverMap = () => {
 
         if (isToday) {
           markerImage = "/image/heart.png";
+          markerStyle = "animation: heartbeat 0.8s ease-in-out infinite;";
         } else if (isPast) {
           markerStyle = "filter: grayscale(100%) brightness(40%);";
         }
@@ -75,7 +76,6 @@ const NaverMap = () => {
       상세보기
     </button>
   </div>
-  
   `;
 
         const infoWindow = new naverMaps.InfoWindow({
@@ -132,6 +132,19 @@ const NaverMap = () => {
         @keyframes spin {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
+        }
+
+        @keyframes heartbeat {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.3);
+          }
+        }
+
+        .heartbeat {
+          animation: heartbeat 0.8s ease-in-out infinite;
         }
       `}</style>
     </div>
