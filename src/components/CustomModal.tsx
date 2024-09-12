@@ -50,18 +50,25 @@ const CustomModal = ({ concert, isOpen, onClose }: CustomModalProps) => {
               flexDirection="column"
               alignItems="center"
             >
-              <Image
-                src={concert.poster}
-                alt={concert.name}
-                borderRadius="md"
-                width={{ base: "50%", md: "100%" }}
-              />
-              <Button
-                colorScheme="red"
-                width={{ base: "100%", md: "70%" }}
-                mt={4}
-                display="block"
+              <Box
+                width="100%"
+                height="0"
+                paddingBottom="140%" // 5:7 aspect ratio
+                position="relative"
+                overflow="hidden"
               >
+                <Image
+                  src={concert.poster}
+                  alt={concert.name}
+                  objectFit="cover"
+                  position="absolute"
+                  top="0"
+                  left="0"
+                  width="100%"
+                  height="100%"
+                />
+              </Box>
+              <Button colorScheme="red" width="100%" mt={4} display="block">
                 예매하기
               </Button>
             </Box>
@@ -99,9 +106,7 @@ const CustomModal = ({ concert, isOpen, onClose }: CustomModalProps) => {
                   <Text fontWeight="bold" width="30%">
                     아티스트
                   </Text>
-                  <Text width="70%">
-                    {concert.artists.join(", ")}
-                  </Text>
+                  <Text width="70%">{concert.artists.join(", ")}</Text>
                 </HStack>
                 <Divider />
               </VStack>

@@ -20,7 +20,7 @@ type SidebarProps = {
   concerts: Concert[];
   onConcertSelect: (concert: Concert) => void;
 };
-const MapPage: React.FC = () => {
+const MapPage = () => {
   const handleConcertSelect = (concert: Concert) => {
     console.log(concert);
   };
