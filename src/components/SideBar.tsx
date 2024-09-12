@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "@emotion/styled";
-import { Box } from "@chakra-ui/react";
+import { Box, useDisclosure } from "@chakra-ui/react";
+import CustomModal from "./CustomModal";
 
 type Concert = {
   name: string;
@@ -26,6 +27,8 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
   const [filteredConcerts, setFilteredConcerts] = useState<Concert[]>(concerts);
   const [toggle, setToggle] = useState<boolean>(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [selectedConcert, setSelectedConcert] = useState<any>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -36,23 +39,29 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
     setToggle((prevToggle) => !prevToggle);
   };
 
+  const handleOpenModal = (concert: Concert) => {
+    onOpen();
+    setSelectedConcert(concert);
+  };
+
   useEffect(() => {
     const currentDate = new Date();
-  
+
     // Filter by date and include ongoing and upcoming concerts if toggle is disabled
     const toggleFiltered = toggle
       ? concerts
       : concerts.filter((concert) =>
           concert.date.some((date) => {
-            const concertDate = new Date(date.split('(')[0]);
-            return concertDate >= currentDate || (
-              concertDate.getDate() === currentDate.getDate() &&
-              concertDate.getMonth() === currentDate.getMonth() &&
-              concertDate.getFullYear() === currentDate.getFullYear()
+            const concertDate = new Date(date.split("(")[0]);
+            return (
+              concertDate >= currentDate ||
+              (concertDate.getDate() === currentDate.getDate() &&
+                concertDate.getMonth() === currentDate.getMonth() &&
+                concertDate.getFullYear() === currentDate.getFullYear())
             );
           })
         );
-  
+
     // Filter by search query
     const searchFiltered = toggleFiltered.filter((concert) => {
       const lowerCaseQuery = query.toLowerCase();
@@ -61,7 +70,7 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
         concert.name.toLowerCase().includes(lowerCaseQuery)
       );
     });
-  
+
     setFilteredConcerts(searchFiltered);
   }, [toggle, query, concerts]);
 
@@ -90,7 +99,7 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
       </ToggleSwitchContainer>
       <LocationList>
         {filteredConcerts.map((concert, index) => (
-          <LocationItem key={index} onClick={() => onConcertSelect(concert)}>
+          <LocationItem key={index} onClick={() => handleOpenModal(concert)}>
             <ImageContainer>
               <LocationImage src={concert.poster} alt="location" />
             </ImageContainer>
@@ -101,6 +110,11 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
           </LocationItem>
         ))}
       </LocationList>
+      <CustomModal
+        concert={selectedConcert}
+        isOpen={isOpen}
+        onClose={onClose}
+      />
     </SidebarContainer>
   );
 };

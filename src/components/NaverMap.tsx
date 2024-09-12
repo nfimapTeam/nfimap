@@ -10,10 +10,6 @@ const NaverMap = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedConcert, setSelectedConcert] = useState<any>(null);
 
-  const handleConfirm = () => {
-    onClose();
-  };
-
   useEffect(() => {
     const mapContainer = mapContainerRef.current;
 
@@ -72,12 +68,18 @@ const NaverMap = () => {
   <div style="width: 300px; font-family: Arial, sans-serif; padding: 10px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 4px;">
     <div style="display: flex; align-items: center;">
       <div style="width: 70px; height: 70px; margin-right: 15px; border-radius: 4px; overflow: hidden;">
-        <img src="${concert.poster || "/api/placeholder/150/150"}" alt="${concert.name}" 
+        <img src="${concert.poster || "/api/placeholder/150/150"}" alt="${
+          concert.name
+        }" 
              style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
       </div>
       <div style="flex-grow: 1;">
-        <h3 style="margin: 0; font-size: 16px; font-weight: bold; color: #333;">${concert.name}</h3>
-        <p style="margin: 5px 0 0; font-size: 14px; color: #666;">${concert.location}</p>
+        <h3 style="margin: 0; font-size: 16px; font-weight: bold; color: #333;">${
+          concert.name
+        }</h3>
+        <p style="margin: 5px 0 0; font-size: 14px; color: #666;">${
+          concert.location
+        }</p>
       </div>
     </div>
      <button class="concertDetailBtn" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #fff; color: #333; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
@@ -100,7 +102,7 @@ const NaverMap = () => {
 
           // InfoWindow가 열린 후에 버튼에 이벤트 리스너를 추가
           setTimeout(() => {
-            const button = document.querySelector('.concertDetailBtn');
+            const button = document.querySelector(".concertDetailBtn");
             if (button) {
               button.addEventListener("click", () => {
                 onOpen();

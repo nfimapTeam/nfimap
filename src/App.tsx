@@ -1,7 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./page/Home";
 import MapPage from "./page/MapPage";
-import Layout from "./components/Layout"
+import Layout from "./components/Layout";
+import DetailPage from "./page/DetailPage";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
@@ -9,7 +11,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/map" element={<MapPage />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="/:id" element={<DetailPage />} />
+        <Route
+          path="*"
+          element={
+            <NotFound title="404" content="찾을 수 없는 페이지입니다!!!" />
+          }
+        />
       </Routes>
     </Layout>
   );
