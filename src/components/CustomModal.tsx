@@ -36,24 +36,36 @@ const CustomModal = ({ concert, isOpen, onClose }: CustomModalProps) => {
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody p="20px">
-          <Flex>
-            <Box width="40%" p={4}>
+          <Flex
+            direction={{ base: "column", md: "row" }}
+            align="center"
+            justify="space-between"
+            gap={{ base: 4, md: 0 }}
+          >
+            <Box
+              width={{ base: "100%", md: "40%" }}
+              p={4}
+              mb={{ base: 4, md: 0 }}
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+            >
               <Image
                 src={concert.poster}
                 alt={concert.name}
                 borderRadius="md"
+                width={{ base: "50%", md: "100%" }}
               />
               <Button
                 colorScheme="red"
-                width="70%"
+                width={{ base: "100%", md: "70%" }}
                 mt={4}
                 display="block"
-                mx="auto"
               >
                 예매하기
               </Button>
             </Box>
-            <Box width="60%" p={4}>
+            <Box width={{ base: "100%", md: "60%" }} p={4}>
               <VStack align="stretch" spacing={4}>
                 <HStack justify="space-between">
                   <Text fontWeight="bold" width="30%">

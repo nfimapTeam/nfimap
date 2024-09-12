@@ -37,12 +37,23 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
   };
 
   useEffect(() => {
+    const currentDate = new Date();
+  
+    // Filter by date and include ongoing and upcoming concerts if toggle is disabled
     const toggleFiltered = toggle
       ? concerts
       : concerts.filter((concert) =>
-          concert.date.every((date) => new Date(date) > new Date())
+          concert.date.some((date) => {
+            const concertDate = new Date(date.split('(')[0]);
+            return concertDate >= currentDate || (
+              concertDate.getDate() === currentDate.getDate() &&
+              concertDate.getMonth() === currentDate.getMonth() &&
+              concertDate.getFullYear() === currentDate.getFullYear()
+            );
+          })
         );
-
+  
+    // Filter by search query
     const searchFiltered = toggleFiltered.filter((concert) => {
       const lowerCaseQuery = query.toLowerCase();
       return (
@@ -50,7 +61,7 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
         concert.name.toLowerCase().includes(lowerCaseQuery)
       );
     });
-
+  
     setFilteredConcerts(searchFiltered);
   }, [toggle, query, concerts]);
 
