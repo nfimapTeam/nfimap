@@ -1,10 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import { concertsData } from "../datas/concerts";
+import { useDisclosure } from "@chakra-ui/react";
+import CustomModal from "./CustomModal";
 
 const NaverMap = () => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<any>(null);
   const [currentInfoWindow, setCurrentInfoWindow] = useState<any>(null);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [selectedConcert, setSelectedConcert] = useState<any>(null);
+
+  const handleConfirm = () => {
+    onClose();
+  };
 
   useEffect(() => {
     const mapContainer = mapContainerRef.current;
@@ -72,7 +80,7 @@ const NaverMap = () => {
         <p style="margin: 5px 0 0; font-size: 14px; color: #666;">${concert.location}</p>
       </div>
     </div>
-    <button style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #fff; color: #333; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
+     <button class="concertDetailBtn" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #fff; color: #333; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
       상세보기
     </button>
   </div>
@@ -88,6 +96,17 @@ const NaverMap = () => {
           }
           infoWindow.open(map, marker);
           setCurrentInfoWindow(infoWindow);
+          setSelectedConcert(concert);
+
+          // InfoWindow가 열린 후에 버튼에 이벤트 리스너를 추가
+          setTimeout(() => {
+            const button = document.querySelector('.concertDetailBtn');
+            if (button) {
+              button.addEventListener("click", () => {
+                onOpen();
+              });
+            }
+          }, 100);
         });
       });
 
@@ -113,7 +132,7 @@ const NaverMap = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [currentInfoWindow]);
+  }, [currentInfoWindow, onOpen]);
 
   return (
     <div
@@ -147,6 +166,11 @@ const NaverMap = () => {
           animation: heartbeat 0.8s ease-in-out infinite;
         }
       `}</style>
+      <CustomModal
+        concert={selectedConcert}
+        isOpen={isOpen}
+        onClose={onClose}
+      />
     </div>
   );
 };
