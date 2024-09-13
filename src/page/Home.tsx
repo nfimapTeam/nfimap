@@ -15,6 +15,7 @@ import {
   Switch,
   FormControl,
   FormLabel,
+  Flex,
 } from "@chakra-ui/react";
 import { concertsData } from "../datas/concerts";
 import moment from "moment";
@@ -94,7 +95,7 @@ const Home = () => {
           mb={4}
         />
 
-        <HStack width="100%" justifyContent="space-between">
+        <Flex width="100%" justifyContent="space-between">
           <Select
             width="200px"
             value={sortOrder}
@@ -114,7 +115,7 @@ const Home = () => {
               onChange={() => setShowPastEvents(!showPastEvents)}
             />
           </FormControl>
-        </HStack>
+        </Flex>
       </Box>
 
       <SimpleGrid columns={columns} spacing={6}>
