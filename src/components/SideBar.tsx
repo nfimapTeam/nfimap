@@ -1,6 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
-import styled from "@emotion/styled";
-import { Box, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  Input,
+  Flex,
+  Switch,
+  Image,
+  Text,
+  VStack,
+  useDisclosure,
+} from "@chakra-ui/react";
 import CustomModal from "./CustomModal";
 
 type Concert = {
@@ -47,7 +55,6 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
   useEffect(() => {
     const currentDate = new Date();
 
-    // Filter by date and include ongoing and upcoming concerts if toggle is disabled
     const toggleFiltered = toggle
       ? concerts
       : concerts.filter((concert) =>
@@ -62,7 +69,6 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
           })
         );
 
-    // Filter by search query
     const searchFiltered = toggleFiltered.filter((concert) => {
       const lowerCaseQuery = query.toLowerCase();
       return (
@@ -75,192 +81,87 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
   }, [toggle, query, concerts]);
 
   return (
-    <SidebarContainer>
-      <HeaderText>공연 정보</HeaderText>
-      <SearchContainer>
-        <StyledSearchInput
+    <Box
+      w="340px"
+      bg="#fff"
+      p="20px"
+      overflowY="auto"
+      h="calc(100vh - 120px)"
+      boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
+      borderRight="1px solid #ddd"
+    >
+      <Text fontSize="24px" fontWeight="bold" mb="20px" textAlign="left">
+        공연 정보
+      </Text>
+      <VStack spacing={4} mb="20px">
+        <Input
           ref={searchInputRef}
           placeholder="이름이나 장소로 검색하세요."
           value={query}
           onChange={handleInputChange}
+          size="md"
         />
-      </SearchContainer>
-      <ToggleSwitchContainer>
-        <span style={{ fontSize: "10px" }}>지난 공연 포함 </span>
-        <ToggleSwitch>
-          <input
-            type="checkbox"
+        <Flex justify="flex-end" align="center">
+          <Text fontSize="10px">지난 공연 포함</Text>
+          <Switch
             id="toggle"
-            checked={toggle}
+            isChecked={toggle}
             onChange={handleToggleChange}
+            ml="10px"
           />
-          <label htmlFor="toggle"></label>
-        </ToggleSwitch>
-      </ToggleSwitchContainer>
-      <LocationList>
+        </Flex>
+      </VStack>
+      <VStack spacing={4} align="start">
         {filteredConcerts.map((concert, index) => (
-          <LocationItem key={index} onClick={() => handleOpenModal(concert)}>
-            <ImageContainer>
-              <LocationImage src={concert.poster} alt="location" />
-            </ImageContainer>
-            <LocationInfo>
-              <h3>{concert.name}</h3>
-              <p>{concert.location}</p>
-            </LocationInfo>
-          </LocationItem>
+          <Flex
+            key={index}
+            onClick={() => handleOpenModal(concert)}
+            cursor="pointer"
+            p="10px"
+            border="1px solid #eee"
+            borderRadius="4px"
+            w="100%"
+            _hover={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}
+          >
+            <Box
+              width="70px"
+              height="70px"
+              minWidth="70px"
+              minHeight="70px"
+              mr="15px"
+              position="relative"
+              overflow="hidden"
+              borderRadius="4px"
+            >
+              <Image
+                src={concert.poster}
+                alt={concert.name}
+                position="absolute"
+                top="0"
+                left="0"
+                width="100%"
+                height="100%"
+                objectFit="cover"
+              />
+            </Box>
+            <Box flexGrow={1}>
+              <Text fontSize="16px" fontWeight="bold" mb="5px">
+                {concert.name}
+              </Text>
+              <Text fontSize="14px" color="#666">
+                {concert.location}
+              </Text>
+            </Box>
+          </Flex>
         ))}
-      </LocationList>
+      </VStack>
       <CustomModal
         concert={selectedConcert}
         isOpen={isOpen}
         onClose={onClose}
       />
-    </SidebarContainer>
+    </Box>
   );
 };
-
-// Styled components
-const HeaderText = styled.h1`
-  text-align: left;
-  color: black;
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: bold;
-`;
-
-const SidebarContainer = styled.div`
-  width: 340px;
-  background-color: #fff;
-  padding: 20px;
-  overflow-y: auto;
-  border-right: 1px solid #ddd;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: calc(100vh - 120px);
-`;
-
-const StyledSearchInput = styled.input`
-  width: 100%;
-  height: 40px;
-  padding: 10px 16px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-
-  &:focus {
-    border-color: #4d90fe;
-    box-shadow: 0 2px 4px rgba(77, 144, 254, 0.5);
-  }
-`;
-
-const SearchContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-`;
-
-const ToggleSwitchContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 20px;
-`;
-
-const ToggleSwitch = styled.div`
-  position: relative;
-  width: 50px;
-  height: 24px;
-  margin-left: 10px;
-
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  label {
-    position: absolute;
-    cursor: pointer;
-    background-color: #ccc;
-    border-radius: 24px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transition: background-color 0.2s;
-  }
-
-  label:before {
-    position: absolute;
-    content: "";
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    background-color: white;
-    top: 3px;
-    left: 3px;
-    transition: transform 0.2s;
-  }
-
-  input:checked + label {
-    background-color: #4d90fe;
-  }
-
-  input:checked + label:before {
-    transform: translateX(26px);
-  }
-`;
-
-const LocationList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-`;
-
-const LocationItem = styled.li`
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  cursor: pointer;
-  padding: 10px;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  transition: box-shadow 0.2s;
-
-  &:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-`;
-
-const ImageContainer = styled.div`
-  position: relative;
-  width: 70px;
-  height: 70px;
-  margin-right: 15px;
-  border-radius: 4px;
-  overflow: hidden;
-`;
-
-const LocationImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const LocationInfo = styled.div`
-  flex-grow: 1;
-
-  h3 {
-    font-size: 16px;
-    margin: 0;
-    font-weight: bold;
-  }
-
-  p {
-    font-size: 14px;
-    color: #666;
-    margin: 5px 0 0;
-  }
-`;
 
 export default Sidebar;
