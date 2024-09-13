@@ -101,7 +101,7 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
           onChange={handleInputChange}
           size="md"
         />
-        <Flex justify="flex-end" align="center">
+        <Flex width="100%" align="center" justifyContent="flex-end">
           <Text fontSize="10px">지난 공연 포함</Text>
           <Switch
             id="toggle"
