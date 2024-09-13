@@ -85,7 +85,7 @@ const Home = () => {
     });
 
   return (
-    <Box p={4}>
+    <Box h="calc(100vh - 120px)" p={4} overflow="auto">
       <Box mb={4}>
         <Input
           placeholder="공연명 또는 공연장을 검색하세요"
