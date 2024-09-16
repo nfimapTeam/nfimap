@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
+import { ConfigProvider } from 'antd';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,7 +13,16 @@ const root = ReactDOM.createRoot(
 root.render(
   <ChakraProvider>
     <BrowserRouter>
-      <App />
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#4BA4F2',
+            colorLink: '#4BA4F2',
+            colorLinkHover: '#3a8fd1',
+          },
+        }}>
+        <App />
+      </ConfigProvider>
     </BrowserRouter>
   </ChakraProvider>
 );

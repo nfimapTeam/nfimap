@@ -4,6 +4,7 @@ import MapPage from "./page/MapPage";
 import Layout from "./components/Layout";
 import DetailPage from "./page/DetailPage";
 import NotFound from "./components/NotFound";
+import 'antd/dist/reset.css';
 
 const App = () => {
   return (

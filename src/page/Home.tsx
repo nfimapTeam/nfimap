@@ -11,22 +11,27 @@ import {
   useBreakpointValue,
   Badge,
   Input,
-  Select,
   Switch,
   FormControl,
   FormLabel,
   Flex,
+  InputGroup,
+  InputRightElement,
+  Icon,
 } from "@chakra-ui/react";
+import { SearchIcon, CloseIcon } from "@chakra-ui/icons";
 import { concertsData } from "../datas/concerts";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
+import { Select } from 'antd';
+import { Option } from "antd/es/mentions";
 
 const Home = () => {
   const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
   const [currentTime, setCurrentTime] = useState(moment());
   const [searchQuery, setSearchQuery] = useState("");
   const [showPastEvents, setShowPastEvents] = useState(false);
-  const [sortOrder, setSortOrder] = useState("name");
+  const [sortOrder, setSortOrder] = useState("이름순");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,6 +40,10 @@ const Home = () => {
     }, 60000);
     return () => clearInterval(interval);
   }, []);
+
+  const clearSearch = () => {
+    setSearchQuery("");
+  };
 
   const calculateTimeRemaining = (openDate: string, openTime: string) => {
     const ticketOpenMoment = moment(
@@ -75,9 +84,9 @@ const Home = () => {
       }
     })
     .sort((a, b) => {
-      if (sortOrder === "name") {
+      if (sortOrder === "이름순") {
         return a.name.localeCompare(b.name);
-      } else if (sortOrder === "date") {
+      } else if (sortOrder === "최신순") {
         return moment(b.date[0].split("(")[0], "YYYY-MM-DD").diff(
           moment(a.date[0].split("(")[0], "YYYY-MM-DD")
         );
@@ -88,22 +97,55 @@ const Home = () => {
   return (
     <Box h="calc(100vh - 120px)" p={4} overflow="auto">
       <Box mb={4}>
-        <Input
-          placeholder="공연명 또는 공연장을 검색하세요"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          mb={4}
-        />
+        <InputGroup size="lg">
+          <Input
+            placeholder="공연명 또는 공연장을 검색하세요"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            mb={4}
+            focusBorderColor="#4BA4F2"
+            bg="whiteAlpha.900"
+            _hover={{ borderColor: "#79AEF2" }}
+            _placeholder={{ color: "gray.400" }}
+            size="lg"
+            borderRadius="md"
+            boxShadow="md"
+          />
+          <InputRightElement width="4.5rem">
+            {searchQuery ? (
+              <Icon
+                as={CloseIcon}
+                color="gray.500"
+                cursor="pointer"
+                onClick={clearSearch}
+                boxSize="12px"
+              />
+            ) : (
+              <Icon 
+              as={SearchIcon}
+              color="gray.500"
+              cursor="pointer"
+              /> 
+            )}
+          </InputRightElement>
+        </InputGroup>
 
-        <Flex width="100%" justifyContent="space-between">
-          <Select
-            width="200px"
-            value={sortOrder}
-            onChange={(e) => setSortOrder(e.target.value)}
-          >
-            <option value="name">이름순</option>
-            <option value="date">최신순</option>
-          </Select>
+        <Flex width="100%" justifyContent="space-between" gap={4} mt={4}>
+        <Select
+          value={sortOrder}
+          onChange={(value) => setSortOrder(value)}
+          style={{ width: 200, height: 40 }}
+          dropdownStyle={{
+            backgroundColor: '#ffffff',
+            borderColor: '#4BA4F2',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+          }}
+          optionLabelProp="label"
+          onSelect={(value) => setSortOrder(value)}
+        >
+          <Option value="이름순">이름순</Option>
+          <Option value="최신순">최신순</Option>
+        </Select>
 
           <FormControl display="flex" alignItems="center">
             <FormLabel htmlFor="show-past-events" mb="0">
@@ -146,12 +188,15 @@ const Home = () => {
                 position="relative"
                 zIndex={1}
                 cursor="pointer"
+              
                 onClick={() => navigate(`/${concert.id}`)}
                 _hover={{
                   boxShadow: "lg",
                   transform: "scale(1.02)",
                   transition: "all 0.2s ease-in-out",
                 }}
+                h="320px"
+                w="100%"
               >
                 <Box>
                   <Box
@@ -182,6 +227,16 @@ const Home = () => {
                   </Link>
                 </Box>
                 <VStack align="start" spacing={2}>
+                  {timeRemaining ? (
+                    <Badge colorScheme="green">
+                      {timeRemaining.days}일 {timeRemaining.hours}시간{" "}
+                      {timeRemaining.minutes}분 후 티켓 오픈
+                    </Badge>
+                  ) : isPastEvent ? (
+                    <Badge colorScheme="gray">공연 종료</Badge>
+                  ) : (
+                    <Badge colorScheme="red">티켓 오픈 완료</Badge>
+                  )}
                   <Text fontSize="lg" fontWeight="bold">
                     {concert.name}
                   </Text>
@@ -190,15 +245,6 @@ const Home = () => {
                     {concert.date.join(", ")} {concert.startTime}
                   </Text>
                   <Text fontSize="sm">{concert.type}</Text>
-
-                  {timeRemaining ? (
-                    <Badge colorScheme="green">
-                      {timeRemaining.days}일 {timeRemaining.hours}시간{" "}
-                      {timeRemaining.minutes}분 후 티켓 오픈
-                    </Badge>
-                  ) : isPastEvent ? null : (
-                    <Badge colorScheme="red">티켓 오픈 완료</Badge>
-                  )}
                 </VStack>
               </HStack>
 
@@ -212,6 +258,7 @@ const Home = () => {
                   bg="blackAlpha.600"
                   zIndex={2}
                   borderRadius="lg"
+                  onClick={() => navigate(`/${concert.id}`)}
                 />
               )}
             </Box>

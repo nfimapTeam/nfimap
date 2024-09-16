@@ -1,4 +1,23 @@
-export const concertsData = [
+interface concertsDataType {
+  id: number;
+  name: string;
+  location: string;
+  type: string;
+  durationMinutes: number;
+  date: string[];
+  startTime: string;
+  artists: string[];
+  ticketLink: string;
+  poster: string;
+  lat: string;
+  lng: string;
+  ticketOpen: {
+    date: string;
+    time: string;
+  }
+}
+
+export const concertsData:concertsDataType[] = [
   {
     id: 1,
     name: "LIVE ON BTOBXN Flying 서울",

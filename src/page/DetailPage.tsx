@@ -10,12 +10,13 @@ import {
   HStack,
   Link,
   StackDivider,
+  Flex,
+  Input,
 } from "@chakra-ui/react";
 import { concertsData } from "../datas/concerts";
 import NotFound from "../components/NotFound";
 
 const DetailPage = () => {
-  // URL에서 id 파라미터를 가져옴
   const { id } = useParams<{ id: string }>();
 
   if (!id) {
@@ -27,10 +28,9 @@ const DetailPage = () => {
   if (!concert) {
     return <NotFound title="No" content="정보가 없습니다." />;
   }
-
+  
   return (
     <Box maxW="4xl" mx="auto" p={4}>
-      {/* 공연 포스터 및 기본 정보 */}
       <HStack spacing={6} align="flex-start">
         <Image
           src={concert.poster}
@@ -39,7 +39,6 @@ const DetailPage = () => {
           borderRadius="md"
         />
 
-        {/* 공연 정보 */}
         <VStack align="start" spacing={4}>
           <Badge colorScheme="red" fontSize="lg" p="4px 8px">
             {concert.type}
@@ -61,8 +60,20 @@ const DetailPage = () => {
               <strong>공연시간:</strong> {concert.startTime}분
             </Text>
           </Box>
+
+
+
         </VStack>
       </HStack>
+
+      <Flex border="1px solid black" justifyContent="center" alignItems="center" gap="16px" h="150px">
+        <Box border="1px solid red"><Text>안뇽</Text></Box>
+        <Box border="1px solid red"><Text>안뇽</Text></Box>
+        <Box border="1px solid red"><Text>안뇽</Text></Box>
+        <Box border="1px solid red"><Text>안뇽</Text></Box>
+      </Flex>
+      <Input value="ff" />
+      <Button p="8px 8x">ddd</Button>
     </Box>
   );
 };
