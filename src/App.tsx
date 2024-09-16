@@ -4,6 +4,8 @@ import MapPage from "./page/MapPage";
 import Layout from "./components/Layout";
 import DetailPage from "./page/DetailPage";
 import NotFound from "./components/NotFound";
+import Profile from "./page/Profile";
+import Music from "./page/Music";
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/:id" element={<DetailPage />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/music" element={<Music />} />
         <Route
           path="*"
           element={

@@ -58,7 +58,7 @@ export const concertsData = [
     location: "임시데이터",
     type: "페스티벌",
     durationMinutes: 720,
-    date: ["2024-09-13(일)", "2024-09-14(일)", "2024-09-15(일)"],
+    date: ["2024-09-16(일)", "2024-09-17(일)", "2024-09-18(일)"],
     startTime: "13: 00",
     artists: [
       "신승훈",
