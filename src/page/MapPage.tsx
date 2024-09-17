@@ -59,7 +59,7 @@ const MapPage = () => {
         />
       </Box>
       <Box flex="1">
-        <NaverMap concerts={concertState} />
+        <NaverMap concerts={concertState} setShowPastConcerts={setShowPastConcerts} />
       </Box>
     </Box>
   );

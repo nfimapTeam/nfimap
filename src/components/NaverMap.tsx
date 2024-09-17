@@ -19,15 +19,19 @@ type Concert = {
 
 interface NaverMapProps {
   concerts: Concert[];
+  setShowPastConcerts: (show: boolean) => void;
 }
 
-const NaverMap = ({ concerts }: NaverMapProps) => {
+const NaverMap = ({ concerts, setShowPastConcerts }: NaverMapProps) => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
   const [currentInfoWindow, setCurrentInfoWindow] = useState<any>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedConcert, setSelectedConcert] = useState<any>(null);
+  const [showPastConcerts, setShowPastConcertsState] = useState<boolean>(false);
+  const [trafficLayer, setTrafficLayer] = useState<any>(null);
+  const [showTraffic, setShowTraffic] = useState<boolean>(false);
 
   useEffect(() => {
     const mapContainer = mapContainerRef.current;
@@ -40,6 +44,10 @@ const NaverMap = ({ concerts }: NaverMapProps) => {
       });
 
       mapRef.current = map;
+
+      // Initialize traffic layer
+      const traffic = new naverMaps.TrafficLayer();
+      setTrafficLayer(traffic);
     }
   }, []);
 
@@ -69,6 +77,8 @@ const NaverMap = ({ concerts }: NaverMapProps) => {
           isPast = true;
         }
       });
+
+      if (!showPastConcerts && isPast) return;
 
       let markerImage = "/image/nfimap.png";
       let markerStyle = "";
@@ -153,7 +163,7 @@ const NaverMap = ({ concerts }: NaverMapProps) => {
       }
     });
 
-  }, [concerts, currentInfoWindow, onOpen]);
+  }, [concerts, currentInfoWindow, onOpen, showPastConcerts]);
 
   useEffect(() => {
     // 맵 외부를 클릭할 경우 infoWindow를 닫는 기능
@@ -171,6 +181,23 @@ const NaverMap = ({ concerts }: NaverMapProps) => {
     };
   }, [currentInfoWindow]);
 
+  const handleTogglePastConcerts = () => {
+    const newState = !showPastConcerts;
+    setShowPastConcertsState(newState);
+    setShowPastConcerts(newState);
+  };
+
+  const handleToggleTraffic = () => {
+    if (trafficLayer) {
+      if (showTraffic) {
+        trafficLayer.setMap(null);
+      } else {
+        trafficLayer.setMap(mapRef.current);
+      }
+      setShowTraffic(!showTraffic);
+    }
+  };
+
   return (
     <div
       ref={mapContainerRef}
@@ -178,6 +205,7 @@ const NaverMap = ({ concerts }: NaverMapProps) => {
         width: "100%",
         height: "calc(100vh - 120px)",
         overflow: "hidden",
+        position: "relative",
       }}
     >
       <style>{`
@@ -202,7 +230,56 @@ const NaverMap = ({ concerts }: NaverMapProps) => {
         .heartbeat {
           animation: heartbeat 0.8s ease-in-out infinite;
         }
+
+        .control-buttons {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          display: flex;
+          gap: 10px;
+          z-index: 10;
+        }
+
+        .control-button {
+          padding: 8px 16px;
+          border: none;
+          border-radius: 4px;
+          color: #fff;
+          font-size: 14px;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s;
+        }
+
+        .past-concerts-button {
+          background-color: #007BFF;
+        }
+
+        .past-concerts-button:hover {
+          background-color: #0056b3;
+        }
+
+        .traffic-button {
+          background-color: #28a745;
+        }
+
+        .traffic-button:hover {
+          background-color: #218838;
+        }
       `}</style>
+      <div className="control-buttons">
+        <button
+          onClick={handleTogglePastConcerts}
+          className="control-button past-concerts-button"
+        >
+          {showPastConcerts ? "지난공연 숨기기" : "지난공연 보기"}
+        </button>
+        <button
+          onClick={handleToggleTraffic}
+          className="control-button traffic-button"
+        >
+          {showTraffic ? "교통상황 숨기기" : "교통상황 보기"}
+        </button>
+      </div>
       <CustomModal
         concert={selectedConcert}
         isOpen={isOpen}
