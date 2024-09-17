@@ -95,7 +95,7 @@ const Home = () => {
     isPastEvent: boolean, 
     timeRemaining: { days: number; hours: number; minutes: number } | null
   ) => {
-    if(isPastEvent) {
+    if(isPastEvent || concert.type === "행사") {
       return "공연 정보";
     } else if(concert.ticketOpen.date === "0000-00-00") {
       return "예매 일정 대기 중";
@@ -104,7 +104,7 @@ const Home = () => {
         ? `${timeRemaining.days}일 ${timeRemaining.hours}시간 ${timeRemaining.minutes}분 후`
           : "예매 정보 대기 중"
     } else {
-      return "예매 사이트 이동";
+      return "티켓 예매";
     }
   };
 
@@ -333,6 +333,10 @@ const Home = () => {
                       <Badge bg="blue.100" color="blue.600">
                         페스티벌
                       </Badge>
+                    ) : concert.type === "행사" ? (
+                        <Badge bg="yellow.100" color="yellow.600">
+                          행사
+                        </Badge>
                     ) : null}
 
                     {concert.performanceType === "단독" ? (
