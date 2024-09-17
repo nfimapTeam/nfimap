@@ -79,7 +79,7 @@ const Sidebar = ({
           onChange={handleInputChange}
           size="md"
         />
-        <Flex width="100%" align="center" justifyContent="flex-end">
+        {/* <Flex width="100%" align="center" justifyContent="flex-end">
           <Text fontSize="10px">지난 공연 포함</Text>
           <Switch
             id="toggle"
@@ -87,7 +87,7 @@ const Sidebar = ({
             onChange={handleToggleChange}
             ml="10px"
           />
-        </Flex>
+        </Flex> */}
       </VStack>
       <VStack spacing={4} align="start">
         {concerts.map((concert, index) => (

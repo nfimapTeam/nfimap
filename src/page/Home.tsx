@@ -169,7 +169,7 @@ const Home = () => {
     });
 
   return (
-    <Box h="calc(100vh - 120px)" p={4} overflow="auto">
+    <Box h="calc(100vh - 120px)" p="16px 16px 50px 16px" overflow="auto">
       <Box mb={4}>
         <InputGroup size="lg">
           <Input
