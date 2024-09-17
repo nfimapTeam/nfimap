@@ -22,6 +22,7 @@ import {
   Flex,
   Divider,
 } from "@chakra-ui/react";
+import Loading from "../components/Loading";
 
 interface Image {
   url: string;
@@ -223,10 +224,10 @@ const Music: React.FC = () => {
             </Box>
           ))}
         </Grid>
-        {loading && <Text>Loading...</Text>}
+        {loading && <Loading />}
         {hasMore && !loading && (
           <Center mt={4}>
-            <Button onClick={handleLoadMore} colorScheme="blue">
+            <Button onClick={handleLoadMore}>
               Load More
             </Button>
           </Center>
@@ -252,12 +253,12 @@ const Music: React.FC = () => {
             >
               {selectedAlbum?.name}
             </Text>
+          <ModalCloseButton border="none" />
           </ModalHeader>
-          <ModalCloseButton />
           <ModalBody p={4}>
             {tracks.length === 0 ? (
               <Text textAlign="center" color="gray.500">
-                No tracks available
+                트렉이 없습니다.
               </Text>
             ) : (
               <VStack spacing={4} align="start">
@@ -277,7 +278,7 @@ const Music: React.FC = () => {
                       </Text>
                       {track.preview_url && (
                         <audio controls src={track.preview_url}>
-                          Your browser does not support the audio element.
+                          오디오를 지원하지 않습니다.
                         </audio>
                       )}
                     </Flex>

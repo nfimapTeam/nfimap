@@ -9,15 +9,23 @@ import {
   Stack,
   Link,
   Icon,
-  Button,
 } from "@chakra-ui/react";
 import {
   RiTeamLine,
   RiHeart2Line,
   RiMusic2Line,
   RiLightbulbLine,
+  RiShieldStarLine,
 } from "@remixicon/react";
 import { profileData } from "../datas/profile";
+import dayjs from "dayjs";
+
+const today = dayjs();
+
+const isFutureDate = (militaryDate: string) => {
+  if (!militaryDate) return false;
+  return dayjs(militaryDate, "YYMMDD").isAfter(today);
+};
 
 const Profile = () => {
   return (
@@ -41,10 +49,18 @@ const Profile = () => {
             <Image src={"/image/nfLogo.png"} alt="NF Logo" />
           </Heading>
 
-          <Flex gap="4" my="6" w="100%">
+          <Grid
+            templateColumns={{
+              base: "repeat(1, 1fr)",
+              md: "repeat(2, 1fr)",
+              lg: "repeat(4, 1fr)",
+            }}
+            gap="6"
+            w="100%"
+            my="6"
+          >
             {/* Debut Date */}
             <Flex
-              flex="1"
               align="center"
               justifyContent="center"
               p="4"
@@ -66,7 +82,6 @@ const Profile = () => {
 
             {/* Debut Song */}
             <Flex
-              flex="1"
               align="center"
               justifyContent="center"
               p="4"
@@ -88,7 +103,6 @@ const Profile = () => {
 
             {/* Fandom */}
             <Flex
-              flex="1"
               align="center"
               justifyContent="center"
               p="4"
@@ -110,7 +124,6 @@ const Profile = () => {
 
             {/* Light Stick */}
             <Flex
-              flex="1"
               align="center"
               justifyContent="center"
               p="4"
@@ -129,7 +142,7 @@ const Profile = () => {
                 </Text>
               </Box>
             </Flex>
-          </Flex>
+          </Grid>
         </Stack>
 
         {/* Members */}
@@ -143,6 +156,7 @@ const Profile = () => {
           {profileData.members.map((member) => (
             <Box
               key={member.name}
+              position="relative"
               textAlign="center"
               p="4"
               boxShadow="lg"
@@ -212,6 +226,27 @@ const Profile = () => {
                   {member.birthdate}
                 </Box>
               </Flex>
+
+              {isFutureDate(member.military) && (
+                <Box
+                  position="absolute"
+                  top="4px"
+                  right="4px"
+                  bg="green.900" // 카키색 배경으로 변경
+                  color="white"
+                  px="3"
+                  py="1"
+                  borderRadius="md"
+                  fontSize="xs"
+                  boxShadow="md"
+                  display="flex"
+                  alignItems="center"
+                >
+                  <Icon as={RiShieldStarLine} w="4" h="4" mr="1" />{" "}
+                  {/* 군대 느낌의 아이콘 */}
+                  전역일: {member.military}
+                </Box>
+              )}
             </Box>
           ))}
         </Grid>
@@ -225,27 +260,15 @@ const Profile = () => {
           </Link>
 
           <Link href={profileData.official_sites.facebook} isExternal>
-            <Image
-              borderRadius="4px"
-              src="/image/facebook.jpg"
-              w="40px"
-            />
+            <Image borderRadius="4px" src="/image/facebook.jpg" w="40px" />
           </Link>
 
           <Link href={profileData.official_sites.instagram} isExternal>
-            <Image
-              borderRadius="4px"
-              src="/image/instagram.jpg"
-              w="40px"
-            />
+            <Image borderRadius="4px" src="/image/instagram.jpg" w="40px" />
           </Link>
 
           <Link href={profileData.official_sites.youtube} isExternal>
-            <Image
-              borderRadius="4px"
-              src="/image/youtube.png"
-              w="40px"
-            />
+            <Image borderRadius="4px" src="/image/youtube.png" w="40px" />
           </Link>
 
           <Link href={profileData.official_sites.daumcafe} isExternal>

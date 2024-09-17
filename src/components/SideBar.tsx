@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import {
   Box,
   Input,
@@ -23,62 +23,40 @@ type Concert = {
   poster: string;
   lat: string;
   lng: string;
+  ticketOpen?: any;
 };
 
 type SidebarProps = {
   concerts: Concert[];
-  onConcertSelect: (concert: Concert) => void;
+  query: string;
+  setQuery: (query: string) => void;
+  showPastConcerts: boolean;
+  setShowPastConcerts: (show: boolean) => void;
 };
 
-const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
-  const [query, setQuery] = useState<string>("");
-  const [filteredConcerts, setFilteredConcerts] = useState<Concert[]>(concerts);
-  const [toggle, setToggle] = useState<boolean>(false);
+const Sidebar = ({
+  concerts,
+  query,
+  setQuery,
+  showPastConcerts,
+  setShowPastConcerts,
+}: SidebarProps) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [selectedConcert, setSelectedConcert] = useState<any>(null);
+  const [selectedConcert, setSelectedConcert] = React.useState<Concert | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setQuery(value);
+    setQuery(e.target.value);
   };
 
   const handleToggleChange = () => {
-    setToggle((prevToggle) => !prevToggle);
+    setShowPastConcerts(!showPastConcerts);
   };
 
   const handleOpenModal = (concert: Concert) => {
     onOpen();
     setSelectedConcert(concert);
   };
-
-  useEffect(() => {
-    const currentDate = new Date();
-
-    const toggleFiltered = toggle
-      ? concerts
-      : concerts.filter((concert) =>
-          concert.date.some((date) => {
-            const concertDate = new Date(date.split("(")[0]);
-            return (
-              concertDate >= currentDate ||
-              (concertDate.getDate() === currentDate.getDate() &&
-                concertDate.getMonth() === currentDate.getMonth() &&
-                concertDate.getFullYear() === currentDate.getFullYear())
-            );
-          })
-        );
-
-    const searchFiltered = toggleFiltered.filter((concert) => {
-      const lowerCaseQuery = query.toLowerCase();
-      return (
-        concert.location.toLowerCase().includes(lowerCaseQuery) ||
-        concert.name.toLowerCase().includes(lowerCaseQuery)
-      );
-    });
-
-    setFilteredConcerts(searchFiltered);
-  }, [toggle, query, concerts]);
 
   return (
     <Box
@@ -105,14 +83,14 @@ const Sidebar = ({ concerts, onConcertSelect }: SidebarProps) => {
           <Text fontSize="10px">지난 공연 포함</Text>
           <Switch
             id="toggle"
-            isChecked={toggle}
+            isChecked={showPastConcerts}
             onChange={handleToggleChange}
             ml="10px"
           />
         </Flex>
       </VStack>
       <VStack spacing={4} align="start">
-        {filteredConcerts.map((concert, index) => (
+        {concerts.map((concert, index) => (
           <Flex
             key={index}
             onClick={() => handleOpenModal(concert)}
