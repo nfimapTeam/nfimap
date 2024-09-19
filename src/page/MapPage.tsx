@@ -23,6 +23,7 @@ const MapPage = () => {
   const [concertState, setConcertState] = useState<Concert[]>(concertsData);
   const [query, setQuery] = useState<string>("");
   const [showPastConcerts, setShowPastConcerts] = useState<boolean>(false);
+  const [selectedConcert, setSelectedConcert] = useState<Concert | null>(null);
 
   useEffect(() => {
     console.log(concertState);
@@ -48,7 +49,7 @@ const MapPage = () => {
   }, [query, showPastConcerts]);
 
   return (
-    <Box display={{ base: "block", md: "flex" }}>
+     <Box display={{ base: "block", md: "flex" }}>
       <Box display={{ base: "none", md: "block" }} width="340px">
         <Sidebar
           concerts={concertState}
@@ -56,10 +57,17 @@ const MapPage = () => {
           setQuery={setQuery}
           showPastConcerts={showPastConcerts}
           setShowPastConcerts={setShowPastConcerts}
+          selectedConcert={selectedConcert}
+          setSelectedConcert={setSelectedConcert}
         />
       </Box>
       <Box flex="1">
-        <NaverMap concerts={concertState} setShowPastConcerts={setShowPastConcerts} />
+        <NaverMap
+          concerts={concertState}
+          setShowPastConcerts={setShowPastConcerts}
+          selectedConcert={selectedConcert}
+          setSelectedConcert={setSelectedConcert}
+        />
       </Box>
     </Box>
   );

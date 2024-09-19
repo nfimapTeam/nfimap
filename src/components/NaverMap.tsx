@@ -20,18 +20,24 @@ type Concert = {
 interface NaverMapProps {
   concerts: Concert[];
   setShowPastConcerts: (show: boolean) => void;
+  selectedConcert: Concert | null;
+  setSelectedConcert: (concert: Concert) => void;
 }
 
-const NaverMap = ({ concerts, setShowPastConcerts }: NaverMapProps) => {
+const NaverMap = ({
+  concerts,
+  setShowPastConcerts,
+  selectedConcert,
+  setSelectedConcert,
+}: NaverMapProps) => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
   const [currentInfoWindow, setCurrentInfoWindow] = useState<any>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [selectedConcert, setSelectedConcert] = useState<any>(null);
   const [showPastConcerts, setShowPastConcertsState] = useState<boolean>(false);
-  const [trafficLayer, setTrafficLayer] = useState<any>(null);
-  const [showTraffic, setShowTraffic] = useState<boolean>(false);
+
+  const ZOOM_LEVEL = 14;
 
   useEffect(() => {
     const mapContainer = mapContainerRef.current;
@@ -44,10 +50,6 @@ const NaverMap = ({ concerts, setShowPastConcerts }: NaverMapProps) => {
       });
 
       mapRef.current = map;
-
-      // Initialize traffic layer
-      const traffic = new naverMaps.TrafficLayer();
-      setTrafficLayer(traffic);
     }
   }, []);
 
@@ -58,7 +60,7 @@ const NaverMap = ({ concerts, setShowPastConcerts }: NaverMapProps) => {
     const map = mapRef.current;
 
     // Clear existing markers
-    markersRef.current.forEach(marker => marker.setMap(null));
+    markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
 
     concerts.forEach((concert) => {
@@ -141,7 +143,9 @@ const NaverMap = ({ concerts, setShowPastConcerts }: NaverMapProps) => {
         setCurrentInfoWindow(infoWindow);
         setSelectedConcert(concert);
 
-        // InfoWindow가 열린 후에 버튼에 이벤트 리스너를 추가
+        map.setCenter(concertLocation);
+        map.setZoom(ZOOM_LEVEL);
+
         setTimeout(() => {
           const button = document.querySelector(".concertDetailBtn");
           if (button) {
@@ -155,47 +159,31 @@ const NaverMap = ({ concerts, setShowPastConcerts }: NaverMapProps) => {
       markersRef.current.push(marker);
     });
 
-    // 기존 맵을 클릭하면 현재 열려 있는 infoWindow를 닫음
     naverMaps.Event.addListener(map, "click", () => {
       if (currentInfoWindow) {
         currentInfoWindow.close();
         setCurrentInfoWindow(null);
       }
     });
+  }, [concerts, showPastConcerts]);
 
-  }, [concerts, currentInfoWindow, onOpen, showPastConcerts]);
-
+  // 새롭게 추가된 useEffect: selectedConcert 상태가 변경될 때 해당 콘서트의 마커를 클릭한 것처럼 처리
   useEffect(() => {
-    // 맵 외부를 클릭할 경우 infoWindow를 닫는 기능
-    const handleClickOutside = (event: MouseEvent) => {
-      if (currentInfoWindow) {
-        currentInfoWindow.close();
-        setCurrentInfoWindow(null);
-      }
-    };
+    if (!selectedConcert || !mapRef.current) return;
 
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [currentInfoWindow]);
+    const marker = markersRef.current.find(
+      (marker) => marker.getTitle() === selectedConcert.name
+    );
+    
+    if (marker) {
+      (window as any).naver.maps.Event.trigger(marker, "click");
+    }
+  }, [selectedConcert]);
 
   const handleTogglePastConcerts = () => {
     const newState = !showPastConcerts;
     setShowPastConcertsState(newState);
     setShowPastConcerts(newState);
-  };
-
-  const handleToggleTraffic = () => {
-    if (trafficLayer) {
-      if (showTraffic) {
-        trafficLayer.setMap(null);
-      } else {
-        trafficLayer.setMap(mapRef.current);
-      }
-      setShowTraffic(!showTraffic);
-    }
   };
 
   return (
@@ -257,14 +245,6 @@ const NaverMap = ({ concerts, setShowPastConcerts }: NaverMapProps) => {
         .past-concerts-button:hover {
           background-color: #0056b3;
         }
-
-        .traffic-button {
-          background-color: #28a745;
-        }
-
-        .traffic-button:hover {
-          background-color: #218838;
-        }
       `}</style>
       <div className="control-buttons">
         <button
@@ -273,18 +253,8 @@ const NaverMap = ({ concerts, setShowPastConcerts }: NaverMapProps) => {
         >
           {showPastConcerts ? "지난공연 숨기기" : "지난공연 보기"}
         </button>
-        <button
-          onClick={handleToggleTraffic}
-          className="control-button traffic-button"
-        >
-          {showTraffic ? "교통상황 숨기기" : "교통상황 보기"}
-        </button>
       </div>
-      <CustomModal
-        concert={selectedConcert}
-        isOpen={isOpen}
-        onClose={onClose}
-      />
+      <CustomModal isOpen={isOpen} onClose={onClose} concert={selectedConcert} />
     </div>
   );
 };

@@ -32,6 +32,8 @@ type SidebarProps = {
   setQuery: (query: string) => void;
   showPastConcerts: boolean;
   setShowPastConcerts: (show: boolean) => void;
+  setSelectedConcert: (concert: Concert) => void;
+  selectedConcert: Concert | null;
 };
 
 const Sidebar = ({
@@ -40,21 +42,15 @@ const Sidebar = ({
   setQuery,
   showPastConcerts,
   setShowPastConcerts,
+  setSelectedConcert,
 }: SidebarProps) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [selectedConcert, setSelectedConcert] = React.useState<Concert | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
-  const handleToggleChange = () => {
-    setShowPastConcerts(!showPastConcerts);
-  };
-
   const handleOpenModal = (concert: Concert) => {
-    onOpen();
     setSelectedConcert(concert);
   };
 
@@ -133,11 +129,6 @@ const Sidebar = ({
           </Flex>
         ))}
       </VStack>
-      <CustomModal
-        concert={selectedConcert}
-        isOpen={isOpen}
-        onClose={onClose}
-      />
     </Box>
   );
 };
