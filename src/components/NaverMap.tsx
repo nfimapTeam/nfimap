@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useDisclosure } from "@chakra-ui/react";
+import { Switch, Text, useDisclosure, Flex } from "@chakra-ui/react";
 import CustomModal from "./CustomModal";
+import theme from "../theme";
 
 type Concert = {
   name: string;
@@ -167,14 +168,13 @@ const NaverMap = ({
     });
   }, [concerts, showPastConcerts]);
 
-  // 새롭게 추가된 useEffect: selectedConcert 상태가 변경될 때 해당 콘서트의 마커를 클릭한 것처럼 처리
   useEffect(() => {
     if (!selectedConcert || !mapRef.current) return;
 
     const marker = markersRef.current.find(
       (marker) => marker.getTitle() === selectedConcert.name
     );
-    
+
     if (marker) {
       (window as any).naver.maps.Event.trigger(marker, "click");
     }
@@ -224,37 +224,86 @@ const NaverMap = ({
           top: 10px;
           right: 10px;
           display: flex;
+          align-items: center;
           gap: 10px;
           z-index: 10;
         }
 
-        .control-button {
-          padding: 8px 16px;
-          border: none;
-          border-radius: 4px;
-          color: #fff;
-          font-size: 14px;
-          cursor: pointer;
-          transition: background-color 0.3s, color 0.3s;
+        .toggle-switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
         }
 
-        .past-concerts-button {
+        .toggle-switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          transition: .4s;
+          border-radius: 34px;
+        }
+
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          border-radius: 50%;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          transition: .4s;
+        }
+
+        input:checked + .slider {
           background-color: #007BFF;
         }
 
-        .past-concerts-button:hover {
-          background-color: #0056b3;
+        input:checked + .slider:before {
+          transform: translateX(26px);
+        }
+
+        .slider.round {
+          border-radius: 34px;
+        }
+
+        .slider.round:before {
+          border-radius: 50%;
         }
       `}</style>
-      <div className="control-buttons">
-        <button
-          onClick={handleTogglePastConcerts}
-          className="control-button past-concerts-button"
-        >
-          {showPastConcerts ? "지난공연 숨기기" : "지난공연 보기"}
-        </button>
-      </div>
-      <CustomModal isOpen={isOpen} onClose={onClose} concert={selectedConcert} />
+      <Flex
+        width="100%"
+        align="center"
+        justifyContent="flex-end"
+        position="absolute"
+        top="20px"
+        right="20px"
+        zIndex="20"
+      >
+        <Text fontSize="10px">지난 공연 포함</Text>
+        <Switch
+          id="show-past-events"
+          isChecked={showPastConcerts}
+          onChange={handleTogglePastConcerts}
+          ml="10px"
+        />
+      </Flex>
+      <CustomModal
+        isOpen={isOpen}
+        onClose={onClose}
+        concert={selectedConcert}
+      />
     </div>
   );
 };

@@ -15,12 +15,10 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  List,
-  ListItem,
   Button,
   Center,
   Flex,
-  Divider,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import Loading from "../components/Loading";
 
@@ -74,7 +72,9 @@ const Music: React.FC = () => {
   const [tracks, setTracks] = useState<Track[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [hasMore, setHasMore] = useState<boolean>(true);
+  const [searchQuery, setSearchQuery] = useState<string>(""); // New state for search query
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const columnCount = useBreakpointValue({ base: 1, md: 2, lg: 3, xl: 4 });
 
   const getToken = useCallback(async () => {
     const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID_API_KEY;
@@ -159,19 +159,9 @@ const Music: React.FC = () => {
   }, [artistId, getAlbums]);
 
   const handleAlbumClick = async (album: Album) => {
-    console.log("Selected album:", album); // Inspect the album object
-
-    // Check if the album object contains the href for tracks
-    if (!album.href) {
-      console.error("No tracks URL available for the selected album");
-      return;
-    }
-
     setSelectedAlbum(album);
-    onOpen(); // Open modal before fetching tracks
-
+    onOpen();
     try {
-      // Fetch album details to get the tracks URL
       const result = await axios.get<Album>(album.href, {
         headers: { Authorization: "Bearer " + token },
       });
@@ -181,14 +171,12 @@ const Music: React.FC = () => {
         return;
       }
 
-      // Fetch tracks using the tracks URL
       const tracksResult = await axios.get<SpotifyTracksResponse>(
         result.data.tracks.href,
         {
           headers: { Authorization: "Bearer " + token },
         }
       );
-
       setTracks(tracksResult.data.items);
     } catch (error) {
       console.error("Failed to fetch tracks:", error);
@@ -199,11 +187,36 @@ const Music: React.FC = () => {
     getAlbums();
   };
 
+  // Filter albums based on the search query
+  const filteredAlbums = albums.filter((album) =>
+    album.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <Box p="16px 0 100px 0" h="calc(100vh - 120px)" overflow="auto">
+    <Box
+      h="calc(100vh - 120px)"
+      overflow="auto"
+      width="100%"
+      maxWidth="1200px"
+      mx="auto"
+    >
       <VStack spacing={4}>
-        <Grid templateColumns="repeat(auto-fill, minmax(200px, 1fr))" gap={6}>
-          {albums.map((album) => (
+        <Input
+          placeholder="앨범명을 검색하세요"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          focusBorderColor="#4BA4F2"
+          bg="whiteAlpha.900"
+          _hover={{ borderColor: "#79AEF2" }}
+          _placeholder={{ color: "gray.400" }}
+          size="lg"
+          borderRadius="md"
+          boxShadow="md"
+          m="20px 0"
+        />
+
+        <Grid templateColumns={`repeat(${columnCount}, 1fr)`} gap={6}>
+          {filteredAlbums.map((album) => (
             <Box
               key={album.id}
               onClick={() => handleAlbumClick(album)}
@@ -227,9 +240,7 @@ const Music: React.FC = () => {
         {loading && <Loading />}
         {hasMore && !loading && (
           <Center mt={4}>
-            <Button onClick={handleLoadMore}>
-              Load More
-            </Button>
+            <Button onClick={handleLoadMore}>Load More</Button>
           </Center>
         )}
       </VStack>
@@ -237,28 +248,12 @@ const Music: React.FC = () => {
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>
-            <Text
-              as="label"
-              fontWeight="bold"
-              fontSize="2xl"
-              color="black.800"
-              border="2px"
-              borderColor="black.300"
-              borderRadius="lg"
-              px={4}
-              py={2}
-              bg="black.50"
-              display="inline-block"
-            >
-              {selectedAlbum?.name}
-            </Text>
-          <ModalCloseButton border="none" />
-          </ModalHeader>
+          <ModalHeader>{selectedAlbum?.name}</ModalHeader>
+          <ModalCloseButton />
           <ModalBody p={4}>
             {tracks.length === 0 ? (
               <Text textAlign="center" color="gray.500">
-                트렉이 없습니다.
+                트랙이 없습니다.
               </Text>
             ) : (
               <VStack spacing={4} align="start">

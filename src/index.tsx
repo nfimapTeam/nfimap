@@ -6,12 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from 'recoil';
+import theme from "./theme";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <ChakraProvider>
+  <ChakraProvider theme={theme}>
     <RecoilRoot>
     <BrowserRouter>
       <App />
