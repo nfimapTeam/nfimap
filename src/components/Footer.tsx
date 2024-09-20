@@ -7,7 +7,7 @@ const Footer = () => {
   const location = useLocation();
   
   const getLinkColor = (path: string) => {
-    return location.pathname === path ? "brand.main" : "black";
+    return location.pathname === path ? "brand.sub2" : "black";
   };
 
   return (

@@ -60,6 +60,13 @@ const Sidebar = ({
       bg="#fff"
       p="20px"
       overflowY="auto"
+      css={{
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
+        "-ms-overflow-style": "none",
+        "scrollbar-width": "none",
+      }}
       h="calc(100vh - 120px)"
       boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
       borderRight="1px solid #ddd"

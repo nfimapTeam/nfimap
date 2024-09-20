@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Switch, Text, useDisclosure, Flex } from "@chakra-ui/react";
 import CustomModal from "./CustomModal";
-import theme from "../theme";
+import theme from "../util/theme";
 
 type Concert = {
   name: string;

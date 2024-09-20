@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from 'recoil';
-import theme from "./theme";
+import theme from "./util/theme";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

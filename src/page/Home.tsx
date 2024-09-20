@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from "react";
 import {
   Box,
-  Image,
-  Text,
-  SimpleGrid,
-  HStack,
-  VStack,
-  Link,
-  Button,
-  useBreakpointValue,
-  Badge,
   Input,
-  Switch,
+  Flex,
   FormControl,
   FormLabel,
-  Flex,
+  Switch,
   InputGroup,
   InputRightElement,
   Icon,
+  Button,
+  SimpleGrid,
+  VStack,
+  HStack,
+  Text,
+  Image,
+  Badge,
+  Link,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { SearchIcon, CloseIcon } from "@chakra-ui/icons";
-import { keyframes } from "@chakra-ui/react";
 import { Select } from "antd";
 import { Option } from "antd/es/mentions";
 import { concertsData } from "../datas/concerts";
@@ -28,26 +27,13 @@ import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { toggleState } from "../atom/toggleState";
-
-const borderGlow = keyframes`
-  0% {
-    border-color: rgba(121, 174, 242, 0.5);
-    box-shadow: 0 0 8px rgba(121, 174, 242, 0.5);
-  }
-  50% {
-    border-color: rgba(121, 174, 242, 0.7);
-    box-shadow: 0 0 12px rgba(121, 174, 242, 0.7);
-  }
-  100% {
-    border-color: rgba(121, 174, 242, 0.5);
-    box-shadow: 0 0 8px rgba(121, 174, 242, 0.5);
-  }
-`;
+import Card from "../components/Card";
 
 const Home = () => {
   const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
   const [currentTime, setCurrentTime] = useState(moment());
   const [searchQuery, setSearchQuery] = useState("");
+  const [viewMode, setViewMode] = useState<"card" | "list">("card"); // View mode 관리
   const [showPastEvents, setShowPastEvents] = useState(false);
   const [sortOrder, setSortOrder] = useState("최신순");
   const [toggle, setToggle] = useRecoilState(toggleState);
@@ -57,7 +43,7 @@ const Home = () => {
     id: number;
     name: string;
     location: string;
-    type: string; // 콘서트 | 페스티벌
+    type: string; // 콘서트 | 페스티벌 | 행사
     performanceType: string; // 단독 | 합동 | 출연
     durationMinutes: number;
     date: string[];
@@ -171,12 +157,20 @@ const Home = () => {
   return (
     <Box
       h="calc(100vh - 120px)"
-      p="16px 16px 50px 16px"
-      overflow="auto"
       width="100%"
       maxWidth="1200px"
       mx="auto"
+      p="16px 16px 150px 16px"
+      overflowY="auto"
+      css={{
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
+        "-ms-overflow-style": "none",
+        "scrollbar-width": "none",
+      }}
     >
+      {/* 검색 및 정렬 섹션 */}
       <Box mb={4}>
         <InputGroup size="lg">
           <Input
@@ -234,47 +228,89 @@ const Home = () => {
               onChange={() => setToggle(!toggle)}
             />
           </FormControl>
+
+          {/* View mode 선택 버튼 */}
+          <Flex gap={2}>
+            <Button
+              onClick={() => setViewMode("card")}
+              bg={viewMode === "card" ? "blue.500" : "gray.200"}
+              color="white"
+              _hover={{ bg: "blue.400" }}
+            >
+              카드형
+            </Button>
+            <Button
+              onClick={() => setViewMode("list")}
+              bg={viewMode === "list" ? "blue.500" : "gray.200"}
+              color="white"
+              _hover={{ bg: "blue.400" }}
+            >
+              리스트형
+            </Button>
+          </Flex>
         </Flex>
       </Box>
 
-      <SimpleGrid columns={columns} spacing={6}>
-        {filteredConcerts.map((concert, index) => {
-          const isFutureOrToday = isEventTodayOrFuture(concert.date);
-          const isPastEvent = !isFutureOrToday;
-          const isTodayEvent = concert.date.some((date) => {
-            const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
-            return concertDate.isSame(currentTime, "day");
-          });
+      {/* 카드형 / 리스트형 레이아웃 분기 처리 */}
+      {viewMode === "card" ? (
+        <SimpleGrid columns={columns} spacing={6}>
+          {filteredConcerts.map((concert, index) => {
+            const isFutureOrToday = isEventTodayOrFuture(concert.date);
+            const isPastEvent = !isFutureOrToday;
+            const isTodayEvent = concert.date.some((date) => {
+              const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+              return concertDate.isSame(currentTime, "day");
+            });
 
-          const timeRemaining = calculateTimeRemaining(
-            concert.ticketOpen.date,
-            concert.ticketOpen.time
-          );
+            const timeRemaining = calculateTimeRemaining(
+              concert.ticketOpen.date,
+              concert.ticketOpen.time
+            );
 
-          return (
-            <Box position="relative" key={index}>
+            return (
+              <Card
+                key={index}
+                concert={concert}
+                isTodayEvent={isTodayEvent}
+                isPastEvent={isPastEvent}
+                timeRemaining={timeRemaining}
+                getButtonText={getButtonText}
+                handleButtonClick={handleButtonClick}
+              />
+            );
+          })}
+        </SimpleGrid>
+      ) : (
+        <VStack spacing={4} align="stretch">
+          {filteredConcerts.map((concert, index) => {
+            const isFutureOrToday = isEventTodayOrFuture(concert.date);
+            const isPastEvent = !isFutureOrToday;
+            const isTodayEvent = concert.date.some((date) => {
+              const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+              return concertDate.isSame(currentTime, "day");
+            });
+
+            const timeRemaining = calculateTimeRemaining(
+              concert.ticketOpen.date,
+              concert.ticketOpen.time
+            );
+
+            return (
               <Box
+                key={index}
                 p={4}
                 borderWidth="1px"
                 borderRadius="lg"
                 overflow="hidden"
                 boxShadow="md"
                 bg="white"
-                alignItems="flex-start"
-                borderColor={isTodayEvent ? "brand.sub" : "gray.200"}
-                animation={
-                  isTodayEvent
-                    ? `${borderGlow} 1.5s ease-in-out infinite`
-                    : "none"
-                }
-                position="relative"
-                zIndex={1}
                 cursor="pointer"
+                _hover={{ bg: "gray.100" }}
               >
                 <HStack alignItems="flex-start" spacing={4}>
                   <Box
-                    w="150px"
-                    h="200px"
+                    w="100px"
+                    h="130px"
                     overflow="hidden"
                     borderRadius="md"
                     flexShrink={0}
@@ -291,126 +327,45 @@ const Home = () => {
                     />
                   </Box>
                   <VStack align="start" spacing={2} flex="1">
-                    <Box>
-                      {/* 공연 상태 배지 */}
-                      {isPastEvent ? (
-                        <Badge colorScheme="gray" mb={2}>
-                          공연 종료
-                        </Badge>
-                      ) : (
-                        <Badge colorScheme="green" mb={2}>
-                          공연 예정
-                        </Badge>
-                      )}
+                    <Text fontSize="lg" fontWeight="bold" noOfLines={1}>
+                      {concert.name}
+                    </Text>
+                    <Text fontSize="sm" color="gray.500" noOfLines={1}>
+                      {concert.location}
+                    </Text>
+                    <Text fontSize="sm" color="gray.400">
+                      {concert.date.join(", ")}
+                    </Text>
 
-                      <Text
-                        fontSize="lg"
-                        fontWeight="bold"
-                        noOfLines={1}
-                        mb={2}
+                    <HStack spacing={2}>
+                      <Badge
+                        colorScheme={isPastEvent ? "gray" : "green"}
+                        p="4px 8px"
+                        borderRadius="md"
                       >
-                        {concert.name}
-                      </Text>
+                        {isPastEvent ? "공연 종료" : "공연 예정"}
+                      </Badge>
+                      <Badge colorScheme="blue">{concert.type}</Badge>
+                    </HStack>
 
-                      <Text fontSize="md" noOfLines={1} mb={2}>
-                        {concert.location}
-                      </Text>
-
-                      <Text fontSize="sm" color="gray.500" noOfLines={1} mb={4}>
-                        {concert.date.join(", ")}
-                      </Text>
-
-                      <HStack spacing={2}>
-                        {concert.type === "콘서트" && (
-                          <Badge
-                            bg="pink.100"
-                            color="pink.600"
-                            p="4px 8px"
-                            borderRadius={4}
-                            fontWeight="900"
-                          >
-                            콘서트
-                          </Badge>
-                        )}
-                        {concert.type === "페스티벌" && (
-                          <Badge
-                            bg="blue.100"
-                            color="blue.600"
-                            p="4px 8px"
-                            borderRadius={4}
-                            fontWeight="900"
-                          >
-                            페스티벌
-                          </Badge>
-                        )}
-                        {concert.type === "행사" && (
-                          <Badge
-                            bg="yellow.100"
-                            color="yellow.600"
-                            p="4px 8px"
-                            borderRadius={4}
-                            fontWeight="900"
-                          >
-                            행사
-                          </Badge>
-                        )}
-                        {concert.performanceType === "단독" && (
-                          <Badge
-                            bg="purple.100"
-                            color="purple.600"
-                            p="4px 8px"
-                            borderRadius={4}
-                            fontWeight="900"
-                          >
-                            단독
-                          </Badge>
-                        )}
-                        {concert.performanceType === "합동" && (
-                          <Badge
-                            bg="teal.100"
-                            color="teal.600"
-                            p="4px 8px"
-                            borderRadius={4}
-                            fontWeight="900"
-                          >
-                            합동
-                          </Badge>
-                        )}
-                        {concert.performanceType === "출연" && (
-                          <Badge
-                            bg="orange.100"
-                            color="orange.600"
-                            p="4px 8px"
-                            borderRadius={4}
-                            fontWeight="900"
-                          >
-                            출연
-                          </Badge>
-                        )}
-                      </HStack>
-                    </Box>
+                    <Link href={concert.ticketLink} isExternal>
+                      <Button
+                        size="sm"
+                        colorScheme="blue"
+                        onClick={(e) =>
+                          handleButtonClick(e, concert, isPastEvent)
+                        }
+                      >
+                        {getButtonText(concert, isPastEvent, timeRemaining)}
+                      </Button>
+                    </Link>
                   </VStack>
                 </HStack>
-
-                <Link href={concert.ticketLink} isExternal>
-                  <Button
-                    mt={4}
-                    border="2px solid #eee"
-                    bg="brand.main"
-                    _hover={{ bg: "brand.sub" }}
-                    width="100%"
-                    fontSize="13px"
-                    onClick={(e) => handleButtonClick(e, concert, isPastEvent)}
-                    isDisabled={concert.ticketLink === ""}
-                  >
-                    {getButtonText(concert, isPastEvent, timeRemaining)}
-                  </Button>
-                </Link>
               </Box>
-            </Box>
-          );
-        })}
-      </SimpleGrid>
+            );
+          })}
+        </VStack>
+      )}
     </Box>
   );
 };

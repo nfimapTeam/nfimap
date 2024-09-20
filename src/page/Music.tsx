@@ -195,10 +195,18 @@ const Music: React.FC = () => {
   return (
     <Box
       h="calc(100vh - 120px)"
-      overflow="auto"
       width="100%"
       maxWidth="1200px"
       mx="auto"
+      p={4}
+       overflowY="auto"
+      css={{
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
+        "-ms-overflow-style": "none",
+        "scrollbar-width": "none",
+      }}
     >
       <VStack spacing={4}>
         <Input
