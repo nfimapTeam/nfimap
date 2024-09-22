@@ -37,6 +37,7 @@ const DetailPage = () => {
           alt={concert.name}
           boxSize="300px"
           borderRadius="md"
+          fallbackSrc="/image/nfimap.png"
         />
 
         {/* 공연 정보 */}

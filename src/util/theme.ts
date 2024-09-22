@@ -4,8 +4,8 @@ const theme = extendTheme({
   colors: {
     brand: {
       main: "#000",
-      sub: "#0597f2",
-      sub2: "#05F2DB"
+      sub: "#0597F2",
+      sub2: "#0597F2"
     },
   },
 });

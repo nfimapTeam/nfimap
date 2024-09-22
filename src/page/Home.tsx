@@ -129,30 +129,55 @@ const Home = () => {
     });
   };
 
-  const filteredConcerts = concertsData
-    .filter((concert) => {
-      const matchesSearch =
-        concert.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        concert.location.toLowerCase().includes(searchQuery.toLowerCase());
+  const sortConcerts = (concerts: Concert[]) => {
+    const now = moment();
+    const upcomingConcerts = concerts.filter((concert) =>
+      concert.date.some((date) =>
+        moment(date.split("(")[0], "YYYY-MM-DD").isSameOrAfter(now, "day")
+      )
+    );
+    const pastConcerts = concerts.filter((concert) =>
+      concert.date.every((date) =>
+        moment(date.split("(")[0], "YYYY-MM-DD").isBefore(now, "day")
+      )
+    );
 
-      const isFutureOrToday = isEventTodayOrFuture(concert.date);
-
-      if (toggle) {
-        return matchesSearch;
-      } else {
-        return matchesSearch && isFutureOrToday;
-      }
-    })
-    .sort((a, b) => {
-      if (sortOrder === "이름순") {
-        return a.name.localeCompare(b.name);
-      } else if (sortOrder === "최신순") {
-        return moment(b.date[0].split("(")[0], "YYYY-MM-DD").diff(
-          moment(a.date[0].split("(")[0], "YYYY-MM-DD")
-        );
-      }
-      return 0;
+    upcomingConcerts.sort((a, b) => {
+      const dateA = moment(a.date[0].split("(")[0], "YYYY-MM-DD");
+      const dateB = moment(b.date[0].split("(")[0], "YYYY-MM-DD");
+      return dateA.diff(dateB);
     });
+
+    pastConcerts.sort((a, b) => {
+      const dateA = moment(a.date[0].split("(")[0], "YYYY-MM-DD");
+      const dateB = moment(b.date[0].split("(")[0], "YYYY-MM-DD");
+      return dateB.diff(dateA);
+    });
+
+    return [...upcomingConcerts, ...pastConcerts];
+  };
+
+  const filteredConcerts = concertsData.filter((concert) => {
+    const matchesSearch =
+      concert.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      concert.location.toLowerCase().includes(searchQuery.toLowerCase());
+
+    if (toggle) {
+      // 토글이 true면 지난 공연만 필터링
+      const isPastEvent = concert.date.every((date) => {
+        const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+        return concertDate.isBefore(currentTime, "day");
+      });
+      return matchesSearch && isPastEvent;
+    } else {
+      // 토글이 false면 공연 예정만 필터링
+      const isFutureOrToday = concert.date.some((date) => {
+        const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+        return concertDate.isSameOrAfter(currentTime, "day");
+      });
+      return matchesSearch && isFutureOrToday;
+    }
+  });
 
   return (
     <Box
@@ -201,7 +226,7 @@ const Home = () => {
           </InputRightElement>
         </InputGroup>
 
-        <Flex width="100%" justifyContent="space-between" gap={4} mt={4}>
+        <Flex width="100%" justifyContent="space-between" gap={8} mt={4}>
           <Select
             value={sortOrder}
             onChange={(value) => setSortOrder(value)}
@@ -220,7 +245,7 @@ const Home = () => {
 
           <FormControl display="flex" alignItems="center">
             <FormLabel htmlFor="show-past-events" mb="0">
-              지난 공연 포함
+              지난 공연 보기
             </FormLabel>
             <Switch
               id="show-past-events"

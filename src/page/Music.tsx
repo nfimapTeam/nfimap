@@ -199,7 +199,7 @@ const Music: React.FC = () => {
       maxWidth="1200px"
       mx="auto"
       p={4}
-       overflowY="auto"
+      overflowY="auto"
       css={{
         "&::-webkit-scrollbar": {
           display: "none",
@@ -280,7 +280,11 @@ const Music: React.FC = () => {
                         {track.name}
                       </Text>
                       {track.preview_url && (
-                        <audio controls src={track.preview_url}>
+                        <audio
+                          controls
+                          controlsList="nodownload"
+                          src={track.preview_url}
+                        >
                           오디오를 지원하지 않습니다.
                         </audio>
                       )}

@@ -84,7 +84,9 @@ const Card: React.FC<CardProps> = ({
         bg="white"
         alignItems="flex-start"
         borderColor={isTodayEvent ? "brand.sub" : "gray.200"}
-        animation={isTodayEvent ? `${borderGlow} 1.5s ease-in-out infinite` : "none"}
+        animation={
+          isTodayEvent ? `${borderGlow} 1.5s ease-in-out infinite` : "none"
+        }
         position="relative"
         zIndex={1}
         cursor="pointer"
@@ -106,6 +108,7 @@ const Card: React.FC<CardProps> = ({
               objectFit="cover"
               w="100%"
               h="100%"
+              fallbackSrc="/image/nfimap.png"
             />
           </Box>
           <VStack align="start" spacing={2} flex="1">
@@ -120,7 +123,13 @@ const Card: React.FC<CardProps> = ({
                 </Badge>
               )}
 
-              <Text fontSize="lg" fontWeight="bold" noOfLines={1} mb={2}>
+              <Text
+                fontSize="lg"
+                fontWeight="bold"
+                noOfLines={2}
+                mb={2}
+                minHeight="3rem"
+              >
                 {concert.name}
               </Text>
 
@@ -203,22 +212,37 @@ const Card: React.FC<CardProps> = ({
             </Box>
           </VStack>
         </HStack>
-
-        <Link href={concert.ticketLink} isExternal>
+        {isPastEvent ? (
+          // No link for past events
           <Button
             mt={4}
             border="2px solid #eee"
-            bg="brand.main"
-            _hover={{ bg: "brand.sub2" }}
+            bg="brand.sub2"
+            _hover={{ bg: "brand.main" }}
             width="100%"
             fontSize="13px"
-            onClick={(e) => handleButtonClick(e, concert, isPastEvent)}
             isDisabled={concert.ticketLink === ""}
             color="white"
           >
             {getButtonText(concert, isPastEvent, timeRemaining)}
           </Button>
-        </Link>
+        ) : (
+          <Link href={concert.ticketLink} isExternal>
+            <Button
+              mt={4}
+              border="2px solid #eee"
+              bg="brand.sub2"
+              _hover={{ bg: "brand.main" }}
+              width="100%"
+              fontSize="13px"
+              onClick={(e) => handleButtonClick(e, concert, isPastEvent)}
+              isDisabled={concert.ticketLink === ""}
+              color="white"
+            >
+              {getButtonText(concert, isPastEvent, timeRemaining)}
+            </Button>
+          </Link>
+        )}
       </Box>
     </Box>
   );

@@ -1,15 +1,7 @@
-import React, { useRef } from "react";
-import {
-  Box,
-  Input,
-  Flex,
-  Switch,
-  Image,
-  Text,
-  VStack,
-  useDisclosure,
-} from "@chakra-ui/react";
-import CustomModal from "./CustomModal";
+import React from "react";
+import { Box, Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
+import ConcertInfo from "./ConcertInfo";
+import NfiLoad from "./NfiLoad";
 
 type Concert = {
   name: string;
@@ -26,34 +18,44 @@ type Concert = {
   ticketOpen?: any;
 };
 
+type Nfiload = {
+  id: number;
+  name: string;
+  location: string;
+  category: string;
+  lat: string;
+  lng: string;
+};
+
 type SidebarProps = {
   concerts: Concert[];
+  nfiload: Nfiload[];
   query: string;
   setQuery: (query: string) => void;
   showPastConcerts: boolean;
   setShowPastConcerts: (show: boolean) => void;
   setSelectedConcert: (concert: Concert) => void;
   selectedConcert: Concert | null;
+  setSelectedNfiLoad: (nfiload: Nfiload) => void;
+  selectedNfiLoad: Nfiload | null;
+  activeTabIndex: number;
+  setActiveTabIndex: (index: number) => void;
 };
 
 const Sidebar = ({
   concerts,
+  nfiload,
   query,
   setQuery,
   showPastConcerts,
   setShowPastConcerts,
   setSelectedConcert,
+  selectedConcert,
+  setSelectedNfiLoad,
+  selectedNfiLoad,
+  activeTabIndex,
+  setActiveTabIndex,
 }: SidebarProps) => {
-  const searchInputRef = useRef<HTMLInputElement>(null);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
-  };
-
-  const handleOpenModal = (concert: Concert) => {
-    setSelectedConcert(concert);
-  };
-
   return (
     <Box
       w="340px"
@@ -71,71 +73,50 @@ const Sidebar = ({
       boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
       borderRight="1px solid #ddd"
     >
-      <Text fontSize="24px" fontWeight="bold" mb="20px" textAlign="left">
-        공연 정보
-      </Text>
-      <VStack spacing={4} mb="20px">
-        <Input
-          ref={searchInputRef}
-          placeholder="이름이나 장소로 검색하세요."
-          value={query}
-          onChange={handleInputChange}
-          size="md"
-        />
-        {/* <Flex width="100%" align="center" justifyContent="flex-end">
-          <Text fontSize="10px">지난 공연 포함</Text>
-          <Switch
-            id="toggle"
-            isChecked={showPastConcerts}
-            onChange={handleToggleChange}
-            ml="10px"
-          />
-        </Flex> */}
-      </VStack>
-      <VStack spacing={4} align="start">
-        {concerts.map((concert, index) => (
-          <Flex
-            key={index}
-            onClick={() => handleOpenModal(concert)}
-            cursor="pointer"
-            p="10px"
-            border="1px solid #eee"
-            borderRadius="4px"
-            w="100%"
-            _hover={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}
+      <Tabs index={activeTabIndex} onChange={setActiveTabIndex}>
+        <TabList>
+          <Tab
+            fontSize="18px"
+            fontWeight="600"
+            textAlign="center"
+            _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
+            _focus={{ boxShadow: "none" }}
+            flex="1"
           >
-            <Box
-              width="70px"
-              height="70px"
-              minWidth="70px"
-              minHeight="70px"
-              mr="15px"
-              position="relative"
-              overflow="hidden"
-              borderRadius="4px"
-            >
-              <Image
-                src={concert.poster}
-                alt={concert.name}
-                position="absolute"
-                top="0"
-                left="0"
-                width="100%"
-                height="100%"
-                objectFit="cover"
-              />
-            </Box>
-            <Box flexGrow={1}>
-              <Text fontSize="16px" fontWeight="bold" mb="5px">
-                {concert.name}
-              </Text>
-              <Text fontSize="14px" color="#666">
-                {concert.location}
-              </Text>
-            </Box>
-          </Flex>
-        ))}
-      </VStack>
+            공연 정보
+          </Tab>
+          <Tab
+            fontSize="18px"
+            fontWeight="600"
+            textAlign="center"
+            _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
+            _focus={{ boxShadow: "none" }}
+            flex="1"
+          >
+            엔피로드
+          </Tab>
+        </TabList>
+
+        <TabPanels>
+          <TabPanel>
+            <ConcertInfo
+              concerts={concerts}
+              query={query}
+              setQuery={setQuery}
+              showPastConcerts={showPastConcerts}
+              setShowPastConcerts={setShowPastConcerts}
+              setSelectedConcert={setSelectedConcert}
+            />
+          </TabPanel>
+          <TabPanel>
+            <NfiLoad 
+              nfiload={nfiload}
+              setSelectedNfiLoad={setSelectedNfiLoad}
+              selectedNfiLoad={selectedNfiLoad}
+            />
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </Box>
   );
 };

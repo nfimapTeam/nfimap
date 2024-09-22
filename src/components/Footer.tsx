@@ -10,6 +10,10 @@ const Footer = () => {
     return location.pathname === path ? "brand.sub2" : "black";
   };
 
+  const getLinkColorIcon = (path: string) => {
+    return location.pathname === path ? "#0597F2" : "black";
+  };
+
   return (
     <Flex
       direction="column"
@@ -32,7 +36,7 @@ const Footer = () => {
           cursor="pointer"
           onClick={() => navigate("/")}
         >
-          <RiListUnordered color={getLinkColor("/")} />
+          <RiListUnordered color={getLinkColorIcon("/")} />
           <Text fontSize="lg" color={getLinkColor("/")} fontWeight={600}>
             리스트
           </Text>
@@ -45,7 +49,7 @@ const Footer = () => {
           cursor="pointer"
           onClick={() => navigate("/map")}
         >
-          <RiMapPinLine color={getLinkColor("/map")} />
+          <RiMapPinLine color={getLinkColorIcon("/map")} />
           <Text fontSize="lg" color={getLinkColor("/map")} fontWeight={600}>
             맵
           </Text>
@@ -58,7 +62,7 @@ const Footer = () => {
           cursor="pointer"
           onClick={() => navigate("/profile")}
         >
-          <RiUser3Line color={getLinkColor("/profile")} />
+          <RiUser3Line color={getLinkColorIcon("/profile")} />
           <Text fontSize="lg" color={getLinkColor("/profile")} fontWeight={600}>
             소개
           </Text>
@@ -71,7 +75,7 @@ const Footer = () => {
           cursor="pointer"
           onClick={() => navigate("/music")}
         >
-          <RiMusicLine color={getLinkColor("/music")} />
+          <RiMusicLine color={getLinkColorIcon("/music")} />
           <Text fontSize="lg" color={getLinkColor("/music")} fontWeight={600}>
             노래
           </Text>

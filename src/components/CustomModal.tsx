@@ -17,13 +17,28 @@ import {
 } from "@chakra-ui/react";
 
 interface CustomModalProps {
-  concert: any;
+  item: any; // Updated to accept either concert or nfiload
   isOpen: boolean;
   onClose: () => void;
 }
 
-const CustomModal = ({ concert, isOpen, onClose }: CustomModalProps) => {
-  if (!concert) return null;
+const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
+  if (!item) return null;
+
+  const getCategoryImage = (category: string): string => {
+    switch (category.toLowerCase()) {
+      case "카페":
+        return "/image/cafe.png";
+      case "장소":
+        return "/image/location.png";
+      case "맛집":
+        return "/image/matzip.png";
+      default:
+        return "/image/nfiload.png";
+    }
+  };
+
+  const isNfiLoad = !("poster" in item); // Check if the item is an Nfiload
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
@@ -31,7 +46,7 @@ const CustomModal = ({ concert, isOpen, onClose }: CustomModalProps) => {
       <ModalContent maxW="900px">
         <ModalHeader borderBottom="1px" borderColor="gray.200" py={2}>
           <Text fontSize="lg" fontWeight="bold">
-            {concert.name}
+            {item.name}
           </Text>
         </ModalHeader>
         <ModalCloseButton />
@@ -58,8 +73,8 @@ const CustomModal = ({ concert, isOpen, onClose }: CustomModalProps) => {
                 overflow="hidden"
               >
                 <Image
-                  src={concert.poster}
-                  alt={concert.name}
+                  src={isNfiLoad ? getCategoryImage(item.category) : item.poster} // Use category image for Nfiload
+                  alt={item.name}
                   objectFit="cover"
                   position="absolute"
                   top="0"
@@ -68,9 +83,11 @@ const CustomModal = ({ concert, isOpen, onClose }: CustomModalProps) => {
                   height="100%"
                 />
               </Box>
-              <Button colorScheme="red" width="100%" mt={4} display="block">
-                예매하기
-              </Button>
+              {!isNfiLoad && (
+                <Button colorScheme="red" width="100%" mt={4} display="block">
+                  예매하기
+                </Button>
+              )}
             </Box>
             <Box width={{ base: "100%", md: "60%" }} p={4}>
               <VStack align="stretch" spacing={4}>
@@ -78,37 +95,51 @@ const CustomModal = ({ concert, isOpen, onClose }: CustomModalProps) => {
                   <Text fontWeight="bold" width="30%">
                     장소
                   </Text>
-                  <Text width="70%">{concert.location}</Text>
+                  <Text width="70%">{item.location}</Text>
                 </HStack>
                 <Divider />
-                <HStack justify="space-between">
-                  <Text fontWeight="bold" width="30%">
-                    공연기간
-                  </Text>
-                  <Text width="70%">{concert.date.join(" ~ ")}</Text>
-                </HStack>
-                <Divider />
-                <HStack justify="space-between">
-                  <Text fontWeight="bold" width="30%">
-                    공연시간
-                  </Text>
-                  <Text width="70%">{concert.durationMinutes}분</Text>
-                </HStack>
-                <Divider />
-                <HStack justify="space-between">
-                  <Text fontWeight="bold" width="30%">
-                    시작시간
-                  </Text>
-                  <Text width="70%">{concert.startTime}</Text>
-                </HStack>
-                <Divider />
-                <HStack justify="space-between">
-                  <Text fontWeight="bold" width="30%">
-                    아티스트
-                  </Text>
-                  <Text width="70%">{concert.artists.join(", ")}</Text>
-                </HStack>
-                <Divider />
+                {isNfiLoad ? (
+                  <>
+                    <HStack justify="space-between">
+                      <Text fontWeight="bold" width="30%">
+                        카테고리
+                      </Text>
+                      <Text width="70%">{item.category}</Text>
+                    </HStack>
+                    <Divider />
+                  </>
+                ) : (
+                  <>
+                    <HStack justify="space-between">
+                      <Text fontWeight="bold" width="30%">
+                        공연기간
+                      </Text>
+                      <Text width="70%">{item.date.join(" ~ ")}</Text>
+                    </HStack>
+                    <Divider />
+                    <HStack justify="space-between">
+                      <Text fontWeight="bold" width="30%">
+                        공연시간
+                      </Text>
+                      <Text width="70%">{item.durationMinutes}분</Text>
+                    </HStack>
+                    <Divider />
+                    <HStack justify="space-between">
+                      <Text fontWeight="bold" width="30%">
+                        시작시간
+                      </Text>
+                      <Text width="70%">{item.startTime}</Text>
+                    </HStack>
+                    <Divider />
+                    <HStack justify="space-between">
+                      <Text fontWeight="bold" width="30%">
+                        아티스트
+                      </Text>
+                      <Text width="70%">{item.artists.join(", ")}</Text>
+                    </HStack>
+                    <Divider />
+                  </>
+                )}
               </VStack>
             </Box>
           </Flex>
