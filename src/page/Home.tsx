@@ -142,42 +142,53 @@ const Home = () => {
       )
     );
 
-    upcomingConcerts.sort((a, b) => {
-      const dateA = moment(a.date[0].split("(")[0], "YYYY-MM-DD");
-      const dateB = moment(b.date[0].split("(")[0], "YYYY-MM-DD");
-      return dateA.diff(dateB);
-    });
+    const sortFunction = (a: Concert, b: Concert) => {
+      if (sortOrder === "최신순") {
+        const dateA = moment(a.date[0].split("(")[0], "YYYY-MM-DD");
+        const dateB = moment(b.date[0].split("(")[0], "YYYY-MM-DD");
+        return dateA.diff(dateB); // 오름차순 정렬 (미래 날짜가 뒤로)
+      } else if (sortOrder === "이름순") {
+        return a.name.localeCompare(b.name);
+      }
+      return 0;
+    };
 
+    upcomingConcerts.sort(sortFunction);
     pastConcerts.sort((a, b) => {
-      const dateA = moment(a.date[0].split("(")[0], "YYYY-MM-DD");
-      const dateB = moment(b.date[0].split("(")[0], "YYYY-MM-DD");
-      return dateB.diff(dateA);
+      if (sortOrder === "최신순") {
+        const dateA = moment(a.date[0].split("(")[0], "YYYY-MM-DD");
+        const dateB = moment(b.date[0].split("(")[0], "YYYY-MM-DD");
+        return dateB.diff(dateA); // 내림차순 정렬 (과거 날짜가 앞으로)
+      }
+      return sortFunction(a, b); // 이름순은 동일하게 처리
     });
 
     return [...upcomingConcerts, ...pastConcerts];
   };
 
-  const filteredConcerts = concertsData.filter((concert) => {
-    const matchesSearch =
-      concert.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      concert.location.toLowerCase().includes(searchQuery.toLowerCase());
+  const filteredAndSortedConcerts = sortConcerts(
+    concertsData.filter((concert) => {
+      const matchesSearch =
+        concert.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        concert.location.toLowerCase().includes(searchQuery.toLowerCase());
 
-    if (toggle) {
-      // 토글이 true면 지난 공연만 필터링
-      const isPastEvent = concert.date.every((date) => {
-        const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
-        return concertDate.isBefore(currentTime, "day");
-      });
-      return matchesSearch && isPastEvent;
-    } else {
-      // 토글이 false면 공연 예정만 필터링
-      const isFutureOrToday = concert.date.some((date) => {
-        const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
-        return concertDate.isSameOrAfter(currentTime, "day");
-      });
-      return matchesSearch && isFutureOrToday;
-    }
-  });
+      if (toggle) {
+        // 토글이 true면 지난 공연만 필터링
+        const isPastEvent = concert.date.every((date) => {
+          const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+          return concertDate.isBefore(currentTime, "day");
+        });
+        return matchesSearch && isPastEvent;
+      } else {
+        // 토글이 false면 공연 예정만 필터링
+        const isFutureOrToday = concert.date.some((date) => {
+          const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+          return concertDate.isSameOrAfter(currentTime, "day");
+        });
+        return matchesSearch && isFutureOrToday;
+      }
+    })
+  );
 
   return (
     <Box
@@ -255,7 +266,7 @@ const Home = () => {
           </FormControl>
 
           {/* View mode 선택 버튼 */}
-          <Flex gap={2}>
+          {/* <Flex gap={2}>
             <Button
               onClick={() => setViewMode("card")}
               bg={viewMode === "card" ? "blue.500" : "gray.200"}
@@ -272,14 +283,14 @@ const Home = () => {
             >
               리스트형
             </Button>
-          </Flex>
+          </Flex> */}
         </Flex>
       </Box>
 
       {/* 카드형 / 리스트형 레이아웃 분기 처리 */}
       {viewMode === "card" ? (
         <SimpleGrid columns={columns} spacing={6}>
-          {filteredConcerts.map((concert, index) => {
+          {filteredAndSortedConcerts.map((concert, index) => {
             const isFutureOrToday = isEventTodayOrFuture(concert.date);
             const isPastEvent = !isFutureOrToday;
             const isTodayEvent = concert.date.some((date) => {
@@ -307,7 +318,7 @@ const Home = () => {
         </SimpleGrid>
       ) : (
         <VStack spacing={4} align="stretch">
-          {filteredConcerts.map((concert, index) => {
+          {filteredAndSortedConcerts.map((concert, index) => {
             const isFutureOrToday = isEventTodayOrFuture(concert.date);
             const isPastEvent = !isFutureOrToday;
             const isTodayEvent = concert.date.some((date) => {

@@ -43,107 +43,116 @@ const Profile = () => {
           />
         </Box>
 
-        {/* Group Information */}
         <Stack mb="8" align="center" spacing="4">
-          <Heading as="h1" size="2xl">
-            <Image src={"/image/nfLogo.png"} alt="NF Logo" />
-          </Heading>
+        <Heading as="h1" size="2xl">
+          <Image src={"/image/nfLogo.png"} alt="NF Logo" />
+        </Heading>
 
-          <Grid
-            templateColumns={{
-              base: "repeat(1, 1fr)",
-              md: "repeat(2, 1fr)",
-              lg: "repeat(4, 1fr)",
-            }}
-            gap="6"
-            w="100%"
-            my="6"
+        <Grid
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(4, 1fr)",
+          }}
+          gap="6"
+          w="100%"
+          my="6"
+        >
+          {/* Debut Date */}
+          <Flex
+            direction="column"  // 세로 정렬로 변경
+            align="center"
+            justifyContent="center"
+            p="4"
+            borderRadius="md"
+            boxShadow="md"
+            gap="4"
+            border="2px solid #eee"
+            width="100%"
           >
-            {/* Debut Date */}
-            <Flex
-              align="center"
-              justifyContent="center"
-              p="4"
-              borderRadius="md"
-              boxShadow="md"
-              gap="4"
-              border="2px solid #eee"
-            >
-              <Icon as={RiLightbulbLine} w="6" h="6" color="blue.500" mr="3" />
-              <Box>
-                <Text fontWeight="bold" fontSize="lg" color="blue.700">
-                  데뷔
-                </Text>
-                <Text fontSize="lg" color="gray.600">
-                  {profileData.debut_date}
-                </Text>
-              </Box>
-            </Flex>
+            <Icon as={RiLightbulbLine} w="6" h="6" color="blue.500" />
+            <Box textAlign="center">  {/* 텍스트 중앙 정렬 */}
+              <Text fontWeight="bold" fontSize="lg" color="blue.700">
+                데뷔
+              </Text>
+              <Text fontSize="lg" color="gray.600" fontWeight="600">
+                {profileData.debut_date}
+              </Text>
+            </Box>
+          </Flex>
 
-            {/* Debut Song */}
-            <Flex
-              align="center"
-              justifyContent="center"
-              p="4"
-              borderRadius="md"
-              boxShadow="md"
-              gap="4"
-              border="2px solid #eee"
-            >
-              <Icon as={RiMusic2Line} w="6" h="6" color="green.500" mr="3" />
-              <Box>
-                <Text fontWeight="bold" fontSize="lg" color="green.700">
-                  데뷔곡
-                </Text>
-                <Text fontSize="lg" color="gray.600">
-                  {profileData.debut_song}
-                </Text>
-              </Box>
-            </Flex>
+          {/* Debut Song */}
+          <Flex
+            direction="column"  // 세로 정렬로 변경
+            align="center"
+            justifyContent="center"
+            p="4"
+            borderRadius="md"
+            boxShadow="md"
+            gap="4"
+            border="2px solid #eee"
+            width="100%"
+          >
+            <Icon as={RiMusic2Line} w="6" h="6" color="green.500" />
+            <Box textAlign="center">  {/* 텍스트 중앙 정렬 */}
+              <Text fontWeight="bold" fontSize="lg" color="green.700">
+                데뷔곡
+              </Text>
+              <Text fontSize="lg" color="gray.600" fontWeight="600">
+                {profileData.debut_song}
+              </Text>
+            </Box>
+          </Flex>
 
-            {/* Fandom */}
-            <Flex
-              align="center"
-              justifyContent="center"
-              p="4"
-              borderRadius="md"
-              boxShadow="md"
-              gap="4"
-              border="2px solid #eee"
-            >
-              <Icon as={RiHeart2Line} w="6" h="6" color="red.500" mr="3" />
-              <Box>
-                <Text fontWeight="bold" fontSize="lg" color="red.700">
-                  팬덤
-                </Text>
-                <Text fontSize="lg" color="gray.600">
-                  {profileData.fandom_name}
-                </Text>
-              </Box>
-            </Flex>
+          {/* Fandom */}
+          <Flex
+            direction="column"  // 세로 정렬로 변경
+            align="center"
+            justifyContent="center"
+            p="4"
+            borderRadius="md"
+            boxShadow="md"
+            gap="4"
+            border="2px solid #eee"
+            width="100%"
+          >
+            <Icon as={RiHeart2Line} w="6" h="6" color="red.500" />
+            <Box textAlign="center">  {/* 텍스트 중앙 정렬 */}
+              <Text fontWeight="bold" fontSize="lg" color="red.700">
+                팬덤
+              </Text>
+              <Text fontSize="lg" color="gray.600" fontWeight="600">
+                {profileData.fandom_name}
+              </Text>
+            </Box>
+          </Flex>
 
-            {/* Light Stick */}
-            <Flex
-              align="center"
-              justifyContent="center"
-              p="4"
-              borderRadius="md"
-              boxShadow="md"
-              gap="4"
-              border="2px solid #eee"
-            >
-              <Icon as={RiTeamLine} w="6" h="6" color="purple.500" mr="3" />
-              <Box>
-                <Text fontWeight="bold" fontSize="lg" color="purple.700">
-                  응원봉
-                </Text>
-                <Text fontSize="lg" color="gray.600">
-                  {profileData.light_stick}
-                </Text>
-              </Box>
-            </Flex>
-          </Grid>
-        </Stack>
+          {/* Light Stick */}
+          <Flex
+            direction="column"  // 세로 정렬로 변경
+            align="center"
+            justifyContent="center"
+            p="4"
+            borderRadius="md"
+            boxShadow="md"
+            gap="4"
+            border="2px solid #eee"
+            width="100%"
+          >
+            <Icon as={RiTeamLine} w="6" h="6" color="purple.500" />
+            <Box textAlign="center">  {/* 텍스트 중앙 정렬 */}
+              <Text fontWeight="bold" fontSize="lg" color="purple.700">
+                응원봉
+              </Text>
+              <Text fontSize="lg" color="gray.600" fontWeight="600">
+                {profileData.light_stick}
+              </Text>
+            </Box>
+          </Flex>
+        </Grid>
+
+      </Stack>
+
 
         {/* Members */}
         <Heading as="h2" size="xl" mb="4">

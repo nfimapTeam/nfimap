@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Box,
   Input,
@@ -52,9 +52,21 @@ const ConcertInfo = ({
   };
 
   const isConcertPast = (concert: Concert) => {
-    const currentDate = new Date().toISOString().split("T")[0];
-    return concert.date.some((date) => date < currentDate);
+    const currentDate = new Date();
+    return concert.date.every((dateString) => {
+      // 날짜 문자열에서 "(요일)" 부분을 제거
+      const datePart = dateString.split("(")[0];
+      const concertDate = new Date(datePart);
+      // 시간을 00:00:00으로 설정하여 날짜만 비교
+      concertDate.setHours(0, 0, 0, 0);
+      currentDate.setHours(0, 0, 0, 0);
+      return concertDate < currentDate;
+    });
   };
+
+  useEffect(() => {
+    console.log(concerts)
+  }, [concerts])
 
   return (
     <VStack spacing={4} align="start">

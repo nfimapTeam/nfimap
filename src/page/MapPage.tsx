@@ -30,7 +30,7 @@ type Nfiload = {
 };
 
 const MapPage = () => {
-  const [concertState, setConcertState] = useState<Concert[]>(concertsData);
+ const [concertState, setConcertState] = useState<Concert[]>(concertsData);
   const [nfiLoadState, setNfiLoadState] = useState<Nfiload[]>(nfiloadData);
   const [query, setQuery] = useState<string>("");
   const [showPastConcerts, setShowPastConcerts] = useState<boolean>(false);
@@ -39,31 +39,33 @@ const MapPage = () => {
   const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
 
   useEffect(() => {
-    const currentDate = new Date().toISOString().split("T")[0];
+    const currentDate = new Date();
 
     const filteredConcerts = concertsData.filter((concert) => {
       const matchesQuery =
         concert.name.toLowerCase().includes(query.toLowerCase()) ||
         concert.location.toLowerCase().includes(query.toLowerCase());
 
-      const isUpcomingOrToday = concert.date.some((date) => {
-        const concertDate = date.split("(")[0];
-        return concertDate >= currentDate;
-      });
+      const concertDates = concert.date.map(date => new Date(date.split("(")[0]));
+      const latestDate = new Date(Math.max(...concertDates.map(date => date.getTime())));
+      
+      const isPast = latestDate < currentDate;
+      const isUpcomingOrToday = latestDate >= currentDate;
 
-      const isPast = concert.date.some((date) => {
-        const concertDate = date.split("(")[0];
-        return concertDate < currentDate;
-      });
+      return matchesQuery && (showPastConcerts ? true : isUpcomingOrToday);
+    });
 
-      return matchesQuery && (showPastConcerts ? isPast || isUpcomingOrToday : isUpcomingOrToday);
+    // 날짜 기준으로 정렬
+    filteredConcerts.sort((a, b) => {
+      const dateA = Math.max(...a.date.map(date => new Date(date.split("(")[0]).getTime()));
+      const dateB = Math.max(...b.date.map(date => new Date(date.split("(")[0]).getTime()));
+      return dateA - dateB;
     });
 
     setConcertState(filteredConcerts);
   }, [query, showPastConcerts]);
 
   useEffect(() => {
-    // Filter NFI load data based on query if needed
     const filteredNfiLoad = nfiloadData.filter((load) =>
       load.name.toLowerCase().includes(query.toLowerCase()) ||
       load.location.toLowerCase().includes(query.toLowerCase())

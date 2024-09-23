@@ -212,21 +212,7 @@ const Card: React.FC<CardProps> = ({
             </Box>
           </VStack>
         </HStack>
-        {isPastEvent ? (
-          // No link for past events
-          <Button
-            mt={4}
-            border="2px solid #eee"
-            bg="brand.sub2"
-            _hover={{ bg: "brand.main" }}
-            width="100%"
-            fontSize="13px"
-            isDisabled={concert.ticketLink === ""}
-            color="white"
-          >
-            {getButtonText(concert, isPastEvent, timeRemaining)}
-          </Button>
-        ) : (
+        {!isPastEvent &&
           <Link href={concert.ticketLink} isExternal>
             <Button
               mt={4}
@@ -242,7 +228,7 @@ const Card: React.FC<CardProps> = ({
               {getButtonText(concert, isPastEvent, timeRemaining)}
             </Button>
           </Link>
-        )}
+        }
       </Box>
     </Box>
   );
