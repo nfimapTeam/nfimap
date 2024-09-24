@@ -191,6 +191,14 @@ const Music: React.FC = () => {
   const filteredAlbums = albums.filter((album) =>
     album.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+useEffect(() => {
+  const music = tracks.map((track: any) => ({
+    name: track.name,
+  }));
+
+  console.log(music);
+}, [tracks]);
+
 
   return (
     <Box
