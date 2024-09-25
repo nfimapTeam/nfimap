@@ -30,13 +30,14 @@ type Nfiload = {
 };
 
 const MapPage = () => {
- const [concertState, setConcertState] = useState<Concert[]>(concertsData);
+  const [concertState, setConcertState] = useState<Concert[]>(concertsData);
   const [nfiLoadState, setNfiLoadState] = useState<Nfiload[]>(nfiloadData);
   const [query, setQuery] = useState<string>("");
   const [showPastConcerts, setShowPastConcerts] = useState<boolean>(false);
   const [selectedConcert, setSelectedConcert] = useState<Concert | null>(null);
   const [selectedNfiLoad, setSelectedNfiLoad] = useState<Nfiload | null>(null);
   const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
+  const [selectedType, setSelectedType] = useState<string>(""); // 추가: 선택된 유형 상태
 
   useEffect(() => {
     const currentDate = new Date();
@@ -46,29 +47,44 @@ const MapPage = () => {
         concert.name.toLowerCase().includes(query.toLowerCase()) ||
         concert.location.toLowerCase().includes(query.toLowerCase());
 
-      const concertDates = concert.date.map(date => new Date(date.split("(")[0]));
-      const latestDate = new Date(Math.max(...concertDates.map(date => date.getTime())));
-      
+      const concertDates = concert.date.map(
+        (date) => new Date(date.split("(")[0])
+      );
+      const latestDate = new Date(
+        Math.max(...concertDates.map((date) => date.getTime()))
+      );
+
       const isPast = latestDate < currentDate;
       const isUpcomingOrToday = latestDate >= currentDate;
 
-      return matchesQuery && (showPastConcerts ? true : isUpcomingOrToday);
+      const matchesType = selectedType ? concert.type === selectedType : true;
+
+      return (
+        matchesQuery &&
+        (showPastConcerts ? true : isUpcomingOrToday) &&
+        matchesType
+      );
     });
 
     // 날짜 기준으로 정렬
     filteredConcerts.sort((a, b) => {
-      const dateA = Math.max(...a.date.map(date => new Date(date.split("(")[0]).getTime()));
-      const dateB = Math.max(...b.date.map(date => new Date(date.split("(")[0]).getTime()));
+      const dateA = Math.max(
+        ...a.date.map((date) => new Date(date.split("(")[0]).getTime())
+      );
+      const dateB = Math.max(
+        ...b.date.map((date) => new Date(date.split("(")[0]).getTime())
+      );
       return dateA - dateB;
     });
 
     setConcertState(filteredConcerts);
-  }, [query, showPastConcerts]);
+  }, [query, showPastConcerts, selectedType]); // 추가: selectedType 의존성 추가
 
   useEffect(() => {
-    const filteredNfiLoad = nfiloadData.filter((load) =>
-      load.name.toLowerCase().includes(query.toLowerCase()) ||
-      load.location.toLowerCase().includes(query.toLowerCase())
+    const filteredNfiLoad = nfiloadData.filter(
+      (load) =>
+        load.name.toLowerCase().includes(query.toLowerCase()) ||
+        load.location.toLowerCase().includes(query.toLowerCase())
     );
     setNfiLoadState(filteredNfiLoad);
   }, [query]);
@@ -89,6 +105,8 @@ const MapPage = () => {
           setSelectedNfiLoad={setSelectedNfiLoad}
           activeTabIndex={activeTabIndex}
           setActiveTabIndex={setActiveTabIndex}
+          selectedType={selectedType} // 추가
+          setSelectedType={setSelectedType} // 추가
         />
       </Box>
       <Box flex="1">

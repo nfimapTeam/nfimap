@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
+import {
+  Box,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+  Select,
+} from "@chakra-ui/react";
 import ConcertInfo from "./ConcertInfo";
 import NfiLoad from "./NfiLoad";
 
@@ -40,6 +48,8 @@ type SidebarProps = {
   selectedNfiLoad: Nfiload | null;
   activeTabIndex: number;
   setActiveTabIndex: (index: number) => void;
+  selectedType: string; // 추가: 필터링된 type 상태
+  setSelectedType: (type: string) => void; // 추가: type 변경 함수
 };
 
 const Sidebar = ({
@@ -55,6 +65,8 @@ const Sidebar = ({
   selectedNfiLoad,
   activeTabIndex,
   setActiveTabIndex,
+  selectedType, // 추가
+  setSelectedType, // 추가
 }: SidebarProps) => {
   return (
     <Box
@@ -106,10 +118,12 @@ const Sidebar = ({
               showPastConcerts={showPastConcerts}
               setShowPastConcerts={setShowPastConcerts}
               setSelectedConcert={setSelectedConcert}
+              selectedType={selectedType} // 추가
+              setSelectedType={setSelectedType}
             />
           </TabPanel>
           <TabPanel>
-            <NfiLoad 
+            <NfiLoad
               nfiload={nfiload}
               setSelectedNfiLoad={setSelectedNfiLoad}
               selectedNfiLoad={selectedNfiLoad}

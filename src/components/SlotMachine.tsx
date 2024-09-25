@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { RiMusic2Line } from 'react-icons/ri'; // 음악 아이콘 추가
-import { Text } from '@chakra-ui/react'; // Chakra UI 텍스트 컴포넌트
+import { Button, Text, Box, IconButton } from '@chakra-ui/react'; // Chakra UI 버튼과 텍스트 컴포넌트
 
 interface Props {
   textData: string[];
@@ -21,6 +21,10 @@ const SlotMachine = ({ textData }: Props) => {
   const [isSpinning, setIsSpinning] = useState(false); // 슬롯머신이 도는 상태인지 여부
   const [isStarted, setIsStarted] = useState(false); // 사용자가 첫 클릭했는지 여부
   const [isClickable, setIsClickable] = useState(true); // 한번 클릭 후 더이상 클릭 못하도록
+  const [finalIndex, setFinalIndex] = useState(0); // 슬롯이 멈춘 후 보여줄 곡의 인덱스
+
+  // 날짜에 맞게 인덱스를 설정
+  const today = new Date().getDate() - 1; // 1일 -> 0번 인덱스로 맞추기 위해 -1
   const shuffledTextData = [...textData].sort(() => Math.random() - 0.5);
   const textArr = Array(ARRAY_REPEAT).fill(shuffledTextData).flat(); // 곡 리스트 반복
   const lastIndex = textArr.length - 1; // 마지막 곡 인덱스
@@ -30,15 +34,14 @@ const SlotMachine = ({ textData }: Props) => {
 
     if (isSpinning) {
       interval = setInterval(() => {
-        setCurrentIndex((prev) => {
-          return prev < lastIndex ? prev + 1 : 0; // 슬롯이 끝에 도달하면 처음으로 돌아가기
-        });
+        setCurrentIndex((prev) => (prev < lastIndex ? prev + 1 : 0)); // 슬롯이 끝에 도달하면 처음으로 돌아가기
       }, getDuration(10, currentIndex));
     }
 
     return () => clearInterval(interval);
   }, [currentIndex, lastIndex, isSpinning]);
 
+  // 애니메이션 설정
   const variants: Variants = {
     initial: { scaleY: 0.8, y: '-50%', opacity: 0.5 },
     animate: ({ isLast }) => {
@@ -56,7 +59,8 @@ const SlotMachine = ({ textData }: Props) => {
       setIsClickable(false); // 클릭 불가로 설정
       setTimeout(() => {
         setIsSpinning(false); // 일정 시간 후 슬롯 멈춤
-      }, 5000); // 5초 동안 돌게 설정
+        setFinalIndex(today); // 멈추면 오늘 날짜에 해당하는 인덱스 설정
+      }, 2000); // 2초 동안 돌게 설정
     }
   }
 
@@ -68,19 +72,20 @@ const SlotMachine = ({ textData }: Props) => {
     <div style={{ textAlign: 'center', position: 'relative' }}>
       {/* 첫 번째 상태: 슬롯이 돌기 전 */}
       {!isStarted && (
-        <div
-          onClick={handleClick}
-          style={{
-            cursor: isClickable ? 'pointer' : 'not-allowed',
-            fontSize: '14px',
-            fontWeight: 'bold',
-            marginBottom: '20px',
-            color: isClickable ? 'black' : 'gray', // 클릭 불가일 때 색상 변경
-            marginTop: "10px",
-          }}
-        >
-          추천곡을 클릭해주세요!
-        </div>
+        <Box display="flex" alignItems="center" justifyContent="center" gap="10px">
+          <Text fontSize="14px" fontWeight="bold" color={isClickable ? 'black' : 'gray'}>
+            버튼을 클릭해주세요!
+          </Text>
+          <IconButton
+            onClick={handleClick}
+            isDisabled={!isClickable}
+            colorScheme="blue"
+            aria-label="추천곡 시작"
+            height="24px"
+            icon={<RiMusic2Line />}
+            borderRadius="full"
+          />
+        </Box>
       )}
 
       {/* 슬롯머신 동작: 슬롯이 시작되면 보여줌 */}
@@ -91,15 +96,15 @@ const SlotMachine = ({ textData }: Props) => {
           {!isSpinning && (
             <>
               <RiMusic2Line color="#3b82f6" size="20px" />
-              <Text fontSize="sm" fontWeight="bold" flexShrink={0}>추천곡 :</Text>
+              <Text fontSize="sm" fontWeight="bold" flexShrink={0}>오늘의 엔피곡 :</Text>
             </>
           )}
           {/* 추천곡 텍스트 */}
-          <div style={{ flexGrow: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '150px' }}>
+          <div style={{ flexGrow: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', maxWidth: '200px' }}>
             <AnimatePresence mode="popLayout">
               <motion.span
                 className="slotMachineText"
-                key={textArr[currentIndex]}
+                key={isSpinning ? textArr[currentIndex] : textData[finalIndex]}
                 custom={{ isLast: currentIndex === lastIndex }}
                 variants={variants}
                 initial="initial"
@@ -121,7 +126,7 @@ const SlotMachine = ({ textData }: Props) => {
                   width: '100%', // Full width to ensure it takes up space
                 }}
               >
-                {textArr[currentIndex]}
+                {isSpinning ? textArr[currentIndex] : textData[finalIndex]} {/* 슬롯이 멈추면 날짜에 맞는 곡 출력 */}
               </motion.span>
             </AnimatePresence>
           </div>

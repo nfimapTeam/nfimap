@@ -28,8 +28,6 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { toggleState } from "../atom/toggleState";
 import Card from "../components/Card";
-import { musicData } from "../datas/music";
-import SlotMachine from "../components/SlotMachine";
 
 const Home = () => {
   const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
@@ -40,7 +38,6 @@ const Home = () => {
   const [sortOrder, setSortOrder] = useState("최신순");
   const [toggle, setToggle] = useRecoilState(toggleState);
   const [selectedType, setSelectedType] = useState("");
-  const musicNames = musicData.map((music) => music.name);
   const navigate = useNavigate();
 
   interface Concert {
@@ -175,9 +172,8 @@ const Home = () => {
       const matchesSearch =
         concert.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         concert.location.toLowerCase().includes(searchQuery.toLowerCase());
-      
-      const matchesType =
-        selectedType === "" || concert.type === selectedType;
+
+      const matchesType = selectedType === "" || concert.type === selectedType;
 
       if (toggle) {
         // 토글이 true면 지난 공연만 필터링
@@ -213,18 +209,6 @@ const Home = () => {
         "scrollbar-width": "none",
       }}
     >
-      <Box p="20px">
-      <Flex
-        alignItems="center"
-        gap="5px"
-        zIndex="10"
-        justifyContent="center"// Center for mobile, right for larger screens
-        flexGrow={1} // Allow the Flex to grow
-        overflow="hidden" // Prevent overflow for smaller screens
-      >
-        <SlotMachine textData={musicNames} />
-        </Flex>
-      </Box>
       {/* 검색 및 정렬 섹션 */}
       <Box mb={4}>
         <InputGroup size="lg">

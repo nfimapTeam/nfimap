@@ -21,6 +21,8 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Loading from "../components/Loading";
+import { musicData } from "../datas/music";
+import SlotMachine from "../components/SlotMachine";
 
 interface Image {
   url: string;
@@ -74,6 +76,7 @@ const Music: React.FC = () => {
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>(""); // New state for search query
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const musicNames = musicData.map((music) => music.name);
   const columnCount = useBreakpointValue({ base: 1, md: 2, lg: 3, xl: 4 });
 
   const getToken = useCallback(async () => {
@@ -191,14 +194,13 @@ const Music: React.FC = () => {
   const filteredAlbums = albums.filter((album) =>
     album.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
-useEffect(() => {
-  const music = tracks.map((track: any) => ({
-    name: track.name,
-  }));
+  useEffect(() => {
+    const music = tracks.map((track: any) => ({
+      name: track.name,
+    }));
 
-  console.log(music);
-}, [tracks]);
-
+    console.log(music);
+  }, [tracks]);
 
   return (
     <Box
@@ -216,6 +218,18 @@ useEffect(() => {
         "scrollbar-width": "none",
       }}
     >
+      <Box p="20px">
+        <Flex
+          alignItems="center"
+          gap="5px"
+          zIndex="10"
+          justifyContent="flex-end"
+          flexGrow={1}
+          overflow="hidden"
+        >
+          <SlotMachine textData={musicNames} />
+        </Flex>
+      </Box>
       <VStack spacing={4}>
         <Input
           placeholder="앨범명을 검색하세요"

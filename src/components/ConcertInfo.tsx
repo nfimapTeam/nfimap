@@ -8,6 +8,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { Select } from "antd";
 
 type Concert = {
   name: string;
@@ -31,6 +32,8 @@ type ConcertInfoProps = {
   showPastConcerts: boolean;
   setShowPastConcerts: (show: boolean) => void;
   setSelectedConcert: (concert: Concert) => void;
+  selectedType: string; // 추가: 필터링된 type 상태
+  setSelectedType: (type: string) => void; // 추가: type 변경 함수
 };
 
 const ConcertInfo = ({
@@ -40,6 +43,8 @@ const ConcertInfo = ({
   showPastConcerts,
   setShowPastConcerts,
   setSelectedConcert,
+  selectedType, // 추가
+  setSelectedType, // 추가
 }: ConcertInfoProps) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -65,8 +70,8 @@ const ConcertInfo = ({
   };
 
   useEffect(() => {
-    console.log(concerts)
-  }, [concerts])
+    console.log(concerts);
+  }, [concerts]);
 
   return (
     <VStack spacing={4} align="start">
@@ -77,14 +82,32 @@ const ConcertInfo = ({
         onChange={handleInputChange}
         size="md"
       />
-      <Flex width="100%" align="center" justifyContent="flex-end">
-        <Text fontSize="10px">지난 공연 포함</Text>
-        <Switch
-          id="toggle"
-          isChecked={showPastConcerts}
-          onChange={() => setShowPastConcerts(!showPastConcerts)}
-          ml="10px"
-        />
+      <Flex width="100%" align="center" justifyContent="space-between">
+        <Select
+          placeholder="유형 선택"
+          value={selectedType}
+          onChange={(value) => setSelectedType(value)}
+          style={{ width: 120, height: 30 }}
+          dropdownStyle={{
+            backgroundColor: "#ffffff",
+            borderColor: "#4BA4F2",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+          }}
+        >
+          <option value="">전체</option>
+          <option value="콘서트">콘서트</option>
+          <option value="페스티벌">페스티벌</option>
+          <option value="행사">행사</option>
+        </Select>
+        <Flex align="center">
+          <Text fontSize="10px">지난 공연 포함</Text>
+          <Switch
+            id="toggle"
+            isChecked={showPastConcerts}
+            onChange={() => setShowPastConcerts(!showPastConcerts)}
+            ml="10px"
+          />
+        </Flex>
       </Flex>
       {concerts.map((concert, index) => {
         const past = isConcertPast(concert);
