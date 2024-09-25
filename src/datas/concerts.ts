@@ -1,7 +1,7 @@
 export const concertsData = [
   {
     id: 1,
-    name: "2024 N Flying LIVE HIDE OUT",
+    name: "2024 N.Flying LIVE HIDE OUT",
     location: "예스24 라이브홀",
     date: ["2024-06-07(금)", "2024-06-08(토)", "2024-06-09(일)"],
     startTime: "금 20:00, 토 18:00, 일 17:00",
