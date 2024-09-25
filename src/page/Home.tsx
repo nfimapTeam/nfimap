@@ -28,6 +28,8 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { toggleState } from "../atom/toggleState";
 import Card from "../components/Card";
+import { musicData } from "../datas/music";
+import SlotMachine from "../components/SlotMachine";
 
 const Home = () => {
   const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
@@ -37,6 +39,8 @@ const Home = () => {
   const [showPastEvents, setShowPastEvents] = useState(false);
   const [sortOrder, setSortOrder] = useState("최신순");
   const [toggle, setToggle] = useRecoilState(toggleState);
+  const [selectedType, setSelectedType] = useState("");
+  const musicNames = musicData.map((music) => music.name);
   const navigate = useNavigate();
 
   interface Concert {
@@ -171,6 +175,9 @@ const Home = () => {
       const matchesSearch =
         concert.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         concert.location.toLowerCase().includes(searchQuery.toLowerCase());
+      
+      const matchesType =
+        selectedType === "" || concert.type === selectedType;
 
       if (toggle) {
         // 토글이 true면 지난 공연만 필터링
@@ -178,14 +185,14 @@ const Home = () => {
           const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
           return concertDate.isBefore(currentTime, "day");
         });
-        return matchesSearch && isPastEvent;
+        return matchesSearch && isPastEvent && matchesType;
       } else {
         // 토글이 false면 공연 예정만 필터링
         const isFutureOrToday = concert.date.some((date) => {
           const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
           return concertDate.isSameOrAfter(currentTime, "day");
         });
-        return matchesSearch && isFutureOrToday;
+        return matchesSearch && isFutureOrToday && matchesType;
       }
     })
   );
@@ -206,6 +213,18 @@ const Home = () => {
         "scrollbar-width": "none",
       }}
     >
+      <Box p="20px">
+      <Flex
+        alignItems="center"
+        gap="5px"
+        zIndex="10"
+        justifyContent="center"// Center for mobile, right for larger screens
+        flexGrow={1} // Allow the Flex to grow
+        overflow="hidden" // Prevent overflow for smaller screens
+      >
+        <SlotMachine textData={musicNames} />
+        </Flex>
+      </Box>
       {/* 검색 및 정렬 섹션 */}
       <Box mb={4}>
         <InputGroup size="lg">
@@ -237,7 +256,23 @@ const Home = () => {
           </InputRightElement>
         </InputGroup>
 
-        <Flex width="100%" justifyContent="space-between" gap={8} mt={4}>
+        <Flex width="100%" justifyContent="space-between" gap={4} mt={4}>
+          <Select
+            value={selectedType}
+            onChange={(value) => setSelectedType(value)}
+            style={{ width: 200, height: 40 }}
+            dropdownStyle={{
+              backgroundColor: "#ffffff",
+              borderColor: "#4BA4F2",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+            }}
+            placeholder="콘서트 타입 선택"
+          >
+            <Option value="">전체</Option>
+            <Option value="콘서트">콘서트</Option>
+            <Option value="페스티벌">페스티벌</Option>
+            <Option value="행사">행사</Option>
+          </Select>
           <Select
             value={sortOrder}
             onChange={(value) => setSortOrder(value)}
