@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { RiMusic2Line } from 'react-icons/ri'; // 음악 아이콘 추가
 import { Button, Text, Box, IconButton } from '@chakra-ui/react'; // Chakra UI 버튼과 텍스트 컴포넌트
+import { useRecoilState } from 'recoil'; // Recoil의 useRecoilState import
+import { slotStateState, toDayMusicState } from '../atom/slotState';
 
 interface Props {
   textData: string[];
@@ -19,9 +21,10 @@ const ARRAY_REPEAT = 5;
 const SlotMachine = ({ textData }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0); // 현재 슬롯에서 보여주는 곡의 인덱스
   const [isSpinning, setIsSpinning] = useState(false); // 슬롯머신이 도는 상태인지 여부
-  const [isStarted, setIsStarted] = useState(false); // 사용자가 첫 클릭했는지 여부
   const [isClickable, setIsClickable] = useState(true); // 한번 클릭 후 더이상 클릭 못하도록
   const [finalIndex, setFinalIndex] = useState(0); // 슬롯이 멈춘 후 보여줄 곡의 인덱스
+  const [todayMusic, setTodayMusic] = useRecoilState(toDayMusicState); // 전역 상태 관리
+  const [isStarted, setIsStarted] = useRecoilState(slotStateState);
 
   // 날짜에 맞게 인덱스를 설정
   const today = new Date().getDate() - 1; // 1일 -> 0번 인덱스로 맞추기 위해 -1
@@ -60,6 +63,7 @@ const SlotMachine = ({ textData }: Props) => {
       setTimeout(() => {
         setIsSpinning(false); // 일정 시간 후 슬롯 멈춤
         setFinalIndex(today); // 멈추면 오늘 날짜에 해당하는 인덱스 설정
+        setTodayMusic(textData[today]); // 전역 상태에 추천곡 저장
       }, 2000); // 2초 동안 돌게 설정
     }
   }
@@ -118,7 +122,7 @@ const SlotMachine = ({ textData }: Props) => {
                   fontSize: '14px', // 글자 크기
                   fontWeight: 'bold',
                   color: '#3b82f6', // 추천곡 색상
-                  animation: 'glow 2s infinite',
+                  // animation: 'glow 2s infinite',
                   whiteSpace: 'nowrap', // Prevent text wrapping
                   overflow: 'hidden', // Hide overflow
                   textOverflow: 'ellipsis', // Add ellipsis for overflow
@@ -126,14 +130,14 @@ const SlotMachine = ({ textData }: Props) => {
                   width: '100%', // Full width to ensure it takes up space
                 }}
               >
-                {isSpinning ? textArr[currentIndex] : textData[finalIndex]} {/* 슬롯이 멈추면 날짜에 맞는 곡 출력 */}
+                {isSpinning ? textArr[currentIndex] : todayMusic}
               </motion.span>
             </AnimatePresence>
           </div>
           
         </div>
       )}
-
+{/* 
       <style>
         {`
           @keyframes glow {
@@ -142,7 +146,7 @@ const SlotMachine = ({ textData }: Props) => {
             100% { text-shadow: 0 0 2px #0597F2; }
           }
         `}
-      </style>
+      </style> */}
     </div>
   );
 };
