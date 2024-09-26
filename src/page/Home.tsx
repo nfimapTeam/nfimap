@@ -285,7 +285,7 @@ const Home = () => {
           </FormControl>
 
           {/* View mode 선택 버튼 */}
-          {/* <Flex gap={2}>
+          <Flex gap={2}>
             <Button
               onClick={() => setViewMode("card")}
               bg={viewMode === "card" ? "blue.500" : "gray.200"}
@@ -302,7 +302,7 @@ const Home = () => {
             >
               리스트형
             </Button>
-          </Flex> */}
+          </Flex>
         </Flex>
       </Box>
 

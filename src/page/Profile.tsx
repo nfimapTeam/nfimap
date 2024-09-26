@@ -305,6 +305,22 @@ const Profile = () => {
               w="40px"
             />
           </Link>
+          <Link href={profileData.official_sites.daumcafe} isExternal>
+            <Image
+              borderRadius="4px"
+              src="/image/daumcafe.png"
+              w="40px"
+            />
+          </Link>
+          <Link href={profileData.official_sites.youtube} isExternal>
+            <Image
+              borderRadius="4px"
+              src="/image/youtube.png"
+              w="40px"
+              height="40px"
+              border="1px solid #eee"
+            />
+          </Link>
         </Flex>
       </Box>
     </Box>

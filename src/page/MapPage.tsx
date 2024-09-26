@@ -42,19 +42,23 @@ const MapPage = () => {
   useEffect(() => {
     const currentDate = new Date();
 
+    currentDate.setHours(0, 0, 0, 0);
+
     const filteredConcerts = concertsData.filter((concert) => {
       const matchesQuery =
         concert.name.toLowerCase().includes(query.toLowerCase()) ||
         concert.location.toLowerCase().includes(query.toLowerCase());
 
-      const concertDates = concert.date.map(
-        (date) => new Date(date.split("(")[0])
-      );
+      const concertDates = concert.date.map((date) => {
+        const parsedDate = new Date(date.split("(")[0]);
+        parsedDate.setHours(0, 0, 0, 0); // 시간을 0으로 설정
+        return parsedDate;
+      });
       const latestDate = new Date(
         Math.max(...concertDates.map((date) => date.getTime()))
       );
 
-      const isPast = latestDate < currentDate;
+      const isPast = latestDate < currentDate; // 과거인지 확인
       const isUpcomingOrToday = latestDate >= currentDate;
 
       const matchesType = selectedType ? concert.type === selectedType : true;

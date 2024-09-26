@@ -100,7 +100,7 @@ const ConcertInfo = ({
           <option value="행사">행사</option>
         </Select>
         <Flex align="center">
-          <Text fontSize="10px">지난 공연 포함</Text>
+          <Text fontSize="10px">지난 공연 보기</Text>
           <Switch
             id="toggle"
             isChecked={showPastConcerts}

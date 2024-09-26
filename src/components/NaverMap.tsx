@@ -110,7 +110,6 @@ const NaverMap = ({
 
         (item as Concert).date.forEach((dateString) => {
           const concertDate = new Date(dateString.split("(")[0]);
-
           if (concertDate.toDateString() === today.toDateString()) {
             isToday = true;
           } else if (concertDate < today) {
@@ -125,7 +124,7 @@ const NaverMap = ({
           markerStyle = "filter: grayscale(100%) brightness(40%);";
         }
       }
-
+      console.log(markerImage)
       const marker = new naverMaps.Marker({
         position: location,
         map: map,
