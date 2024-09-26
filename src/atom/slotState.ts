@@ -3,7 +3,7 @@ import { recoilPersist } from 'recoil-persist';
 
 const { persistAtom } = recoilPersist({
   key: 'toDayMusicPersist',
-  storage: localStorage
+  storage: sessionStorage
 });
 
 export const toDayMusicState = atom<string>({
