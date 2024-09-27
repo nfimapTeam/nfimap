@@ -11,12 +11,13 @@ import {
   Icon,
   Button,
   SimpleGrid,
-  VStack,
-  HStack,
-  Text,
-  Image,
-  Badge,
-  Link,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { SearchIcon, CloseIcon } from "@chakra-ui/icons";
@@ -28,19 +29,13 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { toggleState } from "../atom/toggleState";
 import Card from "../components/Card";
+import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
+import { RiCalendar2Line } from "@remixicon/react";
+import theme from "../util/theme";
+import '../style/custom.css'; 
 
-const Home = () => {
-  const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
-  const [currentTime, setCurrentTime] = useState(moment());
-  const [searchQuery, setSearchQuery] = useState("");
-  const [viewMode, setViewMode] = useState<"card" | "list">("card"); // View mode 관리
-  const [showPastEvents, setShowPastEvents] = useState(false);
-  const [sortOrder, setSortOrder] = useState("최신순");
-  const [toggle, setToggle] = useRecoilState(toggleState);
-  const [selectedType, setSelectedType] = useState("");
-  const navigate = useNavigate();
-
-  interface Concert {
+interface Concert {
     id: number;
     name: string;
     location: string;
@@ -59,6 +54,28 @@ const Home = () => {
       time: string;
     };
   }
+
+const Home = () => {
+  const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [currentTime, setCurrentTime] = useState(moment());
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortOrder, setSortOrder] = useState("최신순");
+  const [toggle, setToggle] = useRecoilState(toggleState);
+  const [selectedType, setSelectedType] = useState("");
+  const navigate = useNavigate();
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
+  const handleDateChange = (date: any) => {
+    if (Array.isArray(date)) {
+      setSelectedDate(date[0] as Date); // 배열일 경우 첫 번째 날짜 선택 (Date 타입으로 변환)
+    } else if (date instanceof Date) {
+      setSelectedDate(date); // 단일 날짜 처리
+    } else {
+      setSelectedDate(null); // null 처리
+    }
+    onClose(); // 날짜 선택 후 모달 닫기
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -284,30 +301,25 @@ const Home = () => {
             />
           </FormControl>
 
-          {/* View mode 선택 버튼 */}
-          <Flex gap={2}>
-            <Button
-              onClick={() => setViewMode("card")}
-              bg={viewMode === "card" ? "blue.500" : "gray.200"}
-              color="white"
-              _hover={{ bg: "blue.400" }}
-            >
-              카드형
-            </Button>
-            <Button
-              onClick={() => setViewMode("list")}
-              bg={viewMode === "list" ? "blue.500" : "gray.200"}
-              color="white"
-              _hover={{ bg: "blue.400" }}
-            >
-              리스트형
-            </Button>
-          </Flex>
+          {/* <Button
+            onClick={onOpen}
+            colorScheme={theme.colors.sub2}
+          >
+            <RiCalendar2Line />
+          </Button> */}
+
+          <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent>
+              <ModalHeader>날짜 선택</ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>
+                <Calendar onChange={handleDateChange} value={selectedDate} />
+              </ModalBody>
+            </ModalContent>
+          </Modal>
         </Flex>
       </Box>
-
-      {/* 카드형 / 리스트형 레이아웃 분기 처리 */}
-      {viewMode === "card" ? (
         <SimpleGrid columns={columns} spacing={6}>
           {filteredAndSortedConcerts.map((concert, index) => {
             const isFutureOrToday = isEventTodayOrFuture(concert.date);
@@ -335,92 +347,6 @@ const Home = () => {
             );
           })}
         </SimpleGrid>
-      ) : (
-        <VStack spacing={4} align="stretch">
-          {filteredAndSortedConcerts.map((concert, index) => {
-            const isFutureOrToday = isEventTodayOrFuture(concert.date);
-            const isPastEvent = !isFutureOrToday;
-            const isTodayEvent = concert.date.some((date) => {
-              const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
-              return concertDate.isSame(currentTime, "day");
-            });
-
-            const timeRemaining = calculateTimeRemaining(
-              concert.ticketOpen.date,
-              concert.ticketOpen.time
-            );
-
-            return (
-              <Box
-                key={index}
-                p={4}
-                borderWidth="1px"
-                borderRadius="lg"
-                overflow="hidden"
-                boxShadow="md"
-                bg="white"
-                cursor="pointer"
-                _hover={{ bg: "gray.100" }}
-              >
-                <HStack alignItems="flex-start" spacing={4}>
-                  <Box
-                    w="100px"
-                    h="130px"
-                    overflow="hidden"
-                    borderRadius="md"
-                    flexShrink={0}
-                    filter={isPastEvent ? "grayscale(100%)" : "none"}
-                    opacity={isPastEvent ? 0.9 : 1}
-                    transition="all 0.3s ease"
-                  >
-                    <Image
-                      src={concert.poster}
-                      alt={concert.name}
-                      objectFit="cover"
-                      w="100%"
-                      h="100%"
-                    />
-                  </Box>
-                  <VStack align="start" spacing={2} flex="1">
-                    <Text fontSize="lg" fontWeight="bold" noOfLines={1}>
-                      {concert.name}
-                    </Text>
-                    <Text fontSize="sm" color="gray.500" noOfLines={1}>
-                      {concert.location}
-                    </Text>
-                    <Text fontSize="sm" color="gray.400">
-                      {concert.date.join(", ")}
-                    </Text>
-
-                    <HStack spacing={2}>
-                      <Badge
-                        colorScheme={isPastEvent ? "gray" : "green"}
-                        p="4px 8px"
-                        borderRadius="md"
-                      >
-                        {isPastEvent ? "공연 종료" : "공연 예정"}
-                      </Badge>
-                      <Badge colorScheme="blue">{concert.type}</Badge>
-                    </HStack>
-
-                    <Link href={concert.ticketLink} isExternal>
-                      <Button
-                        size="sm"
-                        colorScheme="blue"
-                        onClick={(e) =>
-                          handleButtonClick(e, concert, isPastEvent)
-                        }
-                      >
-                        {getButtonText(concert, isPastEvent, timeRemaining)}
-                      </Button>
-                    </Link>
-                  </VStack>
-                </HStack>
-              </Box>
-            );
-          })}
-        </VStack>
-      )}
     </Box>
   );
 };

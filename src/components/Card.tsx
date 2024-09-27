@@ -65,16 +65,24 @@ const borderGlow = keyframes`
   }
 `;
 
-const Card: React.FC<CardProps> = ({
+const Card = ({
   concert,
   isTodayEvent,
   isPastEvent,
   timeRemaining,
   getButtonText,
   handleButtonClick,
-}) => {
+}: CardProps) => {
   return (
-    <Box position="relative">
+    <Box
+      position="relative"
+      sx={{
+      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+        "&:hover": {
+          transform: "translateY(-10px)",
+          boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
+        },
+      }}>
       <Box
         p={4}
         borderWidth="1px"
