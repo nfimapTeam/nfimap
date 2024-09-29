@@ -106,35 +106,32 @@ const Sidebar = ({
       <Tabs index={activeTabIndex} onChange={setActiveTabIndex}>
         <TabList>
           <Tab
-            fontSize="17px"
+            fontSize="16px"
             fontWeight="600"
             textAlign="center"
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
-            whiteSpace="nowrap"
           >
             국내공연
           </Tab>
           <Tab
-            fontSize="17px"
+            fontSize="16px"
             fontWeight="600"
             textAlign="center"
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
-            whiteSpace="nowrap"
           >
             엔피로드
           </Tab>
           <Tab
-            fontSize="17px"
+            fontSize="16px"
             fontWeight="600"
             textAlign="center"
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
-            whiteSpace="nowrap"
           >
             해외공연
           </Tab>
