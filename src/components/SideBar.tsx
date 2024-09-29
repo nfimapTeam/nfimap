@@ -112,6 +112,7 @@ const Sidebar = ({
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
+            whiteSpace="nowrap"
           >
             국내 공연
           </Tab>
@@ -122,6 +123,7 @@ const Sidebar = ({
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
+            whiteSpace="nowrap"
           >
             엔피로드
           </Tab>
@@ -132,6 +134,7 @@ const Sidebar = ({
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
+            whiteSpace="nowrap"
           >
             해외 공연
           </Tab>
