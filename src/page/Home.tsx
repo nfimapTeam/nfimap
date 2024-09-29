@@ -264,7 +264,7 @@ const Home = () => {
           </InputRightElement>
         </InputGroup>
 
-        <Flex width="100%" justifyContent="space-between" gap={4} mt={4}>
+        <Flex width="100%" justifyContent="space-between" gap={4}>
           <Select
             value={selectedType}
             onChange={(value) => setSelectedType(value)}
