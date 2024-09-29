@@ -106,7 +106,7 @@ const Sidebar = ({
       <Tabs index={activeTabIndex} onChange={setActiveTabIndex}>
         <TabList>
           <Tab
-            fontSize="18px"
+            fontSize="17px"
             fontWeight="600"
             textAlign="center"
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
@@ -117,7 +117,7 @@ const Sidebar = ({
             국내 공연
           </Tab>
           <Tab
-            fontSize="18px"
+            fontSize="17px"
             fontWeight="600"
             textAlign="center"
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
@@ -128,7 +128,7 @@ const Sidebar = ({
             엔피로드
           </Tab>
           <Tab
-            fontSize="18px"
+            fontSize="17px"
             fontWeight="600"
             textAlign="center"
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
