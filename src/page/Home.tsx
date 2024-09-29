@@ -35,6 +35,7 @@ import "react-calendar/dist/Calendar.css";
 import { RiCalendar2Line } from "@remixicon/react";
 import theme from "../util/theme";
 import "../style/custom.css";
+import { Helmet } from "react-helmet-async";
 
 interface Concert {
   id: number;
@@ -233,7 +234,13 @@ const Home = () => {
         "scrollbar-width": "none",
       }}
     >
-      {/* 검색 및 정렬 섹션 */}
+      <Helmet>
+        <title>N.Fimap - 콘서트 정보를 확인하세요!</title>
+        <meta name="description" content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다." />
+        <meta property="og:description" content="N.Fimap의 예제 페이지입니다." />
+        <meta property="og:image" content="%PUBLIC_URL%/image/nfimap.png" />
+        <meta property="og:url" content="https://nfimap.co.kr" />
+      </Helmet>
       <Box mb={4}>
         <InputGroup size="lg">
           <Input

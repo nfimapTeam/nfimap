@@ -19,6 +19,7 @@ import {
 } from "@remixicon/react";
 import { profileData } from "../datas/profile";
 import dayjs from "dayjs";
+import { Helmet } from "react-helmet-async";
 
 const today = dayjs();
 
@@ -30,6 +31,13 @@ const isFutureDate = (militaryDate: string) => {
 const Profile = () => {
   return (
     <Box height="calc(100vh - 120px)" overflowY="auto">
+      <Helmet>
+        <title>N.Fimap - 가수 N.Flying을 소개합니다!</title>
+        <meta name="description" content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다." />
+        <meta property="og:description" content="N.Fimap의 예제 페이지입니다." />
+        <meta property="og:image" content="%PUBLIC_URL%/image/nfimap.png" />
+        <meta property="og:url" content="https://nfimap.co.kr" />
+      </Helmet>
       <Box width="100%" maxWidth="1200px" mx="auto" p="4">
         <Box mb="8">
           <Image

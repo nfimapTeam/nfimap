@@ -7,6 +7,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from 'recoil';
 import theme from "./util/theme";
+import { HelmetProvider } from 'react-helmet-async';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,9 +15,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <ChakraProvider theme={theme}>
     <RecoilRoot>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+      <HelmetProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </HelmetProvider>
     </RecoilRoot>
   </ChakraProvider>
 );

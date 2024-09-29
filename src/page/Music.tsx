@@ -23,6 +23,7 @@ import {
 import Loading from "../components/Loading";
 import { musicData } from "../datas/music";
 import SlotMachine from "../components/SlotMachine";
+import { Helmet } from "react-helmet-async";
 
 interface Image {
   url: string;
@@ -218,6 +219,13 @@ const Music: React.FC = () => {
         "scrollbar-width": "none",
       }}
     >
+      <Helmet>
+        <title>N.Fimap - 오늘의 추천곡을 확인하세요!</title>
+        <meta name="description" content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다." />
+        <meta property="og:description" content="N.Fimap의 예제 페이지입니다." />
+        <meta property="og:image" content="%PUBLIC_URL%/image/nfimap.png" />
+        <meta property="og:url" content="https://nfimap.co.kr" />
+      </Helmet>
       <Box p="20px">
         <Flex
           alignItems="center"
