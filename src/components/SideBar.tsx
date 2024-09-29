@@ -114,7 +114,7 @@ const Sidebar = ({
             flex="1"
             whiteSpace="nowrap"
           >
-            국내 공연
+            국내공연
           </Tab>
           <Tab
             fontSize="17px"
@@ -136,7 +136,7 @@ const Sidebar = ({
             flex="1"
             whiteSpace="nowrap"
           >
-            해외 공연
+            해외공연
           </Tab>
         </TabList>
 
