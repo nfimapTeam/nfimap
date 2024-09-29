@@ -30,7 +30,7 @@ const DetailPage = () => {
 
   return (
     <Box maxW="4xl" mx="auto" p={4}>
-      {/* 공연 포스터 및 기본 정보 */}
+      
       <HStack spacing={6} align="flex-start">
         <Image
           src={concert.poster}
