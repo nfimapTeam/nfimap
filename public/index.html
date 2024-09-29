@@ -13,17 +13,19 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+   <meta property="og:title" content="N.Fimap - 가수 N.Flying을 소개합니다." />
+  <meta property="og:description" content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다." />
+  <meta property="og:image" content="%PUBLIC_URL%/image/nfimap.png" />
+  <meta property="og:url" content="https://nfimap.co.kr" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="N.Fimap" />
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
   <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
   <script type="text/javascript"
     src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=<%=process.env.REACT_APP_NAVER_MAP_API_KEY%>"></script>
