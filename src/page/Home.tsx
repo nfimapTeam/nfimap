@@ -24,36 +24,37 @@ import { SearchIcon, CloseIcon } from "@chakra-ui/icons";
 import { Select } from "antd";
 import { Option } from "antd/es/mentions";
 import { concertsData } from "../datas/concerts";
+import { globalConcerts } from "../datas/globalConcerts";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { toggleState } from "../atom/toggleState";
 import Card from "../components/Card";
 import Calendar from "react-calendar";
-import 'react-calendar/dist/Calendar.css';
+import "react-calendar/dist/Calendar.css";
 import { RiCalendar2Line } from "@remixicon/react";
 import theme from "../util/theme";
-import '../style/custom.css'; 
+import "../style/custom.css";
 
 interface Concert {
-    id: number;
-    name: string;
-    location: string;
-    type: string; // 콘서트 | 페스티벌 | 행사
-    performanceType: string; // 단독 | 합동 | 출연
-    durationMinutes: number;
-    date: string[];
-    startTime: string;
-    artists: string[];
-    ticketLink: string;
-    poster: string;
-    lat: string;
-    lng: string;
-    ticketOpen: {
-      date: string;
-      time: string;
-    };
-  }
+  id: number;
+  name: string;
+  location: string;
+  type: string; // 콘서트 | 페스티벌 | 행사
+  performanceType: string; // 단독 | 합동 | 출연
+  durationMinutes: number;
+  date: string[];
+  startTime: string;
+  artists: string[];
+  ticketLink: string;
+  poster: string;
+  lat: string;
+  lng: string;
+  ticketOpen: {
+    date: string;
+    time: string;
+  };
+}
 
 const Home = () => {
   const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
@@ -65,6 +66,7 @@ const Home = () => {
   const [selectedType, setSelectedType] = useState("");
   const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [allConcerts, setAllConcerts] = useState<Concert[]>([]);
 
   const handleDateChange = (date: any) => {
     if (Array.isArray(date)) {
@@ -76,6 +78,11 @@ const Home = () => {
     }
     onClose(); // 날짜 선택 후 모달 닫기
   };
+
+  useEffect(() => {
+    const combinedConcerts = [...concertsData, ...globalConcerts];
+    setAllConcerts(combinedConcerts);
+  }, [concertsData, globalConcerts]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -185,7 +192,7 @@ const Home = () => {
   };
 
   const filteredAndSortedConcerts = sortConcerts(
-    concertsData.filter((concert) => {
+    allConcerts.filter((concert) => {
       const matchesSearch =
         concert.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         concert.location.toLowerCase().includes(searchQuery.toLowerCase());
@@ -320,33 +327,33 @@ const Home = () => {
           </Modal>
         </Flex>
       </Box>
-        <SimpleGrid columns={columns} spacing={6}>
-          {filteredAndSortedConcerts.map((concert, index) => {
-            const isFutureOrToday = isEventTodayOrFuture(concert.date);
-            const isPastEvent = !isFutureOrToday;
-            const isTodayEvent = concert.date.some((date) => {
-              const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
-              return concertDate.isSame(currentTime, "day");
-            });
+      <SimpleGrid columns={columns} spacing={6}>
+        {filteredAndSortedConcerts.map((concert, index) => {
+          const isFutureOrToday = isEventTodayOrFuture(concert.date);
+          const isPastEvent = !isFutureOrToday;
+          const isTodayEvent = concert.date.some((date) => {
+            const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+            return concertDate.isSame(currentTime, "day");
+          });
 
-            const timeRemaining = calculateTimeRemaining(
-              concert.ticketOpen.date,
-              concert.ticketOpen.time
-            );
+          const timeRemaining = calculateTimeRemaining(
+            concert.ticketOpen.date,
+            concert.ticketOpen.time
+          );
 
-            return (
-              <Card
-                key={index}
-                concert={concert}
-                isTodayEvent={isTodayEvent}
-                isPastEvent={isPastEvent}
-                timeRemaining={timeRemaining}
-                getButtonText={getButtonText}
-                handleButtonClick={handleButtonClick}
-              />
-            );
-          })}
-        </SimpleGrid>
+          return (
+            <Card
+              key={index}
+              concert={concert}
+              isTodayEvent={isTodayEvent}
+              isPastEvent={isPastEvent}
+              timeRemaining={timeRemaining}
+              getButtonText={getButtonText}
+              handleButtonClick={handleButtonClick}
+            />
+          );
+        })}
+      </SimpleGrid>
     </Box>
   );
 };

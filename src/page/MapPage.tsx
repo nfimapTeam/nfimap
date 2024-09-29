@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, Button, HStack } from "@chakra-ui/react";
 import Sidebar from "../components/SideBar";
 import { concertsData } from "../datas/concerts";
 import NaverMap from "../components/NaverMap";
 import { nfiloadData } from "../datas/nfiload";
+import GoogleMap from "../components/GoogleMap";
+import { globalConcerts } from "../datas/globalConcerts";
 
 type Concert = {
   name: string;
@@ -31,13 +33,21 @@ type Nfiload = {
 
 const MapPage = () => {
   const [concertState, setConcertState] = useState<Concert[]>(concertsData);
+  const [globalConcertState, setGlobalConcertState] =
+    useState<Concert[]>(globalConcerts);
   const [nfiLoadState, setNfiLoadState] = useState<Nfiload[]>(nfiloadData);
   const [query, setQuery] = useState<string>("");
+  const [selectedType, setSelectedType] = useState<string>("");
+  const [globalQuery, setGlobalQuery] = useState<string>("");
+  const [selectedGlobalType, setSelectedGlobalType] = useState<string>("");
   const [showPastConcerts, setShowPastConcerts] = useState<boolean>(false);
   const [selectedConcert, setSelectedConcert] = useState<Concert | null>(null);
   const [selectedNfiLoad, setSelectedNfiLoad] = useState<Nfiload | null>(null);
   const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
-  const [selectedType, setSelectedType] = useState<string>(""); // 추가: 선택된 유형 상태
+  const [showPastConcertsGlobal, setShowPastConcertsGlobal] =
+    useState<boolean>(false);
+  const [selectedGlobalConcert, setSelectedGlobalConcert] =
+    useState<Concert | null>(null);
 
   useEffect(() => {
     const currentDate = new Date();
@@ -82,7 +92,53 @@ const MapPage = () => {
     });
 
     setConcertState(filteredConcerts);
-  }, [query, showPastConcerts, selectedType]); // 추가: selectedType 의존성 추가
+  }, [query, showPastConcerts, selectedType]);
+
+  useEffect(() => {
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+
+    const filteredGlobalConcerts = globalConcerts.filter((concert) => {
+      const matchesQuery =
+        concert.name.toLowerCase().includes(globalQuery.toLowerCase()) ||
+        concert.location.toLowerCase().includes(globalQuery.toLowerCase());
+
+      const concertDates = concert.date.map((date) => {
+        const parsedDate = new Date(date.split("(")[0]);
+        parsedDate.setHours(0, 0, 0, 0);
+        return parsedDate;
+      });
+
+      const latestDate = new Date(
+        Math.max(...concertDates.map((date) => date.getTime()))
+      );
+
+      const isUpcomingOrToday = latestDate >= currentDate;
+
+      const matchesType = selectedGlobalType
+        ? concert.type === selectedGlobalType
+        : true;
+
+      return (
+        matchesQuery &&
+        (showPastConcertsGlobal ? true : isUpcomingOrToday) &&
+        matchesType
+      );
+    });
+
+    // Sort by date
+    filteredGlobalConcerts.sort((a, b) => {
+      const dateA = Math.max(
+        ...a.date.map((date) => new Date(date.split("(")[0]).getTime())
+      );
+      const dateB = Math.max(
+        ...b.date.map((date) => new Date(date.split("(")[0]).getTime())
+      );
+      return dateA - dateB;
+    });
+
+    setGlobalConcertState(filteredGlobalConcerts);
+  }, [globalQuery, showPastConcertsGlobal, selectedGlobalType]);
 
   useEffect(() => {
     const filteredNfiLoad = nfiloadData.filter(
@@ -98,9 +154,16 @@ const MapPage = () => {
       <Box display={{ base: "none", md: "block" }} width="340px">
         <Sidebar
           concerts={concertState}
+          globalConcerts={globalConcertState}
           nfiload={nfiLoadState}
           query={query}
           setQuery={setQuery}
+          selectedType={selectedType}
+          setSelectedType={setSelectedType}
+          globalQuery={globalQuery}
+          setGlobalQuery={setGlobalQuery}
+          selectedGlobalType={selectedGlobalType}
+          setSelectedGlobalType={setSelectedGlobalType}
           showPastConcerts={showPastConcerts}
           setShowPastConcerts={setShowPastConcerts}
           selectedConcert={selectedConcert}
@@ -109,21 +172,61 @@ const MapPage = () => {
           setSelectedNfiLoad={setSelectedNfiLoad}
           activeTabIndex={activeTabIndex}
           setActiveTabIndex={setActiveTabIndex}
-          selectedType={selectedType} // 추가
-          setSelectedType={setSelectedType} // 추가
+          showPastConcertsGlobal={showPastConcertsGlobal}
+          setShowPastConcertsGlobal={setShowPastConcertsGlobal}
+          selectedGlobalConcert={selectedGlobalConcert}
+          setSelectedGlobalConcert={setSelectedGlobalConcert}
         />
       </Box>
+      <Box display={{ base: "block", md: "none" }} position="absolute" top="80px" left="10px" bg="none" zIndex="1000">
+        <HStack spacing={2}>
+          <Button
+            bg={activeTabIndex === 0 ? "#0597F2" : "#eee"}
+            color={activeTabIndex === 0 ? "white" : "black"}
+            _hover={{ bg: activeTabIndex === 0 ? "#0597F2" : "#eee" }}
+            onClick={() => setActiveTabIndex(0)}
+          >
+            국내공연
+          </Button>
+          <Button
+            bg={activeTabIndex === 1 ? "#0597F2" : "#eee"}
+            color={activeTabIndex === 1 ? "white" : "black"}
+            _hover={{ bg: activeTabIndex === 0 ? "#0597F2" : "#eee" }}
+            onClick={() => setActiveTabIndex(1)}
+          >
+            엔피로드
+          </Button>
+          <Button
+            bg={activeTabIndex === 2 ? "#0597F2" : "#eee"}
+            color={activeTabIndex === 2 ? "white" : "black"}
+            _hover={{ bg: activeTabIndex === 0 ? "#0597F2" : "#eee" }}
+            onClick={() => setActiveTabIndex(2)}
+          >
+            해외공연
+          </Button>
+        </HStack>
+      </Box>
+
       <Box flex="1">
-        <NaverMap
-          concerts={concertState}
-          nfiLoad={nfiLoadState}
-          setShowPastConcerts={setShowPastConcerts}
-          selectedConcert={selectedConcert}
-          setSelectedConcert={setSelectedConcert}
-          selectedNfiLoad={selectedNfiLoad}
-          setSelectedNfiLoad={setSelectedNfiLoad}
-          activeTabIndex={activeTabIndex}
-        />
+        {activeTabIndex === 2 ? (
+          <GoogleMap
+            globalConcerts={globalConcertState}
+            setShowPastConcertsGlobal={setShowPastConcertsGlobal}
+            selectedGlobalConcert={selectedGlobalConcert}
+            setSelectedGlobalConcert={setSelectedGlobalConcert}
+          />
+        ) : (
+          <NaverMap
+            concerts={concertState}
+            nfiLoad={nfiLoadState}
+            setShowPastConcerts={setShowPastConcerts}
+            selectedConcert={selectedConcert}
+            setSelectedConcert={setSelectedConcert}
+            selectedNfiLoad={selectedNfiLoad}
+            setSelectedNfiLoad={setSelectedNfiLoad}
+            activeTabIndex={activeTabIndex}
+          />
+        )}
       </Box>
     </Box>
   );

@@ -165,10 +165,10 @@ const ConcertInfo = ({
               )}
             </Box>
             <Box flexGrow={1}>
-              <Text fontSize="16px" fontWeight="bold" mb="5px">
+              <Text fontSize="16px" fontWeight="bold" mb="5px" noOfLines={1}>
                 {concert.name}
               </Text>
-              <Text fontSize="14px" color="#666">
+              <Text fontSize="14px" color="#666" noOfLines={1}>
                 {concert.location}
               </Text>
             </Box>

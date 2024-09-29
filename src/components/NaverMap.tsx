@@ -58,13 +58,26 @@ const NaverMap = ({
   const getCategoryImage = (category: string): string => {
     switch (category.toLowerCase()) {
       case "카페":
-        return "/image/cafe.png";
+        return "/image/cafe.svg";
       case "장소":
-        return "/image/location.png";
+        return "/image/flag.svg";
       case "맛집":
-        return "/image/matzip.png";
+        return "/image/restaurant.svg";
       default:
         return "/image/nfiload.png";
+    }
+  };
+
+  const getCategoryBackgroundColor = (category: string): string => {
+    switch (category.toLowerCase()) {
+      case "카페":
+        return "#FFC107";
+      case "장소":
+        return "#8BC34A";
+      case "맛집":
+        return "#FF5722";
+      default:
+        return "#FFFFFF";
     }
   };
 
@@ -102,6 +115,14 @@ const NaverMap = ({
           ? "/image/nfimap.png"
           : getCategoryImage((item as Nfiload).category);
       let markerStyle = "";
+      let markerClass =
+        activeTabIndex === 0 ? "concert-marker" : "nfiload-marker";
+
+      // Set the background color for Nfiload markers
+      const backgroundColor =
+        activeTabIndex === 1
+          ? getCategoryBackgroundColor((item as Nfiload).category)
+          : "";
 
       if (activeTabIndex === 0) {
         const today = new Date();
@@ -124,19 +145,30 @@ const NaverMap = ({
           markerStyle = "filter: grayscale(100%) brightness(40%);";
         }
       }
-      console.log(markerImage)
+
       const marker = new naverMaps.Marker({
         position: location,
         map: map,
         title: item.name,
         icon: {
-          content: `
-            <div style="position: relative;">
-              <img src="${markerImage}" 
-                   style="width: 30px; height: 30px; ${markerStyle}" 
-                   class="marker-image">
-            </div>
-          `,
+          content:
+            markerClass === "concert-marker"
+              ? `
+                <div style="position: relative;">
+                  <img 
+                    src="${markerImage}" 
+                    style="width: 30px; height: 30px; ${markerStyle}" 
+                    class="${markerClass}">
+                </div>
+              `
+              : `
+                <div style="position: relative; background-color: ${backgroundColor}; border-radius: 4px; padding: 5px;">
+                  <img 
+                    src="${markerImage}" 
+                    style="width: 15px; height: 15px; ${markerStyle}" 
+                    class="${markerClass}">
+                </div>
+              `,
         },
       });
 
@@ -151,7 +183,7 @@ const NaverMap = ({
       const infoWindowContent = `
         <div style="width: 300px; font-family: Arial, sans-serif; padding: 10px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 4px;">
           <div style="display: flex; align-items: center;">
-            <div style="width: 70px; height: 70px; margin-right: 15px; border-radius: 4px; overflow: hidden;">
+            <div style="background-color: ${backgroundColor}; width: 70px; height: 70px; min-width: 70px; min-height: 70px;max-width: 70px; max-height: 70px; margin-right: 15px; border-radius: 4px; overflow: hidden;">
               <img src="${getPosterImage(item)}" alt="${item.name}" 
                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
             </div>
@@ -160,7 +192,7 @@ const NaverMap = ({
               <p style="margin: 5px 0 0; font-size: 14px; color: #666;">${item.location}</p>
             </div>
           </div>
-           <button class="detailBtn" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #fff; color: #333; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
+           <button class="detailBtn" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #0597F2; color: white; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
             상세보기
           </button>
         </div>
@@ -232,7 +264,7 @@ const NaverMap = ({
       }}
     >
       <style>{`
-        .marker-image:hover {
+        .concert-marker:hover {
           animation: spin 1s linear infinite;
         }
 
@@ -321,7 +353,6 @@ const NaverMap = ({
         isOpen={isOpen}
         onClose={onClose}
         item={activeTabIndex === 0 ? selectedConcert : selectedNfiLoad}
-        // type={activeTabIndex === 0 ? "concert" : "nfiload"}
       />
     </div>
   );

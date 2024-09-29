@@ -37,9 +37,12 @@ type Nfiload = {
 
 type SidebarProps = {
   concerts: Concert[];
+  globalConcerts: Concert[];
   nfiload: Nfiload[];
   query: string;
   setQuery: (query: string) => void;
+  globalQuery: string;
+  setGlobalQuery: (query: string) => void;
   showPastConcerts: boolean;
   setShowPastConcerts: (show: boolean) => void;
   setSelectedConcert: (concert: Concert) => void;
@@ -48,13 +51,20 @@ type SidebarProps = {
   selectedNfiLoad: Nfiload | null;
   activeTabIndex: number;
   setActiveTabIndex: (index: number) => void;
-  selectedType: string; // 추가: 필터링된 type 상태
-  setSelectedType: (type: string) => void; // 추가: type 변경 함수
+  selectedType: string;
+  setSelectedType: (type: string) => void;
+  selectedGlobalType: string;
+  setSelectedGlobalType: (type: string) => void;
+  showPastConcertsGlobal: boolean;
+  setShowPastConcertsGlobal: (show: boolean) => void;
+  setSelectedGlobalConcert: (concert: Concert) => void;
+  selectedGlobalConcert: Concert | null;
 };
 
 const Sidebar = ({
   concerts,
   nfiload,
+  globalConcerts,
   query,
   setQuery,
   showPastConcerts,
@@ -67,6 +77,14 @@ const Sidebar = ({
   setActiveTabIndex,
   selectedType, // 추가
   setSelectedType, // 추가
+  showPastConcertsGlobal,
+  setShowPastConcertsGlobal,
+  setSelectedGlobalConcert,
+  selectedGlobalConcert,
+  globalQuery,
+  setGlobalQuery,
+  selectedGlobalType,
+  setSelectedGlobalType,
 }: SidebarProps) => {
   return (
     <Box
@@ -95,7 +113,7 @@ const Sidebar = ({
             _focus={{ boxShadow: "none" }}
             flex="1"
           >
-            공연 정보
+            국내 공연
           </Tab>
           <Tab
             fontSize="18px"
@@ -106,6 +124,16 @@ const Sidebar = ({
             flex="1"
           >
             엔피로드
+          </Tab>
+          <Tab
+            fontSize="18px"
+            fontWeight="600"
+            textAlign="center"
+            _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
+            _focus={{ boxShadow: "none" }}
+            flex="1"
+          >
+            해외 공연
           </Tab>
         </TabList>
 
@@ -127,6 +155,18 @@ const Sidebar = ({
               nfiload={nfiload}
               setSelectedNfiLoad={setSelectedNfiLoad}
               selectedNfiLoad={selectedNfiLoad}
+            />
+          </TabPanel>
+          <TabPanel>
+            <ConcertInfo
+              concerts={globalConcerts}
+              query={globalQuery}
+              setQuery={setGlobalQuery}
+              showPastConcerts={showPastConcertsGlobal}
+              setShowPastConcerts={setShowPastConcertsGlobal}
+              setSelectedConcert={setSelectedGlobalConcert}
+              selectedType={selectedGlobalType} // 추가
+              setSelectedType={setSelectedGlobalType}
             />
           </TabPanel>
         </TabPanels>
