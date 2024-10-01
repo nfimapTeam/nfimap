@@ -32,8 +32,8 @@ type ConcertInfoProps = {
   showPastConcerts: boolean;
   setShowPastConcerts: (show: boolean) => void;
   setSelectedConcert: (concert: Concert) => void;
-  selectedType: string; // 추가: 필터링된 type 상태
-  setSelectedType: (type: string) => void; // 추가: type 변경 함수
+  selectedType: string;
+  setSelectedType: (type: string) => void;
 };
 
 const ConcertInfo = ({
@@ -43,8 +43,8 @@ const ConcertInfo = ({
   showPastConcerts,
   setShowPastConcerts,
   setSelectedConcert,
-  selectedType, // 추가
-  setSelectedType, // 추가
+  selectedType,
+  setSelectedType,
 }: ConcertInfoProps) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -74,7 +74,7 @@ const ConcertInfo = ({
   }, [concerts]);
 
   return (
-    <VStack spacing={4} align="start">
+    <VStack spacing={4} align="start" height="100%">
       <Input
         ref={searchInputRef}
         placeholder="이름이나 장소로 검색하세요."
@@ -109,72 +109,86 @@ const ConcertInfo = ({
           />
         </Flex>
       </Flex>
-      {concerts.map((concert, index) => {
-        const past = isConcertPast(concert);
+      <Box
+        flex="1"
+        w="100%"
+        overflow="auto"
+        css={{
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+        }}
+      >
+        {concerts.map((concert, index) => {
+          const past = isConcertPast(concert);
 
-        return (
-          <Flex
-            key={index}
-            onClick={() => handleOpenModal(concert)}
-            cursor="pointer"
-            p="10px"
-            border="1px solid #eee"
-            borderRadius="4px"
-            w="100%"
-            _hover={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}
-            position="relative"
-            bg={past ? "rgba(0, 0, 0, 0.35)" : "#fff"}
-          >
-            <Box
-              width="70px"
-              height="70px"
-              minWidth="70px"
-              minHeight="70px"
-              mr="15px"
-              position="relative"
-              overflow="hidden"
+          return (
+            <Flex
+              key={index}
+              onClick={() => handleOpenModal(concert)}
+              cursor="pointer"
+              p="10px"
+              margin="10px 0"
+              border="1px solid #eee"
               borderRadius="4px"
+              w="100%"
+              _hover={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}
+              position="relative"
+              bg={past ? "rgba(0, 0, 0, 0.35)" : "#fff"}
             >
-              <Image
-                src={concert.poster}
-                alt={concert.name}
-                position="absolute"
-                top="0"
-                left="0"
-                width="100%"
-                height="100%"
-                objectFit="cover"
-              />
-              {past && (
-                <Text
+              <Box
+                width="70px"
+                height="70px"
+                minWidth="70px"
+                minHeight="70px"
+                mr="15px"
+                position="relative"
+                overflow="hidden"
+                borderRadius="4px"
+              >
+                <Image
+                  src={concert.poster}
+                  alt={concert.name}
                   position="absolute"
-                  fontSize="12px"
-                  fontWeight="bold"
-                  color="#fff"
-                  bg="rgba(0, 0, 0, 0.7)"
-                  borderRadius="4px"
-                  p="4px 12px"
-                  textAlign="center"
-                  left="50%"
-                  top="50%"
-                  transform="translate(-50%, -50%)"
-                  w="100%"
-                >
-                  공연종료
+                  top="0"
+                  left="0"
+                  width="100%"
+                  height="100%"
+                  objectFit="cover"
+                />
+                {past && (
+                  <Text
+                    position="absolute"
+                    fontSize="12px"
+                    fontWeight="bold"
+                    color="#fff"
+                    bg="rgba(0, 0, 0, 0.7)"
+                    borderRadius="4px"
+                    p="4px 12px"
+                    textAlign="center"
+                    left="50%"
+                    top="50%"
+                    transform="translate(-50%, -50%)"
+                    w="100%"
+                  >
+                    공연종료
+                  </Text>
+                )}
+              </Box>
+              <Box flexGrow={1}>
+                <Text fontSize="16px" fontWeight="bold" mb="5px" noOfLines={1}>
+                  {concert.name}
                 </Text>
-              )}
-            </Box>
-            <Box flexGrow={1}>
-              <Text fontSize="16px" fontWeight="bold" mb="5px" noOfLines={1}>
-                {concert.name}
-              </Text>
-              <Text fontSize="14px" color="#666" noOfLines={1}>
-                {concert.location}
-              </Text>
-            </Box>
-          </Flex>
-        );
-      })}
+                <Text fontSize="14px" color="#666" noOfLines={1}>
+                  {concert.location}
+                </Text>
+              </Box>
+            </Flex>
+          );
+        })}
+      </Box>
     </VStack>
   );
 };

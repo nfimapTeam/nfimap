@@ -90,20 +90,19 @@ const Sidebar = ({
     <Box
       w="340px"
       bg="#fff"
-      p="20px"
-      overflowY="auto"
-      css={{
-        "&::-webkit-scrollbar": {
-          display: "none",
-        },
-        "-ms-overflow-style": "none",
-        "scrollbar-width": "none",
-      }}
       h="calc(100vh - 120px)"
       boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
       borderRight="1px solid #ddd"
+      display="flex"
+      flexDirection="column"
     >
-      <Tabs index={activeTabIndex} onChange={setActiveTabIndex}>
+      <Tabs
+        index={activeTabIndex}
+        onChange={setActiveTabIndex}
+        display="flex"
+        flexDirection="column"
+        height="100%"
+      >
         <TabList>
           <Tab
             fontSize="16px"
@@ -137,8 +136,8 @@ const Sidebar = ({
           </Tab>
         </TabList>
 
-        <TabPanels>
-          <TabPanel>
+        <TabPanels flex="1" overflowY="hidden">
+          <TabPanel height="100%" padding="20px">
             <ConcertInfo
               concerts={concerts}
               query={query}
@@ -146,18 +145,18 @@ const Sidebar = ({
               showPastConcerts={showPastConcerts}
               setShowPastConcerts={setShowPastConcerts}
               setSelectedConcert={setSelectedConcert}
-              selectedType={selectedType} // 추가
+              selectedType={selectedType}
               setSelectedType={setSelectedType}
             />
           </TabPanel>
-          <TabPanel>
+          <TabPanel height="100%" padding="20px">
             <NfiLoad
               nfiload={nfiload}
               setSelectedNfiLoad={setSelectedNfiLoad}
               selectedNfiLoad={selectedNfiLoad}
             />
           </TabPanel>
-          <TabPanel>
+          <TabPanel height="100%" padding="20px">
             <ConcertInfo
               concerts={globalConcerts}
               query={globalQuery}
@@ -165,7 +164,7 @@ const Sidebar = ({
               showPastConcerts={showPastConcertsGlobal}
               setShowPastConcerts={setShowPastConcertsGlobal}
               setSelectedConcert={setSelectedGlobalConcert}
-              selectedType={selectedGlobalType} // 추가
+              selectedType={selectedGlobalType}
               setSelectedType={setSelectedGlobalType}
             />
           </TabPanel>
