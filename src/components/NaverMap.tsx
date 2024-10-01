@@ -88,7 +88,7 @@ const NaverMap = ({
       const naverMaps = (window as any).naver.maps;
       const map = new naverMaps.Map(mapContainer, {
         center: new naverMaps.LatLng(37.5665, 126.978),
-        zoom: 10,
+        zoom: ZOOM_LEVEL,
       });
 
       mapRef.current = map;
@@ -223,6 +223,7 @@ const NaverMap = ({
 
         const detailBtn = document.querySelector(".detailBtn");
         detailBtn?.addEventListener("click", () => {
+          setSelectedConcert(item as Concert);
           onOpen();
         });
 
@@ -234,7 +235,7 @@ const NaverMap = ({
 
       markersRef.current.push(marker);
     });
-  }, [concerts, nfiLoad, activeTabIndex]);
+  }, [concerts, nfiLoad, activeTabIndex, onOpen]);
 
   useEffect(() => {
     if ((!selectedConcert && !selectedNfiLoad) || !mapRef.current) return;
