@@ -90,55 +90,57 @@ const Sidebar = ({
     <Box
       w="340px"
       bg="#fff"
-      p="20px"
-      overflowY="auto"
-      css={{
-        "&::-webkit-scrollbar": {
-          display: "none",
-        },
-        "-ms-overflow-style": "none",
-        "scrollbar-width": "none",
-      }}
       h="calc(100vh - 120px)"
       boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
       borderRight="1px solid #ddd"
+      display="flex"
+      flexDirection="column"
     >
-      <Tabs index={activeTabIndex} onChange={setActiveTabIndex}>
+      <Tabs
+        index={activeTabIndex}
+        onChange={setActiveTabIndex}
+        display="flex"
+        flexDirection="column"
+        height="100%"
+      >
         <TabList>
           <Tab
-            fontSize="16px"
+            fontSize="18px"
             fontWeight="600"
             textAlign="center"
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
+            p="16px 4px"
           >
             국내공연
           </Tab>
           <Tab
-            fontSize="16px"
+            fontSize="18px"
             fontWeight="600"
             textAlign="center"
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
+            p="16px 4px"
           >
             엔피로드
           </Tab>
           <Tab
-            fontSize="16px"
+            fontSize="18px"
             fontWeight="600"
             textAlign="center"
             _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
+            p="16px 4px"
           >
             해외공연
           </Tab>
         </TabList>
 
-        <TabPanels>
-          <TabPanel>
+        <TabPanels flex="1" overflowY="hidden">
+          <TabPanel height="100%" padding="20px">
             <ConcertInfo
               concerts={concerts}
               query={query}
@@ -146,18 +148,18 @@ const Sidebar = ({
               showPastConcerts={showPastConcerts}
               setShowPastConcerts={setShowPastConcerts}
               setSelectedConcert={setSelectedConcert}
-              selectedType={selectedType} // 추가
+              selectedType={selectedType}
               setSelectedType={setSelectedType}
             />
           </TabPanel>
-          <TabPanel>
+          <TabPanel height="100%" padding="20px">
             <NfiLoad
               nfiload={nfiload}
               setSelectedNfiLoad={setSelectedNfiLoad}
               selectedNfiLoad={selectedNfiLoad}
             />
           </TabPanel>
-          <TabPanel>
+          <TabPanel height="100%" padding="20px">
             <ConcertInfo
               concerts={globalConcerts}
               query={globalQuery}
@@ -165,7 +167,7 @@ const Sidebar = ({
               showPastConcerts={showPastConcertsGlobal}
               setShowPastConcerts={setShowPastConcertsGlobal}
               setSelectedConcert={setSelectedGlobalConcert}
-              selectedType={selectedGlobalType} // 추가
+              selectedType={selectedGlobalType}
               setSelectedType={setSelectedGlobalType}
             />
           </TabPanel>

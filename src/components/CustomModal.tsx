@@ -15,9 +15,10 @@ import {
   Divider,
   Button,
 } from "@chakra-ui/react";
+import theme from "../util/theme";
 
 interface CustomModalProps {
-  item: any; // Updated to accept either concert or nfiload
+  item: any;
   isOpen: boolean;
   onClose: () => void;
 }
@@ -38,7 +39,7 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
     }
   };
 
-  const isNfiLoad = !("poster" in item); // Check if the item is an Nfiload
+  const isNfiLoad = !("poster" in item);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
@@ -53,7 +54,6 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
         <ModalBody p="20px">
           <Flex
             direction={{ base: "column", md: "row" }}
-            align="center"
             justify="space-between"
             gap={{ base: 4, md: 0 }}
           >
@@ -73,7 +73,9 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
                 overflow="hidden"
               >
                 <Image
-                  src={isNfiLoad ? getCategoryImage(item.category) : item.poster} // Use category image for Nfiload
+                  src={
+                    isNfiLoad ? getCategoryImage(item.category) : item.poster
+                  } // Use category image for Nfiload
                   alt={item.name}
                   objectFit="cover"
                   position="absolute"
@@ -84,13 +86,24 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
                 />
               </Box>
               {!isNfiLoad && (
-                <Button colorScheme="red" width="100%" mt={4} display="block">
+                <Button
+                  bg={theme.colors.brand.sub2}
+                  color="white"
+                  width="100%"
+                  mt={4}
+                  display="block"
+                >
                   예매하기
                 </Button>
               )}
             </Box>
             <Box width={{ base: "100%", md: "60%" }} p={4}>
               <VStack align="stretch" spacing={4}>
+                <HStack justify="space-between">
+                  <Text fontSize="24px" fontWeight="bold" width="100%">
+                  {item.name}
+                  </Text>
+                </HStack>
                 <HStack justify="space-between">
                   <Text fontWeight="bold" width="30%">
                     장소
