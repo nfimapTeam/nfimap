@@ -6,7 +6,6 @@ import {
   Tab,
   TabPanels,
   TabPanel,
-  Select,
 } from "@chakra-ui/react";
 import ConcertInfo from "./ConcertInfo";
 import NfiLoad from "./NfiLoad";

@@ -92,8 +92,27 @@ const NaverMap = ({
       });
 
       mapRef.current = map;
+
+      naverMaps.Event.addListener(map, 'idle', () => {
+        updateMarkersVisibility();
+      });
     }
   }, []);
+
+  const updateMarkersVisibility = () => {
+    if (!mapRef.current || !(window as any).naver) return;
+
+    const map = mapRef.current;
+    const bounds = map.getBounds();
+
+    markersRef.current.forEach((marker) => {
+      if (bounds.hasLatLng(marker.getPosition())) {
+        marker.setMap(map);
+      } else {
+        marker.setMap(null);
+      }
+    });
+  };
 
   useEffect(() => {
     if (!mapRef.current || !(window as any).naver) return;
@@ -221,9 +240,14 @@ const NaverMap = ({
         infoWindow.open(map, marker);
         setCurrentInfoWindow(infoWindow);
 
+        if (activeTabIndex === 0) {
+          setSelectedConcert(item as Concert);
+        } else {
+          setSelectedNfiLoad(item as Nfiload);
+        }
+
         const detailBtn = document.querySelector(".detailBtn");
         detailBtn?.addEventListener("click", () => {
-          setSelectedConcert(item as Concert);
           onOpen();
         });
 
