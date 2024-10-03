@@ -153,7 +153,7 @@ const MapPage = () => {
   return (
     <Box display={{ base: "block", md: "flex" }}>
       <Helmet>
-        <title>N.Fimap - 콘서트 정보를 맵으로 확인하세요!</title>
+        <title>엔피맵 - 엔플라잉 콘서트 정보를 맵으로 확인하세요!</title>
         <meta
           name="description"
           content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다."

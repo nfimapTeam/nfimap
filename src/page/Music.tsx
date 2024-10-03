@@ -226,7 +226,7 @@ const Music: React.FC = () => {
       }}
     >
       <Helmet>
-        <title>N.Fimap - 오늘의 추천곡을 확인하세요!</title>
+        <title>엔피맵 - 오늘의 추천곡을 확인하세요!</title>
         <meta
           name="description"
           content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다."

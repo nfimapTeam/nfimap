@@ -32,7 +32,7 @@ const Profile = () => {
   return (
     <Box height="calc(100vh - 120px)" overflowY="auto">
       <Helmet>
-        <title>N.Fimap - 가수 N.Flying을 소개합니다!</title>
+        <title>엔피맵 - 가수 N.Flying을 소개합니다!</title>
         <meta name="description" content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다." />
         <meta property="og:description" content="N.Fimap의 예제 페이지입니다." />
         <meta property="og:image" content="%PUBLIC_URL%/image/nfimap.png" />
