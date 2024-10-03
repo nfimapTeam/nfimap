@@ -27,25 +27,12 @@ interface CustomModalProps {
 const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
   if (!item) return null;
 
-  const getCategoryImage = (category: string): string => {
-    switch (category.toLowerCase()) {
-      case "카페":
-        return "/image/cafe.svg";
-      case "장소":
-        return "/image/flag.svg";
-      case "맛집":
-        return "/image/restaurant.svg";
-      default:
-        return "/image/nfiload.png";
-    }
-  };
-
   const isNfiLoad = !("poster" in item);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
       <ModalOverlay />
-      <ModalContent maxW="900px" boxShadow="xl">
+      <ModalContent maxW={isNfiLoad ? "500px" :"900px"} boxShadow="xl">
         <ModalHeader borderBottom="1px" borderColor="gray.200" py={4} bg="gray.50">
           <Text fontSize="xl" fontWeight="bold" color="blue.600">
             {item.name}

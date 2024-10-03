@@ -2,10 +2,11 @@ export const nfiloadData = [
   {
     id: 1,
     name: "포항 영일대 레드립스 커피",
-    location: "경북 포항시 북구 두호동 685-1",
+    location: "경북 포항시 북구 해안로 55 포스타운",
     category: "카페",
     lat: "36.0535805555402",
     lng: "129.376913685955",
+    naverLink: "https://naver.me/xVl3hVPp",
   },
   {
     id: 2,
