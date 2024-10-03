@@ -2,56 +2,70 @@ import React from "react";
 import {
   Box,
   Text,
-  Button,
   Center,
   useBreakpointValue,
   Image,
+  Flex,
+  keyframes,
 } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
 
 interface NotFoundProps {
-  title: string;
   content: string;
 }
 
-const NotFound = ({ title, content }: NotFoundProps) => {
-  const navigate = useNavigate();
+const NotFound = ({ content }: NotFoundProps) => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
-  const handleGoHome = () => {
-    navigate("/");
-  };
+  // Keyframes for counterclockwise rotation
+  const rotateAnimation = keyframes`
+    0% { transform: rotate(0deg); }
+    33% { transform: rotate(360deg); }
+    66% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+  `;
 
   return (
     <Center h="calc(100vh - 120px)" bg="gray.50" p={4}>
       <Box
         textAlign="center"
         bg="white"
-        borderRadius="md"
+        borderRadius="lg"
         p={8}
-        shadow="lg"
-        maxW="md"
+        shadow="xl"
+        maxW="lg"
         w="full"
       >
-        <Text fontSize={isMobile ? "4xl" : "6xl"} fontWeight="bold" mb={4}>
-          {title}
-        </Text>
-        <Image
-          src="/image/nfimap.png"
-          alt="MyApp Logo"
-          boxSize="150px"
-          transition="transform 0.5s ease"
-          m={"20px auto"}
-          _hover={{
-            transform: "rotate(360deg)",
-          }}
-        />
-        <Text fontSize="lg" mb={6} fontWeight="900">
+        <Flex justify="center" align="center" mb={6}>
+          <Image
+            src="/image/four.png"
+            alt="404 Icon"
+            boxSize={isMobile ? "100px" : "150px"}
+            m={2}
+          />
+          <Image
+            src="/image/nfimap.png"
+            alt="NFI Map Logo"
+            boxSize={isMobile ? "100px" : "150px"}
+            m={2}
+            animation={`${rotateAnimation} 3s ease-in-out infinite`}
+          />
+          <Image
+            src="/image/four.png"
+            alt="404 Icon"
+            boxSize={isMobile ? "100px" : "150px"}
+            m={2}
+          />
+        </Flex>
+
+        <Text
+          fontSize={isMobile ? "lg" : "2xl"}
+          fontWeight="extrabold"
+          mb={6}
+          bgClip="text"
+          color="black"
+        >
           {content}
         </Text>
-        <Button colorScheme="teal" onClick={handleGoHome}>
-          엔피홈으로~
-        </Button>
       </Box>
     </Center>
   );

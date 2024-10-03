@@ -19,13 +19,13 @@ const DetailPage = () => {
   const { id } = useParams<{ id: string }>();
 
   if (!id) {
-    return <NotFound title="No" content="정보가 없습니다." />;
+    return <NotFound content="정보가 없습니다." />;
   }
 
   const concert = concertsData.find((concert) => concert.id === parseInt(id));
 
   if (!concert) {
-    return <NotFound title="No" content="정보가 없습니다." />;
+    return <NotFound content="정보가 없습니다." />;
   }
 
   return (
