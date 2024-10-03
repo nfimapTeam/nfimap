@@ -16,7 +16,6 @@ interface NotFoundProps {
 const NotFound = ({ content }: NotFoundProps) => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
-  // Keyframes for counterclockwise rotation
   const rotateAnimation = keyframes`
     0% { transform: rotate(0deg); }
     33% { transform: rotate(360deg); }
