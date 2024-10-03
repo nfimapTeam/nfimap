@@ -65,6 +65,11 @@ interface SpotifyTracksResponse {
   items: Track[];
 }
 
+interface MusicType {
+  name: string;
+  youtubeUrl: string;
+}
+
 const Music: React.FC = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [token, setToken] = useState<string>("");
@@ -77,7 +82,8 @@ const Music: React.FC = () => {
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>(""); // New state for search query
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const musicNames = musicData.map((music) => music.name);
+  const musicNames = musicData.map((music: MusicType) => music.name);
+  const youtubeUrl = musicData.map((music: MusicType) => music.youtubeUrl);
   const columnCount = useBreakpointValue({ base: 1, md: 2, lg: 3, xl: 4 });
 
   const getToken = useCallback(async () => {
@@ -221,8 +227,14 @@ const Music: React.FC = () => {
     >
       <Helmet>
         <title>N.Fimap - 오늘의 추천곡을 확인하세요!</title>
-        <meta name="description" content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다." />
-        <meta property="og:description" content="N.Fimap의 예제 페이지입니다." />
+        <meta
+          name="description"
+          content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다."
+        />
+        <meta
+          property="og:description"
+          content="N.Fimap의 예제 페이지입니다."
+        />
         <meta property="og:image" content="%PUBLIC_URL%/image/nfimap.png" />
         <meta property="og:url" content="https://nfimap.co.kr" />
       </Helmet>
@@ -235,7 +247,7 @@ const Music: React.FC = () => {
           flexGrow={1}
           overflow="hidden"
         >
-          <SlotMachine textData={musicNames} />
+          <SlotMachine textData={musicNames} youtubeUrl={youtubeUrl} />
         </Flex>
       </Box>
       <VStack spacing={4}>

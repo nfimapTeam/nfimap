@@ -14,8 +14,9 @@ import {
   HStack,
   Divider,
   Button,
+  Badge,
 } from "@chakra-ui/react";
-import theme from "../util/theme";
+import { CalendarIcon, ClockIcon, MapPinIcon, UserIcon } from "lucide-react";
 
 interface CustomModalProps {
   item: any;
@@ -26,41 +27,26 @@ interface CustomModalProps {
 const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
   if (!item) return null;
 
-  const getCategoryImage = (category: string): string => {
-    switch (category.toLowerCase()) {
-      case "카페":
-        return "/image/cafe.png";
-      case "장소":
-        return "/image/location.png";
-      case "맛집":
-        return "/image/matzip.png";
-      default:
-        return "/image/nfiload.png";
-    }
-  };
-
   const isNfiLoad = !("poster" in item);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
       <ModalOverlay />
-      <ModalContent maxW="900px">
-        <ModalHeader borderBottom="1px" borderColor="gray.200" py={2}>
-          <Text fontSize="lg" fontWeight="bold">
+      <ModalContent maxW={isNfiLoad ? "500px" :"900px"} boxShadow="xl">
+        <ModalHeader borderBottom="1px" borderColor="gray.200" py={4} bg="gray.50">
+          <Text fontSize="xl" fontWeight="bold" color="blue.600">
             {item.name}
           </Text>
         </ModalHeader>
         <ModalCloseButton />
-        <ModalBody p="20px">
+        <ModalBody p="30px" bg="gray.50">
           <Flex
             direction={{ base: "column", md: "row" }}
             justify="space-between"
-            gap={{ base: 4, md: 0 }}
-          >
+            gap={{ base: 6, md: 8 }}
+          >{ !isNfiLoad &&   
             <Box
               width={{ base: "100%", md: "40%" }}
-              p={4}
-              mb={{ base: 4, md: 0 }}
               display="flex"
               flexDirection="column"
               alignItems="center"
@@ -68,14 +54,14 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
               <Box
                 width="100%"
                 height="0"
-                paddingBottom="140%" // 5:7 aspect ratio
+                paddingBottom="140%"
                 position="relative"
                 overflow="hidden"
+                borderRadius="lg"
+                boxShadow="md"
               >
                 <Image
-                  src={
-                    isNfiLoad ? getCategoryImage(item.category) : item.poster
-                  } // Use category image for Nfiload
+                  src={item.poster}
                   alt={item.name}
                   objectFit="cover"
                   position="absolute"
@@ -87,70 +73,52 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
               </Box>
               {!isNfiLoad && (
                 <Button
-                  bg={theme.colors.brand.sub2}
+                  bg="blue.500"
                   color="white"
                   width="100%"
-                  mt={4}
+                  mt={6}
                   display="block"
+                  _hover={{ bg: "blue.600" }}
+                  boxShadow="md"
                 >
                   예매하기
                 </Button>
               )}
             </Box>
-            <Box width={{ base: "100%", md: "60%" }} p={4}>
-              <VStack align="stretch" spacing={4}>
-                <HStack justify="space-between">
-                  <Text fontSize="24px" fontWeight="bold" width="100%">
-                  {item.name}
+            }
+            <Box width={{ base: "100%", md: isNfiLoad ? "100%" : "60%" }} bg="white" p={6} borderRadius="lg" boxShadow="md">
+              <VStack align="stretch" spacing={5}>
+                <Box>
+                  <Text fontSize="2xl" fontWeight="bold" color="blue.600" mb={2}>
+                    {item.name}
                   </Text>
-                </HStack>
-                <HStack justify="space-between">
-                  <Text fontWeight="bold" width="30%">
-                    장소
-                  </Text>
-                  <Text width="70%">{item.location}</Text>
-                </HStack>
+                  <Badge colorScheme={isNfiLoad ? "green" : "purple"}>
+                    {isNfiLoad ? item.category : "공연"}
+                  </Badge>
+                </Box>
                 <Divider />
+                <HStack spacing={4}>
+                  <MapPinIcon size={20} color="#3182CE" />
+                  <Text fontWeight="medium">{item.location}</Text>
+                </HStack>
                 {isNfiLoad ? (
-                  <>
-                    <HStack justify="space-between">
-                      <Text fontWeight="bold" width="30%">
-                        카테고리
-                      </Text>
-                      <Text width="70%">{item.category}</Text>
-                    </HStack>
-                    <Divider />
-                  </>
+                  <></>
                 ) : (
                   <>
-                    <HStack justify="space-between">
-                      <Text fontWeight="bold" width="30%">
-                        공연기간
-                      </Text>
-                      <Text width="70%">{item.date.join(" ~ ")}</Text>
+                    <HStack spacing={4}>
+                      <CalendarIcon size={20} color="#3182CE" />
+                      <Text fontWeight="medium">{item.date.join(" ~ ")}</Text>
                     </HStack>
-                    <Divider />
-                    <HStack justify="space-between">
-                      <Text fontWeight="bold" width="30%">
-                        공연시간
+                    <HStack spacing={4}>
+                      <ClockIcon size={20} color="#3182CE" />
+                      <Text fontWeight="medium">
+                        {item.startTime} (총 {item.durationMinutes}분)
                       </Text>
-                      <Text width="70%">{item.durationMinutes}분</Text>
                     </HStack>
-                    <Divider />
-                    <HStack justify="space-between">
-                      <Text fontWeight="bold" width="30%">
-                        시작시간
-                      </Text>
-                      <Text width="70%">{item.startTime}</Text>
+                    <HStack spacing={4} alignItems="flex-start">
+                      <UserIcon size={20} color="#3182CE" />
+                      <Text fontWeight="medium">{item.artists.join(", ")}</Text>
                     </HStack>
-                    <Divider />
-                    <HStack justify="space-between">
-                      <Text fontWeight="bold" width="30%">
-                        아티스트
-                      </Text>
-                      <Text width="70%">{item.artists.join(", ")}</Text>
-                    </HStack>
-                    <Divider />
                   </>
                 )}
               </VStack>

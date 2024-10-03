@@ -19,7 +19,7 @@ const App = () => {
         <Route
           path="*"
           element={
-            <NotFound title="404" content="찾을 수 없는 페이지입니다!!!" />
+            <NotFound content="여기엔 엔플라잉이 없어요!" />
           }
         />
       </Routes>

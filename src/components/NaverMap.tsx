@@ -53,7 +53,7 @@ const NaverMap = ({
   const [currentInfoWindow, setCurrentInfoWindow] = useState<any>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const ZOOM_LEVEL = 14;
+  const ZOOM_LEVEL = 3;
 
   const getCategoryImage = (category: string): string => {
     switch (category.toLowerCase()) {
@@ -92,8 +92,27 @@ const NaverMap = ({
       });
 
       mapRef.current = map;
+
+      naverMaps.Event.addListener(map, "idle", () => {
+        updateMarkersVisibility();
+      });
     }
   }, []);
+
+  const updateMarkersVisibility = () => {
+    if (!mapRef.current || !(window as any).naver) return;
+
+    const map = mapRef.current;
+    const bounds = map.getBounds();
+
+    markersRef.current.forEach((marker) => {
+      if (bounds.hasLatLng(marker.getPosition())) {
+        marker.setMap(map);
+      } else {
+        marker.setMap(null);
+      }
+    });
+  };
 
   useEffect(() => {
     if (!mapRef.current || !(window as any).naver) return;
@@ -221,9 +240,14 @@ const NaverMap = ({
         infoWindow.open(map, marker);
         setCurrentInfoWindow(infoWindow);
 
+        if (activeTabIndex === 0) {
+          setSelectedConcert(item as Concert);
+        } else {
+          setSelectedNfiLoad(item as Nfiload);
+        }
+
         const detailBtn = document.querySelector(".detailBtn");
         detailBtn?.addEventListener("click", () => {
-          setSelectedConcert(item as Concert);
           onOpen();
         });
 
@@ -242,12 +266,45 @@ const NaverMap = ({
 
     const selectedItem =
       activeTabIndex === 0 ? selectedConcert : selectedNfiLoad;
+
     const marker = markersRef.current.find(
       (marker) => marker.getTitle() === selectedItem?.name
     );
 
     if (marker) {
+      console.log("fffffccc")
+      const markerImage =
+        activeTabIndex === 0
+          ? "/image/nfimap.png"
+          : getCategoryImage((selectedItem as Nfiload).category);
+
+      marker.setIcon({
+        content:
+          activeTabIndex === 0
+            ? `
+              <div style="position: relative;">
+                <img 
+                  src="${markerImage}" 
+                  style="width: 30px; height: 30px;" 
+                  class="concert-marker">
+              </div>
+            `
+            : `
+              <div style="position: relative; background-color: ${getCategoryBackgroundColor(
+                (selectedItem as Nfiload).category
+              )}; border-radius: 4px; padding: 5px;">
+                <img 
+                  src="${markerImage}" 
+                  style="width: 15px; height: 15px;" 
+                  class="nfiload-marker">
+              </div>
+            `,
+      });
+
+      // 마커 클릭 이벤트 트리거
       (window as any).naver.maps.Event.trigger(marker, "click");
+      marker.setMap(mapRef.current);
+      mapRef.current.setCenter(marker.getPosition());
     }
   }, [selectedConcert, selectedNfiLoad, activeTabIndex]);
 
