@@ -94,11 +94,11 @@ const GoogleMap = ({
       });
 
       const infoWindowContent = `
-        <div style="width: 320px; min-Width: 320px; font-family: Arial, sans-serif; padding: 10px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 4px;">
+        <div style="width: 100%; max-width: 320px; font-family: Arial, sans-serif; padding: 10px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 4px; box-sizing: border-box;">
           <div style="display: flex; align-items: center;">
-            <div style="width: 70px; height: 70px; min-width: 70px; min-height: 70px;max-width: 70px; max-height: 70px; margin-right: 15px; border-radius: 4px; overflow: hidden;">
+            <div style="width: 70px; height: 70px; min-width: 70px; min-height: 70px; margin-right: 15px; border-radius: 4px; overflow: hidden;">
               <img src="${concert.poster}" alt="${concert.name}" 
-                   style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                  style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
             </div>
             <div style="flex-grow: 1;">
               <h3 style="margin: 0; font-size: 16px; font-weight: bold; color: #333;">${concert.name}</h3>
@@ -139,22 +139,34 @@ const GoogleMap = ({
     });
     const style = document.createElement("style");
     style.textContent = `
-      .gm-style-iw-c {
-        padding: 0 !important;
-      }
-      .gm-style-iw-d {
-        overflow: hidden !important;
-      }
-      .gm-style-iw-t::after {
-        display: none !important;
-      }
-      .gm-style-iw-chr {
-        display: none !important;
-      }
+    .gm-style-iw-c {
+      padding: 0 !important;
+    }
+    .gm-style-iw-d {
+      overflow: hidden !important;
+    }
+    .gm-style-iw-t::after {
+      display: none !important;
+    }
+    .gm-style-iw-chr {
+      display: none !important;
+    }
+    .gm-style-iw {
+      padding: 0 !important;
+      max-width: 320px !important;
+      box-sizing: border-box !important
+    }
+    
+    /* 모바일을 위한 반응형 처리 */
+    @media screen and (max-width: 480px) {
       .gm-style-iw {
-        padding: 0 !important;
+        max-width: 100% !important;
       }
-    `;
+      .gm-style-iw-c {
+        width: 100% !important;
+      }
+    }
+  `;
     document.head.appendChild(style);
     
     // Add click listener to map to close InfoWindow
