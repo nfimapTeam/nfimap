@@ -21,7 +21,17 @@
   <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
   <script type="text/javascript"
     src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=<%=process.env.REACT_APP_NAVER_MAP_API_KEY%>"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=<%=process.env.REACT_APP_GOOGLE_MAP_API_KEY%>&callback=myMap"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=<%=process.env.REACT_APP_GOOGLE_MAP_API_KEY%>&callback=myMap"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN4YX01ZCH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZN4YX01ZCH');
+  </script>
   <title>N.Fimap</title>
 </head>
 
