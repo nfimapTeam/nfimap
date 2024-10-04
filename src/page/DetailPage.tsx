@@ -8,15 +8,18 @@ import {
   Badge,
   VStack,
   HStack,
+  Flex,
   Link,
-  StackDivider,
+  Icon,
+  useColorModeValue,
 } from "@chakra-ui/react";
+import { ExternalLinkIcon, CalendarIcon, TimerIcon, MapPinIcon } from "lucide-react";
 import { concertsData } from "../datas/concerts";
 import NotFound from "../components/NotFound";
 
 const DetailPage = () => {
-  // URL에서 id 파라미터를 가져옴
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams();
+  const cardBgColor = useColorModeValue("white", "gray.800");
 
   if (!id) {
     return <NotFound content="정보가 없습니다." />;
@@ -29,41 +32,84 @@ const DetailPage = () => {
   }
 
   return (
-    <Box maxW="4xl" mx="auto" p={4}>
-      
-      <HStack spacing={6} align="flex-start">
-        <Image
-          src={concert.poster}
-          alt={concert.name}
-          boxSize="300px"
-          borderRadius="md"
-          fallbackSrc="/image/nfimap.png"
-        />
-
-        {/* 공연 정보 */}
-        <VStack align="start" spacing={4}>
-          <Badge colorScheme="red" fontSize="lg" p="4px 8px">
-            {concert.type}
-          </Badge>
-          <Text fontSize="2xl" fontWeight="bold">
-            {concert.name}
-          </Text>
-          <Box>
-            <Text fontSize="md">
-              <strong>장소:</strong> {concert.location}
+    <Box
+      maxW="6xl"
+      mx="auto"
+      p={4}
+      height="calc(100vh - 120px)"
+    >
+      <Flex direction={{ base: "column", md: "row" }} gap={8}>
+        <Box flex={1}>
+          <Image
+            src={concert.poster}
+            alt={concert.name}
+            w="100%"
+            h="auto"
+            objectFit="cover"
+            borderRadius="lg"
+            fallbackSrc="/image/nfimap.png"
+            boxShadow="lg"
+          />
+        </Box>
+        
+        <VStack align="stretch" spacing={6} flex={1}>
+          <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
+            <Badge colorScheme="red" fontSize="md" mb={2}>
+              {concert.type}
+            </Badge>
+            <Text fontSize="3xl" fontWeight="bold" mb={4}>
+              {concert.name}
             </Text>
-            <Text fontSize="md">
-              <strong>기간:</strong> {concert.date.join(" - ")}
+            
+            <VStack align="start" spacing={3}>
+              <HStack>
+                <Icon as={MapPinIcon} color="gray.500" />
+                <Text fontSize="lg">{concert.location}</Text>
+              </HStack>
+              <HStack>
+                <Icon as={CalendarIcon} color="gray.500" />
+                <Text fontSize="lg">{concert.date.join(" - ")}</Text>
+              </HStack>
+              <HStack>
+                <Icon as={TimerIcon} color="gray.500" />
+                <Text fontSize="lg">
+                  {concert.startTime} (약 {concert.durationMinutes}분)
+                </Text>
+              </HStack>
+            </VStack>
+          </Box>
+          
+          <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
+            <Text fontSize="xl" fontWeight="semibold" mb={3}>
+              출연 아티스트
             </Text>
-            <Text fontSize="md">
-              <strong>관람시간:</strong> {concert.durationMinutes}분
+            <Flex wrap="wrap" gap={2}>
+              {concert.artists.map((artist, index) => (
+                <Badge key={index} colorScheme="purple" fontSize="md">
+                  {artist}
+                </Badge>
+              ))}
+            </Flex>
+          </Box>
+          
+          <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
+            <Text fontSize="xl" fontWeight="semibold" mb={3}>
+              티켓 정보
             </Text>
-            <Text fontSize="md">
-              <strong>공연시간:</strong> {concert.startTime}분
+            <Text mb={2}>
+              티켓 오픈: {concert.ticketOpen.date} {concert.ticketOpen.time}
             </Text>
+            <Button
+              as={Link}
+              href={concert.ticketLink}
+              isExternal
+              colorScheme="blue"
+            >
+              티켓 예매하기
+            </Button>
           </Box>
         </VStack>
-      </HStack>
+      </Flex>
     </Box>
   );
 };
