@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { keyframes } from "@chakra-ui/react";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 interface Concert {
   id: number;
@@ -73,9 +74,11 @@ const Card = ({
   getButtonText,
   handleButtonClick,
 }: CardProps) => {
+  const navgate = useNavigate();
   return (
     <Box
       position="relative"
+      onClick={() => navgate(`/${concert.id}`)}
       sx={{
       transition: "transform 0.3s ease, box-shadow 0.3s ease",
         "&:hover": {
