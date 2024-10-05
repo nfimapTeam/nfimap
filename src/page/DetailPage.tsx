@@ -13,7 +13,12 @@ import {
   Icon,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { ExternalLinkIcon, CalendarIcon, TimerIcon, MapPinIcon } from "lucide-react";
+import {
+  ExternalLinkIcon,
+  CalendarIcon,
+  TimerIcon,
+  MapPinIcon,
+} from "lucide-react";
 import { concertsData } from "../datas/concerts";
 import NotFound from "../components/NotFound";
 
@@ -32,26 +37,24 @@ const DetailPage = () => {
   }
 
   return (
-    <Box
-      maxW="6xl"
-      mx="auto"
-      p={4}
-      height="calc(100vh - 120px)"
-    >
-      <Flex direction={{ base: "column", md: "row" }} gap={8}>
-        <Box flex={1}>
-          <Image
-            src={concert.poster}
-            alt={concert.name}
-            w="100%"
-            h="auto"
-            objectFit="cover"
-            borderRadius="lg"
-            fallbackSrc="/image/nfimap.png"
-            boxShadow="lg"
-          />
-        </Box>
-        
+    <Box height="calc(100vh - 120px)" overflowY="auto" p={4}>
+      <Flex direction={{ base: "column", md: "row" }} gap={8} align="stretch">
+        <Flex flex={1} justifyContent="center" alignItems="center">
+          <Box maxW={{ base: "100%", md: "400px" }} w="100%">
+            <Image
+              src={concert.poster}
+              alt={concert.name}
+              w="100%"
+              h="auto"
+              p={4}
+              maxH={{ base: "400px", md: "600px" }}
+              objectFit="contain"
+              borderRadius="lg"
+              fallbackSrc="/image/nfimap.png"
+            />
+          </Box>
+        </Flex>
+
         <VStack align="stretch" spacing={6} flex={1}>
           <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
             <Badge colorScheme="red" fontSize="md" mb={2}>
@@ -60,7 +63,7 @@ const DetailPage = () => {
             <Text fontSize="3xl" fontWeight="bold" mb={4}>
               {concert.name}
             </Text>
-            
+
             <VStack align="start" spacing={3}>
               <HStack>
                 <Icon as={MapPinIcon} color="gray.500" />
@@ -78,7 +81,7 @@ const DetailPage = () => {
               </HStack>
             </VStack>
           </Box>
-          
+
           <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
             <Text fontSize="xl" fontWeight="semibold" mb={3}>
               출연 아티스트
@@ -91,7 +94,7 @@ const DetailPage = () => {
               ))}
             </Flex>
           </Box>
-          
+
           <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
             <Text fontSize="xl" fontWeight="semibold" mb={3}>
               티켓 정보
