@@ -225,6 +225,22 @@ export const concertsData = [
   },
   {
     id: 15,
+    name: "한양대학교 ERICA 축제",
+    location: "한양대학교 ERICA",
+    date: ["2024-10-02(수)"],
+    startTime: "20:00", // todo 시작시간 미정
+    durationMinutes: 60, // todo 공연시간 미정
+    type: "행사",
+    performanceType: "출연",
+    artists: ["N.Flying", "STAYC", "YELO"],
+    poster: "/image/show/2024/241002_HANYANG_ERICA.png",
+    ticketOpen: { date: "2024-10-02", time: "20:00" }, // todo 시작시간 미정
+    ticketLink: "https://www.instagram.com/p/DAIm4Cfv1QR/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "37.29471852655008",
+    lng: "126.83308329856165",
+  },
+  {
+    id: 16,
     name: "2024 남원 국제드론제전 with 로봇",
     location: "남원종합스포츠타운 주경기장",
     date: ["2024-10-03(목)"],
@@ -240,7 +256,7 @@ export const concertsData = [
     lng: "127.40357267973333",
   },
   {
-    id: 16,
+    id: 17,
     name: "2024 부산국제록페스티벌",
     location: "삼락생태공원",
     date: ["2024-10-04(금)"],
@@ -256,7 +272,7 @@ export const concertsData = [
     lng: "128.973187787413",
   },
   {
-    id: 17,
+    id: 18,
     name: "고창모양성제 - MZ 업고 뛰어!",
     location: "고창읍성 앞 특설무대",
     date: ["2024-10-12(토)"], // todo 시작시간 미정
@@ -272,7 +288,7 @@ export const concertsData = [
     lng: "126.704875419417",
   },
   {
-    id: 18,
+    id: 19,
     name: "2024 어썸스테이지 in Seoul",
     location: "연세대학교 대강당",
     date: ["2024-10-13(일)"],
@@ -288,7 +304,7 @@ export const concertsData = [
     lng: "126.93895552892523",
   },
   {
-    id: 19,
+    id: 20,
     name: "그랜드 민트 페스티벌 2024",
     location: "올림픽공원 88잔디마당(Mint Breeze Stage)",
     date: ["2024-10-27(일)"],
@@ -302,21 +318,5 @@ export const concertsData = [
     ticketLink: "https://tickets.interpark.com/goods/24011661",
     lat: "37.52066503657698",
     lng: "127.1226794866035",
-  },
-  {
-    id: 20,
-    name: "한양대학교 ERICA 축제",
-    location: "한양대학교 ERICA",
-    date: ["2024-10-02(수)"],
-    startTime: "20:00", // todo 시작시간 미정
-    durationMinutes: 60, // todo 공연시간 미정
-    type: "행사",
-    performanceType: "출연",
-    artists: ["N.Flying", "STAYC", "YELO"],
-    poster: "/image/show/2024/241002_HANYANG_ERICA.png",
-    ticketOpen: { date: "2024-10-02", time: "20:00" }, // todo 시작시간 미정
-    ticketLink: "https://www.instagram.com/p/DAIm4Cfv1QR/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    lat: "37.29471852655008",
-    lng: "126.83308329856165",
   },
 ];
