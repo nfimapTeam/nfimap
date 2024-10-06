@@ -139,36 +139,24 @@ const GoogleMap = ({
     });
     const style = document.createElement("style");
     style.textContent = `
-    .gm-style-iw-c {
-      padding: 0 !important;
-    }
-    .gm-style-iw-d {
-      overflow: hidden !important;
-    }
-    .gm-style-iw-t::after {
-      display: none !important;
-    }
-    .gm-style-iw-chr {
-      display: none !important;
-    }
-    .gm-style-iw {
-      padding: 0 !important;
-      max-width: 320px !important;
-      box-sizing: border-box !important
-    }
-    
-    /* 모바일을 위한 반응형 처리 */
-    @media screen and (max-width: 480px) {
-      .gm-style-iw {
-        max-width: 100% !important;
-      }
       .gm-style-iw-c {
-        width: 100% !important;
+        padding: 0 !important;
       }
-    }
-  `;
+      .gm-style-iw-d {
+        overflow: hidden !important;
+      }
+      .gm-style-iw-t::after {
+        display: none !important;
+      }
+      .gm-style-iw-chr {
+        display: none !important;
+      }
+      .gm-style-iw {
+        padding: 0 !important;
+      }
+    `;
     document.head.appendChild(style);
-    
+
     // Add click listener to map to close InfoWindow
     window.google.maps.event.addListener(map, "click", () => {
       if (currentInfoWindow) {
