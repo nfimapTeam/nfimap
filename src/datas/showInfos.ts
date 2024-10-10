@@ -520,11 +520,10 @@ export const showInfos = [
         capacity: "", // 행사는 수용인원 불필요
         seats: [],
         setlist: [
-            "",
+            ""
         ],
         ootd: [
-            "/image/show_detail/ootd/2024/",
-            "/image/show_detail/ootd/2024/"
+            ""
         ]
     },
     {
@@ -537,16 +536,15 @@ export const showInfos = [
         ],
         capacity: "1,600명",
         seats: [
-
-        ],
-        setlist: [
             "/image/show_detail/seats/2024/YONSEI_awesome.png",
             "/image/show_detail/seats/2024/YONSEI_1F_official.jpg",
             "/image/show_detail/seats/2024/YONSEI_2F_official.jpg",
         ],
+        setlist: [
+            ""
+        ],
         ootd: [
-            "/image/show_detail/ootd/2024/",
-            "/image/show_detail/ootd/2024/"
+            ""
         ]
     },
     {
@@ -560,11 +558,33 @@ export const showInfos = [
         capacity: "전체 수용 인원 충족 시 매진 : 88잔디마당 - 10,000명 한정, 88호수수변무대 - 2,000명 한정",
         seats: [],
         setlist: [
+            ""
+        ],
+        ootd: [
+            ""
+        ]
+    },
+    {
+        id: 21,
+        name: "한수원 뮤직 페스티벌 &lt;씨어터&gt; - 경주", // 경주예술의전당 화랑홀
+        address: "경상북도 경주시 알천북로 1 경주예술의전당 1층",
+        note: [
+            "/image/show_detail/note/2024/GYEONGJU_FOUNDATION_PARKING.jpg",
+            "공연 또는 전시 관람 시 경주예술의전당 제 1주차장 무료 개방",
+            "기타 무료주차 : 공연장 서쪽 주차장 - 60대 / 공연장 인근 시민체육관 공영주차장 - 100대"
+        ],
+        capacity: "1,053 석",
+        seats: [
+            "/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEATS.jpeg",
+            "public/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEAT_1F.png",
+            "public/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEAT_2F.png"
+        ],
+        setlist: [
             "",
         ],
         ootd: [
-            "/image/show_detail/ootd/2024/",
-            "/image/show_detail/ootd/2024/"
+            "",
+            ""
         ]
     },
 ]

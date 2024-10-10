@@ -156,8 +156,7 @@ export const globalConcerts = [
     artists: ["N.Flying"],
     poster: "",
     ticketOpen: { date: "0000-00-00", time: "00:00" },
-    ticketLink: "[https://fncent.com/?m=bbs&bid=notice&p=3&where=site%3D1+and+notice%3D0+and+bbsid%3D'notice'++and+ex1%3D'1'+&uid=60075](https://fncent.com/?m=bbs&bid=notice&p=3&where=site%3D1+and+notice%3D0+and+bbsid%3D%27notice%27++and+ex1%3D%271%27+&uid=60075)",
-    // todo 예매 페이지 오픈 시 변경
+    ticketLink: "",  // todo 예매 페이지 오픈 시 추가
     lat: "37.55107", // todo 공연장 좌표로 수정 필요 (현재 fnc)
     lng: "127.04980",
   },
