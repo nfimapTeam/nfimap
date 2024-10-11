@@ -117,7 +117,7 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
                             size="md"
                             width="100%"
                           >
-                            네이버 링크
+                            네이버 지도로 이동
                           </Button>
                         </Link>
                       )}
