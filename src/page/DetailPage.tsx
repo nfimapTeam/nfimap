@@ -167,7 +167,7 @@ const DetailPage: React.FC = () => {
     <Box height="calc(100vh - 120px)" >
       <Box p="16px 16px 100px 16px" width="100%" maxWidth="1200px"  mx="auto">
       <Flex direction={{ base: "column", md: "row" }} gap={8} align="stretch">
-        <Flex flex={1} justifyContent="center" alignItems="center">
+        <Flex flex={1} justifyContent="center" alignItems="center" bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
           <Box maxW={{ base: "100%", md: "400px" }} w="100%">
             <Image
               src={concert.poster}
