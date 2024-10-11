@@ -30,7 +30,10 @@ type Nfiload = {
   category: string;
   lat: string;
   lng: string;
+  naverLink: string,
+  note: string,
 };
+
 
 const MapPage = () => {
   const [concertState, setConcertState] = useState<Concert[]>(concertsData);

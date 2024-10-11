@@ -24,6 +24,8 @@ type Nfiload = {
   category: string;
   lat: string;
   lng: string;
+  naverLink: string,
+  note: string,
 };
 
 interface NaverMapProps {
@@ -63,6 +65,19 @@ const NaverMap = ({
         return "/image/flag.svg";
       case "맛집":
         return "/image/restaurant.svg";
+      default:
+        return "/image/nfiload.png";
+    }
+  };
+
+  const getCategoryMarkerImage = (category: string): string => {
+    switch (category.toLowerCase()) {
+      case "카페":
+        return "/image/cafeMarker.svg";
+      case "장소":
+        return "/image/flagMarker.svg";
+      case "맛집":
+        return "/image/restaurantMarker.svg";
       default:
         return "/image/nfiload.png";
     }
@@ -132,7 +147,7 @@ const NaverMap = ({
       let markerImage =
         activeTabIndex === 0
           ? "/image/nfimap.png"
-          : getCategoryImage((item as Nfiload).category);
+          : getCategoryMarkerImage((item as Nfiload).category);
       let markerStyle = "";
       let markerClass =
         activeTabIndex === 0 ? "concert-marker" : "nfiload-marker";
@@ -181,10 +196,10 @@ const NaverMap = ({
                 </div>
               `
               : `
-                <div style="position: relative; background-color: ${backgroundColor}; border-radius: 4px; padding: 5px;">
+                <div style="position: relative; border-radius: 4px; padding: 5px;">
                   <img 
                     src="${markerImage}" 
-                    style="width: 15px; height: 15px; ${markerStyle}" 
+                    style="width: 30px; height: 30px; ${markerStyle}" 
                     class="${markerClass}">
                 </div>
               `,
@@ -276,7 +291,7 @@ const NaverMap = ({
       const markerImage =
         activeTabIndex === 0
           ? "/image/nfimap.png"
-          : getCategoryImage((selectedItem as Nfiload).category);
+          : getCategoryMarkerImage((selectedItem as Nfiload).category);
 
       marker.setIcon({
         content:
@@ -290,12 +305,10 @@ const NaverMap = ({
               </div>
             `
             : `
-              <div style="position: relative; background-color: ${getCategoryBackgroundColor(
-                (selectedItem as Nfiload).category
-              )}; border-radius: 4px; padding: 5px;">
+              <div style="position: relative; border-radius: 4px; padding: 5px;">
                 <img 
                   src="${markerImage}" 
-                  style="width: 15px; height: 15px;" 
+                  style="width: 30px; height: 30px;" 
                   class="nfiload-marker">
               </div>
             `,
