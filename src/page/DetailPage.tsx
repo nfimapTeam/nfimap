@@ -13,25 +13,35 @@ import {
   Icon,
   useColorModeValue,
   SimpleGrid,
+  Divider,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import {
   ExternalLinkIcon,
   CalendarIcon,
   TimerIcon,
   MapPinIcon,
+  InfoIcon,
+  MusicIcon,
+  CameraIcon,
+  UsersIcon,
+  ClipboardListIcon,
 } from "lucide-react";
 import { concertsData } from "../datas/concerts";
 import NotFound from "../components/NotFound";
 import Card from "../components/Card";
 import moment from "moment";
 import { globalConcerts } from "../datas/globalConcerts";
+import { showInfos } from "../datas/showInfos";
+import { globalShowInfos } from "../datas/globalShowInfos";
 
 interface Concert {
   id: number;
   name: string;
   location: string;
-  type: string; // 콘서트 | 페스티벌 | 행사
-  performanceType: string; // 단독 | 합동 | 출연
+  type: string;
+  performanceType: string;
   durationMinutes: number;
   date: string[];
   startTime: string;
@@ -46,6 +56,17 @@ interface Concert {
   };
 }
 
+type ShowInfo = {
+    id: number;
+    name: string;
+    address: string;
+    note: string[];
+    capacity: string;
+    seats: string[];
+    setlist: string[];
+    ootd: string[];
+};
+
 interface TimeRemaining {
   days: number;
   hours: number;
@@ -58,18 +79,23 @@ const DetailPage: React.FC = () => {
   const cardBgColor = useColorModeValue("white", "gray.800");
   const currentTime = moment();
   const [allConcerts, setAllConcerts] = useState<Concert[]>([]);
+  const [allInfos, setAllInfos] = useState<ShowInfo[]>([]);
 
   useEffect(() => {
     const combinedConcerts = [...concertsData, ...globalConcerts];
     setAllConcerts(combinedConcerts);
   }, []);
+  useEffect(() => {
+    const combinedInfos = [...showInfos, ...globalShowInfos];
+    setAllInfos(combinedInfos);
+  }, []);
 
   if (!id) {
     return <NotFound content="정보가 없습니다." />;
   }
-
+  const showInfo = allInfos.find((info) => info.id === parseInt(id))
   const concert = allConcerts.find((concert) => concert.id === parseInt(id));
-
+  console.log(showInfo);
   if (!concert) {
     return <NotFound content="정보가 없습니다." />;
   }
@@ -127,21 +153,19 @@ const DetailPage: React.FC = () => {
     }
   };
 
-  // Helper function to shuffle the array
   const shuffleArray = (array: Concert[]) => {
     return array.sort(() => Math.random() - 0.5);
   };
 
-  // Filter upcoming concerts
   const upcomingConcerts = allConcerts.filter(
     (c) => isEventTodayOrFuture(c.date) && c.id !== parseInt(id)
   );
 
-  // Shuffle and take the first 3 concerts
   const randomUpcomingConcerts = shuffleArray(upcomingConcerts).slice(0, 3);
 
   return (
-    <Box height="calc(100vh - 120px)" overflowY="auto" p={4}>
+    <Box height="calc(100vh - 120px)" >
+      <Box p="16px 16px 100px 16px" width="100%" maxWidth="1200px"  mx="auto">
       <Flex direction={{ base: "column", md: "row" }} gap={8} align="stretch">
         <Flex flex={1} justifyContent="center" alignItems="center">
           <Box maxW={{ base: "100%", md: "400px" }} w="100%">
@@ -206,17 +230,124 @@ const DetailPage: React.FC = () => {
             <Text mb={2}>
               티켓 오픈: {concert.ticketOpen.date} {concert.ticketOpen.time}
             </Text>
-            <Button
-              as={Link}
-              href={concert.ticketLink}
-              isExternal
-              colorScheme="blue"
-            >
-              티켓 예매하기
-            </Button>
+            {concert.ticketLink && (
+              <Button
+                as={Link}
+                href={concert.ticketLink}
+                isExternal
+                colorScheme="blue"
+              >
+                티켓 예매하기
+              </Button>
+            )}
           </Box>
         </VStack>
       </Flex>
+
+      {showInfo && (
+  <Box mt={8}>
+    <Divider mb={4} />
+    <Text fontSize="3xl" fontWeight="bold" mb={4} color="teal.600">
+      공연장 상세 정보
+    </Text>
+    
+    <VStack spacing={6} align="stretch">
+      {showInfo.address && (
+        <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="lg">
+          <HStack mb={3}>
+            <Icon as={InfoIcon} color="blue.600" />
+            <Text fontSize="xl" fontWeight="bold" color="gray.700">기본 정보</Text>
+          </HStack>
+          <VStack align="start" spacing={3}>
+            <Text fontSize="lg" color="gray.800"><strong>주소:</strong> {showInfo.address}</Text>
+            {showInfo.capacity && (
+              <Text fontSize="lg" color="gray.800"><strong>수용 인원:</strong> {showInfo.capacity}</Text>
+            )}
+            {showInfo.note && showInfo.note.length > 0 && showInfo.note[0] !== "" && showInfo.note.map((note, index) => (
+              note.endsWith('.png') || note.endsWith('.jpg') || note.endsWith('.jpeg') || note.endsWith('.gif') ? (
+                <Image key={index} src={note} alt={`노트 이미지 ${index + 1}`} borderRadius="md" boxShadow="md" objectFit="cover" w="100%" />
+              ) : (
+                <Text key={index} fontSize="lg" color="gray.600">{note}</Text>
+              )
+            ))}
+          </VStack>
+        </Box>
+      )}
+
+      {showInfo.setlist && showInfo.setlist.length > 0 && showInfo.setlist[0] !== "" && (
+        <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="lg">
+          <HStack mb={3}>
+            <Icon as={MusicIcon} color="green.600" />
+            <Text fontSize="xl" fontWeight="bold" color="gray.700">세트리스트</Text>
+          </HStack>
+          <SimpleGrid columns={1} spacing={2}>
+            {showInfo.setlist.map((song, index) => (
+              <Box 
+                key={index} 
+                p={3} 
+                bg="gray.100" 
+                borderRadius="md" 
+                boxShadow="md" 
+                border="1px solid" 
+                borderColor="gray.300" 
+                textAlign="center"
+              >
+                <Text fontSize="lg" fontWeight="medium" color="gray.800">
+                  {index + 1}. {song}
+                </Text>
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Box>
+      )}
+
+      {showInfo.ootd && showInfo.ootd.length > 0 && showInfo.ootd[0] !== "" && (
+        <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="lg">
+          <HStack mb={3}>
+            <Icon as={CameraIcon} color="purple.600" />
+            <Text fontSize="xl" fontWeight="bold" color="gray.700">공연 사진</Text>
+          </HStack>
+          <SimpleGrid columns={1} spacing={4}>
+            {showInfo.ootd.map((image, index) => (
+              <Image 
+                key={index} 
+                src={image} 
+                alt={`공연 사진 ${index + 1}`} 
+                borderRadius="md" 
+                boxShadow="md" 
+                objectFit="cover" 
+                w="100%" 
+              />
+            ))}
+          </SimpleGrid>
+        </Box>
+      )}
+
+      {showInfo.seats && showInfo.seats.length > 0 && showInfo.seats[0] !== "" && (
+        <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="lg">
+          <HStack mb={3}>
+            <Icon as={UsersIcon} color="orange.600" />
+            <Text fontSize="xl" fontWeight="bold" color="gray.700">좌석 배치도</Text>
+          </HStack>
+          <SimpleGrid columns={1} spacing={4}>
+            {showInfo.seats.map((seat, index) => (
+              <Image 
+                key={index} 
+                src={seat} 
+                alt={`좌석 배치도 ${index + 1}`} 
+                borderRadius="md" 
+                boxShadow="md" 
+                objectFit="cover" 
+                w="100%" 
+              />
+            ))}
+          </SimpleGrid>
+        </Box>
+      )}
+    </VStack>
+  </Box>
+)}
+
 
       <Text fontSize="2xl" fontWeight="bold" mt={8} mb={4}>
         추천 콘서트
@@ -247,7 +378,8 @@ const DetailPage: React.FC = () => {
             />
           );
         })}
-      </SimpleGrid>
+        </SimpleGrid>
+        </Box>
     </Box>
   );
 };

@@ -576,8 +576,8 @@ export const showInfos = [
         capacity: "1,053 석",
         seats: [
             "/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEATS.jpeg",
-            "public/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEAT_1F.png",
-            "public/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEAT_2F.png"
+            "/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEAT_1F.png",
+            "/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEAT_2F.png"
         ],
         setlist: [
             "",
