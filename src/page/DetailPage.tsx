@@ -130,7 +130,7 @@ const DetailPage: React.FC = () => {
     timeRemaining: TimeRemaining | null
   ): string => {
     if (isPastEvent || concert.type === "행사") {
-      return "공연 정보";
+      return "공연정보 확인";
     } else if (concert.ticketOpen.date === "0000-00-00") {
       return "예매 일정 대기 중";
     } else if (concert.ticketLink === "") {
@@ -138,7 +138,7 @@ const DetailPage: React.FC = () => {
         ? `${timeRemaining.days}일 ${timeRemaining.hours}시간 ${timeRemaining.minutes}분 후`
         : "예매 정보 대기 중";
     } else {
-      return "티켓 예매";
+      return "티켓 예매하기";
     }
   };
 
@@ -159,6 +159,12 @@ const DetailPage: React.FC = () => {
 
   const upcomingConcerts = allConcerts.filter(
     (c) => isEventTodayOrFuture(c.date) && c.id !== parseInt(id)
+  );
+
+  const isPastEvent = !isEventTodayOrFuture(concert.date);
+  const timeRemaining = calculateTimeRemaining(
+      concert.ticketOpen.date,
+      concert.ticketOpen.time
   );
 
   const randomUpcomingConcerts = shuffleArray(upcomingConcerts).slice(0, 3);
@@ -212,7 +218,7 @@ const DetailPage: React.FC = () => {
 
           <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
             <Text fontSize="xl" fontWeight="semibold" mb={3}>
-              출연 아티스트
+              출연자
             </Text>
             <Flex wrap="wrap" gap={2}>
               {concert.artists.map((artist, index) => (
@@ -225,21 +231,22 @@ const DetailPage: React.FC = () => {
 
           <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
             <Text fontSize="xl" fontWeight="semibold" mb={3}>
-              티켓 정보
+              {concert.type === "행사" ? "공연 정보" : "예매 정보"}
             </Text>
-            <Text mb={2}>
-              티켓 오픈: {concert.ticketOpen.date} {concert.ticketOpen.time}
-            </Text>
-            {concert.ticketLink && (
-              <Button
+            {concert.type != "행사" && (
+                <Text mb={2}>
+                  티켓 오픈: {concert.ticketOpen.date} {concert.ticketOpen.time}
+                </Text>
+            )}
+            <Button
+                onClick={(e) => handleButtonClick(e, concert, isPastEvent)}
                 as={Link}
                 href={concert.ticketLink}
                 isExternal
                 colorScheme="blue"
-              >
-                티켓 예매하기
-              </Button>
-            )}
+            >
+              {getButtonText(concert, isPastEvent, timeRemaining)}
+            </Button>
           </Box>
         </VStack>
       </Flex>
@@ -248,7 +255,7 @@ const DetailPage: React.FC = () => {
   <Box mt={8}>
     <Divider mb={4} />
     <Text fontSize="3xl" fontWeight="bold" mb={4} color="teal.600">
-      공연장 상세 정보
+      공연 상세
     </Text>
     
     <VStack spacing={6} align="stretch">
@@ -259,17 +266,26 @@ const DetailPage: React.FC = () => {
             <Text fontSize="xl" fontWeight="bold" color="gray.700">기본 정보</Text>
           </HStack>
           <VStack align="start" spacing={3}>
-            <Text fontSize="lg" color="gray.800"><strong>주소:</strong> {showInfo.address}</Text>
+            <Text fontSize="lg" color="gray.800"><strong>주소</strong></Text>
+            <Text fontSize="lg" color="gray.800">&nbsp;{'\u2022'} {showInfo.address}</Text>
             {showInfo.capacity && (
-              <Text fontSize="lg" color="gray.800"><strong>수용 인원:</strong> {showInfo.capacity}</Text>
+                <>
+                  <Text fontSize="lg" color="gray.800"><strong>수용 인원</strong></Text>
+                  <Text fontSize="lg" color="gray.800">&nbsp;{'\u2022'} {showInfo.capacity}</Text>
+                </>
             )}
-            {showInfo.note && showInfo.note.length > 0 && showInfo.note[0] !== "" && showInfo.note.map((note, index) => (
-              note.endsWith('.png') || note.endsWith('.jpg') || note.endsWith('.jpeg') || note.endsWith('.gif') ? (
-                <Image key={index} src={note} alt={`노트 이미지 ${index + 1}`} borderRadius="md" boxShadow="md" objectFit="cover" w="100%" />
-              ) : (
-                <Text key={index} fontSize="lg" color="gray.600">{note}</Text>
-              )
-            ))}
+            {showInfo.note && showInfo.note.length > 0 && showInfo.note[0] !== "" && (
+                <>
+                  <Text fontSize="lg" color="gray.800"><strong>비고</strong><br/></Text>
+                  {showInfo.note.map((note, index) => (
+                      note.endsWith('.png') || note.endsWith('.jpg') || note.endsWith('.jpeg') || note.endsWith('.gif') ? (
+                          <Image key={index} src={note} alt={`노트 이미지 ${index + 1}`} borderRadius="md" boxShadow="md" objectFit="cover" w="100%" />
+                      ) : (
+                          <Text key={index} fontSize="lg" color="gray.600">&nbsp;{'\u2022'} {note}</Text>
+                      )
+                  ))}
+                </>
+            )}
           </VStack>
         </Box>
       )}
@@ -282,14 +298,14 @@ const DetailPage: React.FC = () => {
           </HStack>
           <SimpleGrid columns={1} spacing={2}>
             {showInfo.setlist.map((song, index) => (
-              <Box 
-                key={index} 
-                p={3} 
-                bg="gray.100" 
-                borderRadius="md" 
-                boxShadow="md" 
-                border="1px solid" 
-                borderColor="gray.300" 
+              <Box
+                key={index}
+                p={3}
+                bg="gray.100"
+                borderRadius="md"
+                boxShadow="md"
+                border="1px solid"
+                borderColor="gray.300"
                 textAlign="center"
               >
                 <Text fontSize="lg" fontWeight="medium" color="gray.800">
@@ -305,18 +321,18 @@ const DetailPage: React.FC = () => {
         <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="lg">
           <HStack mb={3}>
             <Icon as={CameraIcon} color="purple.600" />
-            <Text fontSize="xl" fontWeight="bold" color="gray.700">공연 사진</Text>
+            <Text fontSize="xl" fontWeight="bold" color="gray.700">공연 의상</Text>
           </HStack>
           <SimpleGrid columns={1} spacing={4}>
             {showInfo.ootd.map((image, index) => (
-              <Image 
-                key={index} 
-                src={image} 
-                alt={`공연 사진 ${index + 1}`} 
-                borderRadius="md" 
-                boxShadow="md" 
-                objectFit="cover" 
-                w="100%" 
+              <Image
+                key={index}
+                src={image}
+                alt={`공연 의상 ${index + 1}`}
+                borderRadius="md"
+                boxShadow="md"
+                objectFit="cover"
+                w="100%"
               />
             ))}
           </SimpleGrid>
