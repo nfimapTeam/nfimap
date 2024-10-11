@@ -144,20 +144,20 @@ export const globalConcerts = [
     lat: "24.9934617",
     lng: "121.3238273",
   },
-  // { // todo 현재 공연 상세 정보 미정
-  //   id: 1010,
-  //   name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA : 대만",
-  //   location: "미정",
-  //   date: ["2025-02-09(일)"],
-  //   startTime: "00:00",
-  //   durationMinutes: 0,
-  //   type: "콘서트",
-  //   performanceType: "단독",
-  //   artists: ["N.Flying"],
-  //   poster: "",
-  //   ticketOpen: { date: "0000-00-00", time: "00:00" },
-  //   ticketLink: "",  // todo 예매 페이지 오픈 시 추가
-  //   lat: "37.55107", // todo 공연장 좌표로 수정 필요 (현재 fnc)
-  //   lng: "127.04980",
-  // },
+  { // todo 현재 공연 상세 정보 미정
+    id: 1010,
+    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA : 대만",
+    location: "미정",
+    date: ["2025-02-09(일)"],
+    startTime: "00:00",
+    durationMinutes: 0,
+    type: "콘서트",
+    performanceType: "단독",
+    artists: ["N.Flying"],
+    poster: "/image/show/world/250209_HIDE-OUT_TAIPEI_TEMP.jpg", // todo 실제 포스터로 변경
+    ticketOpen: { date: "0000-00-00", time: "00:00" },
+    ticketLink: "",
+    lat: "37.55107", // todo 공연장 좌표로 수정 필요 (현재 fnc)
+    lng: "127.04980",
+  },
 ];
