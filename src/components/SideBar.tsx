@@ -32,6 +32,8 @@ type Nfiload = {
   category: string;
   lat: string;
   lng: string;
+  naverLink: string,
+  note: string,
 };
 
 type SidebarProps = {
