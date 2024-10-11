@@ -1,4 +1,4 @@
-export const showInfos = [
+export const globalShowInfos = [
     {
         id: 1001,
         name: "FNC BAND KINGDOM 2024 - 일본",
@@ -41,7 +41,7 @@ export const showInfos = [
         name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN : 나고야",
         address: "THE BOTTOM LINE 4-7-11 Imaike, Chikusa Ward, Nagoya, Aichi 464-0850, Japan",
         note: [
-            "/image/show_detail/seats/world/"
+            ""
         ],
         capacity: "약 750명",
         seats: [
