@@ -538,7 +538,7 @@ export const showInfos = [
         seats: [
             "/image/show_detail/seats/2024/YONSEI_awesome.png",
             "/image/show_detail/seats/2024/YONSEI_1F_official.jpg",
-            "/image/show_detail/seats/2024/YONSEI_2F_official.jpg",
+            "/image/show_detail/seats/2024/YONSEI_2F_official_01.png",
         ],
         setlist: [
             ""
@@ -575,9 +575,28 @@ export const showInfos = [
         ],
         capacity: "1,053 석",
         seats: [
-            "/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEATS.jpeg",
+            "/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEAT.jpg",
             "/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEAT_1F.png",
             "/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEAT_2F.png"
+        ],
+        setlist: [
+            ""
+        ],
+        ootd: [
+            ""
+        ]
+    },
+    {
+        id: 22,
+        name: "2024 어썸스테이지 [ N.Flying ] - 부산", // 부산 벡스코 오디토리움
+        address: "부산 해운대구 APEC로 55",
+        note: [
+            "벡스코 내 주차장 약 4,000대 주차 가능."
+        ],
+        capacity: "약 4,000명",
+        seats: [
+            "/image/show_detail/seats/2024/BEXCO_Auditorium_1F_official.png",
+            "/image/show_detail/seats/2024/BEXCO_Auditorium_2F_official.png"
         ],
         setlist: [
             "",

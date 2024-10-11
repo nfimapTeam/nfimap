@@ -137,7 +137,7 @@ export const globalShowInfos = [
         ],
         capacity: "약 2,500명",
         seats: [
-            "/image/show_detail/seats/world/241222_HIDE-OUT_MACAU_SEAT.jpgs",
+            "/image/show_detail/seats/world/241222_HIDE-OUT_MACAU_SEAT.jpg",
         ],
         setlist: [
             ""
@@ -173,7 +173,7 @@ export const globalShowInfos = [
         ],
         capacity: "",
         seats: [
-            "/image/show_detail/seats/world/",
+            ""
         ],
         setlist: [
             ""
