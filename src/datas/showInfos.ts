@@ -213,7 +213,7 @@ export const showInfos = [
         ],
         capacity: "약 4,500명",
         seats: [
-            "/image/show_detail/seats/2024/KKYUNGHEE_liveon.png",
+            "/image/show_detail/seats/2024/KYUNGHEE_liveon.png",
             "/image/show_detail/seats/2024/KYUNGHEE_1F_official.png",
             "/image/show_detail/seats/2024/KYUNGHEE_2F_official.png",
             "/image/show_detail/seats/2024/KYUNGHEE_3F_official.png"
@@ -487,7 +487,7 @@ export const showInfos = [
         name: "2024 부산국제록페스티벌", // 삼락생태공원
         address: "부산 사상구 삼락동 29-46",
         note: [
-            "공원 내 유료 주차장 있으나, 주차 공간이 다소 협소하여 주말이나 행사 시에는 혼잡할 수 있음",
+            "공원 내 유료 주차장 있으나, 주차 공간이 다소 협소하여 주말이나 행사 시에는 혼잡할 수 있음.",
             "대중교통을 이용 권장."
         ],
         capacity: "약 10,000명 이상 수용 가능", // 행사는 수용인원 불필요
@@ -569,9 +569,9 @@ export const showInfos = [
         name: "한수원 뮤직 페스티벌 &lt;씨어터&gt; - 경주", // 경주예술의전당 화랑홀
         address: "경상북도 경주시 알천북로 1 경주예술의전당 1층",
         note: [
-            "/image/show_detail/note/2024/GYEONGJU_FOUNDATION_PARKING.jpg",
             "공연 또는 전시 관람 시 경주예술의전당 제 1주차장 무료 개방",
-            "기타 무료주차 : 공연장 서쪽 주차장 - 60대 / 공연장 인근 시민체육관 공영주차장 - 100대"
+            "기타 무료주차 : 공연장 서쪽 주차장 - 60대 / 공연장 인근 시민체육관 공영주차장 - 100대",
+            "/image/show_detail/note/2024/GYEONGJU_FOUNDATION_PARKING.jpg"
         ],
         capacity: "1,053 석",
         seats: [
