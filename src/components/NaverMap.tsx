@@ -24,8 +24,8 @@ type Nfiload = {
   category: string;
   lat: string;
   lng: string;
-  naverLink: string,
-  note: string,
+  naverLink: string;
+  note: string;
 };
 
 interface NaverMapProps {
@@ -208,7 +208,7 @@ const NaverMap = ({
 
       const getPosterImage = (item: Concert | Nfiload): string => {
         if ("poster" in item) {
-          return item.poster;
+          return item.poster && item.poster.trim() !== '' ? item.poster : '/image/nfimap.png';
         } else {
           return getCategoryImage(item.category);
         }
@@ -287,11 +287,41 @@ const NaverMap = ({
     );
 
     if (marker) {
-      console.log("fffffccc")
-      const markerImage =
+      let markerImage =
         activeTabIndex === 0
           ? "/image/nfimap.png"
           : getCategoryMarkerImage((selectedItem as Nfiload).category);
+      let markerStyle = "";
+      let markerClass =
+        activeTabIndex === 0 ? "concert-marker" : "nfiload-marker";
+
+      // Set the background color for Nfiload markers
+      const backgroundColor =
+        activeTabIndex === 1
+          ? getCategoryBackgroundColor((selectedItem as Nfiload).category)
+          : "";
+
+      if (activeTabIndex === 0) {
+        const today = new Date();
+        let isToday = false;
+        let isPast = false;
+
+        (selectedItem as Concert).date.forEach((dateString) => {
+          const concertDate = new Date(dateString.split("(")[0]);
+          if (concertDate.toDateString() === today.toDateString()) {
+            isToday = true;
+          } else if (concertDate < today) {
+            isPast = true;
+          }
+        });
+
+        if (isToday) {
+          markerImage = "/image/heart.png";
+          markerStyle = "animation: heartbeat 0.8s ease-in-out infinite;";
+        } else if (isPast) {
+          markerStyle = "filter: grayscale(100%) brightness(40%);";
+        }
+      }
 
       marker.setIcon({
         content:
@@ -300,7 +330,7 @@ const NaverMap = ({
               <div style="position: relative;">
                 <img 
                   src="${markerImage}" 
-                  style="width: 30px; height: 30px;" 
+                  style="width: 30px; height: 30px; ${markerStyle}" 
                   class="concert-marker">
               </div>
             `
@@ -308,13 +338,13 @@ const NaverMap = ({
               <div style="position: relative; border-radius: 4px; padding: 5px;">
                 <img 
                   src="${markerImage}" 
-                  style="width: 30px; height: 30px;" 
+                  style="width: 30px; height: 30px; ${markerStyle}" 
                   class="nfiload-marker">
               </div>
             `,
       });
 
-      // 마커 클릭 이벤트 트리거
+      // Trigger marker click event
       (window as any).naver.maps.Event.trigger(marker, "click");
       marker.setMap(mapRef.current);
       mapRef.current.setCenter(marker.getPosition());

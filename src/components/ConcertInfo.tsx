@@ -149,7 +149,7 @@ const ConcertInfo = ({
                 borderRadius="4px"
               >
                 <Image
-                  src={concert.poster}
+                  src={concert.poster && concert.poster.trim() !== '' ? concert.poster : '/image/nfimap.png'}
                   alt={concert.name}
                   position="absolute"
                   top="0"

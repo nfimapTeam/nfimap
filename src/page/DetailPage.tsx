@@ -189,7 +189,7 @@ const DetailPage: React.FC = () => {
           </Box>
         </Flex>
 
-        <VStack align="stretch" spacing={6} flex={1}>
+        <Flex flexDirection="column" justifyContent="space-between" flex={1}>
           <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
             <Badge colorScheme="red" fontSize="md" mb={2}>
               {concert.type}
@@ -248,7 +248,7 @@ const DetailPage: React.FC = () => {
               {getButtonText(concert, isPastEvent, timeRemaining)}
             </Button>
           </Box>
-        </VStack>
+        </Flex>
       </Flex>
 
       {showInfo && (

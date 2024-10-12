@@ -73,17 +73,6 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
                     height="100%"
                   />
                 </Box>
-                <Button
-                  bg="blue.500"
-                  color="white"
-                  width="100%"
-                  mt={6}
-                  display="block"
-                  _hover={{ bg: "blue.600" }}
-                  boxShadow="md"
-                >
-                  예매하기
-                </Button>
               </Box>
             )}
             <Box width={{ base: "100%", md: isNfiLoad ? "100%" : "60%" }} bg="white" p={6} borderRadius="lg" boxShadow="md">
