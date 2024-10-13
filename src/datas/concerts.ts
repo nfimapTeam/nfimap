@@ -276,8 +276,8 @@ export const concertsData = [
     name: "고창모양성제 - MZ 업고 뛰어!",
     location: "고창읍성 앞 특설무대",
     date: ["2024-10-12(토)"],
-    startTime: "19:00", // todo 시작시간 미정
-    durationMinutes: 40, // todo 공연 시간 미정
+    startTime: "20:20",
+    durationMinutes: 40,
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying","릴보이", "우디고 차일드"],

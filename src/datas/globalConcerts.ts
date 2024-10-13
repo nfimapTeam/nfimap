@@ -74,7 +74,7 @@ export const globalConcerts = [
     performanceType: "단독",
     artists: ["N.Flying"],
     poster: "/image/show/world/241123_HIDE-OUT_BANKOK.jpg",
-    ticketOpen: { date: "2024-10-05", time: "12:00" },
+    ticketOpen: { date: "2024-10-05", time: "14:00" }, // 현지시각 12시 (시차 +2h)
     ticketLink: "https://www.thaiticketmajor.com/concert/2024-nflying-live-hide-out-in-bangkok.html?utm_source=intro&utm_medium=banner&utm_campaign=NFlying2024BKK",
     lat: "13.71440298",
     lng: "100.4068519",
@@ -90,7 +90,7 @@ export const globalConcerts = [
     performanceType: "단독",
     artists: ["N.Flying"],
     poster: "/image/show/world/241201_HIDE-OUT_MY.jpg",
-    ticketOpen: { date: "2024-09-27", time: "11:00" },
+    ticketOpen: { date: "2024-09-27", time: "12:00" }, // 현지시각 11시 (시차 +1h)
     ticketLink: "https://my.bookmyshow.com/events/2024-n.flying-live-‘hide-out’-in-kuala-lumpur/NFKL2024",
     lat: "3.1397000",
     lng: "101.7093000",
@@ -122,7 +122,7 @@ export const globalConcerts = [
     performanceType: "단독",
     artists: ["N.Flying"],
     poster: "/image/show/world/241222_HIDE-OUT_MACAU.jpeg",
-    ticketOpen: { date: "2024-10-29", time: "12:00" }, // 현지시각 12시 (시차 +1h)
+    ticketOpen: { date: "2024-10-29", time: "13:00" }, // 현지시각 12시 (시차 +1h)
     ticketLink: "https://fncent.com/?m=bbs&bid=notice&p=2&where=site%3D1+and+notice%3D0+and+bbsid%3D'notice'++and+ex1%3D'1'+&uid=60294",
     // todo 예매 페이지 오픈 시 변경
     lat: "22.14708",
@@ -139,7 +139,7 @@ export const globalConcerts = [
     performanceType: "출연",
     artists: ["N.Flying", "FTISLAND", "CNBLUE", "Hi-Fi Un!corn"],
     poster: "/image/show/world/250104_1st_KINGDOM_TAOYUAN.png",
-    ticketOpen: { date: "2024-08-24", time: "13:00" }, // 현지시각 13시 (시차 +1h)
+    ticketOpen: { date: "2024-08-24", time: "14:00" }, // 현지시각 13시 (시차 +1h)
     ticketLink: "https://ticketplus.com.tw/activity/f828edd61c11359cc3f3b991e8bcb4d5",
     lat: "24.9934617",
     lng: "121.3238273",
