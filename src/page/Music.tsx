@@ -327,7 +327,7 @@ const Music: React.FC = () => {
                       <Text fontWeight="bold" fontSize="md">
                         {track.name}
                       </Text>
-                      {track.preview_url ? (
+                      {track.preview_url && (
                         <audio
                           controls
                           controlsList="nodownload"
@@ -335,14 +335,6 @@ const Music: React.FC = () => {
                         >
                           오디오를 지원하지 않습니다.
                         </audio>
-                      ) : (
-                        <Link
-                          href={`https://open.spotify.com/track/${track.id}`}
-                          isExternal
-                          color="blue.500"
-                        >
-                          Spotify에서 듣기 <ExternalLinkIcon mx="2px" />
-                        </Link>
                       )}
                     </Flex>
                   </Box>
