@@ -35,6 +35,7 @@ import moment from "moment";
 import { globalConcerts } from "../datas/globalConcerts";
 import { showInfos } from "../datas/showInfos";
 import { globalShowInfos } from "../datas/globalShowInfos";
+import theme from "../util/theme";
 
 interface Concert {
   id: number;
@@ -244,19 +245,26 @@ const DetailPage: React.FC = () => {
               <Text fontSize="xl" fontWeight="semibold" mb={3}>
                 {concert.type === "행사" ? "공연 정보" : "예매 정보"}
               </Text>
-              <Flex justifyContent="space-between" alignItems="center">
-                {concert.type != "행사" && (
-                  <Badge colorScheme="green" fontSize="md" alignItems="center">
-                    티켓 오픈: {concert.ticketOpen.date}{" "}
-                    {concert.ticketOpen.time}
-                  </Badge>
-                )}
+              <Flex flexDirection="column" gap={3}>
+                <Flex>
+                  {concert.type != "행사" && (
+                    <Badge
+                      colorScheme="green"
+                      fontSize="md"
+                      alignItems="center"
+                    >
+                      티켓 오픈: {concert.ticketOpen.date}{" "}
+                      {concert.ticketOpen.time} (한국시간 기준)
+                    </Badge>
+                  )}
+                </Flex>
                 <Button
                   onClick={(e) => handleButtonClick(e, concert, isPastEvent)}
                   as={Link}
                   href={concert.ticketLink}
                   isExternal
                   colorScheme="blue"
+                  _hover={{ bg: "black", color: "white" }}
                 >
                   {getButtonText(concert, isPastEvent, timeRemaining)}
                 </Button>
