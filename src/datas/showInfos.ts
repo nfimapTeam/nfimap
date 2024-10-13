@@ -520,10 +520,19 @@ export const showInfos = [
         capacity: "", // 행사는 수용인원 불필요
         seats: [],
         setlist: [
-            ""
+            "Blue Moon",
+            "The World Is Mine",
+            "피었습니다",
+            "Autumn Dream",
+            "아 진짜요.",
+            "4242",
+            "놔",
+            "옥탑방",
+            "Sunset",
         ],
         ootd: [
-            ""
+            "/image/show_detail/ootd/2024/241012_GOCHANG_OOTD1.jpeg",
+            "/image/show_detail/ootd/2024/241012_GOCHANG_OOTD2.jpeg"
         ]
     },
     {
