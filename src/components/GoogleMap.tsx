@@ -98,7 +98,7 @@ const GoogleMap = ({
       });
 
       const infoWindowContent = `
-        <div style="width: 320px; max-width: 320px; font-family: Arial, sans-serif; padding: 10px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 4px;">
+        <div style="width: 100%; max-width: 320px; font-family: Arial, sans-serif; padding: 10px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 4px;">
           <div style="display: flex; align-items: center;">
             <div style="width: 70px; height: 70px; min-width: 70px; min-height: 70px;max-width: 70px; max-height: 70px; margin-right: 15px; border-radius: 4px; overflow: hidden;">
               <img src="${concert.poster && concert.poster.trim() !== '' ? concert.poster : '/image/nfimap.png'}" alt="${concert.name}" 
