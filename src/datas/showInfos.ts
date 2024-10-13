@@ -391,7 +391,7 @@ export const showInfos = [
         setlist: [
             "옥탑방",
             "Songbird",
-            "Starlight",
+            "STARLIGHT",
             "네가 내 마음에 자리 잡았다",
             "Blue Moon",
             "Star (1절만)",
@@ -550,10 +550,34 @@ export const showInfos = [
             "/image/show_detail/seats/2024/YONSEI_2F_official_01.png",
         ],
         setlist: [
-            ""
+            "Moonshot",
+            "Sober",
+            "Moon & Cheese",
+            "그 밤",
+            "빈집",
+            "너에게",
+            "폭망",
+            "Autumn Dream",
+            "Blue Moon",
+            "네가 내 마음에 자리 잡았다",
+            "Preview",
+            "ANYWAY",
+            "Shooting Star",
+            "이 별 저 별",
+            "Star",
+            "STARLIGHT",
+            "파스텔리아 (미공개곡)",
+            "아 진짜요.",
+            "4242",
+            "The World Is Mine",
+            "그러니까 우리",
+            "Sunset",
+            "놔",
+            "Songbird",
         ],
         ootd: [
-            ""
+            "/image/show_detail/ootd/2024/241013_AWESOME_STAGE_OOTD1.jpeg",
+            "/image/show_detail/ootd/2024/241013_AWESOME_STAGE_OOTD2.jpeg"
         ]
     },
     {
