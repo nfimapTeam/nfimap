@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import ConcertInfo from "./ConcertInfo";
 import NfiLoad from "./NfiLoad";
+import NoData from "./NoData";
 
 type Concert = {
   name: string;

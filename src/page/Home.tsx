@@ -36,6 +36,7 @@ import { RiCalendar2Line } from "@remixicon/react";
 import theme from "../util/theme";
 import "../style/custom.css";
 import { Helmet } from "react-helmet-async";
+import NoData from "../components/NoData";
 
 interface Concert {
   id: number;
@@ -333,6 +334,7 @@ const Home = () => {
           </Modal>
         </Flex>
       </Box>
+      {filteredAndSortedConcerts.length === 0 && <NoData />}
       <SimpleGrid columns={columns} spacing={6}>
         {filteredAndSortedConcerts.map((concert, index) => {
           const isFutureOrToday = isEventTodayOrFuture(concert.date);

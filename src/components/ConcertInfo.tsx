@@ -9,6 +9,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Select } from "antd";
+import NoData from "./NoData";
 
 type Concert = {
   name: string;
@@ -69,10 +70,6 @@ const ConcertInfo = ({
     });
   };
 
-  useEffect(() => {
-    console.log(concerts);
-  }, [concerts]);
-
   return (
     <VStack spacing={4} align="start" height="100%">
       <Input
@@ -121,6 +118,7 @@ const ConcertInfo = ({
           "scrollbar-width": "none",
         }}
       >
+        {concerts.length === 0 && <NoData />}
         {concerts.map((concert, index) => {
           const past = isConcertPast(concert);
 
