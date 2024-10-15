@@ -1,0 +1,23 @@
+{
+  "latest": "Latest",
+  "byName": "By Name",
+  "concert": "Concert",
+  "festival": "Festival",
+  "event": "Event",
+  "searchPlaceholder": "Search for performance name or venue",
+  "showPastEvents": "Show past events",
+  "selectDate": "Select Date",
+  "helmettitle": "N.Fimap - Check N.Flying concert information!",
+  "helmetdescription": "N.Fimap supports the fandom N.Fia's enthusiasm.",
+  "selectConcertType": "Select concert type",
+  "all": "All",
+  "performanceInfo": "Performance Info",
+  "waitingForTicketSchedule": "Waiting for ticket schedule",
+  "timeUntilTicketing": "{{days}}d {{hours}}h {{minutes}}m until ticketing",
+  "waitingForTicketInfo": "Waiting for ticket info",
+  "buyTickets": "Buy Tickets",
+  "list": "List",
+    "map": "Map",
+    "profile": "Profile",
+    "music": "Music"
+}

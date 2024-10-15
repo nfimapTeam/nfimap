@@ -1,0 +1,23 @@
+{
+  "latest": "최신순",
+  "byName": "이름순",
+  "concert": "콘서트",
+  "festival": "페스티벌",
+  "event": "행사",
+  "searchPlaceholder": "공연명 또는 공연장을 검색하세요",
+  "showPastEvents": "지난 공연 보기",
+  "selectDate": "날짜 선택",
+  "helmettitle": "엔피맵 - 엔플라잉 콘서트 정보를 확인하세요!",
+  "helmetdescription": "N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다.",
+  "selectConcertType": "콘서트 타입 선택",
+  "all": "전체",
+  "performanceInfo": "공연 정보",
+  "waitingForTicketSchedule": "예매 일정 대기 중",
+  "timeUntilTicketing": "예매 시작까지 {{days}}일 {{hours}}시간 {{minutes}}분",
+  "waitingForTicketInfo": "예매 정보 대기 중",
+  "buyTickets": "티켓 예매",
+  "list": "리스트",
+    "map": "맵",
+    "profile": "소개",
+    "music": "노래"
+}

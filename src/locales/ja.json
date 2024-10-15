@@ -1,0 +1,23 @@
+{
+  "latest": "最新順",
+  "byName": "名前順",
+  "concert": "コンサート",
+  "festival": "フェスティバル",
+  "event": "イベント",
+  "searchPlaceholder": "公演名または会場を検索",
+  "showPastEvents": "過去の公演を表示",
+  "selectDate": "日付を選択",
+  "helmettitle": "N.Fimap - エヌ・フライングのコンサート情報をチェック！",
+  "helmetdescription": "N.Fimapはファンダム N.Fiaの情熱を応援します。",
+  "selectConcertType": "コンサートタイプを選択",
+  "all": "すべて",
+  "performanceInfo": "公演情報",
+  "waitingForTicketSchedule": "チケットスケジュール待ち",
+  "timeUntilTicketing": "チケット販売まで{{days}}日{{hours}}時間{{minutes}}分",
+  "waitingForTicketInfo": "チケット情報待ち",
+  "buyTickets": "チケットを購入",
+  "list": "リスト",
+    "map": "地図",
+    "profile": "プロフィール",
+    "music": "音楽"
+}

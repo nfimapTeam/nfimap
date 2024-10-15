@@ -32,18 +32,17 @@ import { toggleState } from "../atom/toggleState";
 import Card from "../components/Card";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { RiCalendar2Line } from "@remixicon/react";
-import theme from "../util/theme";
 import "../style/custom.css";
 import { Helmet } from "react-helmet-async";
 import NoData from "../components/NoData";
+import { useTranslation } from "react-i18next";
 
 interface Concert {
   id: number;
   name: string;
   location: string;
-  type: string; // 콘서트 | 페스티벌 | 행사
-  performanceType: string; // 단독 | 합동 | 출연
+  type: string;
+  performanceType: string;
   durationMinutes: number;
   date: string[];
   startTime: string;
@@ -59,11 +58,13 @@ interface Concert {
 }
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
+
   const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [currentTime, setCurrentTime] = useState(moment());
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortOrder, setSortOrder] = useState("최신순");
+  const [sortOrder, setSortOrder] = useState(t("latest"));
   const [toggle, setToggle] = useRecoilState(toggleState);
   const [selectedType, setSelectedType] = useState("");
   const navigate = useNavigate();
@@ -72,13 +73,13 @@ const Home = () => {
 
   const handleDateChange = (date: any) => {
     if (Array.isArray(date)) {
-      setSelectedDate(date[0] as Date); // 배열일 경우 첫 번째 날짜 선택 (Date 타입으로 변환)
+      setSelectedDate(date[0] as Date);
     } else if (date instanceof Date) {
-      setSelectedDate(date); // 단일 날짜 처리
+      setSelectedDate(date);
     } else {
-      setSelectedDate(null); // null 처리
+      setSelectedDate(null);
     }
-    onClose(); // 날짜 선택 후 모달 닫기
+    onClose();
   };
 
   useEffect(() => {
@@ -95,9 +96,14 @@ const Home = () => {
 
   useEffect(() => {
     if (toggle) {
-      setSortOrder("최신순");
+      setSortOrder(t("latest"));
     }
-  }, [toggle]);
+  }, [toggle, t]);
+
+  useEffect(() => {
+    setSortOrder(t("latest"));
+    setSelectedType("");
+  }, [i18n.language, t]);
 
   const clearSearch = () => {
     setSearchQuery("");
@@ -108,16 +114,16 @@ const Home = () => {
     isPastEvent: boolean,
     timeRemaining: { days: number; hours: number; minutes: number } | null
   ) => {
-    if (isPastEvent || concert.type === "행사") {
-      return "공연 정보";
+    if (isPastEvent || concert.type === t("event")) {
+      return t("performanceInfo");
     } else if (concert.ticketOpen.date === "0000-00-00") {
-      return "예매 일정 대기 중";
+      return t("waitingForTicketSchedule");
     } else if (concert.ticketLink === "") {
       return timeRemaining
-        ? `${timeRemaining.days}일 ${timeRemaining.hours}시간 ${timeRemaining.minutes}분 후`
-        : "예매 정보 대기 중";
+        ? t("timeUntilTicketing", { days: timeRemaining.days, hours: timeRemaining.hours, minutes: timeRemaining.minutes })
+        : t("waitingForTicketInfo");
     } else {
-      return "티켓 예매";
+      return t("buyTickets");
     }
   };
 
@@ -170,11 +176,11 @@ const Home = () => {
     );
 
     const sortFunction = (a: Concert, b: Concert) => {
-      if (sortOrder === "최신순") {
+      if (sortOrder === t("latest")) {
         const dateA = moment(a.date[0].split("(")[0], "YYYY-MM-DD");
         const dateB = moment(b.date[0].split("(")[0], "YYYY-MM-DD");
-        return dateA.diff(dateB); // 오름차순 정렬 (미래 날짜가 뒤로)
-      } else if (sortOrder === "이름순") {
+        return dateA.diff(dateB);
+      } else if (sortOrder === t("byName")) {
         return a.name.localeCompare(b.name);
       }
       return 0;
@@ -182,42 +188,56 @@ const Home = () => {
 
     upcomingConcerts.sort(sortFunction);
     pastConcerts.sort((a, b) => {
-      if (sortOrder === "최신순") {
+      if (sortOrder === t("latest")) {
         const dateA = moment(a.date[0].split("(")[0], "YYYY-MM-DD");
         const dateB = moment(b.date[0].split("(")[0], "YYYY-MM-DD");
-        return dateB.diff(dateA); // 내림차순 정렬 (과거 날짜가 앞으로)
+        return dateB.diff(dateA);
       }
-      return sortFunction(a, b); // 이름순은 동일하게 처리
+      return sortFunction(a, b);
     });
 
     return [...upcomingConcerts, ...pastConcerts];
   };
 
+  const translateType = (type: string) => {
+  switch (type) {
+    case "콘서트":
+      return t("concert");
+    case "페스티벌":
+      return t("festival");
+    case "이벤트":
+      return t("event");
+    default:
+      return type;
+  }
+};
+
   const filteredAndSortedConcerts = sortConcerts(
-    allConcerts.filter((concert) => {
-      const matchesSearch =
-        concert.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        concert.location.toLowerCase().includes(searchQuery.toLowerCase());
+  allConcerts.filter((concert) => {
+    const matchesSearch =
+      concert.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      concert.location.toLowerCase().includes(searchQuery.toLowerCase());
 
-      const matchesType = selectedType === "" || concert.type === selectedType;
+    const translatedConcertType = translateType(concert.type);
+    const matchesType = selectedType === "" || translatedConcertType === selectedType;
 
-      if (toggle) {
-        // 토글이 true면 지난 공연만 필터링
-        const isPastEvent = concert.date.every((date) => {
-          const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
-          return concertDate.isBefore(currentTime, "day");
-        });
-        return matchesSearch && isPastEvent && matchesType;
-      } else {
-        // 토글이 false면 공연 예정만 필터링
-        const isFutureOrToday = concert.date.some((date) => {
-          const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
-          return concertDate.isSameOrAfter(currentTime, "day");
-        });
-        return matchesSearch && isFutureOrToday && matchesType;
-      }
-    })
+    if (toggle) {
+      const isPastEvent = concert.date.every((date) => {
+        const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+        return concertDate.isBefore(currentTime, "day");
+      });
+      return matchesSearch && isPastEvent && matchesType;
+    } else {
+      const isFutureOrToday = concert.date.some((date) => {
+        const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+        return concertDate.isSameOrAfter(currentTime, "day");
+      });
+      return matchesSearch && isFutureOrToday && matchesType;
+    }
+  })
   );
+  
+  
 
   return (
     <Box
@@ -236,15 +256,15 @@ const Home = () => {
       }}
     >
       <Helmet>
-        <title>엔피맵 - 엔플라잉 콘서트 정보를 확인하세요!</title>
-        <meta name="description" content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다." />
+        <title>{t("helmettitle")}</title>
+        <meta name="description" content={t("helmetdescription")} />
         <meta property="og:image" content="https://nfimap.co.kr/image/nfimap.png" />
         <meta property="og:url" content="https://nfimap.co.kr" />
       </Helmet>
       <Box mb={4}>
         <InputGroup size="lg">
           <Input
-            placeholder="공연명 또는 공연장을 검색하세요"
+            placeholder={t("searchPlaceholder")}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             mb={4}
@@ -281,12 +301,12 @@ const Home = () => {
               borderColor: "#4BA4F2",
               boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
             }}
-            placeholder="콘서트 타입 선택"
+            placeholder={t("selectConcertType")}
           >
-            <Option value="">전체</Option>
-            <Option value="콘서트">콘서트</Option>
-            <Option value="페스티벌">페스티벌</Option>
-            <Option value="행사">행사</Option>
+            <Option value="">{t("all")}</Option>
+            <Option value={t("concert")}>{t("concert")}</Option>
+            <Option value={t("festival")}>{t("festival")}</Option>
+            <Option value={t("event")}>{t("event")}</Option>
           </Select>
           <Select
             value={sortOrder}
@@ -297,16 +317,14 @@ const Home = () => {
               borderColor: "#4BA4F2",
               boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
             }}
-            optionLabelProp="label"
-            onSelect={(value) => setSortOrder(value)}
           >
-            <Option value="최신순">최신순</Option>
-            <Option value="이름순">이름순</Option>
+            <Option value={t("latest")}>{t("latest")}</Option>
+            <Option value={t("byName")}>{t("byName")}</Option>
           </Select>
 
           <FormControl display="flex" alignItems="center">
             <FormLabel htmlFor="show-past-events" mb="0">
-              지난 공연 보기
+              {t("showPastEvents")}
             </FormLabel>
             <Switch
               id="show-past-events"
@@ -315,17 +333,10 @@ const Home = () => {
             />
           </FormControl>
 
-          {/* <Button
-            onClick={onOpen}
-            colorScheme={theme.colors.sub2}
-          >
-            <RiCalendar2Line />
-          </Button> */}
-
           <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
-              <ModalHeader>날짜 선택</ModalHeader>
+              <ModalHeader>{t("selectDate")}</ModalHeader>
               <ModalCloseButton />
               <ModalBody>
                 <Calendar onChange={handleDateChange} value={selectedDate} />
