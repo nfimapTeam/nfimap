@@ -7,6 +7,7 @@ import { nfiloadData } from "../datas/nfiload";
 import GoogleMap from "../components/GoogleMap";
 import { globalConcerts } from "../datas/globalConcerts";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 type Concert = {
   name: string;
@@ -36,6 +37,7 @@ type Nfiload = {
 
 
 const MapPage = () => {
+  const { t, i18n } = useTranslation();
   const [concertState, setConcertState] = useState<Concert[]>(concertsData);
   const [globalConcertState, setGlobalConcertState] =
     useState<Concert[]>(globalConcerts);
@@ -156,14 +158,10 @@ const MapPage = () => {
   return (
     <Box display={{ base: "block", md: "flex" }}>
       <Helmet>
-        <title>엔피맵 - 엔플라잉 콘서트 정보를 맵으로 확인하세요!</title>
+        <title>{t("map_title")}</title>
         <meta
           name="description"
-          content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다."
-        />
-        <meta
-          property="og:description"
-          content="N.Fimap의 예제 페이지입니다."
+          content={t("map_description")}
         />
         <meta property="og:image" content="%PUBLIC_URL%/image/nfimap.png" />
         <meta property="og:url" content="https://nfimap.co.kr" />
@@ -210,7 +208,7 @@ const MapPage = () => {
             _hover={{ bg: activeTabIndex === 0 ? "#0597F2" : "#eee" }}
             onClick={() => setActiveTabIndex(0)}
           >
-            국내공연
+            {t("map_domestic")}
           </Button>
           <Button
             bg={activeTabIndex === 1 ? "#0597F2" : "#eee"}
@@ -218,7 +216,7 @@ const MapPage = () => {
             _hover={{ bg: activeTabIndex === 0 ? "#0597F2" : "#eee" }}
             onClick={() => setActiveTabIndex(1)}
           >
-            엔피로드
+            {t("map_nfiload")}
           </Button>
           <Button
             bg={activeTabIndex === 2 ? "#0597F2" : "#eee"}
@@ -226,7 +224,7 @@ const MapPage = () => {
             _hover={{ bg: activeTabIndex === 0 ? "#0597F2" : "#eee" }}
             onClick={() => setActiveTabIndex(2)}
           >
-            해외공연
+            {t("map_global")}
           </Button>
         </HStack>
       </Box>

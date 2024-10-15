@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { Select } from "antd";
 import NoData from "./NoData";
+import { useTranslation } from "react-i18next"; // useTranslation 훅 임포트
 
 type Concert = {
   name: string;
@@ -48,6 +49,7 @@ const ConcertInfo = ({
   setSelectedType,
 }: ConcertInfoProps) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const { t } = useTranslation(); // 번역 함수 초기화
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -60,11 +62,9 @@ const ConcertInfo = ({
   const isConcertPast = (concert: Concert) => {
     const currentDate = new Date();
     return concert.date.every((dateString) => {
-      // 날짜 문자열에서 "(요일)" 부분을 제거
-      const datePart = dateString.split("(")[0];
+      const datePart = dateString.split("(")[0]; // 날짜 문자열에서 "(요일)" 부분 제거
       const concertDate = new Date(datePart);
-      // 시간을 00:00:00으로 설정하여 날짜만 비교
-      concertDate.setHours(0, 0, 0, 0);
+      concertDate.setHours(0, 0, 0, 0); // 날짜만 비교
       currentDate.setHours(0, 0, 0, 0);
       return concertDate < currentDate;
     });
@@ -74,14 +74,14 @@ const ConcertInfo = ({
     <VStack spacing={4} align="start" height="100%">
       <Input
         ref={searchInputRef}
-        placeholder="이름이나 장소로 검색하세요."
+        placeholder={t("mapSearchPlaceholder")} // JSON 파일에서 번역된 문자열
         value={query}
         onChange={handleInputChange}
         size="md"
       />
       <Flex width="100%" align="center" justifyContent="space-between">
         <Select
-          placeholder="유형 선택"
+          placeholder={t("mapSelectPlaceholder")}
           value={selectedType}
           onChange={(value) => setSelectedType(value)}
           style={{ width: 120, height: 30 }}
@@ -91,13 +91,13 @@ const ConcertInfo = ({
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
           }}
         >
-          <option value="">전체</option>
-          <option value="콘서트">콘서트</option>
-          <option value="페스티벌">페스티벌</option>
-          <option value="행사">행사</option>
+          <option value="">{t("mapTypeOptions.mapAll")}</option>
+          <option value="콘서트">{t("mapTypeOptions.mapConcert")}</option>
+          <option value="페스티벌">{t("mapTypeOptions.mapFestival")}</option>
+          <option value="행사">{t("mapTypeOptions.mapEvent")}</option>
         </Select>
         <Flex align="center">
-          <Text fontSize="10px">지난 공연 보기</Text>
+          <Text fontSize="10px">{t("mapShowPastConcerts")}</Text>
           <Switch
             id="toggle"
             isChecked={showPastConcerts}
@@ -171,7 +171,7 @@ const ConcertInfo = ({
                     transform="translate(-50%, -50%)"
                     w="100%"
                   >
-                    공연종료
+                    {t("mapPastConcert")}
                   </Text>
                 )}
               </Box>

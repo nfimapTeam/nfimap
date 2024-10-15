@@ -10,6 +10,7 @@ import {
 import ConcertInfo from "./ConcertInfo";
 import NfiLoad from "./NfiLoad";
 import NoData from "./NoData";
+import { useTranslation } from "react-i18next";
 
 type Concert = {
   name: string;
@@ -88,6 +89,7 @@ const Sidebar = ({
   selectedGlobalType,
   setSelectedGlobalType,
 }: SidebarProps) => {
+  const { t, i18n } = useTranslation();
   return (
     <Box
       w="340px"
@@ -115,7 +117,7 @@ const Sidebar = ({
             flex="1"
             p="16px 4px"
           >
-            국내공연
+            {t("map_domestic")}
           </Tab>
           <Tab
             fontSize="18px"
@@ -126,7 +128,7 @@ const Sidebar = ({
             flex="1"
             p="16px 4px"
           >
-            엔피로드
+            {t("map_nfiload")}
           </Tab>
           <Tab
             fontSize="18px"
@@ -137,7 +139,7 @@ const Sidebar = ({
             flex="1"
             p="16px 4px"
           >
-            해외공연
+            {t("map_global")}
           </Tab>
         </TabList>
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Input, Flex, Text, VStack } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 type Nfiload = {
   id: number;
@@ -8,10 +9,9 @@ type Nfiload = {
   category: string;
   lat: string;
   lng: string;
-  naverLink: string,
-  note: string,
+  naverLink: string;
+  note: string;
 };
-
 
 interface NfiLoadProps {
   nfiload: Nfiload[];
@@ -25,6 +25,7 @@ const NfiLoad = ({
   selectedNfiLoad,
 }: NfiLoadProps) => {
   const [searchQuery, setSearchQuery] = useState("");
+  const { t } = useTranslation();
 
   const filteredNfiload = nfiload.filter(
     (data) =>
@@ -39,7 +40,7 @@ const NfiLoad = ({
   return (
     <VStack spacing={4} align="start" height="100%">
       <Input
-        placeholder="이름이나 장소로 검색하세요."
+        placeholder={t("mapSearchPlaceholder")}
         size="md"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}

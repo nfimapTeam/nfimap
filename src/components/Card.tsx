@@ -13,6 +13,7 @@ import {
 import { keyframes } from "@chakra-ui/react";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface Concert {
   id: number;
@@ -74,18 +75,21 @@ const Card = ({
   getButtonText,
   handleButtonClick,
 }: CardProps) => {
-  const navgate = useNavigate();
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+
   return (
     <Box
       position="relative"
-      onClick={() => navgate(`/${concert.id}`)}
+      onClick={() => navigate(`/${concert.id}`)}
       sx={{
-      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+        transition: "transform 0.3s ease, box-shadow 0.3s ease",
         "&:hover": {
           transform: "translateY(-10px)",
           boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
         },
-      }}>
+      }}
+    >
       <Box
         p={4}
         borderWidth="1px"
@@ -126,11 +130,11 @@ const Card = ({
             <Box>
               {isPastEvent ? (
                 <Badge colorScheme="gray" mb={2}>
-                  공연 종료
+                  {t("concert_ended")} {/* 다국어 공연 종료 */}
                 </Badge>
               ) : (
                 <Badge colorScheme="green" mb={2}>
-                  공연 예정
+                  {t("concert_upcoming")} {/* 다국어 공연 예정 */}
                 </Badge>
               )}
 
@@ -161,7 +165,7 @@ const Card = ({
                     borderRadius={4}
                     fontWeight="900"
                   >
-                    콘서트
+                    {t("concert_type_concert")} {/* 다국어 콘서트 */}
                   </Badge>
                 )}
                 {concert.type === "페스티벌" && (
@@ -172,7 +176,7 @@ const Card = ({
                     borderRadius={4}
                     fontWeight="900"
                   >
-                    페스티벌
+                    {t("concert_type_festival")} {/* 다국어 페스티벌 */}
                   </Badge>
                 )}
                 {concert.type === "행사" && (
@@ -183,7 +187,7 @@ const Card = ({
                     borderRadius={4}
                     fontWeight="900"
                   >
-                    행사
+                    {t("concert_type_event")} {/* 다국어 행사 */}
                   </Badge>
                 )}
                 {concert.performanceType === "단독" && (
@@ -194,7 +198,7 @@ const Card = ({
                     borderRadius={4}
                     fontWeight="900"
                   >
-                    단독
+                    {t("performance_type_solo")} {/* 다국어 단독 */}
                   </Badge>
                 )}
                 {concert.performanceType === "합동" && (
@@ -205,7 +209,7 @@ const Card = ({
                     borderRadius={4}
                     fontWeight="900"
                   >
-                    합동
+                    {t("performance_type_joint")} {/* 다국어 합동 */}
                   </Badge>
                 )}
                 {concert.performanceType === "출연" && (
@@ -216,14 +220,14 @@ const Card = ({
                     borderRadius={4}
                     fontWeight="900"
                   >
-                    출연
+                    {t("performance_type_guest")} {/* 다국어 출연 */}
                   </Badge>
                 )}
               </HStack>
             </Box>
           </VStack>
         </HStack>
-        {!isPastEvent &&
+        {!isPastEvent && (
           <Link href={concert.ticketLink} isExternal>
             <Button
               mt={4}
@@ -239,7 +243,7 @@ const Card = ({
               {getButtonText(concert, isPastEvent, timeRemaining)}
             </Button>
           </Link>
-        }
+        )}
       </Box>
     </Box>
   );

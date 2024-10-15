@@ -20,6 +20,7 @@ import {
 import { profileData } from "../datas/profile";
 import dayjs from "dayjs";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 const today = dayjs();
 
@@ -29,12 +30,13 @@ const isFutureDate = (militaryDate: string) => {
 };
 
 const Profile = () => {
+  const { t } = useTranslation();
   return (
     <Box height="calc(100vh - 120px)" overflowY="auto">
       <Helmet>
-        <title>엔피맵 - 가수 N.Flying을 소개합니다!</title>
-        <meta name="description" content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다." />
-        <meta property="og:description" content="N.Fimap의 예제 페이지입니다." />
+        <title>{t("Profile.title")}</title>
+        <meta name="description" content={t("Profile.description")} />
+        <meta property="og:description" content={t("Profile.og.description")} />
         <meta property="og:image" content="%PUBLIC_URL%/image/nfimap.png" />
         <meta property="og:url" content="https://nfimap.co.kr" />
       </Helmet>
@@ -81,7 +83,7 @@ const Profile = () => {
               <Icon as={RiLightbulbLine} w="6" h="6" color="blue.500" />
               <Box textAlign="center">
                 <Text fontWeight="bold" fontSize="lg" color="blue.700">
-                  데뷔
+                  {t("Profile.debut_date")}
                 </Text>
                 <Text fontSize="lg" color="gray.600" fontWeight="600">
                   {profileData.debut_date}
@@ -104,7 +106,7 @@ const Profile = () => {
               <Icon as={RiMusic2Line} w="6" h="6" color="green.500" />
               <Box textAlign="center">
                 <Text fontWeight="bold" fontSize="lg" color="green.700">
-                  데뷔곡
+                {t("Profile.debut_song")}
                 </Text>
                 <Text fontSize="lg" color="gray.600" fontWeight="600">
                   {profileData.debut_song}
@@ -127,7 +129,7 @@ const Profile = () => {
               <Icon as={RiHeart2Line} w="6" h="6" color="red.500" />
               <Box textAlign="center">
                 <Text fontWeight="bold" fontSize="lg" color="red.700">
-                  팬덤
+                {t("Profile.fandom")}
                 </Text>
                 <Text fontSize="lg" color="gray.600" fontWeight="600">
                   {profileData.fandom_name}
@@ -150,7 +152,7 @@ const Profile = () => {
               <Icon as={RiTeamLine} w="6" h="6" color="purple.500" />
               <Box textAlign="center">
                 <Text fontWeight="bold" fontSize="lg" color="purple.700">
-                  응원봉
+                {t("Profile.light_stick")}
                 </Text>
                 <Text fontSize="lg" color="gray.600" fontWeight="600">
                   {profileData.light_stick}
@@ -162,7 +164,7 @@ const Profile = () => {
 
         {/* Members */}
         <Heading as="h2" size="xl" mb="4">
-          멤버
+        {t("Profile.members")}
         </Heading>
         <Grid
           templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(5, 1fr)" }}
@@ -287,7 +289,7 @@ const Profile = () => {
                   alignItems="center"
                 >
                   <Icon as={RiShieldStarLine} w="4" h="4" mr="1" />
-                  전역일: {member.military}
+                  {t("military")}: {member.military}
                 </Box>
               )}
             </Box>

@@ -4,7 +4,7 @@ import { RiListUnordered, RiMapPinLine, RiUser3Line, RiMusicLine } from "@remixi
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation(); // useTranslation 훅으로 번역 함수 가져오기
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   
