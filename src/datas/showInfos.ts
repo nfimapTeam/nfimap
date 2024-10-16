@@ -628,6 +628,7 @@ export const showInfos = [
         ],
         capacity: "약 4,000명",
         seats: [
+            "/image/show_detail/seats/2024/BEXCO_Auditorium_awesome_241109.png",
             "/image/show_detail/seats/2024/BEXCO_Auditorium_1F_official.png",
             "/image/show_detail/seats/2024/BEXCO_Auditorium_2F_official.png"
         ],
