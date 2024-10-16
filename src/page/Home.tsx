@@ -238,7 +238,7 @@ const Home = () => {
       <Helmet>
         <title>엔피맵 - 엔플라잉 콘서트 정보를 확인하세요!</title>
         <meta name="description" content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다." />
-        <meta property="og:image" content="https://nfimap.co.kr/image/nfimap.png" />
+        <meta property="og:image" content="https://nfimap.co.kr/image/logo/logo.svg" />
         <meta property="og:url" content="https://nfimap.co.kr" />
       </Helmet>
       <Box mb={4}>

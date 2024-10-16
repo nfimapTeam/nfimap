@@ -241,7 +241,7 @@ const Music: React.FC = () => {
           property="og:description"
           content="N.Fimap의 예제 페이지입니다."
         />
-        <meta property="og:image" content="%PUBLIC_URL%/image/nfimap.png" />
+        <meta property="og:image" content="%PUBLIC_URL%/image/logo/logo.svg" />
         <meta property="og:url" content="https://nfimap.co.kr" />
       </Helmet>
       <Box p="20px">

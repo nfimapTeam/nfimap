@@ -196,7 +196,7 @@ const DetailPage: React.FC = () => {
                 maxH={{ base: "400px", md: "600px" }}
                 objectFit="contain"
                 borderRadius="lg"
-                fallbackSrc="/image/nfimap.png"
+                fallbackSrc="/image/logo/logo.svg"
               />
             </Box>
           </Flex>
