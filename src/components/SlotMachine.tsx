@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { RiMusic2Line } from "react-icons/ri"; // 음악 아이콘 추가
-import { Button, Text, Box, IconButton } from "@chakra-ui/react"; // Chakra UI 버튼과 텍스트 컴포넌트
+import { Button, Text, Box, IconButton, Link } from "@chakra-ui/react"; // Chakra UI 버튼과 텍스트 컴포넌트
 import { useRecoilState } from "recoil"; // Recoil의 useRecoilState import
 import { slotStateState, toDayMusicState } from "../atom/slotState";
 
@@ -118,12 +118,9 @@ const SlotMachine = ({ textData, youtubeUrl }: Props) => {
         >
           {/* 추천곡 레이블: 슬롯이 멈춘 후에만 보여줌 */}
           {!isSpinning && (
-            <>
-              <RiMusic2Line color="#3b82f6" size="20px" />
-              <Text fontSize="sm" fontWeight="bold" flexShrink={0}>
-                오늘의 엔피곡 :
-              </Text>
-            </>
+            <Text fontSize="sm" fontWeight="bold" flexShrink={0}>
+              오늘의 엔피곡 :
+            </Text>
           )}
           {/* 추천곡 텍스트 */}
           <div
@@ -166,6 +163,11 @@ const SlotMachine = ({ textData, youtubeUrl }: Props) => {
               </motion.span>
             </AnimatePresence>
           </div>
+          {!isSpinning && (
+            <Link href={youtubeUrl[finalIndex]} isExternal>
+              <img src="/image/youtube.png" alt="YouTube" width="30px" />
+            </Link>
+          )}
         </div>
       )}
     </div>
