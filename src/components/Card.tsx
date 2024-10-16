@@ -119,7 +119,7 @@ const Card = ({
               objectFit="cover"
               w="100%"
               h="100%"
-              fallbackSrc="/image/nfimap.png"
+              fallbackSrc="/image/logo/logo.svg"
             />
           </Box>
           <VStack align="start" spacing={2} flex="1">
