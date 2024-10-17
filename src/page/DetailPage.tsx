@@ -201,7 +201,7 @@ const DetailPage: React.FC = () => {
             </Box>
           </Flex>
 
-          <Flex flexDirection="column" justifyContent="space-between" flex={1}>
+          <Flex flexDirection="column" justifyContent="space-between" flex={1} gap={4}>
             <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
               <Badge colorScheme="red" fontSize="md" mb={2}>
                 {concert.type}
