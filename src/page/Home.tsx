@@ -357,7 +357,10 @@ const Home = () => {
             const isTodayEvent = concert.date.some((date) => {
             const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
             return concertDate.isSame(currentTime, "day");
-          }) || concert.ticketOpen?.date === moment().format("YYYY-MM-DD");
+          });
+
+          // Check if the ticket open date is today
+          const isTicketOpen = concert.ticketOpen?.date === moment().format("YYYY-MM-DD");
 
           const timeRemaining = calculateTimeRemaining(
             concert.ticketOpen.date,
@@ -369,6 +372,7 @@ const Home = () => {
               key={index}
               concert={concert}
               isTodayEvent={isTodayEvent}
+              isTicketOpen={isTicketOpen}
               isPastEvent={isPastEvent}
               timeRemaining={timeRemaining}
               getButtonText={getButtonText}

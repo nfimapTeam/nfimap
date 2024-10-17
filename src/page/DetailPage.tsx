@@ -442,6 +442,8 @@ const DetailPage: React.FC = () => {
               return concertDate.isSame(currentTime, "day");
             });
 
+             const isTicketOpen = concert.ticketOpen?.date === moment().format("YYYY-MM-DD");
+
             const timeRemaining = calculateTimeRemaining(
               concert.ticketOpen.date,
               concert.ticketOpen.time
@@ -452,6 +454,7 @@ const DetailPage: React.FC = () => {
                 key={index}
                 concert={concert}
                 isTodayEvent={isTodayEvent}
+                isTicketOpen={isTicketOpen}
                 isPastEvent={isPastEvent}
                 timeRemaining={timeRemaining}
                 getButtonText={getButtonText}
