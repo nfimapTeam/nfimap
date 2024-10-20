@@ -106,7 +106,7 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
                             size="md"
                             width="100%"
                           >
-                            네이버 지도로 이동
+                            장소 정보 확인
                           </Button>
                         </Link>
                       )}
