@@ -23,9 +23,11 @@
   "map_title": "N.Fimap - Check N.Flying concert information on the map!",
   "map_description": "N.Fimap supports the fandom N.Fia's passion.",
   "map_domestic": "Korea",
-  "map_nfiload": "N.FiLoad",
+  "map_nfiload": "N.Fi Road",
+  "map_global": "Global",
   "map_global": "Global",
   "mapSearchPlaceholder": "Search by name or location.",
+  "mapSelectPlaceholder": "Select type",
   "mapSelectPlaceholder": "Select type",
   "mapTypeOptions": {
     "mapAll": "All",
@@ -34,7 +36,7 @@
     "mapEvent": "Event"
   },
   "mapShowPastConcerts": "Show past concerts",
-  "mapNoData": "No data available.",
+  "mapNoData": "There is no schedule yet!",
   "mapPastConcert": "Concert ended",
   "notFound": "N.Flying is not here!",
   "Profile.title": "N.Fimap - Introducing the Singer N.Flying!",

@@ -23,9 +23,10 @@
   "map_title": "N.Fimap - 在地图上查看N.Flying演唱会信息！",
   "map_description": "N.Fimap支持N.Fia粉丝团的热情。",
   "map_domestic": "韩国演出",
-  "map_nfiload": "N.FiLoad",
+  "map_nfiload": "N.Fi Road",
   "map_global": "海外演出",
   "mapSearchPlaceholder": "按名称或地点搜索。",
+  "mapSelectPlaceholder": "选择类型",
   "mapSelectPlaceholder": "选择类型",
   "mapTypeOptions": {
     "mapAll": "全部",
@@ -34,7 +35,7 @@
     "mapEvent": "活动"
   },
   "mapShowPastConcerts": "显示过去的演出",
-  "mapNoData": "暂无数据。",
+  "mapNoData": "暂无日程安排！",
   "mapPastConcert": "演出结束",
   "notFound": "这里没有N.Flying！",
   "Profile.title": "N.Fimap - 介绍歌手N.Flying！",
