@@ -8,7 +8,7 @@ import {
   TabPanel,
 } from "@chakra-ui/react";
 import ConcertInfo from "./ConcertInfo";
-import NfiLoad from "./NfiLoad";
+import NfiRoad from "./NfiRoad";
 import NoData from "./NoData";
 import { useTranslation } from "react-i18next";
 
@@ -27,7 +27,7 @@ type Concert = {
   ticketOpen?: any;
 };
 
-type Nfiload = {
+type NfiRoadType = {
   id: number;
   name: string;
   location: string;
@@ -41,7 +41,7 @@ type Nfiload = {
 type SidebarProps = {
   concerts: Concert[];
   globalConcerts: Concert[];
-  nfiload: Nfiload[];
+  nfiRoad: NfiRoadType[];
   query: string;
   setQuery: (query: string) => void;
   globalQuery: string;
@@ -50,8 +50,8 @@ type SidebarProps = {
   setShowPastConcerts: (show: boolean) => void;
   setSelectedConcert: (concert: Concert) => void;
   selectedConcert: Concert | null;
-  setSelectedNfiLoad: (nfiload: Nfiload) => void;
-  selectedNfiLoad: Nfiload | null;
+  setSelectedNfiRoad: (nfiRoad: NfiRoadType) => void;
+  selectedNfiRoad: NfiRoadType | null;
   activeTabIndex: number;
   setActiveTabIndex: (index: number) => void;
   selectedType: string;
@@ -66,7 +66,7 @@ type SidebarProps = {
 
 const Sidebar = ({
   concerts,
-  nfiload,
+  nfiRoad,
   globalConcerts,
   query,
   setQuery,
@@ -74,8 +74,8 @@ const Sidebar = ({
   setShowPastConcerts,
   setSelectedConcert,
   selectedConcert,
-  setSelectedNfiLoad,
-  selectedNfiLoad,
+  setSelectedNfiRoad,
+  selectedNfiRoad,
   activeTabIndex,
   setActiveTabIndex,
   selectedType, // 추가
@@ -128,7 +128,7 @@ const Sidebar = ({
             flex="1"
             p="16px 4px"
           >
-            {t("map_nfiload")}
+            {t("map_nfiRoad")}
           </Tab>
           <Tab
             fontSize="18px"
@@ -157,10 +157,10 @@ const Sidebar = ({
             />
           </TabPanel>
           <TabPanel height="100%" padding="20px">
-            <NfiLoad
-              nfiload={nfiload}
-              setSelectedNfiLoad={setSelectedNfiLoad}
-              selectedNfiLoad={selectedNfiLoad}
+            <NfiRoad
+              nfiRoad={nfiRoad}
+              setSelectedNfiRoad={setSelectedNfiRoad}
+              selectedNfiRoad={selectedNfiRoad}
             />
           </TabPanel>
           <TabPanel height="100%" padding="20px">

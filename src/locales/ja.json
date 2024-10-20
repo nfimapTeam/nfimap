@@ -24,7 +24,7 @@
   "map_title": "N.Fimap - N.Flyingコンサート情報をマップで確認しよう！",
   "map_description": "N.FimapはファンダムN.Fiaの情熱を応援します。",
   "map_domestic": "韓国公演",
-  "map_nfiload": "N.Fi Road",
+  "map_nfiRoad": "N.Fi Road",
   "map_global": "海外公演",
   "mapSearchPlaceholder": "名前や場所で検索。",
   "mapSelectPlaceholder": "タイプを選択",

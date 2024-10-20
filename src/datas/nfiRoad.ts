@@ -1,4 +1,4 @@
-export const nfiloadData = [
+export const nfiRoadData = [
   {
     id: 1,
     name: "포항 영일대 레드립스 커피",

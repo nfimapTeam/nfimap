@@ -3,7 +3,7 @@ import { Box, Button, HStack } from "@chakra-ui/react";
 import Sidebar from "../components/SideBar";
 import { concertsData } from "../datas/concerts";
 import NaverMap from "../components/NaverMap";
-import { nfiloadData } from "../datas/nfiload";
+import { nfiRoadData } from "../datas/nfiRoad";
 import GoogleMap from "../components/GoogleMap";
 import { globalConcerts } from "../datas/globalConcerts";
 import { Helmet } from "react-helmet-async";
@@ -24,7 +24,7 @@ type Concert = {
   ticketOpen?: any;
 };
 
-type Nfiload = {
+type NfiRoad = {
   id: number;
   name: string;
   location: string;
@@ -41,14 +41,14 @@ const MapPage = () => {
   const [concertState, setConcertState] = useState<Concert[]>(concertsData);
   const [globalConcertState, setGlobalConcertState] =
     useState<Concert[]>(globalConcerts);
-  const [nfiLoadState, setNfiLoadState] = useState<Nfiload[]>(nfiloadData);
+  const [nfiRoadState, setNfiRoadState] = useState<NfiRoad[]>(nfiRoadData);
   const [query, setQuery] = useState<string>("");
   const [selectedType, setSelectedType] = useState<string>("");
   const [globalQuery, setGlobalQuery] = useState<string>("");
   const [selectedGlobalType, setSelectedGlobalType] = useState<string>("");
   const [showPastConcerts, setShowPastConcerts] = useState<boolean>(false);
   const [selectedConcert, setSelectedConcert] = useState<Concert | null>(null);
-  const [selectedNfiLoad, setSelectedNfiLoad] = useState<Nfiload | null>(null);
+  const [selectedNfiRoad, setSelectedNfiRoad] = useState<NfiRoad | null>(null);
   const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
   const [showPastConcertsGlobal, setShowPastConcertsGlobal] =
     useState<boolean>(false);
@@ -147,12 +147,12 @@ const MapPage = () => {
   }, [globalQuery, showPastConcertsGlobal, selectedGlobalType]);
 
   useEffect(() => {
-    const filteredNfiLoad = nfiloadData.filter(
+    const filteredNfiRoad = nfiRoadData.filter(
       (load) =>
         load.name.toLowerCase().includes(query.toLowerCase()) ||
         load.location.toLowerCase().includes(query.toLowerCase())
     );
-    setNfiLoadState(filteredNfiLoad);
+    setNfiRoadState(filteredNfiRoad);
   }, [query]);
 
   return (
@@ -170,7 +170,7 @@ const MapPage = () => {
         <Sidebar
           concerts={concertState}
           globalConcerts={globalConcertState}
-          nfiload={nfiLoadState}
+          nfiRoad={nfiRoadState}
           query={query}
           setQuery={setQuery}
           selectedType={selectedType}
@@ -183,8 +183,8 @@ const MapPage = () => {
           setShowPastConcerts={setShowPastConcerts}
           selectedConcert={selectedConcert}
           setSelectedConcert={setSelectedConcert}
-          selectedNfiLoad={selectedNfiLoad}
-          setSelectedNfiLoad={setSelectedNfiLoad}
+          selectedNfiRoad={selectedNfiRoad}
+          setSelectedNfiRoad={setSelectedNfiRoad}
           activeTabIndex={activeTabIndex}
           setActiveTabIndex={setActiveTabIndex}
           showPastConcertsGlobal={showPastConcertsGlobal}
@@ -216,7 +216,7 @@ const MapPage = () => {
             _hover={{ bg: activeTabIndex === 0 ? "#0597F2" : "#eee" }}
             onClick={() => setActiveTabIndex(1)}
           >
-            {t("map_nfiload")}
+            {t("map_nfiRoad")}
           </Button>
           <Button
             bg={activeTabIndex === 2 ? "#0597F2" : "#eee"}
@@ -240,12 +240,12 @@ const MapPage = () => {
         ) : (
           <NaverMap
             concerts={concertState}
-            nfiLoad={nfiLoadState}
+            nfiRoad={nfiRoadState}
             setShowPastConcerts={setShowPastConcerts}
             selectedConcert={selectedConcert}
             setSelectedConcert={setSelectedConcert}
-            selectedNfiLoad={selectedNfiLoad}
-            setSelectedNfiLoad={setSelectedNfiLoad}
+            selectedNfiRoad={selectedNfiRoad}
+            setSelectedNfiRoad={setSelectedNfiRoad}
             activeTabIndex={activeTabIndex}
           />
         )}

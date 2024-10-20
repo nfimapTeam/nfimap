@@ -23,7 +23,7 @@
   "map_title": "엔피맵 - 엔플라잉 콘서트 정보를 맵으로 확인하세요!",
   "map_description": "N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다.",
   "map_domestic": "국내공연",
-  "map_nfiload": "엔피로드",
+  "map_nfiRoad": "엔피로드",
   "map_global": "해외공연",
   "mapSearchPlaceholder": "이름이나 장소로 검색하세요.",
   "mapSelectPlaceholder": "유형 선택",

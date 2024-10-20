@@ -23,7 +23,7 @@
   "map_title": "N.Fimap - 在地图上查看N.Flying演唱会信息！",
   "map_description": "N.Fimap支持N.Fia粉丝团的热情。",
   "map_domestic": "韩国演出",
-  "map_nfiload": "N.Fi Road",
+  "map_nfiRoad": "N.Fi Road",
   "map_global": "海外演出",
   "mapSearchPlaceholder": "按名称或地点搜索。",
   "mapSelectPlaceholder": "选择类型",

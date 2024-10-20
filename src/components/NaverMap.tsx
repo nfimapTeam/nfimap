@@ -17,7 +17,7 @@ type Concert = {
   ticketOpen?: any;
 };
 
-type Nfiload = {
+type NfiRoad = {
   id: number;
   name: string;
   location: string;
@@ -30,23 +30,23 @@ type Nfiload = {
 
 interface NaverMapProps {
   concerts: Concert[];
-  nfiLoad: Nfiload[];
+  nfiRoad: NfiRoad[];
   setShowPastConcerts: (show: boolean) => void;
   selectedConcert: Concert | null;
   setSelectedConcert: (concert: Concert) => void;
-  selectedNfiLoad: Nfiload | null;
-  setSelectedNfiLoad: (nfiLoad: Nfiload) => void;
+  selectedNfiRoad: NfiRoad | null;
+  setSelectedNfiRoad: (nfiRoad: NfiRoad) => void;
   activeTabIndex: number;
 }
 
 const NaverMap = ({
   concerts,
-  nfiLoad,
+  nfiRoad,
   setShowPastConcerts,
   selectedConcert,
   setSelectedConcert,
-  selectedNfiLoad,
-  setSelectedNfiLoad,
+  selectedNfiRoad,
+  setSelectedNfiRoad,
   activeTabIndex,
 }: NaverMapProps) => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
@@ -66,7 +66,7 @@ const NaverMap = ({
       case "맛집":
         return "/image/restaurant.svg";
       default:
-        return "/image/nfiload.png";
+        return "/image/pin/pin_nf01.svg";
     }
   };
 
@@ -79,7 +79,7 @@ const NaverMap = ({
       case "맛집":
         return "/image/restaurantMarker.svg";
       default:
-        return "/image/nfiload.png";
+        return "/image/pin/pin_nf01.svg";
     }
   };
 
@@ -139,7 +139,7 @@ const NaverMap = ({
     markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
 
-    const dataToDisplay = activeTabIndex === 0 ? concerts : nfiLoad;
+    const dataToDisplay = activeTabIndex === 0 ? concerts : nfiRoad;
 
     dataToDisplay.forEach((item) => {
       const location = new naverMaps.LatLng(item.lat, item.lng);
@@ -147,15 +147,15 @@ const NaverMap = ({
       let markerImage =
         activeTabIndex === 0
           ? "/image/pin/pin_nf01.svg"
-          : getCategoryMarkerImage((item as Nfiload).category);
+          : getCategoryMarkerImage((item as NfiRoad).category);
       let markerStyle = "";
       let markerClass =
-        activeTabIndex === 0 ? "concert-marker" : "nfiload-marker";
+        activeTabIndex === 0 ? "concert-marker" : "nfiRoad-marker";
 
-      // Set the background color for Nfiload markers
+      // Set the background color for NfiRoad markers
       const backgroundColor =
         activeTabIndex === 1
-          ? getCategoryBackgroundColor((item as Nfiload).category)
+          ? getCategoryBackgroundColor((item as NfiRoad).category)
           : "";
 
       if (activeTabIndex === 0) {
@@ -206,7 +206,7 @@ const NaverMap = ({
         },
       });
 
-      const getPosterImage = (item: Concert | Nfiload): string => {
+      const getPosterImage = (item: Concert | NfiRoad): string => {
         if ("poster" in item) {
           return item.poster && item.poster.trim() !== '' ? item.poster : '/image/logo/logo.svg';
         } else {
@@ -258,7 +258,7 @@ const NaverMap = ({
         if (activeTabIndex === 0) {
           setSelectedConcert(item as Concert);
         } else {
-          setSelectedNfiLoad(item as Nfiload);
+          setSelectedNfiRoad(item as NfiRoad);
         }
 
         const detailBtn = document.querySelector(".detailBtn");
@@ -274,13 +274,13 @@ const NaverMap = ({
 
       markersRef.current.push(marker);
     });
-  }, [concerts, nfiLoad, activeTabIndex, onOpen]);
+  }, [concerts, nfiRoad, activeTabIndex, onOpen]);
 
   useEffect(() => {
-    if ((!selectedConcert && !selectedNfiLoad) || !mapRef.current) return;
+    if ((!selectedConcert && !selectedNfiRoad) || !mapRef.current) return;
 
     const selectedItem =
-      activeTabIndex === 0 ? selectedConcert : selectedNfiLoad;
+      activeTabIndex === 0 ? selectedConcert : selectedNfiRoad;
 
     const marker = markersRef.current.find(
       (marker) => marker.getTitle() === selectedItem?.name
@@ -290,15 +290,15 @@ const NaverMap = ({
       let markerImage =
         activeTabIndex === 0
           ? "/image/pin/pin_nf01.svg"
-          : getCategoryMarkerImage((selectedItem as Nfiload).category);
+          : getCategoryMarkerImage((selectedItem as NfiRoad).category);
       let markerStyle = "";
       let markerClass =
-        activeTabIndex === 0 ? "concert-marker" : "nfiload-marker";
+        activeTabIndex === 0 ? "concert-marker" : "nfiRoad-marker";
 
-      // Set the background color for Nfiload markers
+      // Set the background color for NfiRoad markers
       const backgroundColor =
         activeTabIndex === 1
-          ? getCategoryBackgroundColor((selectedItem as Nfiload).category)
+          ? getCategoryBackgroundColor((selectedItem as NfiRoad).category)
           : "";
 
       if (activeTabIndex === 0) {
@@ -339,7 +339,7 @@ const NaverMap = ({
                 <img 
                   src="${markerImage}" 
                   style="width: 30px; height: 30px; ${markerStyle}" 
-                  class="nfiload-marker">
+                  class="nfiRoad-marker">
               </div>
             `,
       });
@@ -349,7 +349,7 @@ const NaverMap = ({
       marker.setMap(mapRef.current);
       mapRef.current.setCenter(marker.getPosition());
     }
-  }, [selectedConcert, selectedNfiLoad, activeTabIndex]);
+  }, [selectedConcert, selectedNfiRoad, activeTabIndex]);
 
   return (
     <div
@@ -442,7 +442,7 @@ const NaverMap = ({
       <CustomModal
         isOpen={isOpen}
         onClose={onClose}
-        item={activeTabIndex === 0 ? selectedConcert : selectedNfiLoad}
+        item={activeTabIndex === 0 ? selectedConcert : selectedNfiRoad}
       />
     </div>
   );
