@@ -146,7 +146,7 @@ const NaverMap = ({
 
       let markerImage =
         activeTabIndex === 0
-          ? "/image/nfimap.png"
+          ? "/image/pin/pin_nf01.svg"
           : getCategoryMarkerImage((item as Nfiload).category);
       let markerStyle = "";
       let markerClass =
@@ -208,7 +208,7 @@ const NaverMap = ({
 
       const getPosterImage = (item: Concert | Nfiload): string => {
         if ("poster" in item) {
-          return item.poster && item.poster.trim() !== '' ? item.poster : '/image/nfimap.png';
+          return item.poster && item.poster.trim() !== '' ? item.poster : '/image/logo/logo.svg';
         } else {
           return getCategoryImage(item.category);
         }
@@ -289,7 +289,7 @@ const NaverMap = ({
     if (marker) {
       let markerImage =
         activeTabIndex === 0
-          ? "/image/nfimap.png"
+          ? "/image/pin/pin_nf01.svg"
           : getCategoryMarkerImage((selectedItem as Nfiload).category);
       let markerStyle = "";
       let markerClass =
@@ -316,7 +316,7 @@ const NaverMap = ({
         });
 
         if (isToday) {
-          markerImage = "/image/heart.png";
+          markerImage = "/image/pin/pin_heart01.svg";
           markerStyle = "animation: heartbeat 0.8s ease-in-out infinite;";
         } else if (isPast) {
           markerStyle = "filter: grayscale(100%) brightness(40%);";
@@ -362,14 +362,6 @@ const NaverMap = ({
       }}
     >
       <style>{`
-        .concert-marker:hover {
-          animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
 
         @keyframes heartbeat {
           0%, 100% {

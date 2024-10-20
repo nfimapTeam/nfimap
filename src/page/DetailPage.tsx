@@ -196,12 +196,12 @@ const DetailPage: React.FC = () => {
                 maxH={{ base: "400px", md: "600px" }}
                 objectFit="contain"
                 borderRadius="lg"
-                fallbackSrc="/image/nfimap.png"
+                fallbackSrc="/image/logo/logo.svg"
               />
             </Box>
           </Flex>
 
-          <Flex flexDirection="column" justifyContent="space-between" flex={1}>
+          <Flex flexDirection="column" justifyContent="space-between" flex={1} gap={4}>
             <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
               <Badge colorScheme="red" fontSize="md" mb={2}>
                 {concert.type}
@@ -442,6 +442,8 @@ const DetailPage: React.FC = () => {
               return concertDate.isSame(currentTime, "day");
             });
 
+             const isTicketOpen = concert.ticketOpen?.date === moment().format("YYYY-MM-DD");
+
             const timeRemaining = calculateTimeRemaining(
               concert.ticketOpen.date,
               concert.ticketOpen.time
@@ -452,6 +454,7 @@ const DetailPage: React.FC = () => {
                 key={index}
                 concert={concert}
                 isTodayEvent={isTodayEvent}
+                isTicketOpen={isTicketOpen}
                 isPastEvent={isPastEvent}
                 timeRemaining={timeRemaining}
                 getButtonText={getButtonText}

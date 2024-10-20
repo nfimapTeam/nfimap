@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { RiMusic2Line } from "react-icons/ri"; // 음악 아이콘 추가
-import { Button, Text, Box, IconButton } from "@chakra-ui/react"; // Chakra UI 버튼과 텍스트 컴포넌트
+import { Button, Text, Box, IconButton, Link } from "@chakra-ui/react"; // Chakra UI 버튼과 텍스트 컴포넌트
 import { useRecoilState } from "recoil"; // Recoil의 useRecoilState import
 import { slotStateState, toDayMusicState } from "../atom/slotState";
 import { useTranslation } from "react-i18next";
@@ -168,6 +168,11 @@ const SlotMachine = ({ textData, youtubeUrl }: Props) => {
               </motion.span>
             </AnimatePresence>
           </div>
+          {!isSpinning && (
+            <Link href={youtubeUrl[finalIndex]} isExternal>
+              <img src="/image/youtube.png" alt="YouTube" width="30px" />
+            </Link>
+          )}
         </div>
       )}
     </div>

@@ -120,7 +120,11 @@ const Home = () => {
       return t("waitingForTicketSchedule");
     } else if (concert.ticketLink === "") {
       return timeRemaining
-        ? t("timeUntilTicketing", { days: timeRemaining.days, hours: timeRemaining.hours, minutes: timeRemaining.minutes })
+        ? t("timeUntilTicketing", {
+            days: timeRemaining.days,
+            hours: timeRemaining.hours,
+            minutes: timeRemaining.minutes,
+          })
         : t("waitingForTicketInfo");
     } else {
       return t("buyTickets");
@@ -164,11 +168,13 @@ const Home = () => {
 
   const sortConcerts = (concerts: Concert[]) => {
     const now = moment();
+
     const upcomingConcerts = concerts.filter((concert) =>
       concert.date.some((date) =>
         moment(date.split("(")[0], "YYYY-MM-DD").isSameOrAfter(now, "day")
       )
     );
+
     const pastConcerts = concerts.filter((concert) =>
       concert.date.every((date) =>
         moment(date.split("(")[0], "YYYY-MM-DD").isBefore(now, "day")
@@ -176,22 +182,35 @@ const Home = () => {
     );
 
     const sortFunction = (a: Concert, b: Concert) => {
-      if (sortOrder === t("latest")) {
+      const today = moment().format("YYYY-MM-DD");
+
+      // Check if the ticket opens today
+      const ticketOpenA = a.ticketOpen?.date === today;
+      const ticketOpenB = b.ticketOpen?.date === today;
+
+      // If either concert has a ticket open today, prioritize it
+      if (ticketOpenA && !ticketOpenB) return -1;
+      if (!ticketOpenA && ticketOpenB) return 1;
+
+      // Otherwise, apply the sorting logic
+      if (sortOrder === "최신순") {
         const dateA = moment(a.date[0].split("(")[0], "YYYY-MM-DD");
         const dateB = moment(b.date[0].split("(")[0], "YYYY-MM-DD");
-        return dateA.diff(dateB);
-      } else if (sortOrder === t("byName")) {
+        return dateA.diff(dateB); // Ascending for upcoming concerts
+      } else if (sortOrder === "이름순") {
         return a.name.localeCompare(b.name);
       }
       return 0;
     };
 
+    // Sort upcoming concerts first
     upcomingConcerts.sort(sortFunction);
+    // Sort past concerts after that
     pastConcerts.sort((a, b) => {
-      if (sortOrder === t("latest")) {
+      if (sortOrder === "최신순") {
         const dateA = moment(a.date[0].split("(")[0], "YYYY-MM-DD");
         const dateB = moment(b.date[0].split("(")[0], "YYYY-MM-DD");
-        return dateB.diff(dateA);
+        return dateB.diff(dateA); // Descending for past concerts
       }
       return sortFunction(a, b);
     });
@@ -200,17 +219,17 @@ const Home = () => {
   };
 
   const translateType = (type: string) => {
-  switch (type) {
-    case "콘서트":
-      return t("concert");
-    case "페스티벌":
-      return t("festival");
-    case "이벤트":
-      return t("event");
-    default:
-      return type;
-  }
-};
+    switch (type) {
+      case "콘서트":
+        return t("concert");
+      case "페스티벌":
+        return t("festival");
+      case "이벤트":
+        return t("event");
+      default:
+        return type;
+    }
+  };
 
   const filteredAndSortedConcerts = sortConcerts(
   allConcerts.filter((concert) => {
@@ -218,23 +237,24 @@ const Home = () => {
       concert.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       concert.location.toLowerCase().includes(searchQuery.toLowerCase());
 
-    const translatedConcertType = translateType(concert.type);
-    const matchesType = selectedType === "" || translatedConcertType === selectedType;
+      const translatedConcertType = translateType(concert.type);
+      const matchesType =
+        selectedType === "" || translatedConcertType === selectedType;
 
-    if (toggle) {
-      const isPastEvent = concert.date.every((date) => {
-        const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
-        return concertDate.isBefore(currentTime, "day");
-      });
-      return matchesSearch && isPastEvent && matchesType;
-    } else {
-      const isFutureOrToday = concert.date.some((date) => {
-        const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
-        return concertDate.isSameOrAfter(currentTime, "day");
-      });
-      return matchesSearch && isFutureOrToday && matchesType;
-    }
-  })
+      if (toggle) {
+        const isPastEvent = concert.date.every((date) => {
+          const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+          return concertDate.isBefore(currentTime, "day");
+        });
+        return matchesSearch && isPastEvent && matchesType;
+      } else {
+        const isFutureOrToday = concert.date.some((date) => {
+          const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+          return concertDate.isSameOrAfter(currentTime, "day");
+        });
+        return matchesSearch && isFutureOrToday && matchesType;
+      }
+    })
   );
   
   
@@ -258,7 +278,10 @@ const Home = () => {
       <Helmet>
         <title>{t("helmettitle")}</title>
         <meta name="description" content={t("helmetdescription")} />
-        <meta property="og:image" content="https://nfimap.co.kr/image/nfimap.png" />
+        <meta
+          property="og:image"
+          content="https://nfimap.co.kr/image/nfimap.png"
+        />
         <meta property="og:url" content="https://nfimap.co.kr" />
       </Helmet>
       <Box mb={4}>
@@ -355,6 +378,10 @@ const Home = () => {
             return concertDate.isSame(currentTime, "day");
           });
 
+          // Check if the ticket open date is today
+          const isTicketOpen =
+            concert.ticketOpen?.date === moment().format("YYYY-MM-DD");
+
           const timeRemaining = calculateTimeRemaining(
             concert.ticketOpen.date,
             concert.ticketOpen.time
@@ -365,6 +392,7 @@ const Home = () => {
               key={index}
               concert={concert}
               isTodayEvent={isTodayEvent}
+              isTicketOpen={isTicketOpen}
               isPastEvent={isPastEvent}
               timeRemaining={timeRemaining}
               getButtonText={getButtonText}

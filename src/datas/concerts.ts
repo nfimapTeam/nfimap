@@ -345,9 +345,9 @@ export const concertsData = [
     type: "콘서트",
     performanceType: "단독",
     artists: ["N.Flying"],
-    poster: "/image/show/2024/241109_AWESOME_STAGE_BUSAN.jpeg",
+    poster: "/image/show/2024/241109_AWESOME_STAGE_BUSAN.gif",
     ticketOpen: { date: "2024-10-17", time: "20:00" },
-    ticketLink: "", // todo 업데이트 필요
+    ticketLink: "https://tickets.interpark.com/goods/24015177?app_tapbar_state=hide",
     lat: "35.168990100989925",
     lng: "129.13367133019414",
   },

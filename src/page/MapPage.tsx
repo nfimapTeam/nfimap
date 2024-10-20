@@ -163,7 +163,7 @@ const MapPage = () => {
           name="description"
           content={t("map_description")}
         />
-        <meta property="og:image" content="%PUBLIC_URL%/image/nfimap.png" />
+        <meta property="og:image" content="%PUBLIC_URL%/image/logo/logo.svg" />
         <meta property="og:url" content="https://nfimap.co.kr" />
       </Helmet>
       <Box display={{ base: "none", md: "block" }} width="340px">
