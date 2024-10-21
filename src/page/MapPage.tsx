@@ -34,16 +34,14 @@ type NfiRoad = {
   category: string;
   lat: string;
   lng: string;
-  naverLink: string,
-  note: string,
+  naverLink: string;
+  note: string;
 };
-
 
 const MapPage = () => {
   const { t, i18n } = useTranslation();
   const [concertState, setConcertState] = useState<Concert[]>([]);
-  const [globalConcertState, setGlobalConcertState] =
-    useState<Concert[]>([]);
+  const [globalConcertState, setGlobalConcertState] = useState<Concert[]>([]);
   const [nfiRoadState, setNfiRoadState] = useState<NfiRoad[]>([]);
   const [query, setQuery] = useState<string>("");
   const [selectedType, setSelectedType] = useState<string>("");
@@ -57,8 +55,8 @@ const MapPage = () => {
     useState<boolean>(false);
   const [selectedGlobalConcert, setSelectedGlobalConcert] =
     useState<Concert | null>(null);
-  
-   useEffect(() => {
+
+  useEffect(() => {
     if (i18n.language === "ko") {
       setConcertState(concertsData);
       setNfiRoadState(nfiRoadData);
@@ -71,51 +69,48 @@ const MapPage = () => {
   }, [i18n.language]);
 
   useEffect(() => {
-    if(concertState.length > 0){
-    const currentDate = new Date();
+    if (concertState.length > 0) {
+      const currentDate = new Date();
+      currentDate.setHours(0, 0, 0, 0);
 
-    currentDate.setHours(0, 0, 0, 0);
+      const filteredConcerts = concertState.filter((concert) => {
+        const matchesQuery =
+          concert.name.toLowerCase().includes(query.toLowerCase()) ||
+          concert.location.toLowerCase().includes(query.toLowerCase());
 
-    const filteredConcerts = concertState.filter((concert) => {
-      const matchesQuery =
-        concert.name.toLowerCase().includes(query.toLowerCase()) ||
-        concert.location.toLowerCase().includes(query.toLowerCase());
+        const concertDates = concert.date.map((date) => {
+          const parsedDate = new Date(date.split("(")[0]);
+          parsedDate.setHours(0, 0, 0, 0);
+          return parsedDate;
+        });
+        const latestDate = new Date(
+          Math.max(...concertDates.map((date) => date.getTime()))
+        );
 
-      const concertDates = concert.date.map((date) => {
-        const parsedDate = new Date(date.split("(")[0]);
-        parsedDate.setHours(0, 0, 0, 0); // 시간을 0으로 설정
-        return parsedDate;
+        const isUpcomingOrToday = latestDate >= currentDate;
+
+        const matchesType = selectedType ? concert.type === selectedType : true;
+
+        return (
+          matchesQuery &&
+          (showPastConcerts ? true : isUpcomingOrToday) &&
+          matchesType
+        );
       });
-      const latestDate = new Date(
-        Math.max(...concertDates.map((date) => date.getTime()))
-      );
 
-      const isPast = latestDate < currentDate; // 과거인지 확인
-      const isUpcomingOrToday = latestDate >= currentDate;
-
-      const matchesType = selectedType ? concert.type === selectedType : true;
-
-      return (
-        matchesQuery &&
-        (showPastConcerts ? true : isUpcomingOrToday) &&
-        matchesType
-      );
-    });
-
-    // 날짜 기준으로 정렬
-    filteredConcerts.sort((a, b) => {
-      const dateA = Math.max(
-        ...a.date.map((date) => new Date(date.split("(")[0]).getTime())
-      );
-      const dateB = Math.max(
-        ...b.date.map((date) => new Date(date.split("(")[0]).getTime())
-      );
-      return dateA - dateB;
-    });
+      filteredConcerts.sort((a, b) => {
+        const dateA = Math.max(
+          ...a.date.map((date) => new Date(date.split("(")[0]).getTime())
+        );
+        const dateB = Math.max(
+          ...b.date.map((date) => new Date(date.split("(")[0]).getTime())
+        );
+        return dateA - dateB;
+      });
 
       setConcertState(filteredConcerts);
     }
-  }, [query, showPastConcerts, selectedType, concertState, i18n.language, concertState]);
+  }, [query, showPastConcerts, selectedType, i18n.language]);
 
   useEffect(() => {
     if (globalConcertState.length > 0) {
@@ -150,7 +145,6 @@ const MapPage = () => {
         );
       });
 
-      // Sort by date
       filteredGlobalConcerts.sort((a, b) => {
         const dateA = Math.max(
           ...a.date.map((date) => new Date(date.split("(")[0]).getTime())
@@ -163,33 +157,24 @@ const MapPage = () => {
 
       setGlobalConcertState(filteredGlobalConcerts);
     }
-  }, [
-    globalQuery,
-    showPastConcertsGlobal,
-    selectedGlobalType,
-    globalConcertState,
-    i18n.language,
-  ]);
+  }, [globalQuery, showPastConcertsGlobal, selectedGlobalType, i18n.language]);
 
   useEffect(() => {
     if (nfiRoadState.length > 0) {
       const filteredNfiRoad = nfiRoadState.filter(
-        (load) =>
-          load.name.toLowerCase().includes(query.toLowerCase()) ||
-          load.location.toLowerCase().includes(query.toLowerCase())
+        (road) =>
+          road.name.toLowerCase().includes(query.toLowerCase()) ||
+          road.location.toLowerCase().includes(query.toLowerCase())
       );
       setNfiRoadState(filteredNfiRoad);
     }
-  }, [query, nfiRoadState, i18n.language]);
+  }, [query, i18n.language]);
 
   return (
     <Box display={{ base: "block", md: "flex" }}>
       <Helmet>
         <title>{t("map_title")}</title>
-        <meta
-          name="description"
-          content={t("map_description")}
-        />
+        <meta name="description" content={t("map_description")} />
         <meta property="og:image" content="%PUBLIC_URL%/image/logo/logo.svg" />
         <meta property="og:url" content="https://nfimap.co.kr" />
       </Helmet>

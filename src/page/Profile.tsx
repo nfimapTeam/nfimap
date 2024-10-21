@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Image,
@@ -18,9 +18,41 @@ import {
   RiShieldStarLine,
 } from "@remixicon/react";
 import { profileData } from "../datas/profile";
+import { profileDataEng } from "../datas/profileEng";
 import dayjs from "dayjs";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
+
+
+interface Member {
+  name: string;
+  position: string[];
+  aka: string[];
+  birthdate: string;
+  imageUrl: string;
+  military: string;
+  instagram: string;
+  mbti: string;
+}
+
+interface OfficialSites {
+  x: string;
+  facebook: string;
+  instagram: string;
+  youtube: string;
+  daumcafe: string;
+}
+
+interface ProfileData {
+  name: string;
+  debut_date: string;
+  debut_song: string;
+  cover_image_url: string;
+  members: Member[];
+  fandom_name: string;
+  light_stick: string;
+  official_sites: OfficialSites;
+}
 
 const today = dayjs();
 
@@ -30,7 +62,17 @@ const isFutureDate = (militaryDate: string) => {
 };
 
 const Profile = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [profileState, setProfileState] = useState<ProfileData>();
+
+  useEffect(() => {
+    if (i18n.language === "ko") {
+      setProfileState(profileData);
+    } else {
+      setProfileState(profileDataEng);
+    }
+  }, [profileData, profileDataEng, i18n]);
+
   return (
     <Box height="calc(100vh - 120px)" overflowY="auto">
       <Helmet>
@@ -43,8 +85,8 @@ const Profile = () => {
       <Box width="100%" maxWidth="1200px" mx="auto" p="4">
         <Box mb="8">
           <Image
-            src={profileData.cover_image_url}
-            alt={`${profileData.name} Cover`}
+            src={profileState?.cover_image_url}
+            alt={`${profileState?.name} Cover`}
             w="100%"
             h={{ base: "300px", md: "700px" }}
             objectFit="cover"
@@ -86,7 +128,7 @@ const Profile = () => {
                   {t("Profile.debut_date")}
                 </Text>
                 <Text fontSize="lg" color="gray.600" fontWeight="600">
-                  {profileData.debut_date}
+                  {profileState?.debut_date}
                 </Text>
               </Box>
             </Flex>
@@ -106,10 +148,10 @@ const Profile = () => {
               <Icon as={RiMusic2Line} w="6" h="6" color="green.500" />
               <Box textAlign="center">
                 <Text fontWeight="bold" fontSize="lg" color="green.700">
-                {t("Profile.debut_song")}
+                  {t("Profile.debut_song")}
                 </Text>
                 <Text fontSize="lg" color="gray.600" fontWeight="600">
-                  {profileData.debut_song}
+                  {profileState?.debut_song}
                 </Text>
               </Box>
             </Flex>
@@ -129,10 +171,10 @@ const Profile = () => {
               <Icon as={RiHeart2Line} w="6" h="6" color="red.500" />
               <Box textAlign="center">
                 <Text fontWeight="bold" fontSize="lg" color="red.700">
-                {t("Profile.fandom")}
+                  {t("Profile.fandom")}
                 </Text>
                 <Text fontSize="lg" color="gray.600" fontWeight="600">
-                  {profileData.fandom_name}
+                  {profileState?.fandom_name}
                 </Text>
               </Box>
             </Flex>
@@ -152,10 +194,10 @@ const Profile = () => {
               <Icon as={RiTeamLine} w="6" h="6" color="purple.500" />
               <Box textAlign="center">
                 <Text fontWeight="bold" fontSize="lg" color="purple.700">
-                {t("Profile.light_stick")}
+                  {t("Profile.light_stick")}
                 </Text>
                 <Text fontSize="lg" color="gray.600" fontWeight="600">
-                  {profileData.light_stick}
+                  {profileState?.light_stick}
                 </Text>
               </Box>
             </Flex>
@@ -164,13 +206,13 @@ const Profile = () => {
 
         {/* Members */}
         <Heading as="h2" size="xl" mb="4">
-        {t("Profile.members")}
+          {t("Profile.members")}
         </Heading>
         <Grid
           templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(5, 1fr)" }}
           gap="6"
         >
-          {profileData.members.map((member) => (
+          {profileState?.members.map((member) => (
             <Box
               key={member.name}
               position="relative"
@@ -300,29 +342,21 @@ const Profile = () => {
           SNS
         </Heading>
         <Flex justifyContent="center" gap="4" align="center">
-          <Link href={profileData.official_sites.x} isExternal>
+          <Link href={profileState?.official_sites.x} isExternal>
             <Image src="/image/x.png" w="40px" />
           </Link>
 
-          <Link href={profileData.official_sites.facebook} isExternal>
+          <Link href={profileState?.official_sites.facebook} isExternal>
             <Image borderRadius="4px" src="/image/facebook.jpg" w="40px" />
           </Link>
 
-          <Link href={profileData.official_sites.instagram} isExternal>
-            <Image
-              borderRadius="4px"
-              src="/image/instagram.jpg"
-              w="40px"
-            />
+          <Link href={profileState?.official_sites.instagram} isExternal>
+            <Image borderRadius="4px" src="/image/instagram.jpg" w="40px" />
           </Link>
-          <Link href={profileData.official_sites.daumcafe} isExternal>
-            <Image
-              borderRadius="4px"
-              src="/image/daumcafe.png"
-              w="40px"
-            />
+          <Link href={profileState?.official_sites.daumcafe} isExternal>
+            <Image borderRadius="4px" src="/image/daumcafe.png" w="40px" />
           </Link>
-          <Link href={profileData.official_sites.youtube} isExternal>
+          <Link href={profileState?.official_sites.youtube} isExternal>
             <Image
               borderRadius="4px"
               src="/image/youtube.png"

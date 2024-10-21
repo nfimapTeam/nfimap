@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Tabs,
@@ -90,6 +90,7 @@ const Sidebar = ({
   setSelectedGlobalType,
 }: SidebarProps) => {
   const { t, i18n } = useTranslation();
+
   return (
     <Box
       w="340px"
