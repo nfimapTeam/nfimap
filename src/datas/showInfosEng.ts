@@ -325,7 +325,7 @@ export const showInfosEng = [
     },
     {
         id: 11,
-        nme: "Kyonggi University Festival",
+        name: "Kyonggi University Festival",
         address: "Kyonggi University Suwon Campus 154-42, Gwanggyosan-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do, South Korea",
         note: [
             "Parking is available on campus."

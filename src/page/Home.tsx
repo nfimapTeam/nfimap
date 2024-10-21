@@ -24,6 +24,8 @@ import { SearchIcon, CloseIcon } from "@chakra-ui/icons";
 import { Select } from "antd";
 import { Option } from "antd/es/mentions";
 import { concertsData } from "../datas/concerts";
+import { concertsDataEng } from "../datas/concertsEng";
+import { globalConcertsEng } from "../datas/globalConcertsEng";
 import { globalConcerts } from "../datas/globalConcerts";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
@@ -58,7 +60,7 @@ interface Concert {
 }
 
 const Home = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n, } = useTranslation();
 
   const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -83,9 +85,14 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const combinedConcerts = [...concertsData, ...globalConcerts];
-    setAllConcerts(combinedConcerts);
-  }, [concertsData, globalConcerts]);
+    if (i18n.language === "ko") {
+      const combinedConcerts = [...concertsData, ...globalConcerts];
+      setAllConcerts(combinedConcerts);
+    } else {
+      const combinedConcerts = [...concertsDataEng, ...globalConcertsEng];
+      setAllConcerts(combinedConcerts);
+    }
+  }, [i18n.language, concertsData, globalConcerts, concertsDataEng, globalConcertsEng]);
 
   useEffect(() => {
     const interval = setInterval(() => {

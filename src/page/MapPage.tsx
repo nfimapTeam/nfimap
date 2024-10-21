@@ -8,6 +8,9 @@ import GoogleMap from "../components/GoogleMap";
 import { globalConcerts } from "../datas/globalConcerts";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
+import { concertsDataEng } from "../datas/concertsEng";
+import { nfiRoadDataEng } from "../datas/nfilRoadEng";
+import { globalConcertsEng } from "../datas/globalConcertsEng";
 
 type Concert = {
   name: string;
@@ -38,10 +41,10 @@ type NfiRoad = {
 
 const MapPage = () => {
   const { t, i18n } = useTranslation();
-  const [concertState, setConcertState] = useState<Concert[]>(concertsData);
+  const [concertState, setConcertState] = useState<Concert[]>([]);
   const [globalConcertState, setGlobalConcertState] =
-    useState<Concert[]>(globalConcerts);
-  const [nfiRoadState, setNfiRoadState] = useState<NfiRoad[]>(nfiRoadData);
+    useState<Concert[]>([]);
+  const [nfiRoadState, setNfiRoadState] = useState<NfiRoad[]>([]);
   const [query, setQuery] = useState<string>("");
   const [selectedType, setSelectedType] = useState<string>("");
   const [globalQuery, setGlobalQuery] = useState<string>("");
@@ -54,13 +57,26 @@ const MapPage = () => {
     useState<boolean>(false);
   const [selectedGlobalConcert, setSelectedGlobalConcert] =
     useState<Concert | null>(null);
+  
+   useEffect(() => {
+    if (i18n.language === "ko") {
+      setConcertState(concertsData);
+      setNfiRoadState(nfiRoadData);
+      setGlobalConcertState(globalConcerts);
+    } else {
+      setConcertState(concertsDataEng);
+      setNfiRoadState(nfiRoadDataEng);
+      setGlobalConcertState(globalConcertsEng);
+    }
+  }, [i18n.language]);
 
   useEffect(() => {
+    if(concertState.length > 0){
     const currentDate = new Date();
 
     currentDate.setHours(0, 0, 0, 0);
 
-    const filteredConcerts = concertsData.filter((concert) => {
+    const filteredConcerts = concertState.filter((concert) => {
       const matchesQuery =
         concert.name.toLowerCase().includes(query.toLowerCase()) ||
         concert.location.toLowerCase().includes(query.toLowerCase());
@@ -97,63 +113,74 @@ const MapPage = () => {
       return dateA - dateB;
     });
 
-    setConcertState(filteredConcerts);
-  }, [query, showPastConcerts, selectedType]);
+      setConcertState(filteredConcerts);
+    }
+  }, [query, showPastConcerts, selectedType, concertState, i18n.language, concertState]);
 
   useEffect(() => {
-    const currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0);
+    if (globalConcertState.length > 0) {
+      const currentDate = new Date();
+      currentDate.setHours(0, 0, 0, 0);
 
-    const filteredGlobalConcerts = globalConcerts.filter((concert) => {
-      const matchesQuery =
-        concert.name.toLowerCase().includes(globalQuery.toLowerCase()) ||
-        concert.location.toLowerCase().includes(globalQuery.toLowerCase());
+      const filteredGlobalConcerts = globalConcertState.filter((concert) => {
+        const matchesQuery =
+          concert.name.toLowerCase().includes(globalQuery.toLowerCase()) ||
+          concert.location.toLowerCase().includes(globalQuery.toLowerCase());
 
-      const concertDates = concert.date.map((date) => {
-        const parsedDate = new Date(date.split("(")[0]);
-        parsedDate.setHours(0, 0, 0, 0);
-        return parsedDate;
+        const concertDates = concert.date.map((date) => {
+          const parsedDate = new Date(date.split("(")[0]);
+          parsedDate.setHours(0, 0, 0, 0);
+          return parsedDate;
+        });
+
+        const latestDate = new Date(
+          Math.max(...concertDates.map((date) => date.getTime()))
+        );
+
+        const isUpcomingOrToday = latestDate >= currentDate;
+
+        const matchesType = selectedGlobalType
+          ? concert.type === selectedGlobalType
+          : true;
+
+        return (
+          matchesQuery &&
+          (showPastConcertsGlobal ? true : isUpcomingOrToday) &&
+          matchesType
+        );
       });
 
-      const latestDate = new Date(
-        Math.max(...concertDates.map((date) => date.getTime()))
-      );
+      // Sort by date
+      filteredGlobalConcerts.sort((a, b) => {
+        const dateA = Math.max(
+          ...a.date.map((date) => new Date(date.split("(")[0]).getTime())
+        );
+        const dateB = Math.max(
+          ...b.date.map((date) => new Date(date.split("(")[0]).getTime())
+        );
+        return dateA - dateB;
+      });
 
-      const isUpcomingOrToday = latestDate >= currentDate;
-
-      const matchesType = selectedGlobalType
-        ? concert.type === selectedGlobalType
-        : true;
-
-      return (
-        matchesQuery &&
-        (showPastConcertsGlobal ? true : isUpcomingOrToday) &&
-        matchesType
-      );
-    });
-
-    // Sort by date
-    filteredGlobalConcerts.sort((a, b) => {
-      const dateA = Math.max(
-        ...a.date.map((date) => new Date(date.split("(")[0]).getTime())
-      );
-      const dateB = Math.max(
-        ...b.date.map((date) => new Date(date.split("(")[0]).getTime())
-      );
-      return dateA - dateB;
-    });
-
-    setGlobalConcertState(filteredGlobalConcerts);
-  }, [globalQuery, showPastConcertsGlobal, selectedGlobalType]);
+      setGlobalConcertState(filteredGlobalConcerts);
+    }
+  }, [
+    globalQuery,
+    showPastConcertsGlobal,
+    selectedGlobalType,
+    globalConcertState,
+    i18n.language,
+  ]);
 
   useEffect(() => {
-    const filteredNfiRoad = nfiRoadData.filter(
-      (load) =>
-        load.name.toLowerCase().includes(query.toLowerCase()) ||
-        load.location.toLowerCase().includes(query.toLowerCase())
-    );
-    setNfiRoadState(filteredNfiRoad);
-  }, [query]);
+    if (nfiRoadState.length > 0) {
+      const filteredNfiRoad = nfiRoadState.filter(
+        (load) =>
+          load.name.toLowerCase().includes(query.toLowerCase()) ||
+          load.location.toLowerCase().includes(query.toLowerCase())
+      );
+      setNfiRoadState(filteredNfiRoad);
+    }
+  }, [query, nfiRoadState, i18n.language]);
 
   return (
     <Box display={{ base: "block", md: "flex" }}>

@@ -36,6 +36,11 @@ import { globalConcerts } from "../datas/globalConcerts";
 import { showInfos } from "../datas/showInfos";
 import { globalShowInfos } from "../datas/globalShowInfos";
 import theme from "../util/theme";
+import { useTranslation } from "react-i18next";
+import { concertsDataEng } from "../datas/concertsEng";
+import { globalConcertsEng } from "../datas/globalConcertsEng";
+import { showInfosEng } from "../datas/showInfosEng";
+import { globalShowInfosEng } from "../datas/globalShowInfosEng";
 
 interface Concert {
   id: number;
@@ -75,6 +80,7 @@ interface TimeRemaining {
 }
 
 const DetailPage: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const cardBgColor = useColorModeValue("white", "gray.800");
@@ -82,14 +88,26 @@ const DetailPage: React.FC = () => {
   const [allConcerts, setAllConcerts] = useState<Concert[]>([]);
   const [allInfos, setAllInfos] = useState<ShowInfo[]>([]);
 
-  useEffect(() => {
-    const combinedConcerts = [...concertsData, ...globalConcerts];
-    setAllConcerts(combinedConcerts);
-  }, []);
-  useEffect(() => {
-    const combinedInfos = [...showInfos, ...globalShowInfos];
-    setAllInfos(combinedInfos);
-  }, []);
+   useEffect(() => {
+    if (i18n.language === "ko") {
+      const combinedConcerts = [...concertsData, ...globalConcerts];
+      setAllConcerts(combinedConcerts);
+    } else {
+      const combinedConcerts = [...concertsDataEng, ...globalConcertsEng];
+      setAllConcerts(combinedConcerts);
+    }
+   }, [i18n.language, concertsData, globalConcerts, concertsDataEng, globalConcertsEng]);
+  
+   useEffect(() => {
+    if (i18n.language === "ko") {
+      const combinedInfos = [...showInfos, ...globalShowInfos];
+      setAllInfos(combinedInfos);
+    } else {
+      const combinedInfos = [...showInfosEng, ...globalShowInfosEng];
+      setAllInfos(combinedInfos);
+    }
+   }, [i18n.language, showInfos, globalShowInfos, showInfosEng, globalShowInfosEng]);
+  
 
   if (!id) {
     return <NotFound content="정보가 없습니다." />;
