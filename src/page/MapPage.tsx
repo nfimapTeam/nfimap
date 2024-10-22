@@ -71,11 +71,11 @@ const MapPage = () => {
   useEffect(() => {
     const currentDate = new Date();
     currentDate.setHours(0, 0, 0, 0);
-    let concerts
+    let concerts;
     if (i18n.language === "ko") {
-      concerts= concertsData
+      concerts = concertsData;
     } else {
-      concerts = concertsDataEng
+      concerts = concertsDataEng;
     }
 
     const filteredConcerts = concerts.filter((concert) => {
@@ -122,11 +122,11 @@ const MapPage = () => {
     const currentDate = new Date();
     currentDate.setHours(0, 0, 0, 0);
 
-    let concerts
+    let concerts;
     if (i18n.language === "ko") {
-      concerts = globalConcerts
+      concerts = globalConcerts;
     } else {
-      concerts = globalConcertsEng
+      concerts = globalConcertsEng;
     }
 
     const filteredGlobalConcerts = concerts.filter((concert) => {
@@ -169,14 +169,14 @@ const MapPage = () => {
     });
 
     setGlobalConcertState(filteredGlobalConcerts);
-  }, [globalQuery, showPastConcertsGlobal, selectedGlobalType]);
+  }, [globalQuery, showPastConcertsGlobal, selectedGlobalType, i18n.language]);
 
   useEffect(() => {
-    let concerts
+    let concerts;
     if (i18n.language === "ko") {
-      concerts = nfiRoadData
+      concerts = nfiRoadData;
     } else {
-      concerts = nfiRoadDataEng
+      concerts = nfiRoadDataEng;
     }
     const filteredNfiLoad = concerts.filter(
       (load) =>
@@ -184,7 +184,7 @@ const MapPage = () => {
         load.location.toLowerCase().includes(query.toLowerCase())
     );
     setNfiRoadState(filteredNfiLoad);
-  }, [query]);
+  }, [query, i18n.language]);
 
   return (
     <Box display={{ base: "block", md: "flex" }}>
@@ -231,25 +231,30 @@ const MapPage = () => {
       >
         <HStack spacing={2}>
           <Button
-            bg={activeTabIndex === 0 ? "#0597F2" : "#eee"}
-            color={activeTabIndex === 0 ? "white" : "black"}
-            _hover={{ bg: activeTabIndex === 0 ? "#0597F2" : "#eee" }}
+            bg={activeTabIndex === 0 ? "brand.main" : "gray.200"} // 기본 버튼 색상
+            color={activeTabIndex === 0 ? "white" : "black"} // 기본 글자 색상
+            _hover={{ bg: "brand.main", color: "white" }} // 호버 시 색상
+            _active={{ bg: "brand.main", color: "white" }} // 클릭된 상태 (active) 색상
             onClick={() => setActiveTabIndex(0)}
           >
             {t("map_domestic")}
           </Button>
+
           <Button
-            bg={activeTabIndex === 1 ? "#0597F2" : "#eee"}
+            bg={activeTabIndex === 1 ? "brand.main" : "gray.200"}
             color={activeTabIndex === 1 ? "white" : "black"}
-            _hover={{ bg: activeTabIndex === 0 ? "#0597F2" : "#eee" }}
+            _hover={{ bg: "brand.main", color: "white" }}
+            _active={{ bg: "brand.main", color: "white" }}
             onClick={() => setActiveTabIndex(1)}
           >
             {t("map_nfiRoad")}
           </Button>
+
           <Button
-            bg={activeTabIndex === 2 ? "#0597F2" : "#eee"}
+            bg={activeTabIndex === 2 ? "brand.main" : "gray.200"}
             color={activeTabIndex === 2 ? "white" : "black"}
-            _hover={{ bg: activeTabIndex === 0 ? "#0597F2" : "#eee" }}
+            _hover={{ bg: "brand.main", color: "white" }}
+            _active={{ bg: "brand.main", color: "white" }}
             onClick={() => setActiveTabIndex(2)}
           >
             {t("map_global")}

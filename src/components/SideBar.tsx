@@ -1,12 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  Box,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-} from "@chakra-ui/react";
+import { Box, Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
 import ConcertInfo from "./ConcertInfo";
 import NfiRoad from "./NfiRoad";
 import NoData from "./NoData";
@@ -34,8 +27,8 @@ type NfiRoadType = {
   category: string;
   lat: string;
   lng: string;
-  naverLink: string,
-  note: string,
+  naverLink: string;
+  note: string;
 };
 
 type SidebarProps = {
@@ -145,7 +138,11 @@ const Sidebar = ({
         </TabList>
 
         <TabPanels flex="1" overflowY="hidden">
-          <TabPanel height="100%" padding="20px">
+          <TabPanel
+            key={`domestic-${activeTabIndex}`}
+            height="100%"
+            padding="20px"
+          >
             <ConcertInfo
               concerts={concerts}
               query={query}
@@ -157,14 +154,22 @@ const Sidebar = ({
               setSelectedType={setSelectedType}
             />
           </TabPanel>
-          <TabPanel height="100%" padding="20px">
+          <TabPanel
+            key={`nfiRoad-${activeTabIndex}`}
+            height="100%"
+            padding="20px"
+          >
             <NfiRoad
               nfiRoad={nfiRoad}
               setSelectedNfiRoad={setSelectedNfiRoad}
               selectedNfiRoad={selectedNfiRoad}
             />
           </TabPanel>
-          <TabPanel height="100%" padding="20px">
+          <TabPanel
+            key={`global-${activeTabIndex}`}
+            height="100%"
+            padding="20px"
+          >
             <ConcertInfo
               concerts={globalConcerts}
               query={globalQuery}

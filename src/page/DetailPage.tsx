@@ -151,16 +151,16 @@ const DetailPage: React.FC = () => {
     isPastEvent: boolean,
     timeRemaining: TimeRemaining | null
   ): string => {
-    if (isPastEvent || concert.type === "행사") {
-      return "공연정보 확인";
+    if (isPastEvent || concert.type === "행사" || concert.type === "Event") {
+      return t("check_performance_info");
     } else if (concert.ticketOpen.date === "0000-00-00") {
-      return "예매 일정 대기 중";
+      return t("waiting_schedule");
     } else if (concert.ticketLink === "") {
       return timeRemaining
-        ? `${timeRemaining.days}일 ${timeRemaining.hours}시간 ${timeRemaining.minutes}분 후`
-        : "예매 정보 대기 중";
+        ? `${timeRemaining.days}${t("day")} ${timeRemaining.hours}${t("hour")} ${timeRemaining.minutes}${t("minute_later")}`
+        : t("waiting_ticket_info");
     } else {
-      return "티켓 예매하기";
+      return t("ticket_booking");
     }
   };
 
@@ -240,7 +240,7 @@ const DetailPage: React.FC = () => {
                 <HStack>
                   <Icon as={TimerIcon} color="gray.500" />
                   <Text fontSize="lg">
-                    {concert.startTime} (약 {concert.durationMinutes}분)
+                    {concert.startTime} ({t("about")} {concert.durationMinutes}{t("minutes")})
                   </Text>
                 </HStack>
               </VStack>
@@ -248,7 +248,7 @@ const DetailPage: React.FC = () => {
 
             <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
               <Text fontSize="xl" fontWeight="semibold" mb={3}>
-                출연자
+              {t("performers")}
               </Text>
               <Flex wrap="wrap" gap={2}>
                 {concert.artists.map((artist, index) => (
@@ -261,18 +261,18 @@ const DetailPage: React.FC = () => {
 
             <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="md">
               <Text fontSize="xl" fontWeight="semibold" mb={3}>
-                {concert.type === "행사" ? "공연 정보" : "예매 정보"}
+                {(concert.type === "행사" || concert.type === "Event") ? t("performanceInfo") : t("ticket_info")}
               </Text>
               <Flex flexDirection="column" gap={3}>
                 <Flex>
-                  {concert.type != "행사" && (
+                  {!(concert.type === "행사" || concert.type === "Event") && (
                     <Badge
                       colorScheme="green"
                       fontSize="md"
                       alignItems="center"
                     >
-                      티켓 오픈: {concert.ticketOpen.date}{" "}
-                      {concert.ticketOpen.time} (한국시간 기준)
+                      {t("ticket_open")}: {concert.ticketOpen.date}{" "}
+                      {concert.ticketOpen.time} ({t("korea_time")})
                     </Badge>
                   )}
                 </Flex>
@@ -295,7 +295,7 @@ const DetailPage: React.FC = () => {
           <Box mt={8}>
             <Divider mb={4} />
             <Text fontSize="3xl" fontWeight="bold" mb={4} color="teal.600">
-              공연 상세
+            {t("performance_details")}
             </Text>
 
             <VStack spacing={6} align="stretch">
@@ -304,12 +304,12 @@ const DetailPage: React.FC = () => {
                   <HStack mb={3}>
                     <Icon as={InfoIcon} color="blue.600" />
                     <Text fontSize="xl" fontWeight="bold" color="gray.700">
-                      기본 정보
+                    {t("basic_info")}
                     </Text>
                   </HStack>
                   <VStack align="start" spacing={3}>
                     <Text fontSize="lg" color="gray.800">
-                      <strong>주소</strong>
+                      <strong>{t("address")}</strong>
                     </Text>
                     <Text fontSize="lg" color="gray.800">
                       &nbsp;{"\u2022"} {showInfo.address}
@@ -317,7 +317,7 @@ const DetailPage: React.FC = () => {
                     {showInfo.capacity && (
                       <>
                         <Text fontSize="lg" color="gray.800">
-                          <strong>수용 인원</strong>
+                          <strong>{t("capacity")}</strong>
                         </Text>
                         <Text fontSize="lg" color="gray.800">
                           &nbsp;{"\u2022"} {showInfo.capacity}
@@ -329,7 +329,7 @@ const DetailPage: React.FC = () => {
                       showInfo.note[0] !== "" && (
                         <>
                           <Text fontSize="lg" color="gray.800">
-                            <strong>비고</strong>
+                            <strong>{t("notes")}</strong>
                             <br />
                           </Text>
                           {showInfo.note.map((note, index) =>
@@ -365,7 +365,7 @@ const DetailPage: React.FC = () => {
                     <HStack mb={3}>
                       <Icon as={MusicIcon} color="green.600" />
                       <Text fontSize="xl" fontWeight="bold" color="gray.700">
-                        세트리스트
+                      {t("setlist")}
                       </Text>
                     </HStack>
                     <SimpleGrid columns={1} spacing={2}>
@@ -400,7 +400,7 @@ const DetailPage: React.FC = () => {
                     <HStack mb={3}>
                       <Icon as={CameraIcon} color="purple.600" />
                       <Text fontSize="xl" fontWeight="bold" color="gray.700">
-                        공연 의상
+                      {t("costume")}
                       </Text>
                     </HStack>
                     <SimpleGrid columns={1} spacing={4}>
@@ -426,7 +426,7 @@ const DetailPage: React.FC = () => {
                     <HStack mb={3}>
                       <Icon as={UsersIcon} color="orange.600" />
                       <Text fontSize="xl" fontWeight="bold" color="gray.700">
-                        좌석 배치도
+                        {t("seat_map")}
                       </Text>
                     </HStack>
                     <SimpleGrid columns={1} spacing={4}>
@@ -449,7 +449,7 @@ const DetailPage: React.FC = () => {
         )}
 
         <Text fontSize="2xl" fontWeight="bold" mt={8} mb={4}>
-          추천 콘서트
+          {t("recommended_concert")}
         </Text>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6} mt={8}>
           {randomUpcomingConcerts.map((concert, index) => {

@@ -267,7 +267,7 @@ const Home = () => {
       width="100%"
       maxWidth="1200px"
       mx="auto"
-      p="16px 16px 100px 16px"
+      p="16px 16px 70px 16px"
       overflowY="auto"
       css={{
         "&::-webkit-scrollbar": {

@@ -59,6 +59,10 @@ const NaverMap = ({
 
   const ZOOM_LEVEL = 3;
 
+  useEffect(() => {
+    console.log(currentInfoWindow)
+  }, [concerts, nfiRoad]);
+
   const getCategoryImage = (category: string): string => {
     switch (category) {
       case "카페":
@@ -98,7 +102,6 @@ const NaverMap = ({
   };
 
   const getCategoryBackgroundColor = (category: string): string => {
-    console.log(category);
     switch (category) {
       case "카페":
         return "#FFC107";
@@ -155,6 +158,12 @@ const NaverMap = ({
 
     const naverMaps = (window as any).naver.maps;
     const map = mapRef.current;
+
+    // 모든 InfoWindow 닫기
+    if (currentInfoWindow) {
+      currentInfoWindow.close();
+      setCurrentInfoWindow(null); // 이전 InfoWindow 상태 초기화
+    }
 
     // Clear existing markers
     markersRef.current.forEach((marker) => marker.setMap(null));
@@ -229,37 +238,63 @@ const NaverMap = ({
 
       const getPosterImage = (item: Concert | NfiRoad): string => {
         if ("poster" in item) {
-          return item.poster && item.poster.trim() !== '' ? item.poster : '/image/logo/logo.svg';
+          return item.poster && item.poster.trim() !== ""
+            ? item.poster
+            : "/image/logo/logo.svg";
         } else {
           return getCategoryImage(item.category);
         }
       };
 
       naverMaps.Event.addListener(marker, "click", () => {
-        map.setCenter(location);
-        if (currentInfoWindow === marker) {
-          currentInfoWindow?.close();
-          setCurrentInfoWindow(null);
-          return;
-        }
-
+        // 기존 열려있는 InfoWindow 닫기
         if (currentInfoWindow) {
           currentInfoWindow.close();
+          setCurrentInfoWindow(null); // 현재 InfoWindow 상태 초기화
         }
+
+        map.setCenter(location);
 
         const infoWindowContent = `
           <div style="width: 300px; font-family: Arial, sans-serif; padding: 10px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 4px;">
             <div style="display: flex; align-items: center;">
-              <div style="background-color: ${backgroundColor}; width: 70px; height: 70px; min-width: 70px; min-height: 70px;max-width: 70px; max-height: 70px; margin-right: 15px; border-radius: 4px; overflow: hidden;">
+              <div style="background-color: ${backgroundColor}; width: 70px; height: 70px; min-width: 70px; min-height: 70px; max-width: 70px; max-height: 70px; margin-right: 15px; border-radius: 4px; overflow: hidden;">
                 <img src="${getPosterImage(item)}" alt="${item.name}" 
                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
               </div>
               <div style="flex-grow: 1;">
-                <h3 style="margin: 0; font-size: 16px; font-weight: bold; color: #333;">${item.name}</h3>
-                <p style="margin: 5px 0 0; font-size: 14px; color: #666;">${item.location}</p>
-              </div>
+              <h3
+                style="
+                  margin: 0;
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: #333;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 1;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                "
+              >
+                ${item.name}
+              </h3>
+              <p
+                style="
+                  margin: 5px 0 0;
+                  font-size: 14px;
+                  color: #666;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 2;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                "
+              >
+                ${item.location}
+              </p>
             </div>
-             <button class="detailBtn" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #0597F2; color: white; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
+            </div>
+            <button class="detailBtn" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #0597F2; color: white; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
               ${t("View Details")}
             </button>
           </div>
@@ -274,7 +309,7 @@ const NaverMap = ({
         });
 
         infoWindow.open(map, marker);
-        setCurrentInfoWindow(infoWindow);
+        setCurrentInfoWindow(infoWindow); // 현재 InfoWindow 설정
 
         if (activeTabIndex === 0) {
           setSelectedConcert(item as Concert);
@@ -287,9 +322,10 @@ const NaverMap = ({
           onOpen();
         });
 
+        // 지도 클릭 시 모든 InfoWindow 닫기
         naverMaps.Event.addListener(map, "click", () => {
           infoWindow.close();
-          setCurrentInfoWindow(null);
+          setCurrentInfoWindow(null); // InfoWindow 상태 초기화
         });
       });
 
@@ -299,6 +335,11 @@ const NaverMap = ({
 
   useEffect(() => {
     if ((!selectedConcert && !selectedNfiRoad) || !mapRef.current) return;
+
+    if (currentInfoWindow) {
+      currentInfoWindow.close();
+      setCurrentInfoWindow(null);
+    }
 
     const selectedItem =
       activeTabIndex === 0 ? selectedConcert : selectedNfiRoad;

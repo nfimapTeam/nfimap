@@ -72,10 +72,10 @@ const NfiRoad = ({
             bg={selectedNfiRoad?.id === data.id ? "blue.50" : "white"}
           >
             <Box flexGrow={1}>
-              <Text fontSize="16px" fontWeight="bold" mb="5px">
+              <Text fontSize="16px" fontWeight="bold" mb="5px" noOfLines={1}>
                 {data.name}
               </Text>
-              <Text fontSize="14px" color="#666">
+              <Text fontSize="14px" color="#666" noOfLines={2}>
                 {data.location}
               </Text>
             </Box>

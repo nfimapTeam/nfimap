@@ -23,7 +23,6 @@ import dayjs from "dayjs";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 
-
 interface Member {
   name: string;
   position: string[];
@@ -74,7 +73,21 @@ const Profile = () => {
   }, [profileData, profileDataEng, i18n]);
 
   return (
-    <Box height="calc(100vh - 120px)" overflowY="auto">
+    <Box
+      h="calc(100vh - 120px)"
+      width="100%"
+      maxWidth="1200px"
+      mx="auto"
+      p="16px 16px 100px 16px"
+      overflowY="auto"
+      css={{
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
+        "-ms-overflow-style": "none",
+        "scrollbar-width": "none",
+      }}
+    >
       <Helmet>
         <title>{t("Profile.title")}</title>
         <meta name="description" content={t("Profile.description")} />
@@ -341,28 +354,60 @@ const Profile = () => {
         <Heading as="h2" size="xl" mt="8" mb="4">
           SNS
         </Heading>
-        <Flex justifyContent="center" gap="4" align="center">
+        <Flex justifyContent="center" gap="6" align="center" wrap="wrap">
           <Link href={profileState?.official_sites.x} isExternal>
-            <Image src="/image/x.png" w="40px" />
+            <Image
+              src="/image/x.png"
+              w="50px"
+              h="50px"
+              borderRadius="8px"
+              transition="all 0.2s"
+              _hover={{ transform: "scale(1.1)", boxShadow: "lg" }}
+            />
           </Link>
 
           <Link href={profileState?.official_sites.facebook} isExternal>
-            <Image borderRadius="4px" src="/image/facebook.jpg" w="40px" />
+            <Image
+              src="/image/facebook.jpg"
+              w="50px"
+              h="50px"
+              borderRadius="8px"
+              transition="all 0.2s"
+              _hover={{ transform: "scale(1.1)", boxShadow: "lg" }}
+            />
           </Link>
 
           <Link href={profileState?.official_sites.instagram} isExternal>
-            <Image borderRadius="4px" src="/image/instagram.jpg" w="40px" />
+            <Image
+              src="/image/instagram.jpg"
+              w="50px"
+              h="50px"
+              borderRadius="8px"
+              transition="all 0.2s"
+              _hover={{ transform: "scale(1.1)", boxShadow: "lg" }}
+            />
           </Link>
+
           <Link href={profileState?.official_sites.daumcafe} isExternal>
-            <Image borderRadius="4px" src="/image/daumcafe.png" w="40px" />
+            <Image
+              src="/image/daumcafe.png"
+              w="50px"
+              h="50px"
+              borderRadius="8px"
+              transition="all 0.2s"
+              _hover={{ transform: "scale(1.1)", boxShadow: "lg" }}
+            />
           </Link>
+
           <Link href={profileState?.official_sites.youtube} isExternal>
             <Image
-              borderRadius="4px"
               src="/image/youtube.png"
-              w="40px"
-              height="40px"
+              w="50px"
+              h="50px"
+              borderRadius="8px"
               border="1px solid #eee"
+              transition="all 0.2s"
+              _hover={{ transform: "scale(1.1)", boxShadow: "lg" }}
             />
           </Link>
         </Flex>
