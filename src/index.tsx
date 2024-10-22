@@ -8,6 +8,7 @@ import { HashRouter } from "react-router-dom";
 import { RecoilRoot } from 'recoil';
 import theme from "./util/theme";
 import { HelmetProvider } from 'react-helmet-async';
+import './i18n';
 
 const container = document.getElementById("root") as HTMLElement;
 

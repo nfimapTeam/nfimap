@@ -1,8 +1,10 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { RiListUnordered, RiMapPinLine, RiUser3Line, RiMusicLine } from "@remixicon/react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   
@@ -38,7 +40,7 @@ const Footer = () => {
         >
           <RiListUnordered color={getLinkColorIcon("/")} />
           <Text fontSize="lg" color={getLinkColor("/")} fontWeight={600}>
-            리스트
+            {t('list')}
           </Text>
         </Flex>
         <Flex
@@ -51,7 +53,7 @@ const Footer = () => {
         >
           <RiMapPinLine color={getLinkColorIcon("/map")} />
           <Text fontSize="lg" color={getLinkColor("/map")} fontWeight={600}>
-            맵
+            {t('map')}
           </Text>
         </Flex>
         <Flex
@@ -64,7 +66,7 @@ const Footer = () => {
         >
           <RiUser3Line color={getLinkColorIcon("/profile")} />
           <Text fontSize="lg" color={getLinkColor("/profile")} fontWeight={600}>
-            소개
+            {t('profile')}
           </Text>
         </Flex>
         <Flex
@@ -77,7 +79,7 @@ const Footer = () => {
         >
           <RiMusicLine color={getLinkColorIcon("/music")} />
           <Text fontSize="lg" color={getLinkColor("/music")} fontWeight={600}>
-            노래
+            {t('music')}
           </Text>
         </Flex>
       </Flex>

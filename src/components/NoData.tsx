@@ -1,7 +1,9 @@
-import React from 'react';
+import React from "react";
 import { Box, Image, Text, VStack } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 const NoData = () => {
+  const { t } = useTranslation();
   return (
     <VStack spacing={4} align="center" justify="center" height="100%">
       <Box position="relative" width="200px" height="200px">
@@ -15,7 +17,7 @@ const NoData = () => {
         />
       </Box>
       <Text fontSize="lg" fontWeight="medium" color="gray.500">
-        데이터가 없습니다.
+        {t("mapNoData")}
       </Text>
     </VStack>
   );

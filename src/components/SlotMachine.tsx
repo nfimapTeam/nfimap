@@ -4,6 +4,7 @@ import { RiMusic2Line } from "react-icons/ri"; // 음악 아이콘 추가
 import { Button, Text, Box, IconButton, Link } from "@chakra-ui/react"; // Chakra UI 버튼과 텍스트 컴포넌트
 import { useRecoilState } from "recoil"; // Recoil의 useRecoilState import
 import { slotStateState, toDayMusicState } from "../atom/slotState";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   textData: string[];
@@ -20,6 +21,7 @@ interface VariantProps {
 const ARRAY_REPEAT = 5;
 
 const SlotMachine = ({ textData, youtubeUrl }: Props) => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0); // 현재 슬롯에서 보여주는 곡의 인덱스
   const [isSpinning, setIsSpinning] = useState(false); // 슬롯머신이 도는 상태인지 여부
   const [isClickable, setIsClickable] = useState(true); // 한번 클릭 후 더이상 클릭 못하도록
@@ -92,7 +94,7 @@ const SlotMachine = ({ textData, youtubeUrl }: Props) => {
             fontWeight="bold"
             color={isClickable ? "black" : "gray"}
           >
-            버튼을 클릭해주세요!
+            {t("slot_machine_click_button")}
           </Text>
           <IconButton
             onClick={handleClick}
@@ -118,9 +120,12 @@ const SlotMachine = ({ textData, youtubeUrl }: Props) => {
         >
           {/* 추천곡 레이블: 슬롯이 멈춘 후에만 보여줌 */}
           {!isSpinning && (
-            <Text fontSize="sm" fontWeight="bold" flexShrink={0}>
-              오늘의 엔피곡 :
-            </Text>
+            <>
+              <RiMusic2Line color="#3b82f6" size="20px" />
+              <Text fontSize="sm" fontWeight="bold" flexShrink={0}>
+              {t("slot_machine_today_music")}
+              </Text>
+            </>
           )}
           {/* 추천곡 텍스트 */}
           <div

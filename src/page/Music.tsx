@@ -26,6 +26,7 @@ import { musicData } from "../datas/music";
 import SlotMachine from "../components/SlotMachine";
 import { Helmet } from "react-helmet-async";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { useTranslation } from "react-i18next";
 
 interface Image {
   url: string;
@@ -72,7 +73,8 @@ interface MusicType {
   youtubeUrl: string;
 }
 
-const Music: React.FC = () => {
+const Music = () => {
+  const { t, i18n } = useTranslation();
   const [albums, setAlbums] = useState<Album[]>([]);
   const [token, setToken] = useState<string>("");
   const [artistId, setArtistId] = useState<string>("");
@@ -171,7 +173,6 @@ const Music: React.FC = () => {
   }, [artistId, getAlbums]);
 
   const handleAlbumClick = async (album: Album) => {
-    console.log("Selected album:", album);
     if (!album.href) {
       console.error("No tracks URL available for the selected album");
       return;
@@ -211,10 +212,6 @@ const Music: React.FC = () => {
     album.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  useEffect(() => {
-    console.log(tracks);
-  }, [tracks])
-
   return (
     <Box
       h="calc(100vh - 120px)"
@@ -232,7 +229,7 @@ const Music: React.FC = () => {
       }}
     >
       <Helmet>
-        <title>엔피맵 - 오늘의 추천곡을 확인하세요!</title>
+        <title>{t("music_page_title")}</title> {/* 다국어 제목 */}
         <meta
           name="description"
           content="N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다."
@@ -258,7 +255,7 @@ const Music: React.FC = () => {
       </Box>
       <VStack spacing={4}>
         <Input
-          placeholder="앨범명을 검색하세요"
+          placeholder={t("music_search_placeholder")} // 다국어 검색 안내
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           focusBorderColor="#4BA4F2"
@@ -296,7 +293,8 @@ const Music: React.FC = () => {
         {loading && <Loading />}
         {hasMore && !loading && (
           <Center mt={4}>
-            <Button onClick={handleLoadMore}>Load More</Button>
+            <Button onClick={handleLoadMore}>{t("music_load_more")}</Button>{" "}
+            {/* 다국어 더 불러오기 */}
           </Center>
         )}
       </VStack>
@@ -309,7 +307,7 @@ const Music: React.FC = () => {
           <ModalBody p={4}>
             {tracks.length === 0 ? (
               <Text textAlign="center" color="gray.500">
-                트랙이 없습니다.
+                {t("music_no_tracks")} {/* 다국어 트랙 없음 */}
               </Text>
             ) : (
               <VStack spacing={4} align="start">
@@ -333,7 +331,8 @@ const Music: React.FC = () => {
                           controlsList="nodownload"
                           src={track.preview_url}
                         >
-                          오디오를 지원하지 않습니다.
+                          {t("music_audio_support")}{" "}
+                          {/* 다국어 오디오 지원 관련 */}
                         </audio>
                       )}
                     </Flex>

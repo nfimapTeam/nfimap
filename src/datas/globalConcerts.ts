@@ -17,7 +17,7 @@ export const globalConcerts = [
   },
   {
     id: 1002,
-    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN : 요코하마",
+    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN - 요코하마",
     location: "KT Zepp Yokohama",
     date: ["2024-10-29(화)"],
     startTime: "19:00",
@@ -33,7 +33,7 @@ export const globalConcerts = [
   },
   {
     id: 1003,
-    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN : 나고야",
+    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN - 나고야",
     location: "Nagoya Bottom Line",
     date: ["2024-10-31(목)"],
     startTime: "19:00",
@@ -49,7 +49,7 @@ export const globalConcerts = [
   },
   {
     id: 1004,
-    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN : 오사카",
+    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN - 오사카",
     location: "Zepp Namba",
     date: ["2024-11-01(금)"],
     startTime: "19:00",
@@ -65,7 +65,7 @@ export const globalConcerts = [
   },
   {
     id: 1005,
-    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA : 방콕",
+    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA - 방콕",
     location: "MCC HALL BANGKAE",
     date: ["2024-11-23(토)"],
     startTime: "18:00",
@@ -81,7 +81,7 @@ export const globalConcerts = [
   },
   {
     id: 1006,
-    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA : 쿠알라룸푸르",
+    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA - 쿠알라룸푸르",
     location: "ZEPP KUALA LUMPUR",
     date: ["2024-12-01(일)"],
     startTime: "18:00",
@@ -97,7 +97,7 @@ export const globalConcerts = [
   },
   {
     id: 1007,
-    name: "2024 FNC KINGDOM - SING SING SING : 일본",
+    name: "2024 FNC KINGDOM - SING SING SING - 일본",
     location: "마쿠하리 멧세 국제 전시장 9-10홀",
     date: ["2024-12-14(토)", "2024-12-15(일)"],
     startTime: "16:00",
@@ -114,7 +114,7 @@ export const globalConcerts = [
   },
   {
     id: 1008,
-    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA : 마카오",
+    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA - 마카오",
     location: "Broadway Theatre, Broadway Macau",
     date: ["2024-12-22(일)"],
     startTime: "19:00",
@@ -131,7 +131,7 @@ export const globalConcerts = [
   },
   {
     id: 1009,
-    name: "1st FNC BAND KINGDOM in TAOYUAN : 대만",
+    name: "1st FNC BAND KINGDOM in TAOYUAN - 대만",
     location: "THE TAOYUAN ARENA",
     date: ["2025-01-04(토)", "2025-01-05(일)"],
     startTime: "15:30",
@@ -148,7 +148,7 @@ export const globalConcerts = [
   },
   { // todo 현재 공연 상세 정보 미정
     id: 1010,
-    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA : 대만",
+    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA - 대만",
     location: "미정",
     date: ["2025-02-09(일)"],
     startTime: "00:00",

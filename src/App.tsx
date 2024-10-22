@@ -6,8 +6,10 @@ import DetailPage from "./page/DetailPage";
 import NotFound from "./components/NotFound";
 import Profile from "./page/Profile";
 import Music from "./page/Music";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
+  const { t } = useTranslation();
   return (
     <Layout>
       <Routes>
@@ -16,12 +18,7 @@ const App = () => {
         <Route path="/:id" element={<DetailPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/music" element={<Music />} />
-        <Route
-          path="*"
-          element={
-            <NotFound content="여기엔 엔플라잉이 없어요!" />
-          }
-        />
+        <Route path="*" element={<NotFound content={t("notFound")} />} />
       </Routes>
     </Layout>
   );
