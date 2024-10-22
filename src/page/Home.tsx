@@ -121,7 +121,7 @@ const Home = () => {
     isPastEvent: boolean,
     timeRemaining: { days: number; hours: number; minutes: number } | null
   ) => {
-    if (isPastEvent || concert.type === "행사") {
+    if (isPastEvent || concert.type === "행사" || concert.type === "Event") {
       return t("performanceInfo");
     } else if (concert.ticketOpen.date === "0000-00-00") {
       return t("waitingForTicketSchedule");
@@ -228,7 +228,13 @@ const Home = () => {
         return t("concert");
       case "페스티벌":
         return t("festival");
-      case "이벤트":
+      case "행사":
+        return t("event");
+      case "concert":
+        return t("concert");
+      case "festival":
+        return t("festival");
+      case "event":
         return t("event");
       default:
         return type;
@@ -329,9 +335,9 @@ const Home = () => {
             placeholder={t("selectConcertType")}
           >
             <Option value="">{t("all")}</Option>
-            <Option value={t("concert")}>{t("concert")}</Option>
-            <Option value={t("festival")}>{t("festival")}</Option>
-            <Option value={t("event")}>{t("event")}</Option>
+            <Option value={t("concertVal")}>{t("concert")}</Option>
+            <Option value={t("festivalVal")}>{t("festival")}</Option>
+            <Option value={t("eventVal")}>{t("event")}</Option>
           </Select>
           <Select
             value={sortOrder}

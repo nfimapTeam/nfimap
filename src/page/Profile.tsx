@@ -65,12 +65,10 @@ const Profile = () => {
   const [profileState, setProfileState] = useState<ProfileData>();
 
   useEffect(() => {
-    if (i18n.language === "ko") {
-      setProfileState(profileData);
-    } else {
-      setProfileState(profileDataEng);
-    }
-  }, [profileData, profileDataEng, i18n]);
+    const newProfileData =
+      i18n.language === "ko" ? profileData : profileDataEng;
+    setProfileState(newProfileData);
+  }, [i18n.language]);
 
   return (
     <Box
@@ -358,8 +356,8 @@ const Profile = () => {
           <Link href={profileState?.official_sites.x} isExternal>
             <Image
               src="/image/x.png"
-              w="50px"
-              h="50px"
+              w="40px"
+              h="40px"
               borderRadius="8px"
               transition="all 0.2s"
               _hover={{ transform: "scale(1.1)", boxShadow: "lg" }}
@@ -369,8 +367,8 @@ const Profile = () => {
           <Link href={profileState?.official_sites.facebook} isExternal>
             <Image
               src="/image/facebook.jpg"
-              w="50px"
-              h="50px"
+              w="40px"
+              h="40px"
               borderRadius="8px"
               transition="all 0.2s"
               _hover={{ transform: "scale(1.1)", boxShadow: "lg" }}
@@ -380,8 +378,8 @@ const Profile = () => {
           <Link href={profileState?.official_sites.instagram} isExternal>
             <Image
               src="/image/instagram.jpg"
-              w="50px"
-              h="50px"
+              w="40px"
+              h="40px"
               borderRadius="8px"
               transition="all 0.2s"
               _hover={{ transform: "scale(1.1)", boxShadow: "lg" }}
@@ -391,8 +389,8 @@ const Profile = () => {
           <Link href={profileState?.official_sites.daumcafe} isExternal>
             <Image
               src="/image/daumcafe.png"
-              w="50px"
-              h="50px"
+              w="40px"
+              h="40px"
               borderRadius="8px"
               transition="all 0.2s"
               _hover={{ transform: "scale(1.1)", boxShadow: "lg" }}
@@ -402,8 +400,8 @@ const Profile = () => {
           <Link href={profileState?.official_sites.youtube} isExternal>
             <Image
               src="/image/youtube.png"
-              w="50px"
-              h="50px"
+              w="40px"
+              h="40px"
               borderRadius="8px"
               border="1px solid #eee"
               transition="all 0.2s"
