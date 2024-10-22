@@ -18,6 +18,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { CalendarIcon, ClockIcon, MapPinIcon, UserIcon, ExternalLinkIcon, StickyNoteIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface CustomModalProps {
   item: any;
@@ -26,6 +27,7 @@ interface CustomModalProps {
 }
 
 const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
+  const { t, i18n } = useTranslation();
   if (!item) return null;
 
   const isNfiRoad = !("poster" in item);
@@ -80,7 +82,7 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
                 <Box>
                   <HStack spacing={2} mb={2}>
                     <Badge colorScheme={isNfiRoad ? "green" : "purple"} fontSize="md" px={2} py={1}>
-                      {isNfiRoad ? item.category : "공연"}
+                      {isNfiRoad ? item.category : t("performance")}
                     </Badge>
                   </HStack>
                 </Box>
@@ -106,7 +108,7 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
                             size="md"
                             width="100%"
                           >
-                            장소 정보 확인
+                            {t("checkLocationInfo")}
                           </Button>
                         </Link>
                       )}
@@ -120,7 +122,7 @@ const CustomModal = ({ item, isOpen, onClose }: CustomModalProps) => {
                       <HStack spacing={4}>
                         <ClockIcon size={20} color="#3182CE" />
                         <Text fontWeight="medium">
-                          {item.startTime} (총 {item.durationMinutes}분)
+                            {item.startTime} {t("total")} {item.durationMinutes} {t("minutes")}
                         </Text>
                       </HStack>
                       <HStack spacing={4} alignItems="flex-start">

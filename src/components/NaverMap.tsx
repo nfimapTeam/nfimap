@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDisclosure } from "@chakra-ui/react";
 import CustomModal from "./CustomModal";
+import { useTranslation } from "react-i18next";
 
 type Concert = {
   name: string;
@@ -54,16 +55,23 @@ const NaverMap = ({
   const markersRef = useRef<any[]>([]);
   const [currentInfoWindow, setCurrentInfoWindow] = useState<any>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { t, i18n } = useTranslation();
 
   const ZOOM_LEVEL = 3;
 
   const getCategoryImage = (category: string): string => {
-    switch (category.toLowerCase()) {
+    switch (category) {
       case "카페":
         return "/image/cafe.svg";
       case "장소":
         return "/image/flag.svg";
       case "맛집":
+        return "/image/restaurant.svg";
+      case "Cafe":
+        return "/image/cafe.svg";
+      case "Place":
+        return "/image/flag.svg";
+      case "Food":
         return "/image/restaurant.svg";
       default:
         return "/image/pin/pin_nf01.svg";
@@ -71,12 +79,18 @@ const NaverMap = ({
   };
 
   const getCategoryMarkerImage = (category: string): string => {
-    switch (category.toLowerCase()) {
+    switch (category) {
       case "카페":
         return "/image/cafeMarker.svg";
       case "장소":
         return "/image/flagMarker.svg";
       case "맛집":
+        return "/image/restaurantMarker.svg";
+      case "Cafe":
+        return "/image/cafeMarker.svg";
+      case "Place":
+        return "/image/flagMarker.svg";
+      case "Food":
         return "/image/restaurantMarker.svg";
       default:
         return "/image/pin/pin_nf01.svg";
@@ -84,12 +98,19 @@ const NaverMap = ({
   };
 
   const getCategoryBackgroundColor = (category: string): string => {
-    switch (category.toLowerCase()) {
+    console.log(category);
+    switch (category) {
       case "카페":
         return "#FFC107";
       case "장소":
         return "#8BC34A";
       case "맛집":
+        return "#FF5722";
+      case "Cafe":
+        return "#FFC107";
+      case "Place":
+        return "#8BC34A";
+      case "Food":
         return "#FF5722";
       default:
         return "#FFFFFF";
@@ -239,7 +260,7 @@ const NaverMap = ({
               </div>
             </div>
              <button class="detailBtn" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #0597F2; color: white; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
-              상세보기
+              ${t("View Details")}
             </button>
           </div>
         `;

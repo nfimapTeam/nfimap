@@ -64,5 +64,10 @@
   "concert_type_event": "行事",
   "performance_type_solo": "ソロ",
   "performance_type_joint": "合同",
-  "performance_type_guest": "出演"
+  "performance_type_guest": "出演",
+  "View Details": "詳細を見る",
+  "performance": "公演",
+  "checkLocationInfo": "場所情報を確認",
+  "total": "合計",
+  "minutes": "分"
 }

@@ -65,5 +65,10 @@
   "concert_type_event": "Event",
   "performance_type_solo": "Solo",
   "performance_type_joint": "Joint",
-  "performance_type_guest": "Guest"
+  "performance_type_guest": "Guest",
+  "View Details": "View Details",
+  "performance": "Performance",
+  "checkLocationInfo": "Check Location Info",
+  "total": "Total",
+  "minutes": "minutes"
 }

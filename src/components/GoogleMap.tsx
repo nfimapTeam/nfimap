@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { useDisclosure } from "@chakra-ui/react";
 import CustomModal from "./CustomModal";
+import { useTranslation } from "react-i18next";
 
 declare global {
   interface Window {
@@ -36,6 +37,7 @@ const GoogleMap = ({
   selectedGlobalConcert,
   setSelectedGlobalConcert,
 }: GoogleMapProps) => {
+  const { t, i18n } = useTranslation();
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<any>(null);
   const markersRef = useRef<any[]>([]);
@@ -110,7 +112,7 @@ const GoogleMap = ({
             </div>
           </div>
           <button id="detailBtn-${concert.name.replace(/\s+/g, '-')}" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #0597F2; color: white; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
-            상세보기
+            ${t("View Details")}
           </button>
         </div>
       `;
