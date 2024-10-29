@@ -51,7 +51,10 @@ export const globalShowInfos = [
       "폭망 (I Like You)",
       "Blue Moon",
     ],
-    ootd: [""],
+    ootd: [
+        "/image/show_detail/ootd/world/241029_HIDE-OUT_JAPAN_OOTD_01.jpeg",
+        "/image/show_detail/ootd/world/241029_HIDE-OUT_JAPAN_OOTD_02.jpeg"
+    ],
   },
   {
     id: 1003,
