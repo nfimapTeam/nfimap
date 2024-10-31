@@ -13,7 +13,9 @@ export const globalShowInfos = [
       "Star",
       "Endless Summer",
       "옥탑방 (Rooftop)",
-      "Stand by me"
+      "Stand by me",
+      "I'm Sorry - 회승 with 씨엔블루",
+      "바래 (I Wish) - 승협 with FT아일랜드"
     ],
     ootd: [
       "/image/show_detail/ootd/world/240713_KINGDOM_DAY1.jpeg",
@@ -68,14 +70,48 @@ export const globalShowInfos = [
     name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN : 나고야",
     address:
       "THE BOTTOM LINE 4-7-11 Imaike, Chikusa Ward, Nagoya, Aichi 464-0850, Japan",
-    note: [""],
+    note: ["Seung Hyub's birthday"],
     capacity: "약 750명",
     seats: [
       "/image/show_detail/seats/world/241031_NAGOYA BOTTOM LINE_MAP1.png",
       "/image/show_detail/seats/world/241031_NAGOYA BOTTOM LINE_MAP2.png",
     ],
-    setlist: [""],
-    ootd: [""],
+    setlist: [
+      "불놀이 (Flowerwork)",
+      "Video Therapy",
+      "Born to be - 미발매곡",
+      "Kick-Ass",
+      "Lupin",
+      "Songbird",
+      "Blue Moon",
+      "네가 내 마음에 자리 잡았다 (Into You)",
+      "옥탑방 (Rooftop)",
+      "그랬나봐 (I Think I Did)",
+      "FLOWER FANTASY",
+      "Love You Like That - 미발매곡",
+      "굿밤 (GOOD BAM)",
+      "ANYWAY",
+      "4242",
+      "Star",
+      "꽃바람 (YOUTH)",
+      "아 진짜요. (Oh really.)",
+      "Moonshot",
+      "Monster",
+      "진짜가 나타났다 (The Real)",
+      "Run",
+      "The World Is Mine",
+      "그러니까 우리 (Don't Forget This)",
+      "Stand By Me",
+      "Sunset",
+      "폭망 (I Like You)",
+      "놔 (Leave It)",
+      "Blue Moon"
+    ],
+    ootd: [
+        "/image/show_detail/ootd/world/241031_HIDE-OUT_JAPAN_OOTD_00.jpeg",
+        "/image/show_detail/ootd/world/241031_HIDE-OUT_JAPAN_OOTD_01.jpeg",
+        "/image/show_detail/ootd/world/241031_HIDE-OUT_JAPAN_OOTD_02.jpeg"
+    ],
   },
   {
     id: 1004,
