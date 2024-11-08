@@ -606,8 +606,26 @@ export const showInfos = [
       "/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEAT_1F.png",
       "/image/show_detail/seats/2024/GYEONGJU_ARTCENTER_SEAT_2F.png",
     ],
-    setlist: [""],
-    ootd: [""],
+    setlist: [
+      "Blue Moon",
+      "Autumn Dream",
+      "Firefly",
+      "이 별 저 별 (Fate)",
+      "옥탑방 (Rooftop)",
+      "네가 내 마음에 자리 잡았다 (Into You)",
+      "Preview",
+      "굿밤 (GOOD BAM)",
+      "아 진짜요. (Oh really.)",
+      "4242",
+      "ANYWAY",
+      "Songbird",
+      "Sunset",
+      "Shooting Star"
+    ],
+    ootd: [
+      "/image/show_detail/ootd/2024/241108_GYEONGJU_ARTCENTER_OOTD_01.jpeg",
+      "/image/show_detail/ootd/2024/241108_GYEONGJU_ARTCENTER_OOTD_02.jpeg"
+    ],
   },
   {
     id: 22,
