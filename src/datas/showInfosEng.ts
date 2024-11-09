@@ -668,25 +668,6 @@ export const showInfosEng = [
       "/image/show_detail/seats/2024/BEXCO_Auditorium_1F_official.png",
       "/image/show_detail/seats/2024/BEXCO_Auditorium_2F_official.png",
     ],
-    setlist: [""],
-    ootd: ["", ""],
-  },
-  {
-    id: 23,
-    name: "LOVE IN SEOUL 2024 - N.Flying", // 블루스퀘어 마스터카드홀
-    address:
-      "Blue Square Mastercard Hall, 294 Itaewon-ro, Yongsan-gu, Seoul, South Korea",
-    note: [
-      "Blue Square parking lot is usually full. Public transportation is highly recommended (Nearby parking: Hangangjin Station public parking lot)",
-      "Direct underground passage connection between Hangangjin Station exit 2 and 3 on Line 6",
-    ],
-    capacity:
-      "Standing setup: Maximum 2,800 people (1F 2,400 people, 2F 381 seats)",
-    seats: [
-      "/image/show_detail/seats/2024/BLUE_SQUARE_MASTER_CARD_HALL_SEAT.png",
-      "/image/show_detail/seats/2024/BLUE_SQUARE_MASTER_CARD_HALL_SEAT_1F.png",
-      "/image/show_detail/seats/2024/BLUE_SQUARE_MASTER_CARD_HALL_SEAT_2F.png",
-    ],
     setlist: [
       "Moonshot",
       "Sober",
@@ -715,6 +696,28 @@ export const showInfosEng = [
       "Blue Moon",
       "옥탑방 (Rooftop)",
     ],
+    ootd: [
+      "/image/show_detail/ootd/2024/241109_BUSAN_OOTD_01.jpeg",
+      "/image/show_detail/ootd/2024/241109_BUSAN_OOTD_02.jpeg",
+    ],
+  },
+  {
+    id: 23,
+    name: "LOVE IN SEOUL 2024 - N.Flying", // 블루스퀘어 마스터카드홀
+    address:
+      "Blue Square Mastercard Hall, 294 Itaewon-ro, Yongsan-gu, Seoul, South Korea",
+    note: [
+      "Blue Square parking lot is usually full. Public transportation is highly recommended (Nearby parking: Hangangjin Station public parking lot)",
+      "Direct underground passage connection between Hangangjin Station exit 2 and 3 on Line 6",
+    ],
+    capacity:
+      "Standing setup: Maximum 2,800 people (1F 2,400 people, 2F 381 seats)",
+    seats: [
+      "/image/show_detail/seats/2024/BLUE_SQUARE_MASTER_CARD_HALL_SEAT.png",
+      "/image/show_detail/seats/2024/BLUE_SQUARE_MASTER_CARD_HALL_SEAT_1F.png",
+      "/image/show_detail/seats/2024/BLUE_SQUARE_MASTER_CARD_HALL_SEAT_2F.png",
+    ],
+    setlist: [""],
     ootd: [""],
   },
 ];

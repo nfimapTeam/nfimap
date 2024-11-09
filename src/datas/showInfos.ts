@@ -620,11 +620,11 @@ export const showInfos = [
       "ANYWAY",
       "Songbird",
       "Sunset",
-      "Shooting Star"
+      "Shooting Star",
     ],
     ootd: [
       "/image/show_detail/ootd/2024/241108_GYEONGJU_ARTCENTER_OOTD_01.jpeg",
-      "/image/show_detail/ootd/2024/241108_GYEONGJU_ARTCENTER_OOTD_02.jpeg"
+      "/image/show_detail/ootd/2024/241108_GYEONGJU_ARTCENTER_OOTD_02.jpeg",
     ],
   },
   {
@@ -638,7 +638,8 @@ export const showInfos = [
       "/image/show_detail/seats/2024/BEXCO_Auditorium_1F_official.png",
       "/image/show_detail/seats/2024/BEXCO_Auditorium_2F_official.png",
     ],
-    setlist: ["Moonshot",
+    setlist: [
+      "Moonshot",
       "Sober",
       "Tree",
       "Moon & Cheese",
@@ -665,7 +666,10 @@ export const showInfos = [
       "Blue Moon",
       "옥탑방 (Rooftop)",
     ],
-    ootd: ["", ""],
+    ootd: [
+      "/image/show_detail/ootd/2024/241109_BUSAN_OOTD_01.jpeg",
+      "/image/show_detail/ootd/2024/241109_BUSAN_OOTD_02.jpeg",
+    ],
   },
   {
     id: 23,
