@@ -172,7 +172,7 @@ export const showInfos = [
   {
     id: 6,
     name: "Soundberry Festa’ 24 - 부산",
-    address: "부산 해운대구 APEC로 55", // 벡스코 제1전시장
+    address: "부산 해운대구 APEC로 55", // 부산 BEXCO 제1전시장
     note: ["벡스코 내에 유료 주차 공간에 선착순으로 가능."],
     capacity: "약 4,000명 (공연에 따라 다름)",
     seats: [],
@@ -691,7 +691,7 @@ export const showInfos = [
       "폭망 (I Like You)",
       "네가 내 마음에 자리 잡았다 (Into You)",
       "Blue Moon",
-      "골목길에서(Crossroad) - 즉석에서 갑자기",
+      "골목길에서 (Crossroad) - 즉석에서",
       "Autumn Dream",
       "피었습니다. (Into Bloom)",
       "Shooting Star",
@@ -713,6 +713,20 @@ export const showInfos = [
     ootd: [
       "/image/show_detail/ootd/2024/241120_LOVE_IN_SEOUL_OOTD_01.jpeg",
       "/image/show_detail/ootd/2024/241120_LOVE_IN_SEOUL_OOTD_02.jpeg"
+    ],
+  },
+  {
+    id: 24,
+    name: "2024 Someday Christmas in 부산", // 부산 BEXCO 제1전시장
+    address: "부산 해운대구 APEC로 55",
+    note: ["벡스코 내에 유료 주차 공간에 선착순으로 가능."],
+    capacity: "약 4,000명 (공연에 따라 다름)",
+    seats: [],
+    setlist: [
+      ""
+    ],
+    ootd: [
+      ""
     ],
   },
 ];

@@ -177,7 +177,7 @@ export const showInfosEng = [
   {
     id: 6,
     name: "Soundberry Festa’ 24 - Busan",
-    address: "55, APEC-ro, Haeundae-gu, Busan, South Korea", // 벡스코 제1전시장
+    address: "55, APEC-ro, Haeundae-gu, Busan, South Korea", // 부산 BEXCO 제1전시장
     note: [
       "Paid parking spaces are available on a first-come, first-served basis within BEXCO.",
     ],
@@ -723,7 +723,7 @@ export const showInfosEng = [
       "폭망 (I Like You)",
       "네가 내 마음에 자리 잡았다 (Into You)",
       "Blue Moon",
-      "골목길에서(Crossroad) - On the spot",
+      "골목길에서 (Crossroad) - On the spot",
       "Autumn Dream",
       "피었습니다. (Into Bloom)",
       "Shooting Star",
@@ -745,6 +745,20 @@ export const showInfosEng = [
     ootd: [
       "/image/show_detail/ootd/2024/241120_LOVE_IN_SEOUL_OOTD_01.jpeg",
       "/image/show_detail/ootd/2024/241120_LOVE_IN_SEOUL_OOTD_02.jpeg"
+    ],
+  },
+  {
+    id: 24,
+    name: "2024 Someday Christmas in Busan", // 부산 BEXCO 제1전시장
+    address: "55, APEC-ro, Haeundae-gu, Busan, South Korea",
+    note: ["Paid parking spaces are available on a first-come, first-served basis within BEXCO."],
+    capacity: "Approximately 4,000 people (varies depending on the performance)",
+    seats: [],
+    setlist: [
+      ""
+    ],
+    ootd: [
+      ""
     ],
   },
 ];

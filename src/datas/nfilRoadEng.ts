@@ -217,7 +217,17 @@ export const nfiRoadDataEng = [
         category: "Food",
         lat: "35.1622100514759",
         lng: "129.163126552708",
-        naverLink: "https://maps.app.goo.gl/ZhKJYqZUK7XXaB5GA",
+        naverLink: "https://maps..app.goo.gl/ZhKJYqZUK7XXaB5GA",
         note : "A famous hotteok (Korean pancake) shop visited by Seunghyub and Hweseung."
+    },
+    {
+        id: 23,
+        name: "Song-ga-ne Gamja-tang",
+        location: "245 Donggyo-ro, Mapo-gu, Seoul, Song-ga-ne Gamja-tang",
+        category: "Food",
+        lat: "37.5618364940379",
+        lng: "126.924050688833",
+        naverLink: "https://maps.app.goo.gl/q5DCXSo9Y2tgTCyd8",
+        note : "A restaurant that Seunghyub has been visiting since his trainee days."
     },
 ];

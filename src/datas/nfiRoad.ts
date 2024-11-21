@@ -220,4 +220,14 @@ export const nfiRoadData = [
     naverLink: "https://naver.me/GqsTrB3v",
     note : "보컬즈가 다녀간 줄서서 먹는 호떡 맛집"
   },
+  {
+    id: 23,
+    name: "송가네감자탕 본점",
+    location: "서울 마포구 동교로 245 송가네감자탕",
+    category: "맛집",
+    lat: "37.5618364940379",
+    lng: "126.924050688833",
+    naverLink: "https://naver.me/535USHEc",
+    note : "승협 연습생 때부터 가던 감자탕 집"
+  },
 ];
