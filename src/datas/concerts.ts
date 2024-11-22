@@ -438,7 +438,7 @@ export const concertsData = [
     name: "2024 Someday Christmas in 부산",
     location: "부산 BEXCO 제1전시장",
     date: ["2024-12-25(수)"],
-    startTime: "00:00", // todo 아직 미정
+    startTime: "12:00", // todo 아직 미정
     durationMinutes: 500, // todo 아직 미정
     type: "페스티벌",
     performanceType: "출연",

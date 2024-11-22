@@ -445,7 +445,7 @@ export const concertsDataEng = [
     name: "2024 Someday Christmas in Busan",
     location: "BEXCO Exhibition Center1",
     date: ["2024-12-25(Wed)"],
-    startTime: "00:00", // todo 아직 미정
+    startTime: "12:00", // todo 아직 미정
     durationMinutes: 500, // todo 아직 미정
     type: "Festival",
     performanceType: "Guest",
