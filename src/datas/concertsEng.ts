@@ -446,13 +446,13 @@ export const concertsDataEng = [
     location: "BEXCO Exhibition Center1",
     date: ["2024-12-25(Wed)"],
     startTime: "00:00", // todo 아직 미정
-    durationMinutes: 0, // todo 아직 미정
+    durationMinutes: 500, // todo 아직 미정
     type: "Festival",
     performanceType: "Guest",
     artists: ["N.Flying", "Band Nah", "Redoor", "10CM", "THORNAPPLE", "OWALLOIL", "ONEWE", "jisokuryClub", "TOUCHED", "FRankly", "HENRY"],
     poster: "/image/show/2024/241225_SOMEDAY_BUSAN.jpeg",
     ticketOpen: { date: "2024-11-22", time: "18:00" },
-    ticketLink: "", // todo 아직 미정
+    ticketLink: "https://tickets.interpark.com/goods/24016224",
     lat: "35.16913914655388",
     lng: "129.13625805641516",
   },
