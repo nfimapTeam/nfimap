@@ -69,7 +69,7 @@ export const globalConcertsEng = [
         location: "MCC HALL BANGKAE",
         date: ["2024-11-23(Sat)"],
         startTime: "18:00",
-        durationMinutes: 120,
+        durationMinutes: 150,
         type: "Concert",
         performanceType: "Solo",
         artists: ["N.Flying"],
@@ -108,7 +108,6 @@ export const globalConcertsEng = [
         poster: "/image/show/world/241214_BAND_KINGDOM_SING3_JP.png",
         ticketOpen: { date: "2024-08-01", time: "18:00" },
         ticketLink: "https://w.pia.jp/t/fnckingdom24/",
-        // todo 티켓피아 독점 선행 11/16 까지
         lat: "35.6500363",
         lng: "140.0365264",
     },

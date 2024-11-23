@@ -698,7 +698,7 @@ export const showInfos = [
       "Firefly",
       "Video Therapy",
       "Monster",
-      "Monster - 신나서 한번 더",
+      "Monster - 한번 더",
       "그 밤 (The Night)",
       "너에게 (To You)",
       "옥탑방 (Rooftop)",

@@ -443,10 +443,10 @@ export const concertsDataEng = [
   {
     id: 24,
     name: "2024 Someday Christmas in Busan",
-    location: "BEXCO Exhibition Center1",
+    location: "BEXCO Exhibition Center1 Hall3",
     date: ["2024-12-25(Wed)"],
-    startTime: "12:00", // todo 아직 미정
-    durationMinutes: 500, // todo 아직 미정
+    startTime: "12:00",
+    durationMinutes: 500,
     type: "Festival",
     performanceType: "Guest",
     artists: ["N.Flying", "Band Nah", "Redoor", "10CM", "THORNAPPLE", "OWALLOIL", "ONEWE", "jisokuryClub", "TOUCHED", "FRankly", "HENRY"],
