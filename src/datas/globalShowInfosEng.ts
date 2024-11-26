@@ -211,7 +211,12 @@ export const globalShowInfosEng = [
     name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA - Kuala Lumpur",
     address:
       "Zepp Kuala Lumpur BBCC No.2, Jalan Hang Tuah, Bukit Bintang City Centre, 55100 Kuala Lumpur",
-    note: [""],
+    note: [
+      "/image/show_detail/note/2024/ZEPP_KL_GUIDE_00.jpeg",
+      "/image/show_detail/note/2024/ZEPP_KL_GUIDE_01.jpeg",
+      "/image/show_detail/note/2024/ZEPP_KL_GUIDE_02.jpeg",
+      "/image/show_detail/note/2024/ZEPP_KL_GUIDE_03.jpeg"
+    ],
     capacity: "Approximately 2,500 people",
     seats: ["/image/show_detail/seats/world/241201_HIDE-OUT_MY_SEAT.png"],
     setlist: [""],
