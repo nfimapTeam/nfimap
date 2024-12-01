@@ -15,7 +15,7 @@ export const globalShowInfosEng = [
       "옥탑방 (Rooftop)",
       "Stand by me",
       "I'm Sorry - Hweseung with CNBLUE",
-      "바래 (I Wish) - Seunghyub with FTISLAND"
+      "바래 (I Wish) - Seunghyub with FTISLAND",
     ],
     ootd: [
       "/image/show_detail/ootd/world/240713_KINGDOM_DAY1.jpeg",
@@ -65,7 +65,7 @@ export const globalShowInfosEng = [
     ootd: [
       "/image/show_detail/ootd/world/241029_HIDE-OUT_JAPAN_OOTD_01.jpeg",
       "/image/show_detail/ootd/world/241029_HIDE-OUT_JAPAN_OOTD_02.jpeg",
-      "/image/show_detail/ootd/world/241029_HIDE-OUT_JAPAN_OOTD_03.jpeg"
+      "/image/show_detail/ootd/world/241029_HIDE-OUT_JAPAN_OOTD_03.jpeg",
     ],
   },
   {
@@ -108,12 +108,12 @@ export const globalShowInfosEng = [
       "Sunset",
       "폭망 (I Like You)",
       "놔 (Leave It)",
-      "Blue Moon"
+      "Blue Moon",
     ],
     ootd: [
       "/image/show_detail/ootd/world/241031_HIDE-OUT_JAPAN_OOTD_00.jpeg",
       "/image/show_detail/ootd/world/241031_HIDE-OUT_JAPAN_OOTD_01.jpeg",
-      "/image/show_detail/ootd/world/241031_HIDE-OUT_JAPAN_OOTD_02.jpeg"
+      "/image/show_detail/ootd/world/241031_HIDE-OUT_JAPAN_OOTD_02.jpeg",
     ],
   },
   {
@@ -159,7 +159,7 @@ export const globalShowInfosEng = [
       "Stand By Me",
       "Blue Moon",
       "Songbird",
-      "Kick-Ass"
+      "Kick-Ass",
     ],
     ootd: [
       "/image/show_detail/ootd/world/241101_HIDE-OUT_JAPAN_OOTD_01.jpeg",
@@ -203,7 +203,7 @@ export const globalShowInfosEng = [
     ],
     ootd: [
       "/image/show_detail/ootd/world/241123_HIDE-OUT_BANGKOK_OOTD_01.jpeg",
-      "/image/show_detail/ootd/world/241123_HIDE-OUT_BANGKOK_OOTD_02.jpeg"
+      "/image/show_detail/ootd/world/241123_HIDE-OUT_BANGKOK_OOTD_02.jpeg",
     ],
   },
   {
@@ -215,11 +215,41 @@ export const globalShowInfosEng = [
       "/image/show_detail/note/2024/ZEPP_KL_GUIDE_00.jpeg",
       "/image/show_detail/note/2024/ZEPP_KL_GUIDE_01.jpeg",
       "/image/show_detail/note/2024/ZEPP_KL_GUIDE_02.jpeg",
-      "/image/show_detail/note/2024/ZEPP_KL_GUIDE_03.jpeg"
+      "/image/show_detail/note/2024/ZEPP_KL_GUIDE_03.jpeg",
     ],
     capacity: "Approximately 2,500 people",
     seats: ["/image/show_detail/seats/world/241201_HIDE-OUT_MY_SEAT.png"],
-    setlist: [""],
+    setlist: [
+      "불놀이 (Flowerwork)",
+      "Video Therapy",
+      "Born to be - 미발매곡",
+      "Star",
+      "네가 내 마음에 자리 잡았다 (Into You)",
+      "꽃바람 (YOUTH)",
+      "아 진짜요. (Oh really.)",
+      "Blue Moon",
+      "옥탑방 (Rooftop)",
+      "그랬나봐 (I Think I Did)",
+      "FLOWER FANTASY",
+      "Love You Like That - 미발매곡",
+      "굿밤 (GOOD BAM)",
+      "ANYWAY",
+      "4242",
+      "Autumn Dream",
+      "기가 막혀 (Awesome)",
+      "기가 막혀 (Awesome) - 한번 더",
+      "Moonshot",
+      "Monster",
+      "진짜가 나타났다 (The Real)",
+      "진짜가 나타났다 (The Real) - 한번 더",
+      "Run",
+      "The World Is Mine - 앵콜",
+      "그러니까 우리 (Don't Forget This) - 앵콜",
+      "Stand By Me - 앵콜",
+      "Sunset - 앵콜",
+      "놔 (Leave It) - 앵콜",
+      "Songbird - 앵콜",
+    ],
     ootd: [""],
   },
   {
@@ -259,7 +289,8 @@ export const globalShowInfosEng = [
   {
     id: 1010,
     name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA - TAIPEI",
-    address: "TICC No. 1, Section 5, Xinyi Rd, Xinyi District, Taipei City, TAIPEI 110",
+    address:
+      "TICC No. 1, Section 5, Xinyi Rd, Xinyi District, Taipei City, TAIPEI 110",
     note: [""],
     capacity: "Approximately 3,000 people",
     seats: ["/image/show_detail/seats/world/250209_HIDE-OUT_TAIPEI_SEAT.jpeg"],
