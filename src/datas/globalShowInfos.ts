@@ -242,13 +242,16 @@ export const globalShowInfos = [
       "진짜가 나타났다 (The Real) - 한번 더",
       "Run",
       "The World Is Mine - 앵콜",
+      "폭망 (I Like You) - 앵콜",
       "그러니까 우리 (Don't Forget This) - 앵콜",
       "Stand By Me - 앵콜",
       "Sunset - 앵콜",
       "놔 (Leave It) - 앵콜",
       "Songbird - 앵콜",
     ],
-    ootd: [""],
+    ootd: [
+      "/image/show_detail/ootd/world/241201_HIDE-OUT_KUALALUMPUR_OOTD_00.jpeg",
+    ],
   },
   {
     id: 1007,
