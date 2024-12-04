@@ -438,8 +438,8 @@ export const concertsData = [
     name: "2024 Someday Christmas in 부산",
     location: "부산 벡스코 제1전시장 3홀",
     date: ["2024-12-25(수)"],
-    startTime: "12:00",
-    durationMinutes: 500,
+    startTime: "17:40",
+    durationMinutes: 70,
     type: "페스티벌",
     performanceType: "출연",
     artists: ["N.Flying", "나상현씨밴드", "리도어", "십센치", "쏜애플", "오월오일", "온유", "원위", "지소쿠리클럽", "터치드", "프랭클리", "헨리"],
@@ -448,5 +448,21 @@ export const concertsData = [
     ticketLink: "https://tickets.interpark.com/goods/24016224",
     lat: "35.16913914655388",
     lng: "129.13625805641516",
+  },
+  {
+    id: 25,
+    name: "2024 LOVE FNC COUNTDOWN",
+    location: "세종대학교 대양홀",
+    date: ["2024-12-31(화)"],
+    startTime: "00:00", // todo 시간 미정
+    durationMinutes: 0, // todo 시간 미정
+    type: "페스티벌",
+    performanceType: "출연",
+    artists: ["N.Flying", "FNC NEW BAND"], // todo 3번팀 추가
+    poster: "/image/show/2024/241231_LOVE_FNC_COUNTDOWN.jpeg",
+    ticketOpen: { date: "2024-12-09", time: "20:00" },
+    ticketLink: "", // todo 페이지 미오픈
+    lat: "37.548629514638684",
+    lng: "127.07450088858732",
   },
 ];

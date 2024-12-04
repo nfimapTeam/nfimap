@@ -245,9 +245,9 @@ export const globalShowInfos = [
       "폭망 (I Like You) - 앵콜",
       "그러니까 우리 (Don't Forget This) - 앵콜",
       "Stand By Me - 앵콜",
-      "Sunset - 앵콜",
-      "놔 (Leave It) - 앵콜",
-      "Songbird - 앵콜",
+      "Sunset - 앵앵콜",
+      "놔 (Leave It) - 앵앵콜",
+      "Songbird - 앵앵콜",
     ],
     ootd: [
       "/image/show_detail/ootd/world/241201_HIDE-OUT_KUALALUMPUR_OOTD_00.jpeg",

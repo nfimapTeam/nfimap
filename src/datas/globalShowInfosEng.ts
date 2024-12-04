@@ -247,9 +247,9 @@ export const globalShowInfosEng = [
       "폭망 (I Like You) - Encore",
       "그러니까 우리 (Don't Forget This) - Encore",
       "Stand By Me - Encore",
-      "Sunset - Encore",
-      "놔 (Leave It) - Encore",
-      "Songbird - Encore",
+      "Sunset - Double Encore",
+      "놔 (Leave It) - Double Encore",
+      "Songbird - Double Encore",
     ],
     ootd: [
       "/image/show_detail/ootd/world/241201_HIDE-OUT_KUALALUMPUR_OOTD_00.jpeg",

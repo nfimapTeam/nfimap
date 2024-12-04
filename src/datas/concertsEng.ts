@@ -445,8 +445,8 @@ export const concertsDataEng = [
     name: "2024 Someday Christmas in Busan",
     location: "BEXCO Exhibition Center1 Hall3",
     date: ["2024-12-25(Wed)"],
-    startTime: "12:00",
-    durationMinutes: 500,
+    startTime: "17:40",
+    durationMinutes: 70,
     type: "Festival",
     performanceType: "Guest",
     artists: ["N.Flying", "Band Nah", "Redoor", "10CM", "THORNAPPLE", "OWALLOIL", "ONEWE", "jisokuryClub", "TOUCHED", "FRankly", "HENRY"],
@@ -455,5 +455,21 @@ export const concertsDataEng = [
     ticketLink: "https://tickets.interpark.com/goods/24016224",
     lat: "35.16913914655388",
     lng: "129.13625805641516",
+  },
+  {
+    id: 25,
+    name: "2024 LOVE FNC COUNTDOWN",
+    location: "Sejong University Daeyang Hall",
+    date: ["2024-12-31(TUE)"],
+    startTime: "00:00", // todo 시간 미정
+    durationMinutes: 0, // todo 시간 미정
+    type: "Festival",
+    performanceType: "Guest",
+    artists: ["N.Flying", "FNC NEW BAND"], // todo 3번팀 추가
+    poster: "/image/show/2024/241231_LOVE_FNC_COUNTDOWN.jpeg",
+    ticketOpen: { date: "2024-12-09", time: "20:00" },
+    ticketLink: "", // todo 페이지 미오픈
+    lat: "37.548629514638684",
+    lng: "127.07450088858732",
   },
 ];

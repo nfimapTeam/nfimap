@@ -761,4 +761,20 @@ export const showInfosEng = [
       ""
     ],
   },
+  {
+    id: 25,
+    name: "2024 Someday Christmas in 부산", // 세종대학교 대양홀
+    address: "Daeyang Hall, Sejong University, 209 Neungdong-ro, Gwangjin-gu, Seoul, South Korea",
+    note: ["From Exit 6 of Children’s Grand Park Station (Line 7), walk 275 meters (4 minutes)"],
+    capacity: "Approximately 2,029 Seats",
+    seats: [
+      "/image/show_detail/seats/2024/241231_SEJONG_UNIV_TEMP.png" // todo 수정필요
+    ],
+    setlist: [
+      ""
+    ],
+    ootd: [
+      ""
+    ],
+  },
 ];
