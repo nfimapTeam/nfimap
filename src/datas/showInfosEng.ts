@@ -768,7 +768,7 @@ export const showInfosEng = [
     note: ["From Exit 6 of Children’s Grand Park Station (Line 7), walk 275 meters (4 minutes)"],
     capacity: "Approximately 2,029 Seats",
     seats: [
-      "/image/show_detail/seats/2024/241231_SEJONG_UNIV_TEMP.png" // todo 수정필요
+      "/image/show_detail/seats/2024/241231_SEJONG_UNIV.png"
     ],
     setlist: [
       ""

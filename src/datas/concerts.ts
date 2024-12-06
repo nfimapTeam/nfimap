@@ -454,14 +454,14 @@ export const concertsData = [
     name: "2024 LOVE FNC COUNTDOWN",
     location: "세종대학교 대양홀",
     date: ["2024-12-31(화)"],
-    startTime: "00:00", // todo 시간 미정
-    durationMinutes: 0, // todo 시간 미정
+    startTime: "20:50",
+    durationMinutes: 70,
     type: "페스티벌",
     performanceType: "출연",
-    artists: ["N.Flying", "FNC NEW BAND"], // todo 3번팀 추가
+    artists: ["N.Flying", "FNC NEW BAND", "FT아일랜드"],
     poster: "/image/show/2024/241231_LOVE_FNC_COUNTDOWN.jpeg",
     ticketOpen: { date: "2024-12-09", time: "20:00" },
-    ticketLink: "", // todo 페이지 미오픈
+    ticketLink: "https://www.ticketlink.co.kr/product/53659",
     lat: "37.548629514638684",
     lng: "127.07450088858732",
   },

@@ -461,14 +461,14 @@ export const concertsDataEng = [
     name: "2024 LOVE FNC COUNTDOWN",
     location: "Sejong University Daeyang Hall",
     date: ["2024-12-31(TUE)"],
-    startTime: "00:00", // todo 시간 미정
-    durationMinutes: 0, // todo 시간 미정
+    startTime: "20:50",
+    durationMinutes: 70,
     type: "Festival",
     performanceType: "Guest",
-    artists: ["N.Flying", "FNC NEW BAND"], // todo 3번팀 추가
+    artists: ["N.Flying", "FNC NEW BAND", "FTISLAND"],
     poster: "/image/show/2024/241231_LOVE_FNC_COUNTDOWN.jpeg",
     ticketOpen: { date: "2024-12-09", time: "20:00" },
-    ticketLink: "", // todo 페이지 미오픈
+    ticketLink: "https://www.ticketlink.co.kr/product/53659",
     lat: "37.548629514638684",
     lng: "127.07450088858732",
   },

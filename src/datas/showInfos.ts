@@ -736,7 +736,7 @@ export const showInfos = [
     note: ["7호선 어린이대공원역 6번 출구에서 도보 275m (약 4분 소요)"],
     capacity: "약 2,029 석",
     seats: [
-      "/image/show_detail/seats/2024/241231_SEJONG_UNIV_TEMP.png" // todo 수정필요
+      "/image/show_detail/seats/2024/241231_SEJONG_UNIV.png"
     ],
     setlist: [
       ""
