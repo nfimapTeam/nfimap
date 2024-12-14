@@ -298,11 +298,21 @@ export const globalShowInfos = [
   },
   {
     id: 1010,
-    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA : 대만",
+    name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA : 대만",
     address: "TICC No. 1, Section 5, Xinyi Rd, Xinyi District, Taipei City, TAIPEI 110",
     note: [""],
     capacity: "약 3,000명",
     seats: ["/image/show_detail/seats/world/250209_HIDE-OUT_TAIPEI_SEAT.jpeg"],
+    setlist: [""],
+    ootd: [""],
+  },
+  {
+    id: 1011,
+    name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA - 마닐라",
+    address: "NEW FRONTIER THEATER, 7 General Malvar Ave, Cubao, Quezon City, 1109 Metro Manila, Philippines",
+    note: [""],
+    capacity: "약 2,385석",
+    seats: [""], // todo 좌배도 미공개
     setlist: [""],
     ootd: [""],
   },

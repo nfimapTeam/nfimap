@@ -21,7 +21,7 @@ export const globalConcerts = [
     location: "KT Zepp Yokohama",
     date: ["2024-10-29(화)"],
     startTime: "19:00",
-    durationMinutes: 160,
+    durationMinutes: 120, // 실제 160
     type: "콘서트",
     performanceType: "단독",
     artists: ["N.Flying"],
@@ -37,7 +37,7 @@ export const globalConcerts = [
     location: "Nagoya Bottom Line",
     date: ["2024-10-31(목)"],
     startTime: "19:00",
-    durationMinutes: 160,
+    durationMinutes: 120, // 실제 160
     type: "콘서트",
     performanceType: "단독",
     artists: ["N.Flying"],
@@ -69,7 +69,7 @@ export const globalConcerts = [
     location: "MCC HALL BANGKAE",
     date: ["2024-11-23(토)"],
     startTime: "18:00",
-    durationMinutes: 150,
+    durationMinutes: 120, // 실제 150
     type: "콘서트",
     performanceType: "단독",
     artists: ["N.Flying"],
@@ -85,7 +85,7 @@ export const globalConcerts = [
     location: "ZEPP KUALA LUMPUR",
     date: ["2024-12-01(일)"],
     startTime: "18:30",
-    durationMinutes: 170,
+    durationMinutes: 120, // 실제 170
     type: "콘서트",
     performanceType: "단독",
     artists: ["N.Flying"],
@@ -146,7 +146,7 @@ export const globalConcerts = [
   },
   {
     id: 1010,
-    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA - 대만",
+    name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA - 대만",
     location: "TAIPEI TICC",
     date: ["2025-02-09(일)"],
     startTime: "18:00",
@@ -159,5 +159,21 @@ export const globalConcerts = [
     ticketLink: "https://kktix.com/events/1acbe4df/registrations/new",
     lat: "25.0335925",
     lng: "121.5609091",
+  },
+  {
+    id: 1011,
+    name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA - 마닐라",
+    location: "NEW FRONTIER THEATER",
+    date: ["2025-01-26(일)"],
+    startTime: "19:30",
+    durationMinutes: 120,
+    type: "콘서트",
+    performanceType: "단독",
+    artists: ["N.Flying"],
+    poster: "/image/show/world/250126_HIDE-OUT_MANILA.jpg",
+    ticketOpen: { date: "2024-12-28", time: "" }, // todo 티켓 오픈 시간 미정
+    ticketLink: "", // todo 티켓 페이지 미정
+    lat: "14.6224806",
+    lng: "121.0537399",
   },
 ];
