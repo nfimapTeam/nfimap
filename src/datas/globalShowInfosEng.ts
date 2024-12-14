@@ -263,8 +263,17 @@ export const globalShowInfosEng = [
     note: [""],
     capacity: "Approximately 12,000 people",
     seats: [""],
-    setlist: [""],
-    ootd: [""],
+    setlist: [
+      // "스페셜 스테이지 : 군청 - 회승 & 태민", // todo 업뎃필요
+      // "Wind (FT아일랜드) 커버 - 승협 & 정해인",
+      // "스페셜 스테이지 : 유리의 소년 - 차훈 & 이정신",
+      "The World Is Mine",
+      "Songbird",
+      "Stand By Me",
+      "Flashback",
+      "옥탑방 (Rooftop)"
+    ],
+    ootd: [""], // todo 업뎃필요
   },
   {
     id: 1008,
