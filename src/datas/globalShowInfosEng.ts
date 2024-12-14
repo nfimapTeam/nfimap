@@ -273,7 +273,9 @@ export const globalShowInfosEng = [
       "Flashback",
       "옥탑방 (Rooftop)"
     ],
-    ootd: [""], // todo 업뎃필요
+    ootd: [
+        "/image/show_detail/ootd/world/241214_BAND_KINGDOM_SING_OOTD_01.jpeg"
+    ], // todo 업뎃필요
   },
   {
     id: 1008,
