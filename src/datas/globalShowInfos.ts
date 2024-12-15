@@ -262,7 +262,7 @@ export const globalShowInfos = [
     capacity: "약 12,000명",
     seats: [""],
     setlist: [
-        // "스페셜 스테이지 : 군청 - 회승 & 태민", // todo 업뎃필요
+        // "스페셜 스테이지 : 군청 - 회승 & 태민", // todo 확인 후 업뎃필요
         // "Wind (FT아일랜드) 커버 - 승협 & 정해인",
         // "스페셜 스테이지 : 유리의 소년 - 차훈 & 이정신",
         "The World Is Mine",
@@ -272,8 +272,9 @@ export const globalShowInfos = [
         "옥탑방 (Rooftop)"
     ],
     ootd: [
-        "/image/show_detail/ootd/world/241214_BAND_KINGDOM_SING_OOTD_01.jpeg"
-        ], // todo 업뎃필요
+        "/image/show_detail/ootd/world/241214_BAND_KINGDOM_SING_OOTD_01.jpeg",
+        "/image/show_detail/ootd/world/241215_BAND_KINGDOM_SING_OOTD_01.jpeg"
+        ],
   },
   {
     id: 1008,
