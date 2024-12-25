@@ -692,7 +692,7 @@ export const showInfosEng = [
       "The World Is Mine",
       "Sunset",
       "Songbird",
-      "파란 배경",
+      "파란 배경 (Blue Scene)",
       "Blue Moon",
       "옥탑방 (Rooftop)",
     ],
@@ -755,10 +755,25 @@ export const showInfosEng = [
     capacity: "Approximately 4,000 people (varies depending on the performance)",
     seats: [],
     setlist: [
-      ""
+      "딱 하루만 (Just One Day)",
+      "Blue Moon",
+      "아 진짜요. (Oh really.)",
+      "폭망 (I Like You)",
+      "Preview",
+      "Monster",
+      "놔 (Leave It)",
+      "Jingle Bell Rock",
+      "파란 배경 (Blue Scene)",
+      "너에게 (To You)",
+      "옥탑방 (Rooftop)",
+      "Sunset",
+      "Songbird",
+      "ANYWAY",
+      "진짜가 나타났다 (The Real)",
     ],
     ootd: [
-      ""
+      "/image/show_detail/ootd/2024/241225_SOMEDAY_BUSAN_OOTD_01.jpeg",
+      "/image/show_detail/ootd/2024/241225_SOMEDAY_BUSAN_OOTD_02.jpeg"
     ],
   },
   {

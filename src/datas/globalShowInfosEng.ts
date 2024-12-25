@@ -286,7 +286,10 @@ export const globalShowInfosEng = [
     capacity: "Approximately 2,500 people",
     seats: ["/image/show_detail/seats/world/241222_HIDE-OUT_MACAU_SEAT.jpg"],
     setlist: [""],
-    ootd: [""],
+    ootd: [
+      "/image/show_detail/ootd/world/241222_HIDE-OUT_MACAU_01.jpeg",
+      "/image/show_detail/ootd/world/241222_HIDE-OUT_MACAU_02.jpeg",
+    ],
   },
   {
     id: 1009,
