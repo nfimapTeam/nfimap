@@ -320,7 +320,7 @@ export const globalShowInfos = [
     capacity: "약 2,385석",
     seats: [
         "/image/show_detail/seats/world/250126_MANILA_NEW_FRONTIER_THEATER.jpg"
-    ], // todo 상세 좌배도 미공개
+    ],
     setlist: [""],
     ootd: [""],
   },
