@@ -786,7 +786,22 @@ export const showInfosEng = [
       "/image/show_detail/seats/2024/241231_SEJONG_UNIV.png"
     ],
     setlist: [
-      ""
+      "Moonshot",
+      "Monster",
+      "Songbird",
+      "The World Is Mine",
+      "폭망 (I Like You)",
+      "ANYWAY",
+      "Sunset",
+      "Blue Moon",
+      "딱 하루만 (Just One Day)",
+      "골목길에서 (Crossroad)",
+      "Autumn Dream",
+      "아 진짜요. (Oh really.)",
+      "4242",
+      "옥탑방 (Rooftop)",
+      "스물다섯, 스물하나 (Twenty five, Twenty one)",
+      "Flashback",
     ],
     ootd: [
       ""
