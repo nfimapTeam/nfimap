@@ -309,6 +309,7 @@ export const globalShowInfosEng = [
       "옥탑방 (Rooftop)",
       "Stand By Me",
       "Flashback",
+      "I'm Sorry - Hweseung with CNBLUE",
     ],
     ootd: [""],
   },

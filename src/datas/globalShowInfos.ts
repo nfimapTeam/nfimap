@@ -307,6 +307,7 @@ export const globalShowInfos = [
         "옥탑방 (Rooftop)",
         "Stand By Me",
         "Flashback",
+        "I'm Sorry - 회승 with 씨엔블루",
     ],
     ootd: [""],
   },

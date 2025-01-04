@@ -133,7 +133,7 @@ export const globalConcerts = [
     location: "THE TAOYUAN ARENA",
     date: ["2025-01-04(토)", "2025-01-05(일)"],
     startTime: "15:30",
-    durationMinutes: 240,
+    durationMinutes: 270,
     type: "콘서트",
     performanceType: "출연",
     artists: ["N.Flying", "FTISLAND", "CNBLUE", "Hi-Fi Un!corn"],
