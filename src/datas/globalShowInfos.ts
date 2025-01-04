@@ -283,7 +283,7 @@ export const globalShowInfos = [
     note: [""],
     capacity: "약 2,500명",
     seats: ["/image/show_detail/seats/world/241222_HIDE-OUT_MACAU_SEAT.jpg"],
-    setlist: [""],
+    setlist: ["셋리스트를 공유해 주세요!"], // todo 셋리 못 찾음
     ootd: [
       "/image/show_detail/ootd/world/241222_HIDE-OUT_MACAU_01.jpeg",
       "/image/show_detail/ootd/world/241222_HIDE-OUT_MACAU_02.jpeg",
@@ -299,7 +299,15 @@ export const globalShowInfos = [
     seats: [
       "/image/show_detail/seats/world/250104_THE TAOYUAN ARENA_SEAT_SUB_STAGE.jpg",
     ],
-    setlist: [""],
+    setlist: [
+        "Blue Moon",
+        "Songbird",
+        "Star",
+        "Sunset",
+        "옥탑방 (Rooftop)",
+        "Stand By Me",
+        "Flashback",
+    ],
     ootd: [""],
   },
   {
