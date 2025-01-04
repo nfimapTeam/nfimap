@@ -309,7 +309,9 @@ export const globalShowInfos = [
         "Flashback",
         "I'm Sorry - 회승 with 씨엔블루",
     ],
-    ootd: [""],
+    ootd: [
+      "/image/show_detail/ootd/world/250104_1st_KINGDOM_TAOYUAN_DAY1_OOTD.jpg",
+    ],
   },
   {
     id: 1010,

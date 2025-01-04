@@ -311,7 +311,9 @@ export const globalShowInfosEng = [
       "Flashback",
       "I'm Sorry - Hweseung with CNBLUE",
     ],
-    ootd: [""],
+    ootd: [
+      "/image/show_detail/ootd/world/250104_1st_KINGDOM_TAOYUAN_DAY1_OOTD.jpg",
+    ],
   },
   {
     id: 1010,
