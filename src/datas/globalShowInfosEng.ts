@@ -14,8 +14,8 @@ export const globalShowInfosEng = [
       "Endless Summer",
       "옥탑방 (Rooftop)",
       "Stand by me",
-      "I'm Sorry - Hweseung with CNBLUE",
-      "바래 (I Wish) - Seunghyub with FTISLAND",
+      "[DAY1] I'm Sorry - Hweseung with CNBLUE",
+      "[DAY2] 바래 (I Wish) - Seunghyub with FTISLAND",
     ],
     ootd: [
       "/image/show_detail/ootd/world/240713_KINGDOM_DAY1.jpeg",
@@ -309,10 +309,12 @@ export const globalShowInfosEng = [
       "옥탑방 (Rooftop)",
       "Stand By Me",
       "Flashback",
-      "I'm Sorry - Hweseung with CNBLUE",
+      "[DAY1] I'm Sorry - 회승 with 씨엔블루",
+      "[DAY2] 바래 (I Wish) - Seunghyub with FTISLAND",
     ],
     ootd: [
-      "/image/show_detail/ootd/world/250104_1st_KINGDOM_TAOYUAN_DAY1_OOTD.jpg",
+      "/image/show_detail/ootd/world/250104_1st_KINGDOM_TAOYUAN_DAY1_OOTD1.jpeg",
+      "/image/show_detail/ootd/world/250104_1st_KINGDOM_TAOYUAN_DAY2_OOTD.jpeg",
     ],
   },
   {

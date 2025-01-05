@@ -14,8 +14,8 @@ export const globalShowInfos = [
       "Endless Summer",
       "옥탑방 (Rooftop)",
       "Stand by me",
-      "I'm Sorry - 회승 with 씨엔블루",
-      "바래 (I Wish) - 승협 with FT아일랜드"
+      "[DAY1] I'm Sorry - 회승 with 씨엔블루",
+      "[DAY2] 바래 (I Wish) - 승협 with FT아일랜드"
     ],
     ootd: [
       "/image/show_detail/ootd/world/240713_KINGDOM_DAY1.jpeg",
@@ -307,10 +307,12 @@ export const globalShowInfos = [
         "옥탑방 (Rooftop)",
         "Stand By Me",
         "Flashback",
-        "I'm Sorry - 회승 with 씨엔블루",
+        "[DAY1] I'm Sorry - 회승 with 씨엔블루",
+        "[DAY2] 바래 (I Wish) - Seunghyub with FTISLAND",
     ],
     ootd: [
-      "/image/show_detail/ootd/world/250104_1st_KINGDOM_TAOYUAN_DAY1_OOTD.jpg",
+      "/image/show_detail/ootd/world/250104_1st_KINGDOM_TAOYUAN_DAY1_OOTD1.jpeg",
+      "/image/show_detail/ootd/world/250104_1st_KINGDOM_TAOYUAN_DAY2_OOTD.jpeg",
     ],
   },
   {
