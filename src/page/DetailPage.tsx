@@ -381,31 +381,48 @@ const DetailPage: React.FC = () => {
                 showInfo.setlist.length > 0 &&
                 showInfo.setlist[0] !== "" && (
                   <Box bg={cardBgColor} p={6} borderRadius="lg" boxShadow="lg">
-                    <HStack mb={3}>
-                      <Icon as={MusicIcon} color="green.600" />
-                      <Text fontSize="xl" fontWeight="bold" color="gray.700">
+                    <HStack mb={4} justify="center">
+                      <Icon as={MusicIcon} color="purple.500" boxSize={6} />
+                      <Text fontSize="2xl" fontWeight="bold" color="gray.800">
                         {t("setlist")}
                       </Text>
                     </HStack>
-                    <SimpleGrid columns={1} spacing={2}>
+                    <SimpleGrid columns={1} spacing={4}>
                       {showInfo.setlist.map((song, index) => (
                         <Box
                           key={index}
-                          p={3}
-                          bg="gray.100"
-                          borderRadius="md"
-                          boxShadow="md"
-                          border="1px solid"
-                          borderColor="gray.300"
-                          textAlign="center"
+                          p={4}
+                          bg="white"
+                          borderRadius="xl" 
+                          boxShadow="0 4px 12px rgba(0,0,0,0.1)"
+                          border="2px solid"
+                          borderColor="purple.100"
+                          _hover={{
+                            transform: "translateY(-2px)",
+                            boxShadow: "0 6px 16px rgba(0,0,0,0.12)",
+                            borderColor: "purple.300",
+                          }}
+                          transition="all 0.2s"
                         >
-                          <Text
-                            fontSize="lg"
-                            fontWeight="medium"
-                            color="gray.800"
-                          >
-                            {index + 1}. {song}
-                          </Text>
+                          <Flex align="center" justify="center" gap={3}>
+                            <Text
+                              fontSize="xl" 
+                              fontWeight="bold"
+                              color="purple.500"
+                              w="36px"
+                              textAlign="right"
+                            >
+                              {(index + 1).toString().padStart(2, '0')}
+                            </Text>
+                            <Text
+                              fontSize="lg"
+                              fontWeight="medium" 
+                              color="gray.700"
+                              letterSpacing="wide"
+                            >
+                              {song}
+                            </Text>
+                          </Flex>
                         </Box>
                       ))}
                     </SimpleGrid>
