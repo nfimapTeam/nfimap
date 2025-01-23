@@ -328,16 +328,16 @@ export const globalShowInfosEng = [
     setlist: [""],
     ootd: [""],
   },
-  {
-    id: 1011,
-    name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA - MANILA",
-    address: "NEW FRONTIER THEATER, 7 General Malvar Ave, Cubao, Quezon City, 1109 Metro Manila, Philippines",
-    note: ["/image/show_detail/note/2025/250126_MANILA_BENEFIT.jpg"],
-    capacity: "2,385 Seats",
-    seats: [
-        "/image/show_detail/seats/world/250126_MANILA_NEW_FRONTIER_THEATER.jpg"
-    ],
-    setlist: [""],
-    ootd: [""],
-  },
+  // {
+  //   id: 1011,
+  //   name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA - MANILA",
+  //   address: "NEW FRONTIER THEATER, 7 General Malvar Ave, Cubao, Quezon City, 1109 Metro Manila, Philippines",
+  //   note: ["/image/show_detail/note/2025/250126_MANILA_BENEFIT.jpg"],
+  //   capacity: "2,385 Seats",
+  //   seats: [
+  //       "/image/show_detail/seats/world/250126_MANILA_NEW_FRONTIER_THEATER.jpg"
+  //   ],
+  //   setlist: [""],
+  //   ootd: [""],
+  // },
 ];

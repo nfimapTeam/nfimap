@@ -159,21 +159,20 @@ export const globalConcertsEng = [
         lat: "25.0335925",
         lng: "121.5609091",
     },
-
-    {
-        id: 1011,
-        name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA - MANILA",
-        location: "NEW FRONTIER THEATER",
-        date: ["2025-01-26(Sun)"],
-        startTime: "19:30",
-        durationMinutes: 120,
-        type: "Concert",
-        performanceType: "Solo",
-        artists: ["N.Flying"],
-        poster: "/image/show/world/250126_HIDE-OUT_MANILA.jpg",
-        ticketOpen: { date: "2024-12-28", time: "13:00" }, // 현지시각 12시 (시차 +1h)
-        ticketLink: "https://ticketnet.com.ph/event-detail/2025-N-FLYING-LIVE-HIDE-OUT-IN-MANILA#Tickets",
-        lat: "14.6224806",
-        lng: "121.0537399",
-    },
+    // {
+    //     id: 1011,
+    //     name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA - MANILA",
+    //     location: "NEW FRONTIER THEATER",
+    //     date: ["2025-01-26(Sun)"],
+    //     startTime: "19:30",
+    //     durationMinutes: 120,
+    //     type: "Concert",
+    //     performanceType: "Solo",
+    //     artists: ["N.Flying"],
+    //     poster: "/image/show/world/250126_HIDE-OUT_MANILA.jpg",
+    //     ticketOpen: { date: "2024-12-28", time: "13:00" }, // 현지시각 12시 (시차 +1h)
+    //     ticketLink: "https://ticketnet.com.ph/event-detail/2025-N-FLYING-LIVE-HIDE-OUT-IN-MANILA#Tickets",
+    //     lat: "14.6224806",
+    //     lng: "121.0537399",
+    // },
 ];
