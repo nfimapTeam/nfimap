@@ -353,9 +353,9 @@ const DetailPage: React.FC = () => {
                           </Text>
                           {showInfo.note.map((note, index) =>
                             note.endsWith(".png") ||
-                            note.endsWith(".jpg") ||
-                            note.endsWith(".jpeg") ||
-                            note.endsWith(".gif") ? (
+                              note.endsWith(".jpg") ||
+                              note.endsWith(".jpeg") ||
+                              note.endsWith(".gif") ? (
                               <Image
                                 key={index}
                                 src={note}
@@ -393,7 +393,7 @@ const DetailPage: React.FC = () => {
                           key={index}
                           p={4}
                           bg="white"
-                          borderRadius="xl" 
+                          borderRadius="xl"
                           boxShadow="0 4px 12px rgba(0,0,0,0.1)"
                           border="2px solid"
                           borderColor="purple.100"
@@ -406,7 +406,7 @@ const DetailPage: React.FC = () => {
                         >
                           <Flex align="center" justify="center" gap={3}>
                             <Text
-                              fontSize="xl" 
+                              fontSize="xl"
                               fontWeight="bold"
                               color="purple.500"
                               w="36px"
@@ -416,7 +416,7 @@ const DetailPage: React.FC = () => {
                             </Text>
                             <Text
                               fontSize="lg"
-                              fontWeight="medium" 
+                              fontWeight="medium"
                               color="gray.700"
                               letterSpacing="wide"
                             >
@@ -483,40 +483,43 @@ const DetailPage: React.FC = () => {
             </VStack>
           </Box>
         )}
+        {randomUpcomingConcerts.length > 0 && (
+          <>
+            <Text fontSize="2xl" fontWeight="bold" mt={8} mb={4}>
+              {t("recommended_concert")}
+            </Text>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6} mt={8}>
+              {randomUpcomingConcerts.map((concert, index) => {
+                const isFutureOrToday = isEventTodayOrFuture(concert.date);
+                const isPastEvent = !isFutureOrToday;
+                const isTodayEvent = concert.date.some((date) => {
+                  const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
+                  return concertDate.isSame(currentTime, "day");
+                });
 
-        <Text fontSize="2xl" fontWeight="bold" mt={8} mb={4}>
-          {t("recommended_concert")}
-        </Text>
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6} mt={8}>
-          {randomUpcomingConcerts.map((concert, index) => {
-            const isFutureOrToday = isEventTodayOrFuture(concert.date);
-            const isPastEvent = !isFutureOrToday;
-            const isTodayEvent = concert.date.some((date) => {
-              const concertDate = moment(date.split("(")[0], "YYYY-MM-DD");
-              return concertDate.isSame(currentTime, "day");
-            });
+                const isTicketOpen = concert.ticketOpen?.date === moment().format("YYYY-MM-DD");
 
-             const isTicketOpen = concert.ticketOpen?.date === moment().format("YYYY-MM-DD");
+                const timeRemaining = calculateTimeRemaining(
+                  concert.ticketOpen.date,
+                  concert.ticketOpen.time
+                );
 
-            const timeRemaining = calculateTimeRemaining(
-              concert.ticketOpen.date,
-              concert.ticketOpen.time
-            );
-
-            return (
-              <Card
-                key={index}
-                concert={concert}
-                isTodayEvent={isTodayEvent}
-                isTicketOpen={isTicketOpen}
-                isPastEvent={isPastEvent}
-                timeRemaining={timeRemaining}
-                getButtonText={getButtonText}
-                handleButtonClick={handleButtonClick}
-              />
-            );
-          })}
-        </SimpleGrid>
+                return (
+                  <Card
+                    key={index}
+                    concert={concert}
+                    isTodayEvent={isTodayEvent}
+                    isTicketOpen={isTicketOpen}
+                    isPastEvent={isPastEvent}
+                    timeRemaining={timeRemaining}
+                    getButtonText={getButtonText}
+                    handleButtonClick={handleButtonClick}
+                  />
+                );
+              })}
+            </SimpleGrid>
+          </>
+        )}
       </Box>
     </Box>
   );
