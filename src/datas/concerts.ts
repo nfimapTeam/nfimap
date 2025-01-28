@@ -42,7 +42,7 @@ export const concertsData = [
   },
   {
     id: 3,
-    name: "2024 어썸스테이지 in Busan",
+    name: "2024 어썸스테이지 - 부산",
     location: "벡스코 오디토리움",
     date: ["2024-06-30(일)"],
     startTime: "13: 00",
@@ -256,7 +256,7 @@ export const concertsData = [
   },
   {
     id: 14,
-    name: "그린캠프페스티벌 2024 인천",
+    name: "그린캠프페스티벌 2024 - 인천",
     location: "송도달빛축제공원",
     date: ["2024-09-29(일)"],
     startTime: "15:20",
@@ -354,7 +354,7 @@ export const concertsData = [
   },
   {
     id: 19,
-    name: "2024 어썸스테이지 in Seoul",
+    name: "2024 어썸스테이지 - 서울",
     location: "연세대학교 대강당",
     date: ["2024-10-13(일)"],
     startTime: "18:00",
@@ -402,7 +402,7 @@ export const concertsData = [
   },
   {
     id: 22,
-    name: "2024 어썸스테이지 [ N.Flying ] - 부산",
+    name: "2024 어썸스테이지 - 부산",
     location: "벡스코 오디토리움",
     date: ["2024-11-09(토)"],
     startTime: "16:00",
@@ -435,7 +435,7 @@ export const concertsData = [
   },
   {
     id: 24,
-    name: "2024 Someday Christmas in 부산",
+    name: "2024 썸데이 크리스마스 in 부산",
     location: "부산 벡스코 제1전시장 3홀",
     date: ["2024-12-25(수)"],
     startTime: "17:40",
@@ -464,5 +464,21 @@ export const concertsData = [
     ticketLink: "https://www.ticketlink.co.kr/product/53659",
     lat: "37.548629514638684",
     lng: "127.07450088858732",
+  },
+  {
+    id: 26,
+    name: "2025 어썸스테이지: 스페셜 콘서트",
+    location: "벡스코 오디토리움",
+    date: ["2025-03-02(일)", "2025-03-03(월)"],
+    startTime: "일 14:30, 월 16:00,",
+    durationMinutes: 120, // todo 공연시간 미정
+    type: "콘서트",
+    performanceType: "단독",
+    artists: ["N.Flying"],
+    poster: "/image/show/2025/250302-250303_AWESOME-STAGE-SPECIAL-CONCERT.jpeg",
+    ticketOpen: { date: "2025-02-05", time: "20:00" },
+    ticketLink: "", // todo 예매페이지 미오픈
+    lat: "35.168990100989925",
+    lng: "129.13367133019414",
   },
 ];

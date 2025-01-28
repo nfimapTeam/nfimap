@@ -76,7 +76,7 @@ export const showInfos = [
   },
   {
     id: 3,
-    name: "22024 어썸스테이지 in Busan",
+    name: "2024 어썸스테이지 - 부산",
     address: "부산 해운대구 APEC로 55", // 벡스코 오디토리움
     note: ["벡스코 내 주차장 약 4,000대 주차 가능."],
     capacity: "약 4,000명",
@@ -385,7 +385,7 @@ export const showInfos = [
   },
   {
     id: 14,
-    name: "그린캠프페스티벌 2024 인천",
+    name: "그린캠프페스티벌 2024 - 인천",
     address: "인천 연수구 센트럴로 350 달빛축제공원", // 송도달빛축제공원
     note: [
       "송도달빛축제공원 내 주차 공간 있으나, 행사 기간 중에는 혼잡할 수 있으므로 대중교통 이용 권장.",
@@ -519,7 +519,7 @@ export const showInfos = [
     address: "서울 서대문구 연세로 50",
     note: [
       "연세대 정문 옆 지하주차장(백양로 지하주차장) 917대 수용 가능.",
-      "/image/show_detail/note/2024/YONSEI_PARKING_INFO.png",
+      // "/image/show_detail/note/2024/YONSEI_PARKING_INFO.png",
     ],
     capacity: "1,600명",
     seats: [
@@ -746,7 +746,7 @@ export const showInfos = [
   },
   {
     id: 25,
-    name: "2024 Someday Christmas in 부산", // 세종대학교 대양홀
+    name: "2024 LOVE FNC COUNTDOWN", // 세종대학교 대양홀
     address: "서울특별시 광진구 능동로 209 세종대학교 대양홀",
     note: ["7호선 어린이대공원역 6번 출구에서 도보 275m (약 4분 소요)"],
     capacity: "약 2,029 석",
@@ -770,6 +770,23 @@ export const showInfos = [
       "옥탑방 (Rooftop)",
       "스물다섯, 스물하나 (Twenty five, Twenty one)",
       "Flashback",
+    ],
+    ootd: [
+      "/image/show_detail/ootd/2024/241231_LOVE_FNC_COUNTDOWN_OOTD.jpeg"
+    ],
+  },
+  {
+    id: 26,
+    name: "2025 어썸스테이지: 스페셜 콘서트", // 벡스코 오디토리움
+    address: "부산 해운대구 APEC로 55",
+    note: ["벡스코 내 주차장 약 4,000대 주차 가능."],
+    capacity: "약 4,000명",
+    seats: [
+      "/image/show_detail/seats/2024/BEXCO_Auditorium_1F_official.png",
+      "/image/show_detail/seats/2024/BEXCO_Auditorium_2F_official.png",
+    ],
+    setlist: [
+      "",
     ],
     ootd: [
       ""

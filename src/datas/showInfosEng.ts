@@ -76,7 +76,7 @@ export const showInfosEng = [
   },
   {
     id: 3,
-    name: "2024 AWESOME STAGE in Busan",
+    name: "2024 Awesome Stage - Busan",
     address: "BEXCO Auditorium 55, APEC-ro, Haeundae-gu, Busan, South Korea", // 벡스코 오디토리움
     note: [
       "The parking lot within BEXCO can accommodate approximately 4,000 vehicles.",
@@ -146,7 +146,7 @@ export const showInfosEng = [
   },
   {
     id: 5,
-    name: "Soundberry Festa’ 24 - Seoul",
+    name: "Soundberry Festa’ 24",
     address: "376, Gonghang-daero, Gangseo-gu, Seoul, South Korea", // KBS 아레나
     note: [
       "There is a parking lot within the KBS Arena building, but space is limited, so public transportation is recommended.",
@@ -406,7 +406,7 @@ export const showInfosEng = [
   },
   {
     id: 14,
-    name: "GREENCAMP FESTIVAL 2024",
+    name: "GREENCAMP FESTIVAL 2024 - Incheon",
     address:
       "Moonlight Festival Park 350, Central-ro, Yeonsu-gu, Incheon, South Korea", // 송도달빛축제공원
     note: [
@@ -543,12 +543,12 @@ export const showInfosEng = [
   },
   {
     id: 19,
-    name: "2024 AWESOME STAGE in Seoul", // 연세대학교 대강당
+    name: "2024 Awesome Stage - Seoul", // 연세대학교 대강당
     address:
       "Yonsei University Main Auditorium 50, Yonsei-ro, Seodaemun-gu, Seoul, South Korea",
     note: [
       "The underground parking lot next to the main gate of Yonsei University (Baekyang-ro underground parking lot) can accommodate 917 vehicles.",
-      "/image/show_detail/note/2024/YONSEI_PARKING_INFO.png",
+      // "/image/show_detail/note/2024/YONSEI_PARKING_INFO.png",
     ],
     capacity: "1,600 people",
     seats: [
@@ -657,7 +657,7 @@ export const showInfosEng = [
   },
   {
     id: 22,
-    name: "2024 AWESOME STAGE [ N.Flying ] - Busan", // 부산 벡스코 오디토리움
+    name: "2024 Awesome Stage - Busan", // 부산 벡스코 오디토리움
     address: "BEXCO Auditorium 55, APEC-ro, Haeundae-gu, Busan, South Korea",
     note: [
       "Approximately 4,000 parking spaces available at BEXCO parking lot.",
@@ -778,7 +778,7 @@ export const showInfosEng = [
   },
   {
     id: 25,
-    name: "2024 Someday Christmas in 부산", // 세종대학교 대양홀
+    name: "2024 LOVE FNC COUNTDOWN", // 세종대학교 대양홀
     address: "Daeyang Hall, Sejong University, 209 Neungdong-ro, Gwangjin-gu, Seoul, South Korea",
     note: ["From Exit 6 of Children’s Grand Park Station (Line 7), walk 275 meters (4 minutes)"],
     capacity: "Approximately 2,029 Seats",
@@ -802,6 +802,25 @@ export const showInfosEng = [
       "옥탑방 (Rooftop)",
       "스물다섯, 스물하나 (Twenty five, Twenty one)",
       "Flashback",
+    ],
+    ootd: [
+      "/image/show_detail/ootd/2024/241231_LOVE_FNC_COUNTDOWN_OOTD.jpeg"
+    ],
+  },
+  {
+    id: 26,
+    name: "2025 Awesome Stage: Special Concert", // 벡스코 오디토리움
+    address: "BEXCO Auditorium 55, APEC-ro, Haeundae-gu, Busan, South Korea",
+    note: [
+      "The parking lot within BEXCO can accommodate approximately 4,000 vehicles.",
+    ],
+    capacity: "Approximately 4,000 people",
+    seats: [
+      "/image/show_detail/seats/2024/BEXCO_Auditorium_1F_official.png",
+      "/image/show_detail/seats/2024/BEXCO_Auditorium_2F_official.png",
+    ],
+    setlist: [
+      "",
     ],
     ootd: [
       ""

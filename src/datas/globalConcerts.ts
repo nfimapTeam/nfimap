@@ -145,7 +145,7 @@ export const globalConcerts = [
   },
   {
     id: 1010,
-    name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA - 대만",
+    name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA - 타이베이",
     location: "TAIPEI TICC",
     date: ["2025-02-09(일)"],
     startTime: "18:00",

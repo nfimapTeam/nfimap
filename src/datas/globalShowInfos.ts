@@ -24,7 +24,7 @@ export const globalShowInfos = [
   },
   {
     id: 1002,
-    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN : 요코하마",
+    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN - 요코하마",
     address:
       "T Zepp Yokohama 4 Chome-3-6 Minatomirai, Nishi Ward, Yokohama, Kanagawa, 220-0012 Japan",
     note: [""],
@@ -69,7 +69,7 @@ export const globalShowInfos = [
   },
   {
     id: 1003,
-    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN : 나고야",
+    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN - 나고야",
     address:
       "THE BOTTOM LINE 4-7-11 Imaike, Chikusa Ward, Nagoya, Aichi 464-0850, Japan",
     note: ["승협 생일"],
@@ -117,7 +117,7 @@ export const globalShowInfos = [
   },
   {
     id: 1004,
-    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN : 오사카",
+    name: "2024 N.Flying LIVE HIDE-OUT IN JAPAN - 오사카",
     address:
       "Zepp Namba 2 Chome-1-39 Shikitsuhigashi, Naniwa Ward, Osaka, 556-0012 Japan",
     note: [""],
@@ -167,7 +167,7 @@ export const globalShowInfos = [
   },
   {
     id: 1005,
-    name: "2024 N.Flying LIVE HIDE-OUT in ASIA : 방콕",
+    name: "2024 N.Flying LIVE HIDE-OUT in ASIA - 방콕",
     address:
       "MCC HALL BANGKAE, 362 Kanchanaphisek Road, Bang Khae Nuea, Bang Khae, Bangkok 10160, Thailand",
     note: [""],
@@ -206,7 +206,7 @@ export const globalShowInfos = [
   },
   {
     id: 1006,
-    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA : 쿠알라룸푸르",
+    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA - 쿠알라룸푸르",
     address:
       "Zepp Kuala Lumpur BBCC No.2, Jalan Hang Tuah, Bukit Bintang City Centre, 55100 Kuala Lumpur",
     note: [
@@ -255,7 +255,7 @@ export const globalShowInfos = [
   },
   {
     id: 1007,
-    name: "FNC KINGDOM - SING SING SING : 일본",
+    name: "FNC KINGDOM - SING SING SING - 일본",
     address:
       "Makuhari Messe International Exhibition Halls 9-11 2-1 Nakase, Mihama-ku, Chiba 261-8550, Japan",
     note: [""],
@@ -278,7 +278,7 @@ export const globalShowInfos = [
   },
   {
     id: 1008,
-    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA : 마카오",
+    name: "2024 N.Flying LIVE 'HIDE-OUT' in ASIA - 마카오",
     address: "Broadway Theatre, Broadway Macau, Estrada do Istmo, Cotai, Macau",
     note: [""],
     capacity: "약 2,500명",
@@ -291,7 +291,7 @@ export const globalShowInfos = [
   },
   {
     id: 1009,
-    name: "1st FNC BAND KINGDOM in TAOYUAN : 대만",
+    name: "1st FNC BAND KINGDOM in TAOYUAN - 대만",
     address:
       "NTaoyuan Arena, No. 1, Section 1, Sanmin Road, Taoyuan District, Taoyuan City, Taiwan 330",
     note: [""],
@@ -317,7 +317,7 @@ export const globalShowInfos = [
   },
   {
     id: 1010,
-    name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA : 대만",
+    name: "2025 N.Flying LIVE 'HIDE-OUT' in ASIA - 타이베이",
     address: "TICC No. 1, Section 5, Xinyi Rd, Xinyi District, Taipei City, TAIPEI 110",
     note: ["/image/show_detail/note/2025/250209_TAIPEI_BENEFIT.jpg"],
     capacity: "약 3,000명",

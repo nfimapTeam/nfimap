@@ -42,7 +42,7 @@ export const profileDataEng = {
             imageUrl: "/image/member/hewseung.jpg",
             military: "2023-01-01",
             instagram: "https://www.instagram.com/hweng_star",
-            mbti: "ENFJ",
+            mbti: "INFJ",
         },
         {
             name: "Seo Dong-sung",

@@ -42,7 +42,7 @@ export const concertsDataEng = [
   },
   {
     id: 3,
-    name: "2024 AWESOME STAGE in Busan",
+    name: "2024 Awesome Stage - Busan",
     location: "BEXCO Auditorium",
     date: ["2024-06-30(Sun)"],
     startTime: "13: 00",
@@ -263,7 +263,7 @@ export const concertsDataEng = [
   },
   {
     id: 14,
-    name: "GREENCAMP FESTIVAL 2024",
+    name: "GREENCAMP FESTIVAL 2024 - Incheon",
     location: "Songdo Moonlight Festival Park",
     date: ["2024-09-29(Sun)"],
     startTime: "15:20",
@@ -361,7 +361,7 @@ export const concertsDataEng = [
   },
   {
     id: 19,
-    name: "2024 AWESOME STAGE in Seoul",
+    name: "2024 Awesome Stage - Seoul",
     location: "Yonsei University Main Auditorium",
     date: ["2024-10-13(Sun)"],
     startTime: "18:00",
@@ -409,7 +409,7 @@ export const concertsDataEng = [
   },
   {
     id: 22,
-    name: "2024 AWESOME STAGE [ N.Flying ] - Busan",
+    name: "2024 Awesome Stage - Busan",
     location: "BEXCO Auditorium",
     date: ["2024-11-09(Sat)"],
     startTime: "16:00",
@@ -471,5 +471,21 @@ export const concertsDataEng = [
     ticketLink: "https://www.ticketlink.co.kr/product/53659",
     lat: "37.548629514638684",
     lng: "127.07450088858732",
+  },
+  {
+    id: 26,
+    name: "2025 Awesome Stage: Special Concert",
+    location: "BEXCO Auditorium",
+    date: ["2025-03-02(SUN)", "2025-03-03(MON)"],
+    startTime: "SUN 14:30, MON 16:00,",
+    durationMinutes: 120, // todo 공연시간 미정
+    type: "Concert",
+    performanceType: "Solo",
+    artists: ["N.Flying"],
+    poster: "/image/show/2025/250302-250303_AWESOME-STAGE-SPECIAL-CONCERT.jpeg",
+    ticketOpen: { date: "2025-02-05", time: "20:00" },
+    ticketLink: "", // todo 예매페이지 미오픈
+    lat: "35.168990100989925",
+    lng: "129.13367133019414",
   },
 ];
