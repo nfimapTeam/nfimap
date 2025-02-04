@@ -471,13 +471,13 @@ export const concertsData = [
     location: "벡스코 오디토리움",
     date: ["2025-03-02(일)", "2025-03-03(월)"],
     startTime: "일 14:30, 월 16:00,",
-    durationMinutes: 120, // todo 공연시간 미정
+    durationMinutes: 120,
     type: "콘서트",
     performanceType: "단독",
     artists: ["N.Flying"],
     poster: "/image/show/2025/250302-250303_AWESOME-STAGE-SPECIAL-CONCERT.jpeg",
     ticketOpen: { date: "2025-02-05", time: "20:00" },
-    ticketLink: "", // todo 예매페이지 미오픈
+    ticketLink: "https://www.ticketlink.co.kr/product/54452",
     lat: "35.168990100989925",
     lng: "129.13367133019414",
   },
