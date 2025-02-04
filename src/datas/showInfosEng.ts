@@ -816,6 +816,7 @@ export const showInfosEng = [
     ],
     capacity: "Approximately 4,000 people",
     seats: [
+      "/image/show_detail/seats/2025/BEXCO_Auditorium_awesome_250302-03.png",
       "/image/show_detail/seats/2024/BEXCO_Auditorium_1F_official.png",
       "/image/show_detail/seats/2024/BEXCO_Auditorium_2F_official.png",
     ],

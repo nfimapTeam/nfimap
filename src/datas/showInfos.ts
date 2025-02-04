@@ -782,10 +782,12 @@ export const showInfos = [
     note: ["벡스코 내 주차장 약 4,000대 주차 가능."],
     capacity: "약 4,000명",
     seats: [
+      "/image/show_detail/seats/2025/BEXCO_Auditorium_awesome_250302-03.png",
       "/image/show_detail/seats/2024/BEXCO_Auditorium_1F_official.png",
       "/image/show_detail/seats/2024/BEXCO_Auditorium_2F_official.png",
     ],
     setlist: [
+      "",
       "",
     ],
     ootd: [
