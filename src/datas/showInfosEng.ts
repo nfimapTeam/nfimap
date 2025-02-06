@@ -827,4 +827,20 @@ export const showInfosEng = [
       ""
     ],
   },
+  {
+    id: 27,
+    name: "2025 Soundberry Theater", // KBS 아레나
+    address: "376, Gonghang-daero, Gangseo-gu, Seoul, South Korea", // KBS 아레나
+    note: [
+      "There is a parking lot within the KBS Arena building, but space is limited, so public transportation is recommended.",
+    ],
+    capacity: "Approximately 3,000 people",
+    seats: [],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      ""
+    ],
+  },
 ];

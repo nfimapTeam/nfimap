@@ -794,4 +794,19 @@ export const showInfos = [
       ""
     ],
   },
+  {
+    id: 27,
+    name: "2025 Soundberry Theater", // KBS 아레나
+    address: "서울 강서구 공항대로 376",
+    note: ["KBS 아레나 건물 내 주차장이 있으나, 공간이 협소해 대중교통 이용을 권장."],
+    capacity: "약 3,000명",
+    seats: [],
+    setlist: [
+      "",
+      "",
+    ],
+    ootd: [
+      ""
+    ],
+  },
 ];
