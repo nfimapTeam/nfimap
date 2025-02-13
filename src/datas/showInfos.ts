@@ -809,4 +809,24 @@ export const showInfos = [
       ""
     ],
   },
+  {
+    id: 28,
+    name: "Have A Nice Day #11", // 인천 상상플랫폼
+    address: "인천 중구 월미로 33 상상플랫폼",
+    note: [
+        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_01.jpg",
+        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_02.jpg",
+        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_03.jpg",
+        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_04.jpg",
+    ],
+    capacity: "",
+    seats: [],
+    setlist: [
+      "",
+      "",
+    ],
+    ootd: [
+      ""
+    ],
+  },
 ];

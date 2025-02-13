@@ -843,4 +843,24 @@ export const showInfosEng = [
       ""
     ],
   },
+  {
+    id: 28,
+    name: "Have A Nice Day #11", // 인천 상상플랫폼
+    address: "33, Wolmi-ro, Jung-gu, Incheon, South Korea",
+    note: [
+      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_01.jpg",
+      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_02.jpg",
+      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_03.jpg",
+      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_04.jpg",
+    ],
+    capacity: "",
+    seats: [],
+    setlist: [
+      "",
+      "",
+    ],
+    ootd: [
+      ""
+    ],
+  },
 ];

@@ -497,4 +497,20 @@ export const concertsData = [
     lat: "37.55675872491405",
     lng: "126.84796877975087",
   },
+  {
+    id: 28,
+    name: "Have A Nice Day #11",
+    location: "인천 상상플랫폼",
+    date: ["2025-04-12(토)"],
+    startTime: "00:00,", // todo 시간 미정
+    durationMinutes: 0, // todo 시간 미정
+    type: "페스티벌",
+    performanceType: "출연",
+    artists: ["N.Flying", "멜로망스", "범진", "오월오일", "폴킴", "하동균", "황가람", "..."],
+    poster: "/image/show/2025/250412_HAVE_A_NICE_DAY.jpg",
+    ticketOpen: { date: "2025-02-19", time: "18:00" },
+    ticketLink: "", // todo 예매페이지 미오픈
+    lat: "37.47556062356908",
+    lng: "126.6148964197706",
+  },
 ];

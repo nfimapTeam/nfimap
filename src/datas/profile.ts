@@ -42,7 +42,7 @@ export const profileData = {
       imageUrl: "/image/member/hewseung.jpg",
       military: "2023-01-01",
       instagram: "https://www.instagram.com/hweng_star",
-      mbti: "INFJ",
+      mbti: "ENFJ",
     },
     {
       name: "서동성",

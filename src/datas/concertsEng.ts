@@ -504,4 +504,20 @@ export const concertsDataEng = [
     lat: "37.55675872491405",
     lng: "126.84796877975087",
   },
+  {
+    id: 28,
+    name: "Have A Nice Day #11",
+    location: "Incheon Sangsang Platform",
+    date: ["2025-04-12(SAT)"],
+    startTime: "00:00,", // todo 시간 미정
+    durationMinutes: 0, // todo 시간 미정
+    type: "Festival",
+    performanceType: "Guest",
+    artists: ["N.Flying", "MeloMance", "BUMJIN", "OWALLOIL", "Paul Kim", "Ha Dong Qn", "Hwang Karam", "..."],
+    poster: "/image/show/2025/250412_HAVE_A_NICE_DAY.jpg",
+    ticketOpen: { date: "2025-02-19", time: "18:00" },
+    ticketLink: "", // todo 예매페이지 미오픈
+    lat: "37.47556062356908",
+    lng: "126.6148964197706",
+  },
 ];
