@@ -516,7 +516,7 @@ export const concertsDataEng = [
     artists: ["N.Flying", "MeloMance", "BUMJIN", "OWALLOIL", "Paul Kim", "Ha Dong Qn", "Hwang Karam", "..."],
     poster: "/image/show/2025/250412_HAVE_A_NICE_DAY.jpg",
     ticketOpen: { date: "2025-02-19", time: "18:00" },
-    ticketLink: "", // todo 예매페이지 미오픈
+    ticketLink: "https://tickets.interpark.com/goods/25002171",
     lat: "37.47556062356908",
     lng: "126.6148964197706",
   },

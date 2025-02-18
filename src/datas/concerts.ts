@@ -509,7 +509,7 @@ export const concertsData = [
     artists: ["N.Flying", "멜로망스", "범진", "오월오일", "폴킴", "하동균", "황가람", "..."],
     poster: "/image/show/2025/250412_HAVE_A_NICE_DAY.jpg",
     ticketOpen: { date: "2025-02-19", time: "18:00" },
-    ticketLink: "", // todo 예매페이지 미오픈
+    ticketLink: "https://tickets.interpark.com/goods/25002171",
     lat: "37.47556062356908",
     lng: "126.6148964197706",
   },
