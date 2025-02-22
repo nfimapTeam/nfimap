@@ -375,4 +375,19 @@ export const globalShowInfos = [
   //   setlist: [""],
   //   ootd: [""],
   // },
+  {
+    id: 1011,
+    name: "FNC BAND KINGDOM 2025 - 일본",
+    address:
+        "Makuhari Event Hall 2 Chome Nakase, Mihama Ward, Chiba, 261-0023, Japan",
+    note: [""],
+    capacity: "최대 9,000명 수용 가능",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];

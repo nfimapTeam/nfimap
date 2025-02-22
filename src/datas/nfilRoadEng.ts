@@ -57,7 +57,7 @@ export const nfiRoadDataEng = [
         lat: "37.4948475341971",
         lng: "127.030367339339",
         naverLink: "https://maps.app.goo.gl/8p8d33ZgM6HAhyebA",
-        note : "The steamed monkfish restaurant visited by Seunghyub"
+        note : "Visited by 2IDIOTS"
     },
     {
         id: 7,
@@ -260,4 +260,34 @@ export const nfiRoadDataEng = [
         naverLink: "https://maps.app.goo.gl/sXjW9XP4v72vjZSdA",
         note : "The shabu-shabu restaurant where Dongsung had a meal with his father."
     },
+    {
+        "id": 27,
+        "name": "Chupungnyeong Kal Samgyeopsal",
+        "location": "1F, 41, Dosan-daero 51-gil, Gangnam-gu, Seoul, South Korea",
+        "category": "Food",
+        "lat": "37.5259447243218",
+        "lng": "127.038100978755",
+        "naverLink": "https://maps.app.goo.gl/vufPx8z9nKpAFmhu6",
+        "note": "The restaurant that Seunghyub frequented."
+    },
+    {
+        "id": 28,
+        "name": "Saengsaeng Nakji BEXCO Branch",
+        "location": "101, Centum Makers Building, 29, Centum 2-ro, Haeundae-gu, Busan, South Korea",
+        "category": "Food",
+        "lat": "35.1666539973508",
+        "lng": "129.133204693814",
+        "naverLink": "https://maps.app.goo.gl/KfTx86oCxPX4dgks8",
+        "note": "The restaurant visited by N.Flying after the Busan concert."
+    },
+    {
+        "id": 29,
+        "name": "Surim Hoetjip",
+        "location": "1F, Building A, 15, Haeundaehaebyeon-ro 221beon-gil, Haeundae-gu, Busan, South Korea",
+        "category": "Food",
+        "lat": "35.1599145493419",
+        "lng": "129.156008091841",
+        "naverLink": "https://maps.app.goo.gl/sva93wKp8hEVGM5X9",
+        "note": "The restaurant where N.Flying ate mulhoe after the Busan concert."
+    }
 ];

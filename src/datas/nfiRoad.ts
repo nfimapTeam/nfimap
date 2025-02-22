@@ -57,7 +57,7 @@ export const nfiRoadData = [
     lat: "37.4948475341971",
     lng: "127.030367339339",
     naverLink: "https://naver.me/GiHaTeI1",
-    note : "승협이 다녀간 아구찜"
+    note : "두얼간이 촬영지"
   },
   {
     id: 7,
@@ -259,5 +259,35 @@ export const nfiRoadData = [
     lng: "127.054348975494",
     naverLink: "https://naver.me/x3qBfyKS",
     note : "동성이가 아버지와 식사하고 간 샤브샤브 집"
+  },
+  {
+    id: 27,
+    name: "추풍령칼삼겹살",
+    location: "서울 강남구 도산대로51길 41 1층",
+    category: "맛집",
+    lat: "37.5259447243218",
+    lng: "127.038100978755",
+    naverLink: "https://naver.me/xNLZNOIT",
+    note : "승협 단골 식당"
+  },
+  {
+    id: 28,
+    name: "생생낙지 벡스코점",
+    location: "부산 해운대구 센텀2로 29 센텀 메커스빌딩 101호",
+    category: "맛집",
+    lat: "35.1666539973508",
+    lng: "129.133204693814",
+    naverLink: "https://naver.me/5fIpso5O",
+    note : "부산 공연 후 멤버들이 다녀간 식당"
+  },
+  {
+    id: 29,
+    name: "수림횟집",
+    location: "부산 해운대구 해운대해변로221번길 15 A동 1층",
+    category: "맛집",
+    lat: "35.1599145493419",
+    lng: "129.156008091841",
+    naverLink: "https://naver.me/x4FLm33t",
+    note : "부산 공연 후 멤버들이 물회 먹고 간 집"
   },
 ];
