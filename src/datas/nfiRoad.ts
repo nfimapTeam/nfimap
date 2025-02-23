@@ -290,4 +290,14 @@ export const nfiRoadData = [
     naverLink: "https://naver.me/x4FLm33t",
     note : "부산 공연 후 멤버들이 물회 먹고 간 집"
   },
+  {
+    id: 30,
+    name: "중국전통요리링링",
+    location: "서울 강남구 도산대로 521",
+    category: "맛집",
+    lat: "37.5248722572746",
+    lng: "127.050379366946",
+    naverLink: "https://naver.me/GG7PPLeh",
+    note : "회승이가 다녀간 중식당"
+  },
 ];

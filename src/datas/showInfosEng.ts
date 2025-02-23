@@ -863,4 +863,25 @@ export const showInfosEng = [
       ""
     ],
   },
+  {
+    id: 29,
+    name: "The 1st D Awards", // 고려대학교 화정체육관
+    address: "Hwajung Gymnasium, Korea University Seoul Campus Anam-dong, Seongbuk-gu, Seoul, South Korea",
+    note: [
+      "",
+    ],
+    capacity: "3,500 seats",
+    seats: [],
+    setlist: [
+      "FLOWER FANTASY",
+      "Star",
+      "Blue Moon",
+    ],
+    ootd: [
+      "/image/show_detail/ootd/2025/250222_D_Awards_OOTD_01.jpeg",
+      "/image/show_detail/ootd/2025/250222_D_Awards_OOTD_02.jpeg",
+      "/image/show_detail/ootd/2025/250222_D_Awards_OOTD_03.jpeg",
+      "/image/show_detail/ootd/2025/250222_D_Awards_OOTD_04.jpeg",
+    ],
+  },
 ];

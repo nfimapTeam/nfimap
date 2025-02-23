@@ -829,4 +829,25 @@ export const showInfos = [
       ""
     ],
   },
+  {
+    id: 29,
+    name: "제1회 디 어워즈(D Awards)", // 고려대학교 화정체육관
+    address: "서울 성북구 안암동5가 126-28 고려대학교 서울캠퍼스 화정체육관",
+    note: [
+      "",
+    ],
+    capacity: "3,500석",
+    seats: [],
+    setlist: [
+      "FLOWER FANTASY",
+      "Star",
+      "Blue Moon",
+    ],
+    ootd: [
+      "/image/show_detail/ootd/2025/250222_D_Awards_OOTD_01.jpeg",
+      "/image/show_detail/ootd/2025/250222_D_Awards_OOTD_02.jpeg",
+      "/image/show_detail/ootd/2025/250222_D_Awards_OOTD_03.jpeg",
+      "/image/show_detail/ootd/2025/250222_D_Awards_OOTD_04.jpeg",
+    ],
+  },
 ];

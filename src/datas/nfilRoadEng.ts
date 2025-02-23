@@ -218,7 +218,7 @@ export const nfiRoadDataEng = [
         lat: "35.1622100514759",
         lng: "129.163126552708",
         naverLink: "https://maps..app.goo.gl/ZhKJYqZUK7XXaB5GA",
-        note : "A famous hotteok (Korean pancake) shop visited by Seunghyub and Hweseung."
+        note : "The famous hotteok (Korean pancake) shop visited by Seunghyub and Hweseung."
     },
     {
         id: 23,
@@ -228,7 +228,7 @@ export const nfiRoadDataEng = [
         lat: "37.5618364940379",
         lng: "126.924050688833",
         naverLink: "https://maps.app.goo.gl/q5DCXSo9Y2tgTCyd8",
-        note : "A restaurant that Seunghyub has been visiting since his trainee days."
+        note : "The restaurant that Seunghyub has been visiting since his trainee days."
     },
     {
         id: 24,
@@ -238,7 +238,7 @@ export const nfiRoadDataEng = [
         lat: "37.5376693827344",
         lng: "127.053399481711",
         naverLink: "https://maps.app.goo.gl/f8apCDEvW2fcDLeu6",
-        note : "A raw fish restaurant that N.Flying visited on the first snowy day."
+        note : "The raw fish restaurant that N.Flying visited on the first snowy day."
     },
     {
         id: 25,
@@ -289,5 +289,15 @@ export const nfiRoadDataEng = [
         "lng": "129.156008091841",
         "naverLink": "https://maps.app.goo.gl/sva93wKp8hEVGM5X9",
         "note": "The restaurant where N.Flying ate mulhoe after the Busan concert."
-    }
+    },
+    {
+        id: 30,
+        name: "Chinese Traditional Cuisine Ling Ling",
+        location: "Chinese Traditional Cuisine Ling Ling Dosan-daero, Gangnam-gu, Seoul, South Korea",
+        category: "Food",
+        lat: "37.5248722572746",
+        lng: "127.050379366946",
+        naverLink: "https://maps.app.goo.gl/fK64R1q1W8SQiuxeA",
+        note : "The Chinese restaurant that Hweseung visited."
+    },
 ];
