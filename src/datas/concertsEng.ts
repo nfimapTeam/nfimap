@@ -536,4 +536,20 @@ export const concertsDataEng = [
     lat: "37.59262346049395",
     lng: "127.02493316477286",
   },
+  {
+    id: 30,
+    name: "Beautiful Mint Life 2025",
+    location: "Olympic Park 88 Lawn Field",
+    date: ["2025-06-14(Sat)"],
+    startTime: "00:00,", // todo
+    durationMinutes: 0, // todo
+    type: "Festival",
+    performanceType: "Guest",
+    artists: ["N.Flying", "Silica Gel", "Nerd Connection", "Jung Seung-hwan", "So Soo Bin", "..."],
+    poster: "/image/show/2025/250614_Beautiful_Mint_Life.jpeg",
+    ticketOpen: { date: "2025-03-05", time: "18:00" },
+    ticketLink: "", // todo 페이지오픈예정
+    lat: "37.52066503657698",
+    lng: "127.1226794866035",
+  },
 ];

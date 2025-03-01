@@ -850,4 +850,21 @@ export const showInfos = [
       "/image/show_detail/ootd/2025/250222_D_Awards_OOTD_04.jpeg",
     ],
   },
+  {
+    id: 30,
+    name: "뷰티풀 민트 라이프 2025", // 올림픽공원 88잔디마당
+    address: "서울 송파구 올림픽로 424",
+    note: [
+      "올림픽공원 주차장 이용이 가능하나, 만차 가능성 높아 대중교통 이용 권장.",
+      "필요 시 송파구청 주차장이나 잠실역 공영주차장 등의 대체 주차장 확인.",
+    ],
+    capacity: "",
+    seats: [],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];

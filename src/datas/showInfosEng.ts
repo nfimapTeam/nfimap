@@ -884,4 +884,21 @@ export const showInfosEng = [
       "/image/show_detail/ootd/2025/250222_D_Awards_OOTD_04.jpeg",
     ],
   },
+  {
+    id: 30,
+    name: "Beautiful Mint Life 2025", // 올림픽공원 88잔디마당
+    address: "88 Lawn Field, Olympic Park, 424, Olympic-ro, Songpa-gu, Seoul, South Korea",
+    note: [
+      "Parking is available at Olympic Park, but it is highly likely to be full. Public transportation is recommended.",
+      "If needed, check alternative parking options such as Songpa-gu Office Parking Lot or Jamsil Station Public Parking Lot.",
+    ],
+    capacity: "",
+    seats: [],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];

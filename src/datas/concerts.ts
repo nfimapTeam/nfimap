@@ -529,4 +529,20 @@ export const concertsData = [
     lat: "37.59262346049395",
     lng: "127.02493316477286",
   },
+  {
+    id: 30,
+    name: "뷰티풀 민트 라이프 2025",
+    location: "올림픽공원 88잔디마당",
+    date: ["2025-06-14(토)"],
+    startTime: "00:00,", // todo
+    durationMinutes: 0, // todo
+    type: "페스티벌",
+    performanceType: "출연",
+    artists: ["N.Flying", "실리카겔", "너드커넥션", "정승환", "소수빈", "..."],
+    poster: "/image/show/2025/250614_Beautiful_Mint_Life.jpeg",
+    ticketOpen: { date: "2025-03-05", time: "18:00" },
+    ticketLink: "", // todo 페이지오픈예정
+    lat: "37.52066503657698",
+    lng: "127.1226794866035",
+  },
 ];
