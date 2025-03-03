@@ -812,7 +812,7 @@ export const showInfos = [
       "뜨거운 감자 (Hot Potato) - 앵콜",
       "진짜가 나타났다 (The Real) - 앵콜",
       "놔 (Leave It) - 앵앵콜",
-      "딱 하루만 (Just One Day) - 앵앵콜",
+      "딱 하루만 (Just One Day) - 앵앵앵콜",
     ],
     ootd: [
       "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY1_OOTD1.jpeg",

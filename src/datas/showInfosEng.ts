@@ -846,7 +846,7 @@ export const showInfosEng = [
       "뜨거운 감자 (Hot Potato) - Encore",
       "진짜가 나타났다 (The Real) - Encore",
       "놔 (Leave It) - Double Encore",
-      "딱 하루만 (Just One Day) - Double Encore",
+      "딱 하루만 (Just One Day) - Triple Encore",
     ],
     ootd: [
       "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY1_OOTD1.jpeg",
