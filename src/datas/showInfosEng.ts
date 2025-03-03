@@ -838,16 +838,21 @@ export const showInfosEng = [
       "이 별 저 별 (Fate)",
       "Sober",
       "Moonshot",
+      "기가 막혀 (Awesome) - On the spot",
       "굿밤 (GOOD BAM)",
       "네가 내 마음에 자리 잡았다 (Into You)",
       "너 없는 난 (Fall With You)",
       "Shooting Star",
       "뜨거운 감자 (Hot Potato) - Encore",
       "진짜가 나타났다 (The Real) - Encore",
+      "놔 (Leave It) - Double Encore",
+      "딱 하루만 (Just One Day) - Double Encore",
     ],
     ootd: [
       "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY1_OOTD1.jpeg",
-      "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY1_OOTD2.jpeg"
+      "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY1_OOTD2.jpeg",
+      "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY2_OOTD1.jpeg",
+      "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY2_OOTD2.jpeg",
     ],
   },
   {

@@ -804,16 +804,21 @@ export const showInfos = [
       "이 별 저 별 (Fate)",
       "Sober",
       "Moonshot",
+      "기가 막혀 (Awesome) - 즉석에서",
       "굿밤 (GOOD BAM)",
       "네가 내 마음에 자리 잡았다 (Into You)",
       "너 없는 난 (Fall With You)",
       "Shooting Star",
       "뜨거운 감자 (Hot Potato) - 앵콜",
       "진짜가 나타났다 (The Real) - 앵콜",
+      "놔 (Leave It) - 앵앵콜",
+      "딱 하루만 (Just One Day) - 앵앵콜",
     ],
     ootd: [
       "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY1_OOTD1.jpeg",
-      "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY1_OOTD2.jpeg"
+      "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY1_OOTD2.jpeg",
+      "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY2_OOTD1.jpeg",
+      "/image/show_detail/ootd/2025/250302_BEXCO_ASESOME_DAY2_OOTD2.jpeg"
     ],
   },
   {
