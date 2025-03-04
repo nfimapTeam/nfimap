@@ -541,7 +541,7 @@ export const concertsData = [
     artists: ["N.Flying", "실리카겔", "너드커넥션", "정승환", "소수빈", "..."],
     poster: "/image/show/2025/250614_Beautiful_Mint_Life.jpeg",
     ticketOpen: { date: "2025-03-05", time: "18:00" },
-    ticketLink: "", // todo 페이지오픈예정
+    ticketLink: "https://tickets.interpark.com/goods/25002850",
     lat: "37.52066503657698",
     lng: "127.1226794866035",
   },
