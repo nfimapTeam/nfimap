@@ -12,7 +12,7 @@ export const profileData = {
       imageUrl: "/image/member/seunghyub.jpg",
       military: "2071-10-31",
       instagram: "https://www.instagram.com/sssn9_zzzn9/",
-      mbti: "ESTP",
+      mbti: "ENFP",
     },
     {
       name: "차훈",
@@ -32,7 +32,7 @@ export const profileData = {
       imageUrl: "/image/member/jaehyun.jpg",
       military: "2073-07-15",
       instagram: "https://www.instagram.com/_.kimjaehyun._",
-      mbti: "ENFP",
+      mbti: "ENTJ",
     },
     {
       name: "유회승",
@@ -52,7 +52,7 @@ export const profileData = {
       imageUrl: "/image/member/dongsung.jpg",
       military: "2075-04-09",
       instagram: "https://www.instagram.com/9_6_meng22",
-      mbti: "ISTJ",
+      mbti: "INTJ",
     },
   ],
   fandom_name: "엔피아 (N.Fia)",
