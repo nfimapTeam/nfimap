@@ -493,8 +493,8 @@ export const concertsDataEng = [
     name: "2025 Soundberry Theater",
     location: "KBS ARENA",
     date: ["2025-03-22(Sat)", "2025-03-23(Sun)"],
-    startTime: "SAT 13:00, SUN 13:00,",
-    durationMinutes: 500,
+    startTime: "SAT 18:10, SUN 20:50,",
+    durationMinutes: 60,
     type: "Festival",
     performanceType: "Guest",
     artists: ["N.Flying", "ONEWE", "Hi-Fi Un!corn", "HA HYUN SANG", "10CM", "..."],
@@ -514,7 +514,7 @@ export const concertsDataEng = [
     type: "Festival",
     performanceType: "Guest",
     artists: ["N.Flying", "MeloMance", "BUMJIN", "OWALLOIL", "Paul Kim", "Ha Dong Qn", "Hwang Karam", "..."],
-    poster: "/image/show/2025/250412_HAVE_A_NICE_DAY.jpg",
+    poster: "/image/show/2025/250412_HAVE_A_NICE_DAY_hash_11.jpg",
     ticketOpen: { date: "2025-02-19", time: "18:00" },
     ticketLink: "https://tickets.interpark.com/goods/25002171",
     lat: "37.47556062356908",
@@ -546,10 +546,42 @@ export const concertsDataEng = [
     type: "Festival",
     performanceType: "Guest",
     artists: ["N.Flying", "Silica Gel", "Nerd Connection", "Jung Seung-hwan", "So Soo Bin", "..."],
-    poster: "/image/show/2025/250614_Beautiful_Mint_Life.jpeg",
+    poster: "/image/show/2025/250614_Beautiful_Mint_Life_2025.jpg",
     ticketOpen: { date: "2025-03-05", time: "18:00" },
     ticketLink: "https://tickets.interpark.com/goods/25002850",
     lat: "37.52066503657698",
     lng: "127.1226794866035",
   },
+  {
+    id: 31,
+    name: "2025 Daecheongho Daedeok Music Festival",
+    location: "Geumgang Lohas Daecheong Park",
+    date: ["2025-04-05(Sat)"],
+    startTime: "19:30,",
+    durationMinutes: 60, // todo 타임테이블 확인 필요
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "10CM", "Stella Jang", "..."],
+    poster: "/image/show/2025/250405_DDMF_DAEDEOK.jpg",
+    ticketOpen: { date: "2025-04-05", time: "19:30" },
+    ticketLink: "https://www.xn--vk1b9fv8tlkdzuqf4h.com/",
+    lat: "36.473100351177",
+    lng: "127.473888987036",
+  },
+  // {
+  //   id: 32,
+  //   name: "PEAK FESTIVAL 2025",
+  //   location: "Nanji Hangang Park",
+  //   date: ["2025-05-00()"], // todo 라인업 확인 필요
+  //   startTime: "00:00,", // todo 타임테이블 확인 필요
+  //   durationMinutes: 540, // todo 타임테이블 확인 필요
+  //   type: "Festival",
+  //   performanceType: "Guest",
+  //   artists: ["N.Flying", "", "", "..."], // todo
+  //   poster: "/image/show/2025/", // todo
+  //   ticketOpen: { date: "2025-03-11", time: "18:00" },
+  //   ticketLink: "", // todo 확인 필요
+  //   lat: "37.566970160997684",
+  //   lng: "126.87568258083365",
+  // },
 ];

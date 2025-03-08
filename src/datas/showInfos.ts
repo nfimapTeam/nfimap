@@ -233,7 +233,7 @@ export const showInfos = [
     id: 8,
     name: "Someday Festival 2024",
     address: "서울 마포구 상암동 482-132", // 서울 난지한강공원
-    note: ["공원 내 유료 주차 공간 이용 가능 (주말에는 혼잡할 수 있음)."],
+    note: ["공원 내 유료 주차 공간 이용 가능 (주말에는 혼잡할 수 있음)"],
     capacity: "약 5,000명 이상 (주최 행사에 따라 다름)",
     seats: [],
     setlist: [
@@ -284,7 +284,7 @@ export const showInfos = [
     id: 10,
     name: "미유페(Me+Youth Festival)",
     address: "서울 마포구 상암동 482-132", // 난지한강공원 젊음의광장
-    note: ["공원 내 유료 주차 공간 이용 가능 (주말에는 혼잡할 수 있음)."],
+    note: ["공원 내 유료 주차 공간 이용 가능 (주말에는 혼잡할 수 있음)"],
     capacity: "약 5,000명 이상 (주최 행사에 따라 다름)",
     seats: [],
     setlist: [
@@ -825,7 +825,10 @@ export const showInfos = [
     id: 27,
     name: "2025 Soundberry Theater", // KBS 아레나
     address: "서울 강서구 공항대로 376",
-    note: ["KBS 아레나 건물 내 주차장이 있으나, 공간이 협소해 대중교통 이용을 권장."],
+    note: [
+        "KBS 아레나 건물 내 주차장이 있으나, 공간이 협소해 대중교통 이용을 권장.",
+        "/image/show_detail/note/2025/250322-250323_Soundberry_Theater_Timetable.png"
+    ],
     capacity: "약 3,000명",
     seats: [],
     setlist: [
@@ -841,6 +844,7 @@ export const showInfos = [
     name: "Have A Nice Day #11", // 인천 상상플랫폼
     address: "인천 중구 월미로 33 상상플랫폼",
     note: [
+        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_LineUp.jpg",
         "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_01.jpg",
         "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_02.jpg",
         "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_03.jpg",
@@ -884,6 +888,7 @@ export const showInfos = [
     note: [
       "올림픽공원 주차장 이용이 가능하나, 만차 가능성 높아 대중교통 이용 권장.",
       "필요 시 송파구청 주차장이나 잠실역 공영주차장 등의 대체 주차장 확인.",
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_LineUp.jpeg"
     ],
     capacity: "",
     seats: [],
@@ -894,4 +899,37 @@ export const showInfos = [
       "",
     ],
   },
+  {
+    id: 31,
+    name: "2025 대덕물빛축제 뮤직페스티벌", // 대청공원 일원
+    address: "대전광역시 대덕구 대청로 607",
+    note: [
+      "주차 공간이 제한적이므로 가급적 대중교통 또는 셔틀버스 이용 권장.",
+      "자가용 이용 시 공식 홈페이지 및 SNS를 통해 주차 가능 여부 사전 확인 필수.",
+      "공연 종료 후 셔틀버스 이용 대기 시간이 길어질 수 있어 미리 대비 필요.",
+    ],
+    capacity: "",
+    seats: [],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  // {
+  //   id: 32,
+  //   name: "PEAK FESTIVAL 2025",
+  //   address: "서울 마포구 상암동 482-132", // 난지한강공원
+  //   note: ["공원 내 유료 주차 공간 이용 가능 (주말에는 혼잡할 수 있음)"],
+  //   capacity: "",
+  //   seats: [],
+  //   setlist: [
+  //     "",
+  //   ],
+  //   ootd: [
+  //     "",
+  //   ],
+  // },
+
 ];

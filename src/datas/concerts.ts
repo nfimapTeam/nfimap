@@ -486,8 +486,8 @@ export const concertsData = [
     name: "2025 Soundberry Theater",
     location: "KBS 아레나",
     date: ["2025-03-22(토)", "2025-03-23(일)"],
-    startTime: "토 13:00, 일 13:00,",
-    durationMinutes: 500,
+    startTime: "토 18:10, 일 20:50,",
+    durationMinutes: 60,
     type: "페스티벌",
     performanceType: "출연",
     artists: ["N.Flying", "원위", "Hi-Fi Un!corn", "하현상", "10CM", "..."],
@@ -507,7 +507,7 @@ export const concertsData = [
     type: "페스티벌",
     performanceType: "출연",
     artists: ["N.Flying", "멜로망스", "범진", "오월오일", "폴킴", "하동균", "황가람", "..."],
-    poster: "/image/show/2025/250412_HAVE_A_NICE_DAY.jpg",
+    poster: "/image/show/2025/250412_HAVE_A_NICE_DAY_hash_11.jpg",
     ticketOpen: { date: "2025-02-19", time: "18:00" },
     ticketLink: "https://tickets.interpark.com/goods/25002171",
     lat: "37.47556062356908",
@@ -539,10 +539,42 @@ export const concertsData = [
     type: "페스티벌",
     performanceType: "출연",
     artists: ["N.Flying", "실리카겔", "너드커넥션", "정승환", "소수빈", "..."],
-    poster: "/image/show/2025/250614_Beautiful_Mint_Life.jpeg",
+    poster: "/image/show/2025/250614_Beautiful_Mint_Life_2025.jpg",
     ticketOpen: { date: "2025-03-05", time: "18:00" },
     ticketLink: "https://tickets.interpark.com/goods/25002850",
     lat: "37.52066503657698",
     lng: "127.1226794866035",
   },
+  {
+    id: 31,
+    name: "2025 대덕물빛축제 뮤직페스티벌",
+    location: "대청공원 일원",
+    date: ["2025-04-05(토)"],
+    startTime: "19:30,",
+    durationMinutes: 60, // todo 타임테이블 확인 필요
+    type: "행사",
+    performanceType: "출연",
+    artists: ["N.Flying", "10CM", "스텔라장", "..."],
+    poster: "/image/show/2025/250405_DDMF_DAEDEOK.jpg",
+    ticketOpen: { date: "2025-04-05", time: "19:30" },
+    ticketLink: "https://www.xn--vk1b9fv8tlkdzuqf4h.com/",
+    lat: "36.473100351177",
+    lng: "127.473888987036",
+  },
+  // {
+  //   id: 32,
+  //   name: "PEAK FESTIVAL 2025",
+  //   location: "난지한강공원",
+  //   date: ["2025-05-00()"], // todo 라인업 확인 필요
+  //   startTime: "00:00,", // todo 타임테이블 확인 필요
+  //   durationMinutes: 540, // todo 타임테이블 확인 필요
+  //   type: "페스티벌",
+  //   performanceType: "출연",
+  //   artists: ["N.Flying", "", "", "..."], // todo
+  //   poster: "/image/show/2025/", // todo
+  //   ticketOpen: { date: "2025-03-11", time: "18:00" },
+  //   ticketLink: "", // todo 확인 필요
+  //   lat: "37.566970160997684",
+  //   lng: "126.87568258083365",
+  // },
 ];

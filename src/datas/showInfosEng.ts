@@ -861,6 +861,7 @@ export const showInfosEng = [
     address: "376, Gonghang-daero, Gangseo-gu, Seoul, South Korea", // KBS 아레나
     note: [
       "There is a parking lot within the KBS Arena building, but space is limited, so public transportation is recommended.",
+      "/image/show_detail/note/2025/250322-250323_Soundberry_Theater_Timetable.png"
     ],
     capacity: "Approximately 3,000 people",
     seats: [],
@@ -876,6 +877,7 @@ export const showInfosEng = [
     name: "Have A Nice Day #11", // 인천 상상플랫폼
     address: "33, Wolmi-ro, Jung-gu, Incheon, South Korea",
     note: [
+      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_LineUp.jpg",
       "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_01.jpg",
       "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_02.jpg",
       "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_03.jpg",
@@ -919,6 +921,7 @@ export const showInfosEng = [
     note: [
       "Parking is available at Olympic Park, but it is highly likely to be full. Public transportation is recommended.",
       "If needed, check alternative parking options such as Songpa-gu Office Parking Lot or Jamsil Station Public Parking Lot.",
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_LineUp.jpeg"
     ],
     capacity: "",
     seats: [],
@@ -929,4 +932,39 @@ export const showInfosEng = [
       "",
     ],
   },
+  {
+    id: 31,
+    name: "2025 Daecheongho Daedeok Music Festival", // 대청공원 일원
+    address: "607 Daecheong-ro, Daedeok-gu, Daejeon City, South Korea",
+    note: [
+      "Limited parking—use public transport or shuttles if possible.",
+      "Check parking availability online before driving.",
+      "Shuttle bus wait times may be long after the concert—plan ahead.",
+    ],
+    capacity: "",
+    seats: [],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  // {
+  //   id: 32,
+  //   name: "PEAK FESTIVAL 20254",
+  //   address:
+  //       "Nanji Hangang Park 482-132, Sangam-dong, Mapo-gu, Seoul, South Korea", // 난지한강공원
+  //   note: [
+  //     "Paid parking is available in the park (it may get crowded on weekends)",
+  //   ],
+  //   capacity: "",
+  //   seats: [],
+  //   setlist: [
+  //     "",
+  //   ],
+  //   ootd: [
+  //     ,
+  //   ],
+  // },
 ];
