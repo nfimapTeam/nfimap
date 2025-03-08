@@ -300,4 +300,24 @@ export const nfiRoadDataEng = [
         naverLink: "https://maps.app.goo.gl/fK64R1q1W8SQiuxeA",
         note : "The Chinese restaurant that Hweseung visited."
     },
+    {
+        id: 31,
+        name: "MitBord Seoul",
+        location: "1F, 1, Seongsuil-ro, Seongdong-gu, Seoul, South Korea",
+        category: "Food",
+        lat: "37.5408654463888",
+        lng: "127.047850218608",
+        naverLink: "https://maps.app.goo.gl/4hLCvXwwsxRwGHey8",
+        note : "2025.03.08 Seunghyub's Instagram"
+    },
+    {
+        id: 32,
+        name: "Seobook Myeonok",
+        location: "Seobook Myeonok, 199-1, Jayang-ro, Gwangjin-gu, Seoul, South Korea",
+        category: "Food",
+        lat: "37.5453748311268",
+        lng: "127.085295421877",
+        naverLink: "https://maps.app.goo.gl/QNLTkNkJKbEfWEbh6",
+        note : "Seunghyub's favorite Pyeongyang Naengmyeon restaurant"
+    },
 ];

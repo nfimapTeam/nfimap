@@ -300,4 +300,24 @@ export const nfiRoadData = [
     naverLink: "https://naver.me/GG7PPLeh",
     note : "회승이가 다녀간 중식당"
   },
+  {
+    id: 31,
+    name: "밋보어 서울",
+    location: "서울 성동구 성수일로 1 1층",
+    category: "맛집",
+    lat: "37.5408654463888",
+    lng: "127.047850218608",
+    naverLink: "https://naver.me/Fr7xIC0U",
+    note : "2025.03.08 승협 인스타그램"
+  },
+  {
+    id: 32,
+    name: "서북면옥",
+    location: "서울 광진구 자양로 199-1 서북면옥",
+    category: "맛집",
+    lat: "37.5453748311268",
+    lng: "127.085295421877",
+    naverLink: "https://naver.me/FUhsArTw",
+    note : "우얘합에서 얘기한 승협이 최애 평양냉면 집"
+  },
 ];
