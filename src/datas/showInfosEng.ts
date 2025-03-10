@@ -950,21 +950,22 @@ export const showInfosEng = [
       "",
     ],
   },
-  // {
-  //   id: 32,
-  //   name: "PEAK FESTIVAL 20254",
-  //   address:
-  //       "Nanji Hangang Park 482-132, Sangam-dong, Mapo-gu, Seoul, South Korea", // 난지한강공원
-  //   note: [
-  //     "Paid parking is available in the park (it may get crowded on weekends)",
-  //   ],
-  //   capacity: "",
-  //   seats: [],
-  //   setlist: [
-  //     "",
-  //   ],
-  //   ootd: [
-  //     ,
-  //   ],
-  // },
+  {
+    id: 32,
+    name: "PEAK FESTIVAL 20254",
+    address:
+        "Nanji Hangang Park 482-132, Sangam-dong, Mapo-gu, Seoul, South Korea", // 난지한강공원
+    note: [
+      "Paid parking is available in the park (it may get crowded on weekends)",
+      "/image/show_detail/note/2025/250525_PEAK FESTIVAL_2ND_LINEUP.jpeg",
+    ],
+    capacity: "",
+    seats: [],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];

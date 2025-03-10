@@ -917,19 +917,22 @@ export const showInfos = [
       "",
     ],
   },
-  // {
-  //   id: 32,
-  //   name: "PEAK FESTIVAL 2025",
-  //   address: "서울 마포구 상암동 482-132", // 난지한강공원
-  //   note: ["공원 내 유료 주차 공간 이용 가능 (주말에는 혼잡할 수 있음)"],
-  //   capacity: "",
-  //   seats: [],
-  //   setlist: [
-  //     "",
-  //   ],
-  //   ootd: [
-  //     "",
-  //   ],
-  // },
+  {
+    id: 32,
+    name: "PEAK FESTIVAL 2025",
+    address: "서울 마포구 상암동 482-132", // 난지한강공원
+    note: [
+        "공원 내 유료 주차 공간 이용 가능 (주말에는 혼잡할 수 있음)",
+        "/image/show_detail/note/2025/250525_PEAK FESTIVAL_2ND_LINEUP.jpeg",
+    ],
+    capacity: "",
+    seats: [],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 
 ];

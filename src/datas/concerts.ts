@@ -561,20 +561,20 @@ export const concertsData = [
     lat: "36.473100351177",
     lng: "127.473888987036",
   },
-  // {
-  //   id: 32,
-  //   name: "PEAK FESTIVAL 2025",
-  //   location: "난지한강공원",
-  //   date: ["2025-05-00()"], // todo 라인업 확인 필요
-  //   startTime: "00:00,", // todo 타임테이블 확인 필요
-  //   durationMinutes: 540, // todo 타임테이블 확인 필요
-  //   type: "페스티벌",
-  //   performanceType: "출연",
-  //   artists: ["N.Flying", "", "", "..."], // todo
-  //   poster: "/image/show/2025/", // todo
-  //   ticketOpen: { date: "2025-03-11", time: "18:00" },
-  //   ticketLink: "", // todo 확인 필요
-  //   lat: "37.566970160997684",
-  //   lng: "126.87568258083365",
-  // },
+  {
+    id: 32,
+    name: "PEAK FESTIVAL 2025",
+    location: "난지한강공원",
+    date: ["2025-05-25(일)"],
+    startTime: "00:00,", // todo 타임테이블 확인 필요
+    durationMinutes: 540, // todo 타임테이블 확인 필요
+    type: "페스티벌",
+    performanceType: "출연",
+    artists: ["N.Flying", "10CM", "한로로", "오월오일", "..."],
+    poster: "/image/show/2025/250525_PEAK FESTIVAL 2025.jpg",
+    ticketOpen: { date: "2025-03-11", time: "18:00" },
+    ticketLink: "https://tickets.interpark.com/goods/25002448",
+    lat: "37.566970160997684",
+    lng: "126.87568258083365",
+  },
 ];

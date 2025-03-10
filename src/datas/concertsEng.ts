@@ -568,20 +568,20 @@ export const concertsDataEng = [
     lat: "36.473100351177",
     lng: "127.473888987036",
   },
-  // {
-  //   id: 32,
-  //   name: "PEAK FESTIVAL 2025",
-  //   location: "Nanji Hangang Park",
-  //   date: ["2025-05-00()"], // todo 라인업 확인 필요
-  //   startTime: "00:00,", // todo 타임테이블 확인 필요
-  //   durationMinutes: 540, // todo 타임테이블 확인 필요
-  //   type: "Festival",
-  //   performanceType: "Guest",
-  //   artists: ["N.Flying", "", "", "..."], // todo
-  //   poster: "/image/show/2025/", // todo
-  //   ticketOpen: { date: "2025-03-11", time: "18:00" },
-  //   ticketLink: "", // todo 확인 필요
-  //   lat: "37.566970160997684",
-  //   lng: "126.87568258083365",
-  // },
+  {
+    id: 32,
+    name: "PEAK FESTIVAL 2025",
+    location: "Nanji Hangang Park",
+    date: ["2025-05-25(Sun)"],
+    startTime: "00:00,", // todo 타임테이블 확인 필요
+    durationMinutes: 540, // todo 타임테이블 확인 필요
+    type: "Festival",
+    performanceType: "Guest",
+    artists: ["N.Flying", "10CM", "HANRORO", "OWALLOIL", "..."],
+    poster: "/image/show/2025/250525_PEAK FESTIVAL 2025.jpg",
+    ticketOpen: { date: "2025-03-11", time: "18:00" },
+    ticketLink: "https://tickets.interpark.com/goods/25002448",
+    lat: "37.566970160997684",
+    lng: "126.87568258083365",
+  },
 ];
