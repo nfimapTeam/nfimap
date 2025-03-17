@@ -562,7 +562,7 @@ export const concertsDataEng = [
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "10CM", "Stella Jang", "..."],
-    poster: "/image/show/2025/250405_DDMF_DAEDEOK.jpg",
+    poster: "/image/show/2025/250405_DAEDEOK_MUSIC_FESTIVAL.jpg",
     ticketOpen: { date: "2025-04-05", time: "19:30" },
     ticketLink: "https://www.xn--vk1b9fv8tlkdzuqf4h.com/",
     lat: "36.473100351177",
@@ -590,7 +590,7 @@ export const concertsDataEng = [
     location: "Yeungnam University Cheonma Art Center Grand Hall",
     date: ["2025-04-20(Sun)"],
     startTime: "16:00,",
-    durationMinutes: 60, // todo 업뎃 필요
+    durationMinutes: 0, // todo 업뎃 필요
     type: "Concert",
     performanceType: "Joint",
     artists: ["N.Flying", "Band Nah"],
@@ -616,4 +616,36 @@ export const concertsDataEng = [
     lat: "37.51473581654706",
     lng: "127.12751944805042",
   },
+  {
+    id: 35,
+    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (BUSAN)",
+    location: "Location TBD", // todo 추후 공지 확인 필요
+    date: ["2025-07-05(Sat)"],
+    startTime: "16:00",
+    durationMinutes: 120, // todo 확인 필요
+    type: "Concert",
+    performanceType: "Solo",
+    artists: ["N.Flying"],
+    poster: "/image/show/2025/250705_&CON4_FULL_CIRCLE_BUSAN.jpeg",
+    ticketOpen: { date: "2025-07-05", time: "16:00" }, // todo 업뎃 필요
+    ticketLink: "", // todo 업뎃 필요 https://www.fncent.com/NFLYING/b/notice/61254
+    lat: "35.1150061689085", // todo 업뎃 필요 - 현재는 부산역
+    lng: "129.0414358051436", // todo 업뎃 필요 - 현재는 부산역
+  },
+  // {
+  //   id: 36,
+  //   name: "TREND WAVE 2025",
+  //   location: "Location TBD", // todo 추후 공지 확인 필요
+  //   date: ["2025-05-03(Sat)"],
+  //   startTime: "00:00", // todo 확인 필요
+  //   durationMinutes: 0, // todo 확인 필요
+  //   type: "Event",
+  //   performanceType: "Guest",
+  //   artists: ["N.Flying", "THE BOYZ", "ENHYPEN", "STAYC", "ILLIT", "..."],
+  //   poster: "/image/show/2025/250503_Trend_Wave_2025.jpg",
+  //   ticketOpen: { date: "2025-05-03", time: "00:00" }, // todo 업뎃 필요
+  //   ticketLink: "https://x.com/TrendwaveFesta", // todo 공식 계정으로 업뎃 필요
+  //   lat: "37.5510652973239", // todo 업뎃 필요 - 현재는 FNC성수
+  //   lng: "127.049807506605", // todo 업뎃 필요 - 현재는 FNC성수
+  // },
 ];

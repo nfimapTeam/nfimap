@@ -861,7 +861,8 @@ export const showInfosEng = [
     address: "376, Gonghang-daero, Gangseo-gu, Seoul, South Korea", // KBS 아레나
     note: [
       "There is a parking lot within the KBS Arena building, but space is limited, so public transportation is recommended.",
-      "/image/show_detail/note/2025/250322-250323_Soundberry_Theater_Timetable.png"
+      "/image/show_detail/note/2025/250322-250323_Soundberry_Theater_NF.jpg",
+      "/image/show_detail/note/2025/250322-250323_Soundberry_Theater_Timetable.png",
     ],
     capacity: "Approximately 3,000 people",
     seats: [],
@@ -877,11 +878,10 @@ export const showInfosEng = [
     name: "Have A Nice Day #11", // 인천 상상플랫폼
     address: "33, Wolmi-ro, Jung-gu, Incheon, South Korea",
     note: [
+      "3-minute walk from Incheon Station to Sangsang Platform.",
+      "Parking available near Sangsang Platform for drivers.",
+      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_hash_11_NF.jpg",
       "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_LineUp.jpg",
-      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_01.jpg",
-      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_02.jpg",
-      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_03.jpg",
-      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_04.jpg",
     ],
     capacity: "",
     seats: [],
@@ -921,6 +921,7 @@ export const showInfosEng = [
     note: [
       "Parking is available at Olympic Park, but it is highly likely to be full. Public transportation is recommended.",
       "If needed, check alternative parking options such as Songpa-gu Office Parking Lot or Jamsil Station Public Parking Lot.",
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_NF.jpg",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_LineUp.jpeg"
     ],
     capacity: "",
@@ -940,6 +941,9 @@ export const showInfosEng = [
       "Limited parking—use public transport or shuttles if possible.",
       "Check parking availability online before driving.",
       "Shuttle bus wait times may be long after the concert—plan ahead.",
+      "/image/show_detail/note/2025/250405_DDMF_DAEDEOK_NF.jpg",
+      "/image/show_detail/note/2025/250405_DDMF_TIME_TABLE.jpg",
+      "/image/show_detail/note/2025/250405_DDMF_DAEDEOK_SCHEDULE.jpg",
     ],
     capacity: "",
     seats: [],
@@ -976,7 +980,7 @@ export const showInfosEng = [
       "",
     ],
     capacity: "1,889 seats",
-    seats: [
+    seats: [ // todo 실제 좌배도로 업뎃 필요
       "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_1F.gif",
       "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_2F.gif",
     ],
@@ -995,7 +999,7 @@ export const showInfosEng = [
       "",
     ],
     capacity: "Approximately 3,000 seats (Fixed: 2,432 seats, Floor: 500–600 seats)",
-    seats: [
+    seats: [ // todo 실제 좌배도로 업뎃 필요
       "/image/show_detail/seats/2025/Olympic Hall_SEAT.jpg",
     ],
     setlist: [
@@ -1005,4 +1009,41 @@ export const showInfosEng = [
       "",
     ],
   },
+  {
+    id: 35,
+    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (BUSAN)",
+    address: "Location TBD", // todo 추후 공지 시 수정 필요
+    note: [
+      "",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  // {
+  //   id: 36,
+  //   name: "TREND WAVE 2025",
+  //   address: "Location TBD", // todo 추후 공지 확인 필요
+  //   note: [
+  //     "It will be an invitation-only event, with no ticket sales.",
+  //     "Participation details will be announced through official channels.",
+  //   ],
+  //   capacity: "",
+  //   seats: [
+  //     "",
+  //   ],
+  //   setlist: [
+  //     "",
+  //   ],
+  //   ootd: [
+  //     "",
+  //   ],
+  // },
 ];

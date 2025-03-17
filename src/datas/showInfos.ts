@@ -826,8 +826,9 @@ export const showInfos = [
     name: "2025 Soundberry Theater", // KBS 아레나
     address: "서울 강서구 공항대로 376",
     note: [
-        "KBS 아레나 건물 내 주차장이 있으나, 공간이 협소해 대중교통 이용을 권장.",
-        "/image/show_detail/note/2025/250322-250323_Soundberry_Theater_Timetable.png"
+      "KBS 아레나 건물 내 주차장이 있으나, 공간이 협소해 대중교통 이용을 권장.",
+      "/image/show_detail/note/2025/250322-250323_Soundberry_Theater_NF.jpg",
+      "/image/show_detail/note/2025/250322-250323_Soundberry_Theater_Timetable.png",
     ],
     capacity: "약 3,000명",
     seats: [],
@@ -844,11 +845,10 @@ export const showInfos = [
     name: "Have A Nice Day #11", // 인천 상상플랫폼
     address: "인천 중구 월미로 33 상상플랫폼",
     note: [
+        "인천역에서 상상플랫폼까지 도보 3분 거리",
+        "자가용 이용 시 상상플랫폼 인근 주차장 이용",
+        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_hash_11_NF.jpg",
         "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_LineUp.jpg",
-        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_01.jpg",
-        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_02.jpg",
-        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_03.jpg",
-        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_INFO_04.jpg",
     ],
     capacity: "",
     seats: [],
@@ -888,6 +888,7 @@ export const showInfos = [
     note: [
       "올림픽공원 주차장 이용이 가능하나, 만차 가능성 높아 대중교통 이용 권장.",
       "필요 시 송파구청 주차장이나 잠실역 공영주차장 등의 대체 주차장 확인.",
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_NF.jpg",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_LineUp.jpeg"
     ],
     capacity: "",
@@ -907,6 +908,9 @@ export const showInfos = [
       "주차 공간이 제한적이므로 가급적 대중교통 또는 셔틀버스 이용 권장.",
       "자가용 이용 시 공식 홈페이지 및 SNS를 통해 주차 가능 여부 사전 확인 필수.",
       "공연 종료 후 셔틀버스 이용 대기 시간이 길어질 수 있어 미리 대비 필요.",
+      "/image/show_detail/note/2025/250405_DDMF_DAEDEOK_NF.jpg",
+      "/image/show_detail/note/2025/250405_DDMF_TIME_TABLE.jpg",
+      "/image/show_detail/note/2025/250405_DDMF_DAEDEOK_SCHEDULE.jpg",
     ],
     capacity: "",
     seats: [],
@@ -941,8 +945,8 @@ export const showInfos = [
     note: [
       "",
     ],
-    capacity: "총 1,889석",
-    seats: [
+    capacity: "총 1,889 석",
+    seats: [ // todo 실제 좌배도로 업뎃 필요
       "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_1F.gif",
       "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_2F.gif",
     ],
@@ -961,7 +965,7 @@ export const showInfos = [
       "",
     ],
     capacity: "약 3,000석 (고정 2,432석, 플로어 500~600석)",
-    seats: [
+    seats: [ // todo 실제 좌배도로 업뎃 필요
       "/image/show_detail/seats/2025/Olympic Hall_SEAT.jpg",
     ],
     setlist: [
@@ -971,16 +975,35 @@ export const showInfos = [
       "",
     ],
   },
+  {
+    id: 35,
+    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (부산)",
+    address: "장소 추후 공지 예정", // todo 추후 공지 시 수정 필요
+    note: [
+      "",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
   // {
-  //   id: 35,
-  //   name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (부산)",
-  //   address: "",
+  //   id: 36,
+  //   name: "TREND WAVE 2025",
+  //   address: "장소 미정", // todo 추후 공지 확인 필요
   //   note: [
-  //     "",
+  //     "티켓 판매 없이 초청제 방식으로 운영됨.",
+  //     "참여 방법은 공식 채널을 통해 별도 안내 예정.",
   //   ],
-  //   capacity: "약 3,000석 (고정 2,432석, 플로어 500~600석)",
+  //   capacity: "",
   //   seats: [
-  //     "/image/show_detail/seats/2025/Olympic Hall_SEAT.jpg",
+  //     "",
   //   ],
   //   setlist: [
   //     "",

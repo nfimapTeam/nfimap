@@ -555,7 +555,7 @@ export const concertsData = [
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "10CM", "스텔라장", "..."],
-    poster: "/image/show/2025/250405_DDMF_DAEDEOK.jpg",
+    poster: "/image/show/2025/250405_DAEDEOK_MUSIC_FESTIVAL.jpg",
     ticketOpen: { date: "2025-04-05", time: "19:30" },
     ticketLink: "https://www.xn--vk1b9fv8tlkdzuqf4h.com/",
     lat: "36.473100351177",
@@ -583,7 +583,7 @@ export const concertsData = [
     location: "대구 영남대학교 천마아트센터 그랜드홀",
     date: ["2025-04-20(일)"],
     startTime: "16:00",
-    durationMinutes: 60, // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
     type: "콘서트",
     performanceType: "합동",
     artists: ["N.Flying", "나상현씨밴드"],
@@ -609,20 +609,36 @@ export const concertsData = [
     lat: "37.51473581654706",
     lng: "127.12751944805042",
   },
+  {
+    id: 35,
+    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (부산)",
+    location: "장소 추후 공지 예정", // todo 추후 공지 확인 필요
+    date: ["2025-07-05(토)"],
+    startTime: "16:00",
+    durationMinutes: 120, // todo 확인 필요
+    type: "콘서트",
+    performanceType: "단독",
+    artists: ["N.Flying"],
+    poster: "/image/show/2025/250705_&CON4_FULL_CIRCLE_BUSAN.jpeg",
+    ticketOpen: { date: "2025-07-05", time: "16:00" }, // todo 업뎃 필요
+    ticketLink: "", // todo 업뎃 필요 https://www.fncent.com/NFLYING/b/notice/61254
+    lat: "35.1150061689085", // todo 업뎃 필요 - 현재는 부산역
+    lng: "129.0414358051436", // todo 업뎃 필요 - 현재는 부산역
+  },
   // {
-  //   id: 35,
-  //   name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (부산)",
-  //   location: "", // todo 확인 필요
-  //   date: ["2025-07-05(토)"],
-  //   startTime: "토 16:00",
-  //   durationMinutes: 120, // todo 확인 필요
-  //   type: "콘서트",
-  //   performanceType: "단독",
-  //   artists: ["N.Flying"],
-  //   poster: "/image/show/2025/250705_&CON4_FULL_CIRCLE_BUSAN.jpeg",
-  //   ticketOpen: { date: "2025-00-00", time: "00:00" },
-  //   ticketLink: "", // todo 업뎃 필요 https://www.fncent.com/NFLYING/b/notice/61254
-  //   lat: "", // todo 업뎃 필요 - 현재는 FNC 사옥
-  //   lng: "", // todo 업뎃 필요 - 현재는 FNC 사옥
+  //   id: 36,
+  //   name: "TREND WAVE 2025",
+  //   location: "장소 미정", // todo 추후 공지 확인 필요
+  //   date: ["2025-05-03(토)"],
+  //   startTime: "00:00", // todo 확인 필요
+  //   durationMinutes: 0, // todo 확인 필요
+  //   type: "행사",
+  //   performanceType: "출연",
+  //   artists: ["N.Flying", "더보이즈", "엔하이픈", "스테이씨", "아일릿", "..."],
+  //   poster: "/image/show/2025/250503_Trend_Wave_2025.jpg",
+  //   ticketOpen: { date: "2025-05-03", time: "00:00" }, // todo 업뎃 필요
+  //   ticketLink: "https://x.com/TrendwaveFesta", // todo 공식 계정으로 업뎃 필요
+  //   lat: "37.5510652973239", // todo 업뎃 필요 - 현재는 FNC성수
+  //   lng: "127.049807506605", // todo 업뎃 필요 - 현재는 FNC성수
   // },
 ];
