@@ -934,5 +934,59 @@ export const showInfos = [
       "",
     ],
   },
-
+  {
+    id: 33,
+    name: "Live on Spring in 대구",
+    address: "경상북도 경산시 대학로 280 영남대학교 천마아트센터", // 대구 영남대학교 천마아트센터 그랜드홀
+    note: [
+      "",
+    ],
+    capacity: "총 1,889석",
+    seats: [
+      "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_1F.gif",
+      "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_2F.gif",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 34,
+    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE",
+    address: "서울 송파구 방이동 88-2 올림픽홀", // 올림픽공원 올림픽홀
+    note: [
+      "",
+    ],
+    capacity: "약 3,000석 (고정 2,432석, 플로어 500~600석)",
+    seats: [
+      "/image/show_detail/seats/2025/Olympic Hall_SEAT.jpg",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  // {
+  //   id: 35,
+  //   name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (부산)",
+  //   address: "",
+  //   note: [
+  //     "",
+  //   ],
+  //   capacity: "약 3,000석 (고정 2,432석, 플로어 500~600석)",
+  //   seats: [
+  //     "/image/show_detail/seats/2025/Olympic Hall_SEAT.jpg",
+  //   ],
+  //   setlist: [
+  //     "",
+  //   ],
+  //   ootd: [
+  //     "",
+  //   ],
+  // },
 ];

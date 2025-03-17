@@ -584,4 +584,36 @@ export const concertsDataEng = [
     lat: "37.566970160997684",
     lng: "126.87568258083365",
   },
+  {
+    id: 33,
+    name: "Live on Spring in Daegu",
+    location: "Yeungnam University Cheonma Art Center Grand Hall",
+    date: ["2025-04-20(Sun)"],
+    startTime: "16:00,",
+    durationMinutes: 60, // todo 업뎃 필요
+    type: "Concert",
+    performanceType: "Joint",
+    artists: ["N.Flying", "Band Nah"],
+    poster: "/image/show/2025/250420_LIVE_ON_DAEGU.png",
+    ticketOpen: { date: "2025-03-21", time: "20:00" },
+    ticketLink: "", // todo 업뎃 필요 http://ticket.yes24.com/New/Notice/NoticeMain.aspx#id=15772
+    lat: "35.8321486333884",
+    lng: "128.7530935426661",
+  },
+  {
+    id: 34,
+    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (SEOUL)",
+    location: "Olympic Park Olympic Hall",
+    date: ["2025-05-09(Fri)", "2025-05-10(Sat)", "2025-05-11(Sun)"],
+    startTime: "Fri 19:30, Sat 18:00, Sun 16:00",
+    durationMinutes: 120, // todo 확인 필요
+    type: "Concert",
+    performanceType: "Solo",
+    artists: ["N.Flying"],
+    poster: "/image/show/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL.jpeg",
+    ticketOpen: { date: "2025-03-28", time: "20:00" },
+    ticketLink: "", // todo 업뎃 필요 https://ticket.interpark.com/webzine/paper/TPNoticeView.asp?bbsno=34&pageno=1&stext=&no=54909&groupno=54909&seq=0&KindOfGoods=TICKET&Genre=&sort=WriteDate
+    lat: "37.51473581654706",
+    lng: "127.12751944805042",
+  },
 ];

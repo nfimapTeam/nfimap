@@ -781,7 +781,7 @@ export const showInfosEng = [
     name: "2024 LOVE FNC COUNTDOWN", // 세종대학교 대양홀
     address: "Daeyang Hall, Sejong University, 209 Neungdong-ro, Gwangjin-gu, Seoul, South Korea",
     note: ["From Exit 6 of Children’s Grand Park Station (Line 7), walk 275 meters (4 minutes)"],
-    capacity: "Approximately 2,029 Seats",
+    capacity: "Approximately 2,029 seats",
     seats: [
       "/image/show_detail/seats/2024/241231_SEJONG_UNIV.png"
     ],
@@ -961,6 +961,43 @@ export const showInfosEng = [
     ],
     capacity: "",
     seats: [],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 33,
+    name: "Live on Spring in Daegu",
+    address: "280, Daehak-ro, Gyeongsan-si, Gyeongsangbuk-do, South Korea", // 대구 영남대학교 천마아트센터 그랜드홀
+    note: [
+      "",
+    ],
+    capacity: "1,889 seats",
+    seats: [
+      "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_1F.gif",
+      "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_2F.gif",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 34,
+    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE",
+    address: "Olympic Hall, 88-2 Bangi-dong, Songpa-gu, Seoul, South Korea", // 올림픽공원 올림픽홀
+    note: [
+      "",
+    ],
+    capacity: "Approximately 3,000 seats (Fixed: 2,432 seats, Floor: 500–600 seats)",
+    seats: [
+      "/image/show_detail/seats/2025/Olympic Hall_SEAT.jpg",
+    ],
     setlist: [
       "",
     ],

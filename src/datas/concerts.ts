@@ -470,7 +470,7 @@ export const concertsData = [
     name: "2025 어썸스테이지: 스페셜 콘서트",
     location: "벡스코 오디토리움",
     date: ["2025-03-02(일)", "2025-03-03(월)"],
-    startTime: "일 14:30, 월 16:00,",
+    startTime: "일 14:30, 월 16:00",
     durationMinutes: 120,
     type: "콘서트",
     performanceType: "단독",
@@ -486,7 +486,7 @@ export const concertsData = [
     name: "2025 Soundberry Theater",
     location: "KBS 아레나",
     date: ["2025-03-22(토)", "2025-03-23(일)"],
-    startTime: "토 18:10, 일 20:50,",
+    startTime: "토 18:10, 일 20:50",
     durationMinutes: 60,
     type: "페스티벌",
     performanceType: "출연",
@@ -502,7 +502,7 @@ export const concertsData = [
     name: "Have A Nice Day #11",
     location: "인천 상상플랫폼",
     date: ["2025-04-12(토)"],
-    startTime: "00:00,", // todo 시간 미정
+    startTime: "00:00", // todo 시간 미정
     durationMinutes: 0, // todo 시간 미정
     type: "페스티벌",
     performanceType: "출연",
@@ -518,7 +518,7 @@ export const concertsData = [
     name: "제1회 디 어워즈(D Awards)",
     location: "고려대학교 화정체육관",
     date: ["2025-02-22(토)"],
-    startTime: "18:00,",
+    startTime: "18:00",
     durationMinutes: 9,
     type: "행사",
     performanceType: "출연",
@@ -534,7 +534,7 @@ export const concertsData = [
     name: "뷰티풀 민트 라이프 2025",
     location: "올림픽공원 88잔디마당",
     date: ["2025-06-14(토)"],
-    startTime: "00:00,", // todo
+    startTime: "00:00", // todo
     durationMinutes: 0, // todo
     type: "페스티벌",
     performanceType: "출연",
@@ -550,7 +550,7 @@ export const concertsData = [
     name: "2025 대덕물빛축제 뮤직페스티벌",
     location: "대청공원 일원",
     date: ["2025-04-05(토)"],
-    startTime: "19:30,",
+    startTime: "19:30",
     durationMinutes: 60, // todo 타임테이블 확인 필요
     type: "행사",
     performanceType: "출연",
@@ -566,7 +566,7 @@ export const concertsData = [
     name: "PEAK FESTIVAL 2025",
     location: "난지한강공원",
     date: ["2025-05-25(일)"],
-    startTime: "00:00,", // todo 타임테이블 확인 필요
+    startTime: "00:00", // todo 타임테이블 확인 필요
     durationMinutes: 540, // todo 타임테이블 확인 필요
     type: "페스티벌",
     performanceType: "출연",
@@ -577,4 +577,52 @@ export const concertsData = [
     lat: "37.566970160997684",
     lng: "126.87568258083365",
   },
+  {
+    id: 33,
+    name: "Live on Spring in 대구",
+    location: "대구 영남대학교 천마아트센터 그랜드홀",
+    date: ["2025-04-20(일)"],
+    startTime: "16:00",
+    durationMinutes: 60, // todo 확인 필요
+    type: "콘서트",
+    performanceType: "합동",
+    artists: ["N.Flying", "나상현씨밴드"],
+    poster: "/image/show/2025/250420_LIVE_ON_DAEGU.png",
+    ticketOpen: { date: "2025-03-21", time: "20:00" },
+    ticketLink: "", // todo 업뎃 필요 http://ticket.yes24.com/New/Notice/NoticeMain.aspx#id=15772
+    lat: "35.8321486333884",
+    lng: "128.7530935426661",
+  },
+  {
+    id: 34,
+    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (서울)",
+    location: "올림픽공원 올림픽홀",
+    date: ["2025-05-09(금)", "2025-05-10(토)", "2025-05-11(일)"],
+    startTime: "금 19:30, 토 18:00, 일 16:00",
+    durationMinutes: 120, // todo 확인 필요
+    type: "콘서트",
+    performanceType: "단독",
+    artists: ["N.Flying"],
+    poster: "/image/show/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL.jpeg",
+    ticketOpen: { date: "2025-03-28", time: "20:00" },
+    ticketLink: "", // todo 업뎃 필요 https://ticket.interpark.com/webzine/paper/TPNoticeView.asp?bbsno=34&pageno=1&stext=&no=54909&groupno=54909&seq=0&KindOfGoods=TICKET&Genre=&sort=WriteDate
+    lat: "37.51473581654706",
+    lng: "127.12751944805042",
+  },
+  // {
+  //   id: 35,
+  //   name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (부산)",
+  //   location: "", // todo 확인 필요
+  //   date: ["2025-07-05(토)"],
+  //   startTime: "토 16:00",
+  //   durationMinutes: 120, // todo 확인 필요
+  //   type: "콘서트",
+  //   performanceType: "단독",
+  //   artists: ["N.Flying"],
+  //   poster: "/image/show/2025/250705_&CON4_FULL_CIRCLE_BUSAN.jpeg",
+  //   ticketOpen: { date: "2025-00-00", time: "00:00" },
+  //   ticketLink: "", // todo 업뎃 필요 https://www.fncent.com/NFLYING/b/notice/61254
+  //   lat: "", // todo 업뎃 필요 - 현재는 FNC 사옥
+  //   lng: "", // todo 업뎃 필요 - 현재는 FNC 사옥
+  // },
 ];
