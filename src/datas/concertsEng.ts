@@ -509,8 +509,8 @@ export const concertsDataEng = [
     name: "Have A Nice Day #11",
     location: "Incheon Sangsang Platform",
     date: ["2025-04-12(Sat)"],
-    startTime: "00:00,", // todo 시간 미정
-    durationMinutes: 0, // todo 시간 미정
+    startTime: "16:00,",
+    durationMinutes: 50,
     type: "Festival",
     performanceType: "Guest",
     artists: ["N.Flying", "MeloMance", "BUMJIN", "OWALLOIL", "Paul Kim", "Ha Dong Qn", "Hwang Karam", "..."],
@@ -558,7 +558,7 @@ export const concertsDataEng = [
     location: "Geumgang Lohas Daecheong Park",
     date: ["2025-04-05(Sat)"],
     startTime: "19:30,",
-    durationMinutes: 60, // todo 타임테이블 확인 필요
+    durationMinutes: 60, // todo 확인 필요
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "10CM", "Stella Jang", "..."],
@@ -589,14 +589,14 @@ export const concertsDataEng = [
     name: "Live on Spring in Daegu",
     location: "Yeungnam University Cheonma Art Center Grand Hall",
     date: ["2025-04-20(Sun)"],
-    startTime: "16:00,",
-    durationMinutes: 0, // todo 업뎃 필요
+    startTime: "17:20,",
+    durationMinutes: 60,
     type: "Concert",
     performanceType: "Joint",
     artists: ["N.Flying", "Band Nah"],
     poster: "/image/show/2025/250420_LIVE_ON_DAEGU.png",
     ticketOpen: { date: "2025-03-21", time: "20:00" },
-    ticketLink: "", // todo 업뎃 필요 http://ticket.yes24.com/New/Notice/NoticeMain.aspx#id=15772
+    ticketLink: "http://ticket.yes24.com/Special/53223",
     lat: "35.8321486333884",
     lng: "128.7530935426661",
   },
@@ -632,20 +632,20 @@ export const concertsDataEng = [
     lat: "35.1150061689085", // todo 업뎃 필요 - 현재는 부산역
     lng: "129.0414358051436", // todo 업뎃 필요 - 현재는 부산역
   },
-  // {
-  //   id: 36,
-  //   name: "TREND WAVE 2025",
-  //   location: "Location TBD", // todo 추후 공지 확인 필요
-  //   date: ["2025-05-03(Sat)"],
-  //   startTime: "00:00", // todo 확인 필요
-  //   durationMinutes: 0, // todo 확인 필요
-  //   type: "Event",
-  //   performanceType: "Guest",
-  //   artists: ["N.Flying", "THE BOYZ", "ENHYPEN", "STAYC", "ILLIT", "..."],
-  //   poster: "/image/show/2025/250503_Trend_Wave_2025.jpg",
-  //   ticketOpen: { date: "2025-05-03", time: "00:00" }, // todo 업뎃 필요
-  //   ticketLink: "https://x.com/TrendwaveFesta", // todo 공식 계정으로 업뎃 필요
-  //   lat: "37.5510652973239", // todo 업뎃 필요 - 현재는 FNC성수
-  //   lng: "127.049807506605", // todo 업뎃 필요 - 현재는 FNC성수
-  // },
+  {
+    id: 36,
+    name: "TREND WAVE 2025",
+    location: "Location TBD", // todo 추후 공지 확인 필요
+    date: ["2025-05-03(Sat)"],
+    startTime: "00:00", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "THE BOYZ", "ENHYPEN", "STAYC", "ILLIT", "..."],
+    poster: "/image/show/2025/250503_Trend_Wave_2025.jpg",
+    ticketOpen: { date: "2025-05-03", time: "00:00" }, // todo 업뎃 필요
+    ticketLink: "https://x.com/TrendwaveFesta", // todo 공식 계정으로 업뎃 필요
+    lat: "37.5510652973239", // todo 업뎃 필요 - 현재는 FNC성수
+    lng: "127.049807506605", // todo 업뎃 필요 - 현재는 FNC성수
+  },
 ];

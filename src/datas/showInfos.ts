@@ -848,7 +848,8 @@ export const showInfos = [
         "인천역에서 상상플랫폼까지 도보 3분 거리",
         "자가용 이용 시 상상플랫폼 인근 주차장 이용",
         "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_hash_11_NF.jpg",
-        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_LineUp.jpg",
+        "/image/show_detail/note/2025/250412_HAND11_Timetable.jpg",
+        "/image/show_detail/note/2025/250412_HAND11_Map.jpg",
     ],
     capacity: "",
     seats: [],
@@ -889,7 +890,7 @@ export const showInfos = [
       "올림픽공원 주차장 이용이 가능하나, 만차 가능성 높아 대중교통 이용 권장.",
       "필요 시 송파구청 주차장이나 잠실역 공영주차장 등의 대체 주차장 확인.",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_NF.jpg",
-      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_LineUp.jpeg"
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2nd_LineUp.jpg"
     ],
     capacity: "",
     seats: [],
@@ -943,10 +944,12 @@ export const showInfos = [
     name: "Live on Spring in 대구",
     address: "경상북도 경산시 대학로 280 영남대학교 천마아트센터", // 대구 영남대학교 천마아트센터 그랜드홀
     note: [
-      "",
+      "천마아트센터 주차장은 협소하여 만차 가능성 높음.",
+      "주변 주차장 또는 대중교통 이용 권장.",
     ],
     capacity: "총 1,889 석",
-    seats: [ // todo 실제 좌배도로 업뎃 필요
+    seats: [
+      "/image/show_detail/seats/2025/250420_LIVE_ON_DAEGU_CHEONMA_SEAT.png",
       "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_1F.gif",
       "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_2F.gif",
     ],
@@ -993,23 +996,24 @@ export const showInfos = [
       "",
     ],
   },
-  // {
-  //   id: 36,
-  //   name: "TREND WAVE 2025",
-  //   address: "장소 미정", // todo 추후 공지 확인 필요
-  //   note: [
-  //     "티켓 판매 없이 초청제 방식으로 운영됨.",
-  //     "참여 방법은 공식 채널을 통해 별도 안내 예정.",
-  //   ],
-  //   capacity: "",
-  //   seats: [
-  //     "",
-  //   ],
-  //   setlist: [
-  //     "",
-  //   ],
-  //   ootd: [
-  //     "",
-  //   ],
-  // },
+  {
+    id: 36,
+    name: "TREND WAVE 2025",
+    address: "장소 미정", // todo 추후 공지 확인 필요
+    note: [
+      "티켓 판매 없이 초청제 방식으로 운영됨.",
+      "참여 방법은 공식 채널을 통해 별도 안내 예정.",
+      "/image/show_detail/note/2025/250503_Trend_Wave_2025_2nd_LineUp.jpeg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];

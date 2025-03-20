@@ -881,7 +881,8 @@ export const showInfosEng = [
       "3-minute walk from Incheon Station to Sangsang Platform.",
       "Parking available near Sangsang Platform for drivers.",
       "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_hash_11_NF.jpg",
-      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_LineUp.jpg",
+      "/image/show_detail/note/2025/250412_HAND11_Timetable.jpg",
+      "/image/show_detail/note/2025/250412_HAND11_Map.jpg",
     ],
     capacity: "",
     seats: [],
@@ -922,7 +923,7 @@ export const showInfosEng = [
       "Parking is available at Olympic Park, but it is highly likely to be full. Public transportation is recommended.",
       "If needed, check alternative parking options such as Songpa-gu Office Parking Lot or Jamsil Station Public Parking Lot.",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_NF.jpg",
-      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_LineUp.jpeg"
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2nd_LineUp.jpg"
     ],
     capacity: "",
     seats: [],
@@ -977,10 +978,12 @@ export const showInfosEng = [
     name: "Live on Spring in Daegu",
     address: "280, Daehak-ro, Gyeongsan-si, Gyeongsangbuk-do, South Korea", // 대구 영남대학교 천마아트센터 그랜드홀
     note: [
-      "",
+      "Cheonma Art Center parking is limited and may be full.",
+      "Please use nearby parking or public transportation.",
     ],
     capacity: "1,889 seats",
-    seats: [ // todo 실제 좌배도로 업뎃 필요
+    seats: [
+      "/image/show_detail/seats/2025/250420_LIVE_ON_DAEGU_CHEONMA_SEAT.png",
       "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_1F.gif",
       "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_2F.gif",
     ],
@@ -1027,23 +1030,24 @@ export const showInfosEng = [
       "",
     ],
   },
-  // {
-  //   id: 36,
-  //   name: "TREND WAVE 2025",
-  //   address: "Location TBD", // todo 추후 공지 확인 필요
-  //   note: [
-  //     "It will be an invitation-only event, with no ticket sales.",
-  //     "Participation details will be announced through official channels.",
-  //   ],
-  //   capacity: "",
-  //   seats: [
-  //     "",
-  //   ],
-  //   setlist: [
-  //     "",
-  //   ],
-  //   ootd: [
-  //     "",
-  //   ],
-  // },
+  {
+    id: 36,
+    name: "TREND WAVE 2025",
+    address: "Location TBD", // todo 추후 공지 확인 필요
+    note: [
+      "It will be an invitation-only event, with no ticket sales.",
+      "Participation details will be announced through official channels.",
+      "/image/show_detail/note/2025/250503_Trend_Wave_2025_2nd_LineUp.jpeg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];
