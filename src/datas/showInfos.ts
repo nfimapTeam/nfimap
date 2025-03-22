@@ -833,11 +833,25 @@ export const showInfos = [
     capacity: "약 3,000명",
     seats: [],
     setlist: [
-      "",
-      "",
-    ],
+      "Moonshot",
+      "Video Therapy",
+      "Monster",
+      "Firefly",
+      "이 별 저 별 (Fate)",
+      "4242",
+      "ANYWAY",
+      "Sunset",
+      "Star",
+      "Blue Moon",
+      "Shooting Star",
+      "Songbird",
+      "옥탑방 (Rooftop) - 앵콜",
+      "놔 (Leave It) - 앵콜"
+
+],
     ootd: [
-      ""
+      "/image/show_detail/ootd/2025/250322-250323_Soundberry_Theater_OOTD_01.jpeg",
+      "/image/show_detail/ootd/2025/250322-250323_Soundberry_Theater_OOTD_02.jpeg"
     ],
   },
   {
@@ -946,6 +960,8 @@ export const showInfos = [
     note: [
       "천마아트센터 주차장은 협소하여 만차 가능성 높음.",
       "주변 주차장 또는 대중교통 이용 권장.",
+      "/image/show_detail/note/2025/250420_LIVE_ON_DAEGU_NF.jpeg",
+      "/image/show_detail/note/2025/250420_LIVE_ON_DAEGU_TIME.png",
     ],
     capacity: "총 1,889 석",
     seats: [
@@ -965,7 +981,10 @@ export const showInfos = [
     name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE",
     address: "서울 송파구 방이동 88-2 올림픽홀", // 올림픽공원 올림픽홀
     note: [
-      "",
+      "팬클럽 선예매 인증 가능 조건: 2025년 3월 21일(금)까지 N.Fia 4기에 가입",
+      "N.Fia 4기 인증 기간: 2025년 3월 27일(목) 14:00 – 3월 31일(월) 23:59까지 [KST]",
+      "N.Fia 4기 선예매 기간: 2025년 3월 28일(금) 20:00 – 3월 31일(월) 23:59까지 [KST]",
+
     ],
     capacity: "약 3,000석 (고정 2,432석, 플로어 500~600석)",
     seats: [ // todo 실제 좌배도로 업뎃 필요

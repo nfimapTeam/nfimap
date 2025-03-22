@@ -867,10 +867,24 @@ export const showInfosEng = [
     capacity: "Approximately 3,000 people",
     seats: [],
     setlist: [
-      "",
+      "Moonshot",
+      "Video Therapy",
+      "Monster",
+      "Firefly",
+      "이 별 저 별 (Fate)",
+      "4242",
+      "ANYWAY",
+      "Sunset",
+      "Star",
+      "Blue Moon",
+      "Shooting Star",
+      "Songbird",
+      "옥탑방 (Rooftop) - Encore",
+      "놔 (Leave It) - Encore"
     ],
     ootd: [
-      ""
+      "/image/show_detail/ootd/2025/250322-250323_Soundberry_Theater_OOTD_01.jpeg",
+      "/image/show_detail/ootd/2025/250322-250323_Soundberry_Theater_OOTD_02.jpeg"
     ],
   },
   {
@@ -980,6 +994,8 @@ export const showInfosEng = [
     note: [
       "Cheonma Art Center parking is limited and may be full.",
       "Please use nearby parking or public transportation.",
+      "/image/show_detail/note/2025/250420_LIVE_ON_DAEGU_NF.jpeg",
+      "/image/show_detail/note/2025/250420_LIVE_ON_DAEGU_TIME.png",
     ],
     capacity: "1,889 seats",
     seats: [
@@ -999,7 +1015,9 @@ export const showInfosEng = [
     name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE",
     address: "Olympic Hall, 88-2 Bangi-dong, Songpa-gu, Seoul, South Korea", // 올림픽공원 올림픽홀
     note: [
-      "",
+      "Fan Club Presale Eligibility: Must be a registered N.Fia 4th member by March 21, 2025 (Fri).",
+      "N.Fia 4th Membership Verification Period: March 27, 2025 (Thu) 14:00 – March 31, 2025 (Mon) 23:59 [KST].",
+      "N.Fia 4th Presale Period: March 28, 2025 (Fri) 20:00 – March 31, 2025 (Mon) 23:59 [KST].",
     ],
     capacity: "Approximately 3,000 seats (Fixed: 2,432 seats, Floor: 500–600 seats)",
     seats: [ // todo 실제 좌배도로 업뎃 필요
