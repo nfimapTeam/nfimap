@@ -867,6 +867,7 @@ export const showInfosEng = [
     capacity: "Approximately 3,000 people",
     seats: [],
     setlist: [
+      // 토요일 셋리
       "Moonshot",
       "Video Therapy",
       "Monster",
@@ -880,11 +881,29 @@ export const showInfosEng = [
       "Shooting Star",
       "Songbird",
       "옥탑방 (Rooftop) - Encore",
-      "놔 (Leave It) - Encore"
+      "놔 (Leave It) - Encore",
+      // 일요일 셋리
+      "Songbird",
+      "The World Is Mine",
+      "아 진짜요. (Oh really.)",
+      "Preview",
+      "ANYWAY",
+      "뜨거운 감자 (Hot Potato)",
+      "ㅈㅅ (Pardon?)",
+      "진짜가 나타났다 (The Real)",
+      "네가 내 마음에 자리 잡았다 (Into You)",
+      "Blue Moon",
+      "옥탑방 (Rooftop)",
+      "Stand By Me",
+      "Flashback - Encore",
+      "Sunset - Double Encore",
+      "Monster - Triple Encore",
     ],
     ootd: [
       "/image/show_detail/ootd/2025/250322-250323_Soundberry_Theater_OOTD_01.jpeg",
-      "/image/show_detail/ootd/2025/250322-250323_Soundberry_Theater_OOTD_02.jpeg"
+      "/image/show_detail/ootd/2025/250322-250323_Soundberry_Theater_OOTD_02.jpeg",
+      "/image/show_detail/ootd/2025/250323_Soundberry_Theater_OOTD_01.jpeg",
+      "/image/show_detail/ootd/2025/250323_Soundberry_Theater_OOTD_02.jpeg",
     ],
   },
   {
