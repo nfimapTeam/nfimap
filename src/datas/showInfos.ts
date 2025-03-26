@@ -1005,8 +1005,8 @@ export const showInfos = [
 
     ],
     capacity: "약 3,000석 (고정 2,432석, 플로어 500~600석)",
-    seats: [ // todo 실제 좌배도로 업뎃 필요
-      "/image/show_detail/seats/2025/Olympic Hall_SEAT.jpg",
+    seats: [
+      "/image/show_detail/seats/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_SEAT.png",
     ],
     setlist: [
       "",
@@ -1036,11 +1036,12 @@ export const showInfos = [
   {
     id: 36,
     name: "TREND WAVE 2025",
-    address: "장소 미정", // todo 추후 공지 확인 필요
+    address: "인천광역시 서구 봉수대로 806 인천아시아드주경기장",
     note: [
       "티켓 판매 없이 초청제 방식으로 운영됨.",
       "참여 방법은 공식 채널을 통해 별도 안내 예정.",
-      "/image/show_detail/note/2025/250503_Trend_Wave_2025_2nd_LineUp.jpeg",
+      "주차 공간이 매우 협소하여 주차가 어려우니 가급적 대중교통 이용 요망.",
+      "/image/show_detail/note/2025/250503_Trend_Wave_2025_FIN_LineUp.jpeg",
     ],
     capacity: "",
     seats: [

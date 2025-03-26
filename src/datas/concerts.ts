@@ -599,13 +599,13 @@ export const concertsData = [
     location: "올림픽공원 올림픽홀",
     date: ["2025-05-09(금)", "2025-05-10(토)", "2025-05-11(일)"],
     startTime: "금 19:30, 토 18:00, 일 16:00",
-    durationMinutes: 120, // todo 확인 필요
+    durationMinutes: 120,
     type: "콘서트",
     performanceType: "단독",
     artists: ["N.Flying"],
     poster: "/image/show/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL.jpeg",
     ticketOpen: { date: "2025-03-28", time: "20:00" },
-    ticketLink: "", // todo 업뎃 필요 https://ticket.interpark.com/webzine/paper/TPNoticeView.asp?bbsno=34&pageno=1&stext=&no=54909&groupno=54909&seq=0&KindOfGoods=TICKET&Genre=&sort=WriteDate
+    ticketLink: "https://tickets.interpark.com/goods/25004056",
     lat: "37.51473581654706",
     lng: "127.12751944805042",
   },
@@ -628,17 +628,17 @@ export const concertsData = [
   {
     id: 36,
     name: "TREND WAVE 2025",
-    location: "장소 미정", // todo 추후 공지 확인 필요
+    location: "인천아시아드주경기장",
     date: ["2025-05-03(토)"],
-    startTime: "00:00", // todo 확인 필요
+    startTime: "18:00", // todo 실제 시간 확인 필요
     durationMinutes: 0, // todo 확인 필요
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "더보이즈", "엔하이픈", "스테이씨", "아일릿", "..."],
     poster: "/image/show/2025/250503_Trend_Wave_2025.jpg",
-    ticketOpen: { date: "2025-05-03", time: "00:00" }, // todo 업뎃 필요
-    ticketLink: "https://x.com/TrendwaveFesta", // todo 공식 계정으로 업뎃 필요
-    lat: "37.5510652973239", // todo 업뎃 필요 - 현재는 FNC성수
-    lng: "127.049807506605", // todo 업뎃 필요 - 현재는 FNC성수
+    ticketOpen: { date: "2025-05-03", time: "18:00" },
+    ticketLink: "https://trendwavefestival.com/",
+    lat: "37.54756062984157",
+    lng: "126.66659295529641",
   },
 ];

@@ -1039,8 +1039,8 @@ export const showInfosEng = [
       "N.Fia 4th Presale Period: March 28, 2025 (Fri) 20:00 – March 31, 2025 (Mon) 23:59 [KST].",
     ],
     capacity: "Approximately 3,000 seats (Fixed: 2,432 seats, Floor: 500–600 seats)",
-    seats: [ // todo 실제 좌배도로 업뎃 필요
-      "/image/show_detail/seats/2025/Olympic Hall_SEAT.jpg",
+    seats: [
+      "/image/show_detail/seats/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_SEAT.png",
     ],
     setlist: [
       "",
@@ -1070,11 +1070,12 @@ export const showInfosEng = [
   {
     id: 36,
     name: "TREND WAVE 2025",
-    address: "Location TBD", // todo 추후 공지 확인 필요
+    address: "Incheon Asiad Main Stadium 806, Bongsu-daero, Seo-gu, Incheon, South Korea",
     note: [
       "It will be an invitation-only event, with no ticket sales.",
       "Participation details will be announced through official channels.",
-      "/image/show_detail/note/2025/250503_Trend_Wave_2025_2nd_LineUp.jpeg",
+      "Parking is limited. Please use public transportation if possible.",
+      "/image/show_detail/note/2025/250503_Trend_Wave_2025_FIN_LineUp.jpeg",
     ],
     capacity: "",
     seats: [

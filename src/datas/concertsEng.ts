@@ -606,13 +606,13 @@ export const concertsDataEng = [
     location: "Olympic Park Olympic Hall",
     date: ["2025-05-09(Fri)", "2025-05-10(Sat)", "2025-05-11(Sun)"],
     startTime: "Fri 19:30, Sat 18:00, Sun 16:00",
-    durationMinutes: 120, // todo 확인 필요
+    durationMinutes: 120,
     type: "Concert",
     performanceType: "Solo",
     artists: ["N.Flying"],
     poster: "/image/show/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL.jpeg",
     ticketOpen: { date: "2025-03-28", time: "20:00" },
-    ticketLink: "", // todo 업뎃 필요 https://ticket.interpark.com/webzine/paper/TPNoticeView.asp?bbsno=34&pageno=1&stext=&no=54909&groupno=54909&seq=0&KindOfGoods=TICKET&Genre=&sort=WriteDate
+    ticketLink: "https://tickets.interpark.com/goods/25004056",
     lat: "37.51473581654706",
     lng: "127.12751944805042",
   },
@@ -635,17 +635,17 @@ export const concertsDataEng = [
   {
     id: 36,
     name: "TREND WAVE 2025",
-    location: "Location TBD", // todo 추후 공지 확인 필요
+    location: "Incheon Asiad Main Stadium",
     date: ["2025-05-03(Sat)"],
-    startTime: "00:00", // todo 확인 필요
+    startTime: "18:00", // todo 실제 시간 확인 필요
     durationMinutes: 0, // todo 확인 필요
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "THE BOYZ", "ENHYPEN", "STAYC", "ILLIT", "..."],
     poster: "/image/show/2025/250503_Trend_Wave_2025.jpg",
-    ticketOpen: { date: "2025-05-03", time: "00:00" }, // todo 업뎃 필요
-    ticketLink: "https://x.com/TrendwaveFesta", // todo 공식 계정으로 업뎃 필요
-    lat: "37.5510652973239", // todo 업뎃 필요 - 현재는 FNC성수
-    lng: "127.049807506605", // todo 업뎃 필요 - 현재는 FNC성수
+    ticketOpen: { date: "2025-05-03", time: "18:00" },
+    ticketLink: "https://trendwavefestival.com/",
+    lat: "37.54756062984157",
+    lng: "126.66659295529641",
   },
 ];
