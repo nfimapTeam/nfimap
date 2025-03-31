@@ -610,8 +610,8 @@ export const concertsDataEng = [
     type: "Concert",
     performanceType: "Solo",
     artists: ["N.Flying"],
-    poster: "/image/show/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL.jpeg",
-    ticketOpen: { date: "2025-03-28", time: "20:00" },
+    poster: "/image/show/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_NF.jpeg",
+    ticketOpen: { date: "2025-04-01", time: "20:00" },
     ticketLink: "https://tickets.interpark.com/goods/25004056",
     lat: "37.51473581654706",
     lng: "127.12751944805042",
@@ -619,18 +619,18 @@ export const concertsDataEng = [
   {
     id: 35,
     name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (BUSAN)",
-    location: "Location TBD", // todo 추후 공지 확인 필요
+    location: "KBS Busan Hall",
     date: ["2025-07-05(Sat)"],
     startTime: "16:00",
-    durationMinutes: 120, // todo 확인 필요
+    durationMinutes: 120,
     type: "Concert",
     performanceType: "Solo",
     artists: ["N.Flying"],
     poster: "/image/show/2025/250705_&CON4_FULL_CIRCLE_BUSAN.jpeg",
     ticketOpen: { date: "2025-07-05", time: "16:00" }, // todo 업뎃 필요
     ticketLink: "", // todo 업뎃 필요 https://www.fncent.com/NFLYING/b/notice/61254
-    lat: "35.1150061689085", // todo 업뎃 필요 - 현재는 부산역
-    lng: "129.0414358051436", // todo 업뎃 필요 - 현재는 부산역
+    lat: "35.145093252451666",
+    lng: "129.10867582979586",
   },
   {
     id: 36,

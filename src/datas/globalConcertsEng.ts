@@ -187,7 +187,7 @@ export const globalConcertsEng = [
         artists: ["N.Flying", "FTISLAND", "CNBLUE", "Hi-Fi Un!corn", "AxMxP"],
         poster: "/image/show/world/250712-250713_FNC BAND KINGDOM 2025.jpeg",
         ticketOpen: { date: "2025-02-26", time: "18:00" },
-        ticketLink: "https://va.pia.jp/index.jsp?slcd=VO339&n=2008251103", // todo 3/29 FNC 선행 발표 | https://www.fncent.co.jp/fncbandkingdom
+        ticketLink: "https://nflying-official.jp/news/detail/760", // todo https://www.fncent.co.jp/fncbandkingdom
         lat: "35.6482438",
         lng: "140.0321482",
     },

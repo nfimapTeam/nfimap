@@ -1052,7 +1052,7 @@ export const showInfosEng = [
   {
     id: 35,
     name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (BUSAN)",
-    address: "Location TBD", // todo 추후 공지 시 수정 필요
+    address: "429, Suyeong-ro, Suyeong-gu, Busan, South Korea",
     note: [
       "",
     ],

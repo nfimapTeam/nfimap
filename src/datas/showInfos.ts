@@ -1018,7 +1018,7 @@ export const showInfos = [
   {
     id: 35,
     name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (부산)",
-    address: "장소 추후 공지 예정", // todo 추후 공지 시 수정 필요
+    address: "부산 수영구 수영로 429 KBS부산방송총국",
     note: [
       "",
     ],
