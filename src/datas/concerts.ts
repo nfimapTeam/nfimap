@@ -631,12 +631,12 @@ export const concertsData = [
     location: "인천아시아드주경기장",
     date: ["2025-05-03(토)"],
     startTime: "18:00", // todo 실제 시간 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    durationMinutes: 210, // todo 확인 필요
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "더보이즈", "엔하이픈", "스테이씨", "아일릿", "..."],
     poster: "/image/show/2025/250503_Trend_Wave_2025.jpg",
-    ticketOpen: { date: "2025-05-03", time: "18:00" },
+    ticketOpen: { date: "2025-04-04", time: "12:00" },
     ticketLink: "https://trendwavefestival.com/",
     lat: "37.54756062984157",
     lng: "126.66659295529641",

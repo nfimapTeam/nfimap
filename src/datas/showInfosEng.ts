@@ -1038,7 +1038,7 @@ export const showInfosEng = [
       "N.Fia 4th Membership Verification Period: March 27, 2025 (Thu) 14:00 – March 31, 2025 (Mon) 23:59 [KST].",
       "N.Fia 4th Presale Period: March 28, 2025 (Fri) 20:00 – March 31, 2025 (Mon) 23:59 [KST].",
     ],
-    capacity: "Approximately 3,000 seats (Fixed: 2,432 seats, Floor: 500–600 seats)",
+    capacity: "2,453 seats", // (Fixed: 2,432 seats, Floor: 500–600 seats)
     seats: [
       "/image/show_detail/seats/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_SEAT.png",
     ],
@@ -1058,7 +1058,7 @@ export const showInfosEng = [
     ],
     capacity: "",
     seats: [
-      "",
+      "/image/show_detail/seats/2025/KBS_BUSAN_HALL_SEAT.png",//todo 실제 좌배도로 수정
     ],
     setlist: [
       "",

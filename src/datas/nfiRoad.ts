@@ -320,4 +320,44 @@ export const nfiRoadData = [
     naverLink: "https://naver.me/FUhsArTw",
     note : "우얘합에서 얘기한 승협이 최애 평양냉면 집"
   },
+  {
+    id: 33,
+    name: "대원식당",
+    location: "서울 용산구 한강대로62나길 16-1",
+    category: "맛집",
+    lat: "37.5343464871621",
+    lng: "126.974708922854",
+    naverLink: "https://naver.me/Fmf6lZhA",
+    note : "연탄불에 구워주는 생선구이가 맛있는 엔플라잉의 또간집"
+  },
+  {
+    id: 34,
+    name: "몽촌 닭갈비",
+    location: "서울 송파구 석촌호수로 298 104호, 105호",
+    category: "맛집",
+    lat: "37.5115694532177",
+    lng: "127.10815851038",
+    naverLink: "https://naver.me/xgNS9hG9",
+    note : "재현이가 훈련소 동기들과 다녀간 식당"
+  },
+  {
+    id: 35,
+    name: "샤브인서울 성수점",
+    location: "서울 성동구 성수일로6길 53 유원지식산업센터 1층",
+    category: "맛집",
+    lat: "37.5442146717831",
+    lng: "127.055789372886",
+    naverLink: "https://naver.me/xWTneveP",
+    note : "동성이가 다녀간 샤브샤브 집"
+  },
+  {
+    id: 36,
+    name: "누데이크 하우스 도산",
+    location: "서울 강남구 압구정로46길 50 하우스 도산 B1",
+    category: "카페",
+    lat: "37.5253703709931",
+    lng: "127.035679523304",
+    naverLink: "https://naver.me/FG7xht84",
+    note : "2025.03.15 승협 인스타그램 속 카페"
+  },
 ];

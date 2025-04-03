@@ -1004,7 +1004,7 @@ export const showInfos = [
       "N.Fia 4기 선예매 기간: 2025년 3월 28일(금) 20:00 – 3월 31일(월) 23:59까지 [KST]",
 
     ],
-    capacity: "약 3,000석 (고정 2,432석, 플로어 500~600석)",
+    capacity: "2,453석", // 약 3,000석 (고정 2,432석, 플로어 500~600석)
     seats: [
       "/image/show_detail/seats/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_SEAT.png",
     ],
@@ -1024,7 +1024,7 @@ export const showInfos = [
     ],
     capacity: "",
     seats: [
-      "",
+      "/image/show_detail/seats/2025/KBS_BUSAN_HALL_SEAT.png",//todo 실제 좌배도로 수정
     ],
     setlist: [
       "",

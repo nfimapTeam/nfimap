@@ -320,4 +320,44 @@ export const nfiRoadDataEng = [
         naverLink: "https://maps.app.goo.gl/QNLTkNkJKbEfWEbh6",
         note : "Seunghyub's favorite Pyeongyang Naengmyeon restaurant"
     },
+    {
+        id: 33,
+        name: "Daewon Restaurant",
+        location: "16-1, Hangang-daero 62na-gil, Yongsan-gu, Seoul, South Korea",
+        category: "Food",
+        lat: "37.5343464871621",
+        lng: "126.974708922854",
+        naverLink: "https://maps.app.goo.gl/qzjNQhPpRaTKBjrm7",
+        note : "The charcoal-grilled fish was so delicious that N.Flying visited the place again."
+    },
+    {
+        id: 34,
+        name: "Mongchon Dakgalbi",
+        location: "298, Seokchonhosu-ro, Songpa-gu, Seoul, South Korea",
+        category: "Food",
+        lat: "37.5115694532177",
+        lng: "127.10815851038",
+        naverLink: "https://maps.app.goo.gl/1iEQnv6RzZudQkZw9",
+        note : "The place Jaehyun visited with friends."
+    },
+    {
+        id: 35,
+        name: "Shabu in Seoul Seongsu",
+        location: "53, Seongsuil-ro 6-gil, Seongdong-gu, Seoul, South Korea",
+        category: "Food",
+        lat: "37.5442146717831",
+        lng: "127.055789372886",
+        naverLink: "https://maps.app.goo.gl/SKPuNHBgWZDp9FZB8",
+        note : "The shabu-shabu restaurant Dongsung visited."
+    },
+    {
+        id: 36,
+        name: "NUDAKE HAUS DOSAN",
+        location: "50, Apgujeong-ro 46-gil, Gangnam-gu, Seoul, South Korea",
+        category: "Cafe",
+        lat: "37.5253703709931",
+        lng: "127.035679523304",
+        naverLink: "https://maps.app.goo.gl/MuoR1gCpM9zmPwvQ7",
+        note : "2025.03.15 Seunghyub’s Instagram."
+    },
 ];

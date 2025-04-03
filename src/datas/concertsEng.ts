@@ -638,12 +638,12 @@ export const concertsDataEng = [
     location: "Incheon Asiad Main Stadium",
     date: ["2025-05-03(Sat)"],
     startTime: "18:00", // todo 실제 시간 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    durationMinutes: 210, // todo 확인 필요
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "THE BOYZ", "ENHYPEN", "STAYC", "ILLIT", "..."],
     poster: "/image/show/2025/250503_Trend_Wave_2025.jpg",
-    ticketOpen: { date: "2025-05-03", time: "18:00" },
+    ticketOpen: { date: "2025-04-04", time: "12:00" },
     ticketLink: "https://trendwavefestival.com/",
     lat: "37.54756062984157",
     lng: "126.66659295529641",
