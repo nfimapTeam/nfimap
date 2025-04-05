@@ -982,10 +982,20 @@ export const showInfosEng = [
     capacity: "",
     seats: [],
     setlist: [
-      "",
+      "Star",
+      "Blue Moon",
+      "아 진짜요. (0h really.)",
+      "팔불출 (Lovefool)",
+      "ANYWAY" ,
+      "네가 내 마음에 자리 잡았다 (Into You)",
+      "Sunset",
+      "옥탑방 (Rooftop)",
+      "Preview",
+      "4242",
+      "Songbird",
     ],
     ootd: [
-      "",
+      "/image/show_detail/ootd/2025/250405_Daedeok_OOTD.png",
     ],
   },
   {
