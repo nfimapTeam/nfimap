@@ -747,7 +747,7 @@ export const showInfos = [
   {
     id: 25,
     name: "2024 LOVE FNC COUNTDOWN", // 세종대학교 대양홀
-    address: "서울특별시 광진구 능동로 209 세종대학교 대양홀",
+    address: "서울 광진구 능동로 209 세종대학교 대양홀",
     note: ["7호선 어린이대공원역 6번 출구에서 도보 275m (약 4분 소요)"],
     capacity: "약 2,029 석",
     seats: [
@@ -1056,6 +1056,24 @@ export const showInfos = [
     capacity: "",
     seats: [
       "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 37,
+    name: "이세계 페스티벌 2025",
+    address: "서울 구로구 경인로 430",
+    note: [
+      "지정 좌석제로 진행됩니다.",
+    ],
+    capacity: "약 20,000 석",
+    seats: [
+      "/image/show_detail/seats/2025/250517_ISEGYE_FESTIVAL SEOUL_2025.png",
     ],
     setlist: [
       "",

@@ -1098,4 +1098,22 @@ export const showInfosEng = [
       "",
     ],
   },
+  {
+    id: 37,
+    name: "ISEGYE FESTIVAL SEOUL 2025",
+    address: "430, Gyeongin-ro, Guro-gu, Seoul, South Korea",
+    note: [
+      "This event will operate on a reserved seating basis.",
+    ],
+    capacity: "Approximately 20,000 seats",
+    seats: [
+      "/image/show_detail/seats/2025/250517_ISEGYE_FESTIVAL SEOUL_2025.png",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];
