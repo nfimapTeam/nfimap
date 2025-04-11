@@ -906,27 +906,27 @@ export const showInfosEng = [
       "/image/show_detail/ootd/2025/250323_Soundberry_Theater_OOTD_02.jpeg",
     ],
   },
-  {
-    id: 28,
-    name: "Have A Nice Day #11", // 인천 상상플랫폼
-    address: "33, Wolmi-ro, Jung-gu, Incheon, South Korea",
-    note: [
-      "3-minute walk from Incheon Station to Sangsang Platform.",
-      "Parking available near Sangsang Platform for drivers.",
-      "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_hash_11_NF.jpg",
-      "/image/show_detail/note/2025/250412_HAND11_Timetable.jpg",
-      "/image/show_detail/note/2025/250412_HAND11_Map.jpg",
-    ],
-    capacity: "",
-    seats: [],
-    setlist: [
-      "",
-      "",
-    ],
-    ootd: [
-      ""
-    ],
-  },
+  // {
+  //   id: 28,
+  //   name: "Have A Nice Day #11", // 인천 상상플랫폼
+  //   address: "33, Wolmi-ro, Jung-gu, Incheon, South Korea",
+  //   note: [
+  //     "3-minute walk from Incheon Station to Sangsang Platform.",
+  //     "Parking available near Sangsang Platform for drivers.",
+  //     "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_hash_11_NF.jpg",
+  //     "/image/show_detail/note/2025/250412_HAND11_Timetable.jpg",
+  //     "/image/show_detail/note/2025/250412_HAND11_Map.jpg",
+  //   ],
+  //   capacity: "",
+  //   seats: [],
+  //   setlist: [
+  //     "",
+  //     "",
+  //   ],
+  //   ootd: [
+  //     ""
+  //   ],
+  // }, // 공연 취소
   {
     id: 29,
     name: "The 1st D Awards", // 고려대학교 화정체육관
@@ -1064,9 +1064,11 @@ export const showInfosEng = [
     name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (BUSAN)",
     address: "429, Suyeong-ro, Suyeong-gu, Busan, South Korea",
     note: [
-      "",
+      "Fan Club Presale Eligibility: Must be a registered N.Fia 4th member by April 13, 2025 (Sun).",
+      "N.Fia 4th Membership Verification Period: April 18, 2025 (Fri) 14:00 – April 22, 2025 (Tue) 23:59 [KST].",
+      "N.Fia 4th Presale Period: April 21, 2025 (Mon) 20:00 – April 22, 2025 (Tue) 23:59 [KST].",
     ],
-    capacity: "",
+    capacity: "2,847 seats",
     seats: [
       "/image/show_detail/seats/2025/KBS_BUSAN_HALL_SEAT.png",//todo 실제 좌배도로 수정
     ],

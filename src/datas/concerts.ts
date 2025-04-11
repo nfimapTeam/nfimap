@@ -497,22 +497,22 @@ export const concertsData = [
     lat: "37.55675872491405",
     lng: "126.84796877975087",
   },
-  {
-    id: 28,
-    name: "Have A Nice Day #11",
-    location: "인천 상상플랫폼",
-    date: ["2025-04-12(토)"],
-    startTime: "16:00",
-    durationMinutes: 50,
-    type: "페스티벌",
-    performanceType: "출연",
-    artists: ["N.Flying", "멜로망스", "범진", "오월오일", "폴킴", "하동균", "황가람", "..."],
-    poster: "/image/show/2025/250412_HAVE_A_NICE_DAY_hash_11.jpg",
-    ticketOpen: { date: "2025-02-19", time: "18:00" },
-    ticketLink: "https://tickets.interpark.com/goods/25002171",
-    lat: "37.47556062356908",
-    lng: "126.6148964197706",
-  },
+  // {
+  //   id: 28,
+  //   name: "Have A Nice Day #11",
+  //   location: "인천 상상플랫폼",
+  //   date: ["2025-04-12(토)"],
+  //   startTime: "16:00",
+  //   durationMinutes: 50,
+  //   type: "페스티벌",
+  //   performanceType: "출연",
+  //   artists: ["N.Flying", "멜로망스", "범진", "오월오일", "폴킴", "하동균", "황가람", "..."],
+  //   poster: "/image/show/2025/250412_HAVE_A_NICE_DAY_hash_11.jpg",
+  //   ticketOpen: { date: "2025-02-19", time: "18:00" },
+  //   ticketLink: "https://tickets.interpark.com/goods/25002171",
+  //   lat: "37.47556062356908",
+  //   lng: "126.6148964197706",
+  // }, // 공연 취소
   {
     id: 29,
     name: "제1회 디 어워즈(D Awards)",
@@ -620,7 +620,7 @@ export const concertsData = [
     performanceType: "단독",
     artists: ["N.Flying"],
     poster: "/image/show/2025/250705_&CON4_FULL_CIRCLE_BUSAN.jpeg",
-    ticketOpen: { date: "2025-07-05", time: "16:00" }, // todo 업뎃 필요
+    ticketOpen: { date: "2025-04-21", time: "20:00" }, // todo 일반예매 4/23(수) 업뎃 필요
     ticketLink: "", // todo 업뎃 필요 https://www.fncent.com/NFLYING/b/notice/61254
     lat: "35.145093252451666",
     lng: "129.10867582979586",

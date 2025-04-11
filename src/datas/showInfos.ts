@@ -872,27 +872,27 @@ export const showInfos = [
       "/image/show_detail/ootd/2025/250323_Soundberry_Theater_OOTD_02.jpeg",
     ],
   },
-  {
-    id: 28,
-    name: "Have A Nice Day #11", // 인천 상상플랫폼
-    address: "인천 중구 월미로 33 상상플랫폼",
-    note: [
-        "인천역에서 상상플랫폼까지 도보 3분 거리",
-        "자가용 이용 시 상상플랫폼 인근 주차장 이용",
-        "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_hash_11_NF.jpg",
-        "/image/show_detail/note/2025/250412_HAND11_Timetable.jpg",
-        "/image/show_detail/note/2025/250412_HAND11_Map.jpg",
-    ],
-    capacity: "",
-    seats: [],
-    setlist: [
-      "",
-      "",
-    ],
-    ootd: [
-      ""
-    ],
-  },
+  // {
+  //   id: 28,
+  //   name: "Have A Nice Day #11", // 인천 상상플랫폼
+  //   address: "인천 중구 월미로 33 상상플랫폼",
+  //   note: [
+  //       "인천역에서 상상플랫폼까지 도보 3분 거리",
+  //       "자가용 이용 시 상상플랫폼 인근 주차장 이용",
+  //       "/image/show_detail/note/2025/250412_HAVE_A_NICE_DAY_hash_11_NF.jpg",
+  //       "/image/show_detail/note/2025/250412_HAND11_Timetable.jpg",
+  //       "/image/show_detail/note/2025/250412_HAND11_Map.jpg",
+  //   ],
+  //   capacity: "",
+  //   seats: [],
+  //   setlist: [
+  //     "",
+  //     "",
+  //   ],
+  //   ootd: [
+  //     ""
+  //   ],
+  // }, // 공연 취소
   {
     id: 29,
     name: "제1회 디 어워즈(D Awards)", // 고려대학교 화정체육관
@@ -1012,7 +1012,6 @@ export const showInfos = [
       "팬클럽 선예매 인증 가능 조건: 2025년 3월 21일(금)까지 N.Fia 4기에 가입",
       "N.Fia 4기 인증 기간: 2025년 3월 27일(목) 14:00 – 3월 31일(월) 23:59까지 [KST]",
       "N.Fia 4기 선예매 기간: 2025년 3월 28일(금) 20:00 – 3월 31일(월) 23:59까지 [KST]",
-
     ],
     capacity: "2,453석", // 약 3,000석 (고정 2,432석, 플로어 500~600석)
     seats: [
@@ -1030,9 +1029,11 @@ export const showInfos = [
     name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (부산)",
     address: "부산 수영구 수영로 429 KBS부산방송총국",
     note: [
-      "",
+      "팬클럽 선예매 인증 가능 조건: 2025년 4월 13일(일)까지 N.Fia 4기에 가입",
+      "N.Fia 4기 인증 기간: 2025년 4월 18일(금) 14:00 – 4월 22일(화) 23:59까지 [KST]",
+      "N.Fia 4기 선예매 기간: 2025년 4월 21일(월) 20:00 – 4월 22일(화) 23:59까지 [KST]",
     ],
-    capacity: "",
+    capacity: "2,847석",
     seats: [
       "/image/show_detail/seats/2025/KBS_BUSAN_HALL_SEAT.png",//todo 실제 좌배도로 수정
     ],
