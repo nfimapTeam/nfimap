@@ -547,8 +547,8 @@ export const concertsDataEng = [
     performanceType: "Guest",
     artists: ["N.Flying", "Silica Gel", "Nerd Connection", "Jung Seung-hwan", "So Soo Bin", "..."],
     poster: "/image/show/2025/250614_Beautiful_Mint_Life_2025.jpg",
-    ticketOpen: { date: "2025-03-05", time: "18:00" },
-    ticketLink: "https://tickets.interpark.com/goods/25002850",
+    ticketOpen: { date: "2025-04-17", time: "14:00" }, // todo 기존 date: "2025-03-05", time: "18:00"
+    ticketLink: "https://tickets.interpark.com/contents/notice/detail/9273", // todo 기존 https://tickets.interpark.com/goods/25002850
     lat: "37.52066503657698",
     lng: "127.1226794866035",
   },
@@ -611,8 +611,8 @@ export const concertsDataEng = [
     performanceType: "Solo",
     artists: ["N.Flying"],
     poster: "/image/show/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_NF.jpeg",
-    ticketOpen: { date: "2025-04-01", time: "20:00" },
-    ticketLink: "https://tickets.interpark.com/goods/25004056",
+    ticketOpen: { date: "2025-04-17", time: "20:00" }, // todo 기존 일예 date: "2025-04-01", time: "20:00"
+    ticketLink: "https://tickets.interpark.com/contents/notice/detail/9342", // todo 기존 https://tickets.interpark.com/goods/25004056
     lat: "37.51473581654706",
     lng: "127.12751944805042",
   },

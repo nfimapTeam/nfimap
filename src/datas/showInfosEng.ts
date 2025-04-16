@@ -953,10 +953,12 @@ export const showInfosEng = [
     name: "Beautiful Mint Life 2025", // 올림픽공원 88잔디마당
     address: "88 Lawn Field, Olympic Park, 424, Olympic-ro, Songpa-gu, Seoul, South Korea",
     note: [
-      "Parking is available at Olympic Park, but it is highly likely to be full. Public transportation is recommended.",
-      "If needed, check alternative parking options such as Songpa-gu Office Parking Lot or Jamsil Station Public Parking Lot.",
+      "Priority Ticket Sale Opens : April 17, 2025 (Thu) at 2PM (KST)",
+      "Ticket Limit : 1 ticket per person per date",
+      "N.Flying – June 14 (Sat) @Cafe Blossom House (KSPO DOME)",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_NF.jpg",
-      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2nd_LineUp.jpg"
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_3rd_LineUp.jpeg", // todo 5.7최종
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Stage_v1.jpeg" // todo 5.7최종
     ],
     capacity: "",
     seats: [],
@@ -1044,9 +1046,11 @@ export const showInfosEng = [
     name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE",
     address: "Olympic Hall, 88-2 Bangi-dong, Songpa-gu, Seoul, South Korea", // 올림픽공원 올림픽홀
     note: [
-      "Fan Club Presale Eligibility: Must be a registered N.Fia 4th member by March 21, 2025 (Fri).",
-      "N.Fia 4th Membership Verification Period: March 27, 2025 (Thu) 14:00 – March 31, 2025 (Mon) 23:59 [KST].",
-      "N.Fia 4th Presale Period: March 28, 2025 (Fri) 20:00 – March 31, 2025 (Mon) 23:59 [KST].",
+      "Fan Club Presale Eligibility: Must be a registered N.Fia 4th member by March 21, 2025 (Fri) [KST]",
+      "N.Fia 4th Membership Verification Period: March 27, 2025 (Thu) 14:00 – March 31, 2025 (Mon) 23:59 [KST]",
+      "N.Fia 4th Presale Period: March 28, 2025 (Fri) 20:00 – March 31, 2025 (Mon) 23:59 [KST]",
+      "General Ticket Sale Opens : April 1, 2025 (Tue) 20:00 [KST]",
+      "Additional Seats (including limited view seats) Open: April 17, 2025 (Thu) 20:00 [KST]",
     ],
     capacity: "2,453 seats", // (Fixed: 2,432 seats, Floor: 500–600 seats)
     seats: [

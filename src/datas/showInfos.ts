@@ -919,10 +919,12 @@ export const showInfos = [
     name: "뷰티풀 민트 라이프 2025", // 올림픽공원 88잔디마당
     address: "서울 송파구 올림픽로 424",
     note: [
-      "올림픽공원 주차장 이용이 가능하나, 만차 가능성 높아 대중교통 이용 권장.",
-      "필요 시 송파구청 주차장이나 잠실역 공영주차장 등의 대체 주차장 확인.",
+      "우선입장권 예매 오픈 : 2025년 4월 17일(목) 2PM(KST)",
+      "우선입장권 매수 제한 : 일자별 1인 1매",
+      "엔플라잉 - 6/14(토) @Cafe Blossom House(KSPO DOME)",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_NF.jpg",
-      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2nd_LineUp.jpg"
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_3rd_LineUp.jpeg", // todo 5.7최종
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Stage_v1.jpeg" // todo 5.7최종
     ],
     capacity: "",
     seats: [],
@@ -1009,9 +1011,11 @@ export const showInfos = [
     name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE",
     address: "서울 송파구 방이동 88-2 올림픽홀", // 올림픽공원 올림픽홀
     note: [
-      "팬클럽 선예매 인증 가능 조건: 2025년 3월 21일(금)까지 N.Fia 4기에 가입",
+      "팬클럽 선예매 인증 가능 조건: 2025년 3월 21일(금)까지 N.Fia 4기에 가입 [KST]",
       "N.Fia 4기 인증 기간: 2025년 3월 27일(목) 14:00 – 3월 31일(월) 23:59까지 [KST]",
       "N.Fia 4기 선예매 기간: 2025년 3월 28일(금) 20:00 – 3월 31일(월) 23:59까지 [KST]",
+      "일반 예매 오픈 : 2025년 4월 1일(화) 20:00 [KST]",
+      "추가 좌석 오픈(시야제한석 포함) : 2025년 4월 17일(목) 20:00 [KST]",
     ],
     capacity: "2,453석", // 약 3,000석 (고정 2,432석, 플로어 500~600석)
     seats: [
