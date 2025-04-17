@@ -972,7 +972,7 @@ export const showInfos = [
     address: "서울 마포구 상암동 482-132", // 난지한강공원
     note: [
         "공원 내 유료 주차 공간 이용 가능 (주말에는 혼잡할 수 있음)",
-        "/image/show_detail/note/2025/250525_PEAK FESTIVAL_2ND_LINEUP.jpeg",
+        "/image/show_detail/note/2025/250525_PEAK FESTIVAL_FINAL_LINEUP.jpg",
     ],
     capacity: "",
     seats: [],
@@ -1019,7 +1019,7 @@ export const showInfos = [
     ],
     capacity: "2,453석", // 약 3,000석 (고정 2,432석, 플로어 500~600석)
     seats: [
-      "/image/show_detail/seats/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_SEAT.png",
+      "/image/show_detail/seats/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_SEAT_new.png",
     ],
     setlist: [
       "",

@@ -1007,7 +1007,7 @@ export const showInfosEng = [
         "Nanji Hangang Park 482-132, Sangam-dong, Mapo-gu, Seoul, South Korea", // 난지한강공원
     note: [
       "Paid parking is available in the park (it may get crowded on weekends)",
-      "/image/show_detail/note/2025/250525_PEAK FESTIVAL_2ND_LINEUP.jpeg",
+      "/image/show_detail/note/2025/250525_PEAK FESTIVAL_FINAL_LINEUP.jpg",
     ],
     capacity: "",
     seats: [],
@@ -1054,7 +1054,7 @@ export const showInfosEng = [
     ],
     capacity: "2,453 seats", // (Fixed: 2,432 seats, Floor: 500–600 seats)
     seats: [
-      "/image/show_detail/seats/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_SEAT.png",
+      "/image/show_detail/seats/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_SEAT_new.png",
     ],
     setlist: [
       "",
