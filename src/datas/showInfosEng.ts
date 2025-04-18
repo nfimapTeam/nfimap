@@ -1071,10 +1071,11 @@ export const showInfosEng = [
       "Fan Club Presale Eligibility: Must be a registered N.Fia 4th member by April 13, 2025 (Sun).",
       "N.Fia 4th Membership Verification Period: April 18, 2025 (Fri) 14:00 – April 22, 2025 (Tue) 23:59 [KST].",
       "N.Fia 4th Presale Period: April 21, 2025 (Mon) 20:00 – April 22, 2025 (Tue) 23:59 [KST].",
+      "General Ticket Sale Opens : April 23, 2025 (Wed) 20:00 [KST]",
     ],
     capacity: "2,847 seats",
     seats: [
-      "/image/show_detail/seats/2025/KBS_BUSAN_HALL_SEAT.png",//todo 실제 좌배도로 수정
+      "/image/show_detail/seats/2025/250705_&CON4_FULL_CIRCLE_BUSAN_SEAT.png",
     ],
     setlist: [
       "",

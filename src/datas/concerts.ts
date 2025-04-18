@@ -621,7 +621,7 @@ export const concertsData = [
     artists: ["N.Flying"],
     poster: "/image/show/2025/250705_&CON4_FULL_CIRCLE_BUSAN.jpeg",
     ticketOpen: { date: "2025-04-21", time: "20:00" }, // todo 일반예매 4/23(수) 업뎃 필요
-    ticketLink: "", // todo 업뎃 필요 https://www.fncent.com/NFLYING/b/notice/61254
+    ticketLink: "https://tickets.interpark.com/goods/25005712",
     lat: "35.145093252451666",
     lng: "129.10867582979586",
   },

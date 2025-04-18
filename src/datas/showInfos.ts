@@ -1036,10 +1036,11 @@ export const showInfos = [
       "팬클럽 선예매 인증 가능 조건: 2025년 4월 13일(일)까지 N.Fia 4기에 가입",
       "N.Fia 4기 인증 기간: 2025년 4월 18일(금) 14:00 – 4월 22일(화) 23:59까지 [KST]",
       "N.Fia 4기 선예매 기간: 2025년 4월 21일(월) 20:00 – 4월 22일(화) 23:59까지 [KST]",
+      "일반 예매 오픈 : 2025년 4월 23일(수) 20:00 [KST]",
     ],
     capacity: "2,847석",
     seats: [
-      "/image/show_detail/seats/2025/KBS_BUSAN_HALL_SEAT.png",//todo 실제 좌배도로 수정
+      "/image/show_detail/seats/2025/250705_&CON4_FULL_CIRCLE_BUSAN_SEAT.png",
     ],
     setlist: [
       "",
