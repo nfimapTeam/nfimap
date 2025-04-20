@@ -1035,10 +1035,21 @@ export const showInfosEng = [
       "/image/show_detail/seats/2025/250420_Yeungnam_Univ_Cheonma_Grand_Hall_2F.gif",
     ],
     setlist: [
-      "",
+      "Moonshot",
+      "Star",
+      "아 진짜요. (0h really.)",
+      "4242",
+      "ANYWAY" ,
+      "Blue Moon",
+      "STARLIGHT",
+      "Video Therapy",
+      "Monster",
+      "Sunset",
+      "옥탑방 (Rooftop)",
+      "Songbird",
     ],
     ootd: [
-      "",
+      "image/show_detail/ootd/2025/250420_LIVE_ON_SPRING_IN_DAEGU.jpeg",
     ],
   },
   {
