@@ -1037,7 +1037,7 @@ export const showInfosEng = [
     setlist: [
       "Moonshot",
       "Star",
-      "진짜가 나타났다 (The Real)",
+      "아 진짜요. (0h really.)",
       "4242",
       "ANYWAY" ,
       "Blue Moon",
