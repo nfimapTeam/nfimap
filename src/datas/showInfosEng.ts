@@ -1086,7 +1086,7 @@ export const showInfosEng = [
     ],
     capacity: "2,847 seats",
     seats: [
-      "/image/show_detail/seats/2025/250705_&CON4_FULL_CIRCLE_BUSAN_SEAT.png",
+      "/image/show_detail/seats/2025/250705_&CON4_FULL_CIRCLE_BUSAN_SEAT_new.png",
     ],
     setlist: [
       "",
