@@ -1099,4 +1099,25 @@ export const showInfos = [
       "",
     ],
   },
+  {
+    id: 38,
+    name: "SOUNDBERRY FESTA '25",
+    address: "경기 고양시 일산서구 킨텍스로 217-59",
+    note: [
+      "얼리버드 티켓 예매 : 4월 28일(월) 18시 – 5월 8일(목) 23시 59분",
+      "얼리버드 티켓은 양일권만 예매 가능합니다." +
+      "날짜별 일일권은 2차 라인업 발표 이후 오픈될 예정입니다.",
+      "/image/show_detail/note/2025/250719-250720_SOUNDBERRY_FESTA_'25_1st_Line_Up.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];

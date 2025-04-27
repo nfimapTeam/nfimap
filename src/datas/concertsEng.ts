@@ -664,4 +664,20 @@ export const concertsDataEng = [
     lat: "37.4982125677913",
     lng: "126.867088741096",
   },
+  {
+    id: 38,
+    name: "SOUNDBERRY FESTA '25",
+    location: "KINTEX 2 Exhibition Hall 9.",
+    date: ["2025-07-19(Sat)", "2025-07-20(Sun)"],
+    startTime: "00:00",
+    durationMinutes: 500,
+    type: "Festival",
+    performanceType: "Guest",
+    artists: ["N.Flying", "LUCY", "10CM", "ONEWE", "OWALLOIL", "jisokuryClub", "..."],
+    poster: "/image/show/2025/250719-250720_SOUNDBERRY_FESTA_'25.jpg",
+    ticketOpen: { date: "2025-04-28", time: "18:00" },
+    ticketLink: "https://tickets.interpark.com/contents/notice/detail/9432", // todo 실제페이지로 변경
+    lat: "37.66442586885296",
+    lng: "126.74029613018321",
+  },
 ];

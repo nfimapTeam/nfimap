@@ -360,4 +360,14 @@ export const nfiRoadData = [
     naverLink: "https://naver.me/FG7xht84",
     note : "2025.03.15 승협 인스타그램 속 카페"
   },
+  {
+    id: 37,
+    name: "원조구남집",
+    location: "부산 해운대구 구남로24번길 11 1,2층",
+    category: "맛집",
+    lat: "35.161521984038316",
+    lng: "129.15964044052708",
+    naverLink: "https://naver.me/FxF8vPPL",
+    note : "2025.03.02 부산 어썸스테이지 엔플라잉 완전체 첫 공연 후 저녁 식사"
+  },
 ];

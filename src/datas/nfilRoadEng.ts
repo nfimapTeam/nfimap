@@ -360,4 +360,14 @@ export const nfiRoadDataEng = [
         naverLink: "https://maps.app.goo.gl/MuoR1gCpM9zmPwvQ7",
         note : "2025.03.15 Seunghyub’s Instagram."
     },
+    {
+        id: 37,
+        name: "Wonjo Goonamjip",
+        location: "11, Gunam-ro 24beon-gil, Haeundae-gu, Busan, South Korea",
+        category: "Food",
+        lat: "35.161521984038316",
+        lng: "129.15964044052708",
+        naverLink: "https://maps.app.goo.gl/docwEZjYb5ccNQ5d8",
+        note : "2025.03.02 Dinner after N.Flying’s first full-member concert at Busan Awesome Stage"
+    },
 ];

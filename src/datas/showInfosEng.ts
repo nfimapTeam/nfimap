@@ -1134,4 +1134,25 @@ export const showInfosEng = [
       "",
     ],
   },
+  {
+    id: 38,
+    name: "SOUNDBERRY FESTA '25",
+    address: "217-59, kintex-ro, ilsanseo-gu, goyang-si, gyeonggi-do, South Korea",
+    note: [
+      "Early Bird Ticket Sales: April 28 (Mon) 6:00 PM – May 8 (Thu) 11:59 PM",
+      "Early Bird tickets are available for 2-Day Passes only.",
+      "Single-day tickets will be available after the second lineup announcement.",
+      "/image/show_detail/note/2025/250719-250720_SOUNDBERRY_FESTA_'25_1st_Line_Up.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];
