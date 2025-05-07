@@ -573,8 +573,8 @@ export const concertsDataEng = [
     name: "PEAK FESTIVAL 2025",
     location: "Nanji Hangang Park",
     date: ["2025-05-25(Sun)"],
-    startTime: "00:00,", // todo 타임테이블 확인 필요
-    durationMinutes: 540, // todo 타임테이블 확인 필요
+    startTime: "16:00,",
+    durationMinutes: 50,
     type: "Festival",
     performanceType: "Guest",
     artists: ["N.Flying", "10CM", "HANRORO", "OWALLOIL", "..."],
@@ -653,8 +653,8 @@ export const concertsDataEng = [
     name: "ISEGYE FESTIVAL SEOUL 2025",
     location: "Gocheok Sky Dome",
     date: ["2025-05-17(Sat)"],
-    startTime: "13:00",
-    durationMinutes: 480,
+    startTime: "15:20",
+    durationMinutes: 50,
     type: "Festival",
     performanceType: "Guest",
     artists: ["N.Flying", "SUNMI", "ISEGYE IDOL", "MRCH", "tripleS", "BOYNEXTDOOR", "..."],
@@ -698,19 +698,66 @@ export const concertsDataEng = [
   },
   {
     id: 40,
-    name: "2025 INCHEON NAT'L UNIVERSITY FESTIVAL",
+    name: "2025 INCHEON NAT'L UNIVERSITY FESTIVAL - UNI_ON",
     location: "INCHEON NATIONAL UNIVERSITY SONGDO CAMPUS",
     date: ["2025-05-07(Wed)"],
     startTime: "21:00",
     durationMinutes: 60,
     type: "Event",
     performanceType: "Guest",
-    artists: ["N.Flying", "LUCY", "SIKKOO",],
+    artists: ["N.Flying", "LUCY", "SIKKOO"],
     poster: "/image/show/2025/250507_INCHEON_NAT'L_UNIVERSITY_FESTIVAL.jpeg",
     ticketOpen: { date: "2025-05-07", time: "21:00" },
     ticketLink: "https://www.instagram.com/p/DJJTbHKPrHa/?img_index=2&igsh=MWcwbnFiaHF1MWNhZw==",
     lat: "37.37689426613007",
     lng: "126.63103997715851",
   },
-
+  {
+    id: 41,
+    name: "2025 KYUNG HEE UNIVERSITY FESTIVAL - MASTERPEACE : 청춘",
+    location: "Kyung Hee University (Seoul)", // 26, Kyungheedae-ro, Dongdaemun-gu, Seoul,
+    date: ["2025-05-15(Thu)"],
+    startTime: "00:00", // todo
+    durationMinutes: 0, // todo
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "LUCY", "Beenzino", "Yerin Baek"],
+    poster: "/image/show/2025/250515_KYUNG_HEE_UNIVERSITY_FESTIVAL.jpg",
+    ticketOpen: { date: "2025-05-15", time: "00:00" }, // todo
+    ticketLink: "https://www.instagram.com/p/DJMF-yMPDj4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "37.59651475517445",
+    lng: "127.05460783136776",
+  },
+  {
+    id: 42,
+    name: "I LOVE YONSEI - 140th Anniversary of Yonsei University",
+    location: "Yonsei University Open-air Theater, Sinchon Campus", // 50, Yonsei-ro, Seodaemun-gu, Seoul,
+    date: ["2025-06-08(Thu)"],
+    startTime: "00:00", // todo
+    durationMinutes: 0, // todo
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "Apink", "ZEROBASEONE", "KISS OF LIFE"],
+    poster: "/image/show/2025/250608_YONSEI_UNIVERSITY_ANNIVERSARY_CELEBRATION.png",
+    ticketOpen: { date: "2025-06-08", time: "00:00" }, // todo
+    ticketLink: "https://www.instagram.com/reel/DJEDDL2SBTc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "37.56537358800766",
+    lng: "126.9395885379679",
+  },
+  {
+    id: 43,
+    name: "26th Asian Athletics Championships 2025 Gumi",
+    location: "Gumi Stadium", // 375-22, Parkchunghee-ro, Gumi-si, Gyeongsangbuk-do,   관람객 수 12000석 정도
+    date: ["2025-05-27(Tue)"],
+    startTime: "19:30", // todo 확인 필요
+    durationMinutes: 0, // todo
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "DYNAMICDUO", "Song Sohee", "Gummy", "YOUNGTAK"],
+    poster: "/image/show/2025/250527_26th_Asian_Athletics_Championships_2025_Gumi.jpg",
+    ticketOpen: { date: "2025-05-27", time: "19:30" }, // todo
+    ticketLink: "https://www.2025gumi.kr/",
+    lat: "36.1114486845855",
+    lng: "128.352429149039",
+  },
 ];

@@ -955,10 +955,11 @@ export const showInfosEng = [
     note: [
       "Priority Ticket Sale Opens : April 17, 2025 (Thu) at 2PM (KST)",
       "Ticket Limit : 1 ticket per person per date",
-      "N.Flying – June 14 (Sat) @Cafe Blossom House (KSPO DOME)",
+      "6/14(Sat) - N.Flying @Cafe Blossom House(KSPO DOME)",
+      "6/13(Fri) - AxMxP with Seung-hyub & Dong-sung of N.Flying",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_NF.jpg",
-      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_3rd_LineUp.jpeg", // todo 5.7최종
-      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Stage_v1.jpeg" // todo 5.7최종
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Final_LineUp.jpg",
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Stage_Sat_Final.jpg",
     ],
     capacity: "",
     seats: [],
@@ -1008,6 +1009,7 @@ export const showInfosEng = [
     note: [
       "Paid parking is available in the park (it may get crowded on weekends)",
       "/image/show_detail/note/2025/250525_PEAK FESTIVAL_FINAL_LINEUP.jpg",
+      "/image/show_detail/note/2025/250525_PEAK FESTIVAL 2025_TIMETABLE.jpg",
     ],
     capacity: "",
     seats: [],
@@ -1126,6 +1128,7 @@ export const showInfosEng = [
     address: "430, Gyeongin-ro, Guro-gu, Seoul, South Korea",
     note: [
       "This event will operate on a reserved seating basis.",
+      "/image/show_detail/note/2025/250517_ISEGYE_FESTIVAL SEOUL_2025_TIMETABLE.jpg",
     ],
     capacity: "Approximately 20,000 seats",
     seats: [
@@ -1165,7 +1168,7 @@ export const showInfosEng = [
     address: "206, Chungjang-daero, Dong-gu, Busan, South Korea",
     note: [
       "All seats are assigned seating",
-      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_LineUp.jpeg",
+      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_LineUp_NF.jpeg",
       "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_Map.png",
     ],
     capacity: "",
@@ -1181,11 +1184,12 @@ export const showInfosEng = [
   },
   {
     id: 40,
-    name: "2025 INCHEON NAT'L UNIVERSITY FESTIVAL",
+    name: "2025 INCHEON NAT'L UNIVERSITY FESTIVAL - UNI_ON",
     address: "119, Academy-ro, Yeonsu-gu, Incheon, South Korea",
     note: [
-      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_LineUp_NF.jpeg",
+      "/image/show_detail/note/2025/250507_INCHEON_UNIVERSITY_LineUp.jpeg",
       "/image/show_detail/note/2025/250507_INCHEON_UNIVERSITY_TimeTable.jpeg",
+      "/image/show_detail/note/2025/250507_INCHEON_UNIVERSITY_Seat.jpg",
     ],
     capacity: "",
     seats: [

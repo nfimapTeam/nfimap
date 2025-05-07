@@ -921,10 +921,11 @@ export const showInfos = [
     note: [
       "우선입장권 예매 오픈 : 2025년 4월 17일(목) 2PM(KST)",
       "우선입장권 매수 제한 : 일자별 1인 1매",
-      "엔플라잉 - 6/14(토) @Cafe Blossom House(KSPO DOME)",
+      "6/14(토) - 엔플라잉 @Cafe Blossom House(KSPO DOME)",
+      "6/13(금) - AxMxP with 이승협,서동성 of N.Flying",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_NF.jpg",
-      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_3rd_LineUp.jpeg", // todo 5.7최종
-      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Stage_v1.jpeg" // todo 5.7최종
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Final_LineUp.jpg",
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Stage_Sat_Final.jpg",
     ],
     capacity: "",
     seats: [],
@@ -973,6 +974,7 @@ export const showInfos = [
     note: [
         "공원 내 유료 주차 공간 이용 가능 (주말에는 혼잡할 수 있음)",
         "/image/show_detail/note/2025/250525_PEAK FESTIVAL_FINAL_LINEUP.jpg",
+        "/image/show_detail/note/2025/250525_PEAK FESTIVAL 2025_TIMETABLE.jpg",
     ],
     capacity: "",
     seats: [],
@@ -1091,6 +1093,7 @@ export const showInfos = [
     address: "서울 구로구 경인로 430",
     note: [
       "지정 좌석제로 진행됩니다.",
+      "/image/show_detail/note/2025/250517_ISEGYE_FESTIVAL SEOUL_2025_TIMETABLE.jpg",
     ],
     capacity: "약 20,000 석",
     seats: [
@@ -1146,11 +1149,12 @@ export const showInfos = [
   },
   {
     id: 40,
-    name: "2025 인천대학교 축제",
+    name: "2025 인천대학교 축제 - 윤희의 교환일기",
     address: "인천광역시 연수구 아카데미로 119",
     note: [
-      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_LineUp_NF.jpeg",
+      "/image/show_detail/note/2025/250507_INCHEON_UNIVERSITY_LineUp.jpeg",
       "/image/show_detail/note/2025/250507_INCHEON_UNIVERSITY_TimeTable.jpeg",
+      "/image/show_detail/note/2025/250507_INCHEON_UNIVERSITY_Seat.jpg",
     ],
     capacity: "",
     seats: [
