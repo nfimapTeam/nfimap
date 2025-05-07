@@ -630,8 +630,8 @@ export const concertsData = [
     name: "TREND WAVE 2025",
     location: "인천아시아드주경기장",
     date: ["2025-05-03(토)"],
-    startTime: "18:00", // todo 실제 시간 확인 필요
-    durationMinutes: 210, // todo 확인 필요
+    startTime: "18:00",
+    durationMinutes: 30,
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "더보이즈", "엔하이픈", "스테이씨", "아일릿", "..."],
@@ -672,5 +672,21 @@ export const concertsData = [
     ticketLink: "https://tickets.interpark.com/contents/notice/detail/9432", // todo 실제페이지로 변경
     lat: "37.66442586885296",
     lng: "126.74029613018321",
+  },
+  {
+    id: 39,
+    name: "제18회 부산항 축제 with MyK FESTA",
+    location: "부산항국제여객터미널 야외주차장 일원",
+    date: ["2025-05-30(금)"],
+    startTime: "19:00",
+    durationMinutes: 150,
+    type: "행사",
+    performanceType: "출연",
+    artists: ["N.Flying", "SUPER JUNIOR-D&E", "씨엔블루", "ITZY", "..."],
+    poster: "/image/show/2025/250530_BUSAN PORT FESTIVAL.jpeg",
+    ticketOpen: { date: "2025-05-07", time: "19:00" },
+    ticketLink: "https://ticket.melon.com/performance/index.htm?prodId=211366",
+    lat: "35.11529194886069",
+    lng: "129.04719805299905",
   },
 ];

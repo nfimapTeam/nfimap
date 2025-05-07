@@ -1110,10 +1110,14 @@ export const showInfosEng = [
       "",
     ],
     setlist: [
-      "",
+      "Flashback",
+      "Songbird",
+      "Star",
+      "옥탑방 (Rooftop)",
+      "Blue Moon"
     ],
     ootd: [
-      "",
+      "image/show_detail/ootd/2025/250503_Trend_Wave_2025_OOTD.jpeg",
     ],
   },
   {
@@ -1147,6 +1151,26 @@ export const showInfosEng = [
     capacity: "",
     seats: [
       "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 39,
+    name: "The 18th Busan Port Festival with MyK FESTA",
+    address: "206, Chungjang-daero, Dong-gu, Busan, South Korea",
+    note: [
+      "All seats are assigned seating",
+      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_LineUp.jpeg",
+      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_Map.png",
+    ],
+    capacity: "",
+    seats: [
+      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_Seat.png",
     ],
     setlist: [
       "",

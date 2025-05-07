@@ -637,8 +637,8 @@ export const concertsDataEng = [
     name: "TREND WAVE 2025",
     location: "Incheon Asiad Main Stadium",
     date: ["2025-05-03(Sat)"],
-    startTime: "18:00", // todo 실제 시간 확인 필요
-    durationMinutes: 210, // todo 확인 필요
+    startTime: "18:00",
+    durationMinutes: 30,
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "THE BOYZ", "ENHYPEN", "STAYC", "ILLIT", "..."],
@@ -679,5 +679,21 @@ export const concertsDataEng = [
     ticketLink: "https://tickets.interpark.com/contents/notice/detail/9432", // todo 실제페이지로 변경
     lat: "37.66442586885296",
     lng: "126.74029613018321",
+  },
+  {
+    id: 39,
+    name: "The 18th Busan Port Festival with MyK FESTA",
+    location: "Busan Port International Passenger Terminal Outdoor Parking Lot",
+    date: ["2025-05-30(Fri)"],
+    startTime: "19:00",
+    durationMinutes: 150,
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "SUPER JUNIOR-D&E", "CNBLUE", "ITZY", "..."],
+    poster: "/image/show/2025/",
+    ticketOpen: { date: "2025-05-07", time: "19:00" },
+    ticketLink: "https://ticket.melon.com/performance/index.htm?prodId=211366",
+    lat: "35.11529194886069",
+    lng: "129.04719805299905",
   },
 ];

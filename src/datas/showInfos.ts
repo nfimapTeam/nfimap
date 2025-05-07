@@ -1075,10 +1075,14 @@ export const showInfos = [
       "",
     ],
     setlist: [
-      "",
+      "Flashback",
+      "Songbird",
+      "Star",
+      "옥탑방 (Rooftop)",
+      "Blue Moon"
     ],
     ootd: [
-      "",
+      "image/show_detail/ootd/2025/250503_Trend_Wave_2025_OOTD.jpeg",
     ],
   },
   {
@@ -1112,6 +1116,26 @@ export const showInfos = [
     capacity: "",
     seats: [
       "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 39,
+    name: "제18회 부산항 축제 with MyK FESTA",
+    address: "부산광역시 동구 충장대로 206",
+    note: [
+      "전 좌석 지정석",
+      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_LineUp.jpeg",
+      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_Map.png",
+    ],
+    capacity: "",
+    seats: [
+      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_Seat.png",
     ],
     setlist: [
       "",
