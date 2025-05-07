@@ -1130,12 +1130,31 @@ export const showInfos = [
     address: "부산광역시 동구 충장대로 206",
     note: [
       "전 좌석 지정석",
-      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_LineUp.jpeg",
+      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_LineUp_NF.jpeg",
       "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_Map.png",
     ],
     capacity: "",
     seats: [
       "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_Seat.png",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 40,
+    name: "2025 인천대학교 축제",
+    address: "인천광역시 연수구 아카데미로 119",
+    note: [
+      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_LineUp_NF.jpeg",
+      "/image/show_detail/note/2025/250507_INCHEON_UNIVERSITY_TimeTable.jpeg",
+    ],
+    capacity: "",
+    seats: [
+      "",
     ],
     setlist: [
       "",

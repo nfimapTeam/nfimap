@@ -1179,4 +1179,23 @@ export const showInfosEng = [
       "",
     ],
   },
+  {
+    id: 40,
+    name: "2025 INCHEON NAT'L UNIVERSITY FESTIVAL",
+    address: "119, Academy-ro, Yeonsu-gu, Incheon, South Korea",
+    note: [
+      "/image/show_detail/note/2025/250530_BUSAN PORT FESTIVAL_LineUp_NF.jpeg",
+      "/image/show_detail/note/2025/250507_INCHEON_UNIVERSITY_TimeTable.jpeg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];
