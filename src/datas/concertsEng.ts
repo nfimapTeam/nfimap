@@ -699,10 +699,10 @@ export const concertsDataEng = [
   {
     id: 40,
     name: "2025 INCHEON NAT'L UNIVERSITY FESTIVAL - UNI_ON",
-    location: "INCHEON NATIONAL UNIVERSITY SONGDO CAMPUS",
+    location: "Incheon National University Songdo Campus",
     date: ["2025-05-07(Wed)"],
     startTime: "21:00",
-    durationMinutes: 60,
+    durationMinutes: 40,
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "LUCY", "SIKKOO"],
@@ -759,5 +759,21 @@ export const concertsDataEng = [
     ticketLink: "https://www.2025gumi.kr/",
     lat: "36.1114486845855",
     lng: "128.352429149039",
+  },
+  {
+    id: 44,
+    name: "2025 DANKOOK UNIVERSITY FESTIVAL - DANFESTA : Blueming",
+    location: "Dankook University (Jukjeon Campus)",
+    date: ["2025-05-14(Wed)"],
+    startTime: "00:00", // todo
+    durationMinutes: 0, // todo
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "10CM", "KWON EUNBI"],
+    poster: "/image/show/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL.png",
+    ticketOpen: { date: "2025-05-14", time: "00:00" }, // todo
+    ticketLink: "https://www.instagram.com/p/DJY1LXKyjj-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "37.31974425558333",
+    lng: "127.12748542066663",
   },
 ];

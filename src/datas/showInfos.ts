@@ -1161,6 +1161,31 @@ export const showInfos = [
       "",
     ],
     setlist: [
+      "옥탑방 (Rooftop)",
+      "Songbird",
+      "Blue Moon",
+      "Star",
+      "4242",
+      "Sunset",
+      "아 진짜요. (Oh really.)",
+      "ANYWAY",
+    ],
+    ootd: [
+      "image/show_detail/ootd/2025/250507_INCHEON_NAT'L_UNIVERSITY_FESTIVAL_OOTD.jpeg",
+    ],
+  },
+  { // todo 41~43
+    id: 44,
+    name: "2025 단국대학교 죽전캠퍼스 대동제 - DANFESTA : Blueming",
+    address: "경기 용인시 수지구 죽전로 152",
+    note: [
+      "/image/show_detail/note/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL_NF.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
       "",
     ],
     ootd: [

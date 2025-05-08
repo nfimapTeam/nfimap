@@ -695,7 +695,7 @@ export const concertsData = [
     location: "인천대학교 송도캠퍼스",
     date: ["2025-05-07(수)"],
     startTime: "21:00",
-    durationMinutes: 60,
+    durationMinutes: 40,
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "루시", "식구"],
@@ -752,5 +752,21 @@ export const concertsData = [
     ticketLink: "https://www.2025gumi.kr/",
     lat: "36.1114486845855",
     lng: "128.352429149039",
+  },
+  {
+    id: 44,
+    name: "2025 단국대학교 죽전캠퍼스 대동제 - DANFESTA : Blueming",
+    location: "단국대학교 죽전캠퍼스",
+    date: ["2025-05-14(수)"],
+    startTime: "00:00", // todo
+    durationMinutes: 0, // todo
+    type: "행사",
+    performanceType: "출연",
+    artists: ["N.Flying", "10CM", "권은비"],
+    poster: "/image/show/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL.png",
+    ticketOpen: { date: "2025-05-14", time: "00:00" }, // todo
+    ticketLink: "https://www.instagram.com/p/DJY1LXKyjj-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "37.31974425558333",
+    lng: "127.12748542066663",
   },
 ];

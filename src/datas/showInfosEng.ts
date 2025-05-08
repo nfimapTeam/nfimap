@@ -1196,6 +1196,31 @@ export const showInfosEng = [
       "",
     ],
     setlist: [
+      "옥탑방 (Rooftop)",
+      "Songbird",
+      "Blue Moon",
+      "Star",
+      "4242",
+      "Sunset",
+      "아 진짜요. (Oh really.)",
+      "ANYWAY",
+    ],
+    ootd: [
+      "image/show_detail/ootd/2025/250507_INCHEON_NAT'L_UNIVERSITY_FESTIVAL_OOTD.jpeg",
+    ],
+  },
+  { // todo 41~43
+    id: 44,
+    name: "2025 DANKOOK UNIVERSITY FESTIVAL - DANFESTA : Blueming",
+    address: "152, Jukjeon-ro, Suji-gu, Yongin-si, Gyeonggi-do, South Korea",
+    note: [
+      "/image/show_detail/note/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL_NF.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
       "",
     ],
     ootd: [
