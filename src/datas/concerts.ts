@@ -599,7 +599,7 @@ export const concertsData = [
     location: "올림픽공원 올림픽홀",
     date: ["2025-05-09(금)", "2025-05-10(토)", "2025-05-11(일)"],
     startTime: "금 19:30, 토 18:00, 일 16:00",
-    durationMinutes: 120,
+    durationMinutes: 180,
     type: "콘서트",
     performanceType: "단독",
     artists: ["N.Flying"],
@@ -661,15 +661,15 @@ export const concertsData = [
     id: 38,
     name: "SOUNDBERRY FESTA '25",
     location: "킨텍스 제2전시장 9홀",
-    date: ["2025-07-19(토)", "2025-07-20(일)"],
+    date: ["2025-07-20(일)"],
     startTime: "00:00",
     durationMinutes: 500,
     type: "페스티벌",
     performanceType: "출연",
     artists: ["N.Flying", "루시", "10CM", "원위", "오월오일", "지소쿠리클럽", "..."],
-    poster: "/image/show/2025/250719-250720_SOUNDBERRY_FESTA_'25.jpg",
-    ticketOpen: { date: "2025-04-28", time: "18:00" },
-    ticketLink: "https://tickets.interpark.com/contents/notice/detail/9432", // todo 실제페이지로 변경
+    poster: "/image/show/2025/250720_SOUNDBERRY_FESTA_'25.jpg",
+    ticketOpen: { date: "2025-05-12", time: "18:00" },
+    ticketLink: "https://tickets.interpark.com/goods/25006146",
     lat: "37.66442586885296",
     lng: "126.74029613018321",
   },
@@ -708,15 +708,15 @@ export const concertsData = [
   {
     id: 41,
     name: "2025 경희대학교 축제 - MASTERPEACE : 청춘",
-    location: "경희대학교 서울캠퍼스", // 서울특별시 동대문구 경희대로 26
+    location: "경희대학교 서울캠퍼스",
     date: ["2025-05-15(목)"],
-    startTime: "00:00", // todo
-    durationMinutes: 0, // todo
+    startTime: "21:00",
+    durationMinutes: 60,
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "루시", "빈지노", "백예린"],
     poster: "/image/show/2025/250515_KYUNG_HEE_UNIVERSITY_FESTIVAL.jpg",
-    ticketOpen: { date: "2025-05-15", time: "00:00" }, // todo
+    ticketOpen: { date: "2025-05-15", time: "21:00" },
     ticketLink: "https://www.instagram.com/p/DJMF-yMPDj4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     lat: "37.59651475517445",
     lng: "127.05460783136776",
@@ -724,7 +724,7 @@ export const concertsData = [
   {
     id: 42,
     name: "연세여 사랑한다 - 연세대 창립 140주년 & 연고전 100주년 기념",
-    location: "연세대학교 신촌 캠퍼스 노천극장", // 서울 서대문구 연세로 50
+    location: "연세대학교 신촌 캠퍼스 노천극장",
     date: ["2025-06-08(목)"],
     startTime: "00:00", // todo
     durationMinutes: 0, // todo
@@ -739,11 +739,11 @@ export const concertsData = [
   },
   {
     id: 43,
-    name: "2025 구미 아시아육상경기선수권대회 개회식", // 26th Asian Athletics Championships 2025 Gumi
-    location: "구미시민운동장", // 경북 구미시 박정희로 375-22 구미시민운동장
-    date: ["2025-05-27(화)"], //   관람객 수 12000석 정도
-    startTime: "19:30", // todo 확인 필요
-    durationMinutes: 0, // todo
+    name: "2025 구미 아시아육상경기선수권대회 개회식",
+    location: "구미시민운동장",
+    date: ["2025-05-27(화)"],
+    startTime: "20:16", // todo 확인 필요
+    durationMinutes: 12, // todo 확인 필요
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "다이나믹듀오", "송소희", "거미", "영탁"],
@@ -755,18 +755,34 @@ export const concertsData = [
   },
   {
     id: 44,
-    name: "2025 단국대학교 죽전캠퍼스 대동제 - DANFESTA : Blueming",
+    name: "2025 단국대학교 죽전캠퍼스 축제 - DANFESTA : Blueming",
     location: "단국대학교 죽전캠퍼스",
     date: ["2025-05-14(수)"],
-    startTime: "00:00", // todo
-    durationMinutes: 0, // todo
+    startTime: "20:45",
+    durationMinutes: 75,
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "10CM", "권은비"],
     poster: "/image/show/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL.png",
-    ticketOpen: { date: "2025-05-14", time: "00:00" }, // todo
+    ticketOpen: { date: "2025-05-14", time: "20:45" },
     ticketLink: "https://www.instagram.com/p/DJY1LXKyjj-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     lat: "37.31974425558333",
     lng: "127.12748542066663",
   },
+  // {
+  //   id: 45,
+  //   name: "경인여자대학교 축제 - 청솔제",
+  //   location: "경인여자대학교 잔디광장",
+  //   date: ["2025-05-21(수)"],
+  //   startTime: "18:30", // todo 확인 필요
+  //   durationMinutes: 0, // todo 확인 필요
+  //   type: "행사",
+  //   performanceType: "출연",
+  //   artists: ["N.Flying", "..."],
+  //   poster: "/image/show/2025/250521_KYUNG-IN_WOMEN'S_UNIVERSITY_FESTIVAL.png",
+  //   ticketOpen: { date: "2025-05-21", time: "18:30" }, // todo 링크&시간 확인 필요
+  //   ticketLink: "https://www.instagram.com/p/DJY7WRjp4R8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  //   lat: "37.54794749358135",
+  //   lng: "126.72206304823997",
+  // },
 ];

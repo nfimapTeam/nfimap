@@ -1056,7 +1056,7 @@ export const showInfosEng = [
   },
   {
     id: 34,
-    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE",
+    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (SEOUL)",
     address: "Olympic Hall, 88-2 Bangi-dong, Songpa-gu, Seoul, South Korea", // 올림픽공원 올림픽홀
     note: [
       "Fan Club Presale Eligibility: Must be a registered N.Fia 4th member by March 21, 2025 (Fri) [KST]",
@@ -1070,10 +1070,45 @@ export const showInfosEng = [
       "/image/show_detail/seats/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_SEAT_new.png",
     ],
     setlist: [
-      "",
+      "Shooting Star",
+      "Moonshot",
+      "Blue Moon",
+      "폭망 (I Like You)",
+      "네가 내 마음에 자리 잡았다 (Into You)",
+      "Preview",
+      "Sunset",
+      "Run Like This - Spoiler of an unreleased new song",
+      "봄이 부시게 (Spring Memories)",
+      "Flashback",
+      "아 진짜요. (Oh really.)",
+      "ㅈㅅ (Pardon?)",
+      "4242",
+      "4242 - Once more",
+      "Firefly",
+      "Dangerously (Feat. J.DON)",
+      "SEE YOU LATER (사계의 봄OST)",
+      "Video Therapy",
+      "Monster",
+      "짠해 (Say Goodbye)",
+      "짠해 (Say Goodbye) - Once more",
+      "뫼비우스 - Spoiler of an unreleased new song",
+      "Stand By Me",
+      "만년설 - Spoiler of an unreleased new song",
+      "에요 (E-YO)",
+      "옥탑방 (Rooftop)",
+      "Songbird",
+      "피었습니다. (Into Bloom) - Encore",
+      "굿밤 (GOOD BAM) - Encore",
+      "You - Encore",
+      "놔 (Leave It) - Encore",
+      "뜨거운 감자 (Hot Potato) - Encore",
+      "진짜가 나타났다 (The Real) - Encore",
+      "Blue Moon - Encore",
     ],
     ootd: [
-      "",
+      "/image/show_detail/ootd/2025/250509_&CON4_FULL_CIRCLE_SEOUL_OOTD.jpeg",
+      "/image/show_detail/ootd/2025/250510_&CON4_FULL_CIRCLE_SEOUL_OOTD.jpeg",
+      "/image/show_detail/ootd/2025/250511_&CON4_FULL_CIRCLE_SEOUL_OOTD.jpeg",
     ],
   },
   {
@@ -1148,8 +1183,7 @@ export const showInfosEng = [
     note: [
       "Early Bird Ticket Sales: April 28 (Mon) 6:00 PM – May 8 (Thu) 11:59 PM",
       "Early Bird tickets are available for 2-Day Passes only.",
-      "Single-day tickets will be available after the second lineup announcement.",
-      "/image/show_detail/note/2025/250719-250720_SOUNDBERRY_FESTA_'25_1st_Line_Up.jpg",
+      "/image/show_detail/note/2025/250720_SOUNDBERRY_FESTA_'25_2nd_LineUp.jpg",
     ],
     capacity: "",
     seats: [
@@ -1209,12 +1243,13 @@ export const showInfosEng = [
       "image/show_detail/ootd/2025/250507_INCHEON_NAT'L_UNIVERSITY_FESTIVAL_OOTD.jpeg",
     ],
   },
-  { // todo 41~43
-    id: 44,
-    name: "2025 DANKOOK UNIVERSITY FESTIVAL - DANFESTA : Blueming",
-    address: "152, Jukjeon-ro, Suji-gu, Yongin-si, Gyeonggi-do, South Korea",
+  {
+    id: 41,
+    name: "2025 KYUNG HEE UNIVERSITY FESTIVAL - MASTERPEACE : 청춘",
+    address: "26, Kyungheedae-ro, Dongdaemun-gu, Seoul, South Korea",
     note: [
-      "/image/show_detail/note/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL_NF.jpg",
+      "/image/show_detail/note/2025/250515_KYUNG_HEE_UNIVERSITY_FESTIVAL_NF.jpg",
+      "/image/show_detail/note/2025/250515_KYUNG_HEE_UNIVERSITY_FESTIVAL_TIME_TABLE.jpg",
     ],
     capacity: "",
     seats: [
@@ -1227,4 +1262,78 @@ export const showInfosEng = [
       "",
     ],
   },
+  {
+    id: 42,
+    name: "I LOVE YONSEI - 140th Anniversary of Yonsei University",
+    address: "50, Yonsei-ro, Seodaemun-gu, Seoul, South Korea",
+    note: [
+      "/image/show_detail/note/2025/250608_YONSEI_UNIVERSITY_NF.png",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 43,
+    name: "26th Asian Athletics Championships 2025 Gumi",
+    address: "375-22, Parkchunghee-ro, Gumi-si, Gyeongsangbuk-do, South Korea",
+    note: [
+      "/image/show_detail/note/2025/250527_26th_Asian_Athletics_Championships_2025_Gumi_LineUp.png",
+      "/image/show_detail/note/2025/250527_26th_Asian_Athletics_Championships_2025_Gumi_TIME_TABLE.png",
+    ],
+    capacity: "Approximately 12,000 seats",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 44,
+    name: "2025 DANKOOK UNIVERSITY FESTIVAL - DANFESTA : Blueming",
+    address: "152, Jukjeon-ro, Suji-gu, Yongin-si, Gyeonggi-do, South Korea",
+    note: [
+      "/image/show_detail/note/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL_NF.jpg",
+      "/image/show_detail/note/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL_TIME_TABLE.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  // {
+  //   id: 45,
+  //   name: "KYUNG-IN WOMEN'S UNIVERSITY FESTIVAL",
+  //   address: "63, Gyeyangsan-ro, Gyeyang-gu, Incheon, South Korea",
+  //   note: [
+  //     // "/image/show_detail/note/2025/",
+  //   ],
+  //   capacity: "",
+  //   seats: [
+  //     "",
+  //   ],
+  //   setlist: [
+  //     "",
+  //   ],
+  //   ootd: [
+  //     "",
+  //   ],
+  // },
 ];

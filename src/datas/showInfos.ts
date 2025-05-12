@@ -864,7 +864,7 @@ export const showInfos = [
       "Flashback - 앵콜",
       "Sunset - 앵앵콜",
       "Monster - 앵앵앵콜",
-],
+    ],
     ootd: [
       "/image/show_detail/ootd/2025/250322-250323_Soundberry_Theater_OOTD_01.jpeg",
       "/image/show_detail/ootd/2025/250322-250323_Soundberry_Theater_OOTD_02.jpeg",
@@ -1021,7 +1021,7 @@ export const showInfos = [
   },
   {
     id: 34,
-    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE",
+    name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (서울)",
     address: "서울 송파구 방이동 88-2 올림픽홀", // 올림픽공원 올림픽홀
     note: [
       "팬클럽 선예매 인증 가능 조건: 2025년 3월 21일(금)까지 N.Fia 4기에 가입 [KST]",
@@ -1035,10 +1035,45 @@ export const showInfos = [
       "/image/show_detail/seats/2025/250509-250511_&CON4_FULL_CIRCLE_SEOUL_SEAT_new.png",
     ],
     setlist: [
-      "",
+      "Shooting Star",
+      "Moonshot",
+      "Blue Moon",
+      "폭망 (I Like You)",
+      "네가 내 마음에 자리 잡았다 (Into You)",
+      "Preview",
+      "Sunset",
+      "Run Like This - 신곡 스포",
+      "봄이 부시게 (Spring Memories)",
+      "Flashback",
+      "아 진짜요. (Oh really.)",
+      "ㅈㅅ (Pardon?)",
+      "4242",
+      "4242 - 한번 더",
+      "Firefly",
+      "Dangerously (Feat. J.DON)",
+      "SEE YOU LATER (사계의 봄OST)",
+      "Video Therapy",
+      "Monster",
+      "짠해 (Say Goodbye)",
+      "짠해 (Say Goodbye) - 한번 더",
+      "뫼비우스 - 신곡 스포",
+      "Stand By Me",
+      "만년설 - 신곡 스포",
+      "에요 (E-YO)",
+      "옥탑방 (Rooftop)",
+      "Songbird",
+      "피었습니다. (Into Bloom) - 앵콜",
+      "굿밤 (GOOD BAM) - 앵콜",
+      "You - 앵콜",
+      "놔 (Leave It) - 앵콜",
+      "뜨거운 감자 (Hot Potato) - 앵콜",
+      "진짜가 나타났다 (The Real) - 앵콜",
+      "Blue Moon - 앵콜",
     ],
     ootd: [
-      "",
+      "/image/show_detail/ootd/2025/250509_&CON4_FULL_CIRCLE_SEOUL_OOTD.jpeg",
+      "/image/show_detail/ootd/2025/250510_&CON4_FULL_CIRCLE_SEOUL_OOTD.jpeg",
+      "/image/show_detail/ootd/2025/250511_&CON4_FULL_CIRCLE_SEOUL_OOTD.jpeg",
     ],
   },
   {
@@ -1112,9 +1147,8 @@ export const showInfos = [
     address: "경기 고양시 일산서구 킨텍스로 217-59",
     note: [
       "얼리버드 티켓 예매 : 4월 28일(월) 18시 – 5월 8일(목) 23시 59분",
-      "얼리버드 티켓은 양일권만 예매 가능합니다." +
-      "날짜별 일일권은 2차 라인업 발표 이후 오픈될 예정입니다.",
-      "/image/show_detail/note/2025/250719-250720_SOUNDBERRY_FESTA_'25_1st_Line_Up.jpg",
+      "얼리버드 티켓은 양일권만 예매 가능.",
+      "/image/show_detail/note/2025/250720_SOUNDBERRY_FESTA_'25_2nd_LineUp.jpg",
     ],
     capacity: "",
     seats: [
@@ -1174,12 +1208,13 @@ export const showInfos = [
       "image/show_detail/ootd/2025/250507_INCHEON_NAT'L_UNIVERSITY_FESTIVAL_OOTD.jpeg",
     ],
   },
-  { // todo 41~43
-    id: 44,
-    name: "2025 단국대학교 죽전캠퍼스 대동제 - DANFESTA : Blueming",
-    address: "경기 용인시 수지구 죽전로 152",
+  {
+    id: 41,
+    name: "2025 경희대학교 축제 - MASTERPEACE : 청춘",
+    address: "서울특별시 동대문구 경희대로 26 노천극장",
     note: [
-      "/image/show_detail/note/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL_NF.jpg",
+      "/image/show_detail/note/2025/250515_KYUNG_HEE_UNIVERSITY_FESTIVAL_NF.jpg",
+      "/image/show_detail/note/2025/250515_KYUNG_HEE_UNIVERSITY_FESTIVAL_TIME_TABLE.jpg",
     ],
     capacity: "",
     seats: [
@@ -1192,4 +1227,78 @@ export const showInfos = [
       "",
     ],
   },
+  {
+    id: 42,
+    name: "연세여 사랑한다 - 연세대 창립 140주년 & 연고전 100주년 기념",
+    address: "서울 서대문구 연세로 50",
+    note: [
+      "/image/show_detail/note/2025/250608_YONSEI_UNIVERSITY_NF.png",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 43,
+    name: "2025 구미 아시아육상경기선수권대회 개회식",
+    address: "경북 구미시 박정희로 375-22 구미시민운동장",
+    note: [
+      "/image/show_detail/note/2025/250527_26th_Asian_Athletics_Championships_2025_Gumi_LineUp.png",
+      "/image/show_detail/note/2025/250527_26th_Asian_Athletics_Championships_2025_Gumi_TIME_TABLE.png",
+    ],
+    capacity: "약 12,000석",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 44,
+    name: "2025 단국대학교 죽전캠퍼스 대동제 - DANFESTA : Blueming",
+    address: "경기 용인시 수지구 죽전로 152",
+    note: [
+      "/image/show_detail/note/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL_NF.jpg",
+      "/image/show_detail/note/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL_TIME_TABLE.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  // {
+  //   id: 45,
+  //   name: "경인여자대학교 축제 - 청솔제",
+  //   address: "인천 계양구 계양산로 63 경인여자대학교",
+  //   note: [
+  //     // "/image/show_detail/note/2025/",
+  //   ],
+  //   capacity: "",
+  //   seats: [
+  //     "",
+  //   ],
+  //   setlist: [
+  //     "",
+  //   ],
+  //   ootd: [
+  //     "",
+  //   ],
+  // },
 ];

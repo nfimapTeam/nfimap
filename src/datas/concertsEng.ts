@@ -606,7 +606,7 @@ export const concertsDataEng = [
     location: "Olympic Park Olympic Hall",
     date: ["2025-05-09(Fri)", "2025-05-10(Sat)", "2025-05-11(Sun)"],
     startTime: "Fri 19:30, Sat 18:00, Sun 16:00",
-    durationMinutes: 120,
+    durationMinutes: 180,
     type: "Concert",
     performanceType: "Solo",
     artists: ["N.Flying"],
@@ -668,15 +668,15 @@ export const concertsDataEng = [
     id: 38,
     name: "SOUNDBERRY FESTA '25",
     location: "KINTEX 2 Exhibition Hall 9.",
-    date: ["2025-07-19(Sat)", "2025-07-20(Sun)"],
+    date: ["2025-07-20(Sun)"],
     startTime: "00:00",
     durationMinutes: 500,
     type: "Festival",
     performanceType: "Guest",
     artists: ["N.Flying", "LUCY", "10CM", "ONEWE", "OWALLOIL", "jisokuryClub", "..."],
-    poster: "/image/show/2025/250719-250720_SOUNDBERRY_FESTA_'25.jpg",
-    ticketOpen: { date: "2025-04-28", time: "18:00" },
-    ticketLink: "https://tickets.interpark.com/contents/notice/detail/9432", // todo 실제페이지로 변경
+    poster: "/image/show/2025/250720_SOUNDBERRY_FESTA_'25.jpg",
+    ticketOpen: { date: "2025-05-12", time: "18:00" },
+    ticketLink: "https://tickets.interpark.com/goods/25006146",
     lat: "37.66442586885296",
     lng: "126.74029613018321",
   },
@@ -715,15 +715,15 @@ export const concertsDataEng = [
   {
     id: 41,
     name: "2025 KYUNG HEE UNIVERSITY FESTIVAL - MASTERPEACE : 청춘",
-    location: "Kyung Hee University (Seoul)", // 26, Kyungheedae-ro, Dongdaemun-gu, Seoul,
+    location: "Kyung Hee University (Seoul)",
     date: ["2025-05-15(Thu)"],
-    startTime: "00:00", // todo
-    durationMinutes: 0, // todo
+    startTime: "21:00",
+    durationMinutes: 60,
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "LUCY", "Beenzino", "Yerin Baek"],
     poster: "/image/show/2025/250515_KYUNG_HEE_UNIVERSITY_FESTIVAL.jpg",
-    ticketOpen: { date: "2025-05-15", time: "00:00" }, // todo
+    ticketOpen: { date: "2025-05-15", time: "21:00" },
     ticketLink: "https://www.instagram.com/p/DJMF-yMPDj4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     lat: "37.59651475517445",
     lng: "127.05460783136776",
@@ -731,7 +731,7 @@ export const concertsDataEng = [
   {
     id: 42,
     name: "I LOVE YONSEI - 140th Anniversary of Yonsei University",
-    location: "Yonsei University Open-air Theater, Sinchon Campus", // 50, Yonsei-ro, Seodaemun-gu, Seoul,
+    location: "Yonsei University Open-air Theater, Sinchon Campus",
     date: ["2025-06-08(Thu)"],
     startTime: "00:00", // todo
     durationMinutes: 0, // todo
@@ -747,10 +747,10 @@ export const concertsDataEng = [
   {
     id: 43,
     name: "26th Asian Athletics Championships 2025 Gumi",
-    location: "Gumi Stadium", // 375-22, Parkchunghee-ro, Gumi-si, Gyeongsangbuk-do,   관람객 수 12000석 정도
+    location: "Gumi Stadium",
     date: ["2025-05-27(Tue)"],
-    startTime: "19:30", // todo 확인 필요
-    durationMinutes: 0, // todo
+    startTime: "20:16", // todo 확인 필요
+    durationMinutes: 12, // todo 확인 필요
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "DYNAMICDUO", "Song Sohee", "Gummy", "YOUNGTAK"],
@@ -765,15 +765,31 @@ export const concertsDataEng = [
     name: "2025 DANKOOK UNIVERSITY FESTIVAL - DANFESTA : Blueming",
     location: "Dankook University (Jukjeon Campus)",
     date: ["2025-05-14(Wed)"],
-    startTime: "00:00", // todo
-    durationMinutes: 0, // todo
+    startTime: "20:45",
+    durationMinutes: 75,
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "10CM", "KWON EUNBI"],
     poster: "/image/show/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL.png",
-    ticketOpen: { date: "2025-05-14", time: "00:00" }, // todo
+    ticketOpen: { date: "2025-05-14", time: "20:45" },
     ticketLink: "https://www.instagram.com/p/DJY1LXKyjj-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     lat: "37.31974425558333",
     lng: "127.12748542066663",
   },
+  // {
+  //   id: 45,
+  //   name: "KYUNG-IN WOMEN'S UNIVERSITY FESTIVAL",
+  //   location: "KYUNG-IN WOMEN'S UNIVERSITY",
+  //   date: ["2025-05-21(Wed)"],
+  //   startTime: "18:30", // todo 확인 필요
+  //   durationMinutes: 0, // todo 확인 필요
+  //   type: "Event",
+  //   performanceType: "Guest",
+  //   artists: ["N.Flying", "..."],
+  //   poster: "/image/show/2025/",
+  //   ticketOpen: { date: "2025-05-21", time: "18:30" }, // todo 링크&시간 확인 필요
+  //   ticketLink: "https://www.instagram.com/p/DJY7WRjp4R8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  //   lat: "37.54794749358135",
+  //   lng: "126.72206304823997",
+  // },
 ];
