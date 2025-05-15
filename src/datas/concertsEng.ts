@@ -541,8 +541,8 @@ export const concertsDataEng = [
     name: "Beautiful Mint Life 2025",
     location: "Olympic Park 88 Lawn Field",
     date: ["2025-06-14(Sat)"],
-    startTime: "00:00,", // todo
-    durationMinutes: 0, // todo
+    startTime: "19:30",
+    durationMinutes: 60,
     type: "Festival",
     performanceType: "Guest",
     artists: ["N.Flying", "Silica Gel", "Nerd Connection", "Jung Seung-hwan", "So Soo Bin", "..."],
@@ -620,15 +620,15 @@ export const concertsDataEng = [
     id: 35,
     name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (BUSAN)",
     location: "KBS Busan Hall",
-    date: ["2025-07-05(Sat)"],
-    startTime: "16:00",
+    date: ["2025-07-04(Fri)", "2025-07-05(Sat)"],
+    startTime: "Fri 19:30, Sat 16:00",
     durationMinutes: 120,
     type: "Concert",
     performanceType: "Solo",
     artists: ["N.Flying"],
-    poster: "/image/show/2025/250705_&CON4_FULL_CIRCLE_BUSAN_NF.jpg",
-    ticketOpen: { date: "2025-04-23", time: "20:00" },
-    ticketLink: "https://tickets.interpark.com/goods/25005712",
+    poster: "/image/show/2025/250704-250705_&CON4_FULL_CIRCLE_BUSAN_NF_v2.jpg",
+    ticketOpen: { date: "2025-05-26", time: "20:00" }, // todo 추가 회차 선예매 - 일반예매
+    ticketLink: "https://tickets.interpark.com/goods/25005712", // todo 확인
     lat: "35.145093252451666",
     lng: "129.10867582979586",
   },
@@ -766,7 +766,7 @@ export const concertsDataEng = [
     location: "Dankook University (Jukjeon Campus)",
     date: ["2025-05-14(Wed)"],
     startTime: "20:45",
-    durationMinutes: 75,
+    durationMinutes: 60,
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "10CM", "KWON EUNBI"],
@@ -776,20 +776,100 @@ export const concertsDataEng = [
     lat: "37.31974425558333",
     lng: "127.12748542066663",
   },
-  // {
-  //   id: 45,
-  //   name: "KYUNG-IN WOMEN'S UNIVERSITY FESTIVAL",
-  //   location: "KYUNG-IN WOMEN'S UNIVERSITY",
-  //   date: ["2025-05-21(Wed)"],
-  //   startTime: "18:30", // todo 확인 필요
-  //   durationMinutes: 0, // todo 확인 필요
-  //   type: "Event",
-  //   performanceType: "Guest",
-  //   artists: ["N.Flying", "..."],
-  //   poster: "/image/show/2025/",
-  //   ticketOpen: { date: "2025-05-21", time: "18:30" }, // todo 링크&시간 확인 필요
-  //   ticketLink: "https://www.instagram.com/p/DJY7WRjp4R8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-  //   lat: "37.54794749358135",
-  //   lng: "126.72206304823997",
-  // },
+  {
+    id: 45,
+    name: "KYUNG-IN WOMEN'S UNIVERSITY FESTIVAL",
+    location: "Kyung-In Women's University",
+    date: ["2025-05-21(Wed)"],
+    startTime: "18:30", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "Ampersand", "Billie", "pH-1", "..."],
+    poster: "/image/show/2025/250521_KYUNG-IN_WOMEN'S_UNIVERSITY_FESTIVAL.jpg",
+    ticketOpen: { date: "2025-05-21", time: "18:30" }, // todo 시간 확인 필요
+    ticketLink: "https://www.instagram.com/p/DJncLc0TCSY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "37.54794749358135",
+    lng: "126.72206304823997",
+  },
+  {
+    id: 46,
+    name: "CATHOLIC_UNIVERSITY_FESTIVAL - AUREUM FESTIVAL",
+    location: "Catholic University",
+    date: ["2025-05-22(Thu)"],
+    startTime: "00:00", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "Crush"],
+    poster: "/image/show/2025/250522_Catholic_University_Festival.png",
+    ticketOpen: { date: "2025-05-22", time: "00:00" }, // todo 시간 확인 필요
+    ticketLink: "https://www.instagram.com/p/DJn-FngyRa_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "37.4877220550605",
+    lng: "126.80117586442704",
+  },
+  {
+    id: 47,
+    name: "2025 KWANGWOON UNIVERSITY FESTIVAL - AINES: PIECE",
+    location: "Kwangwoon University", // todo
+    date: ["2025-05-23(Fri)"],
+    startTime: "00:00", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "10CM", "YdBB"],
+    poster: "/image/show/2025/250523_KWU_FESTIVAL.jpg",
+    ticketOpen: { date: "2025-05-23", time: "00:00" }, // todo 시간 확인 필요
+    ticketLink: "https://www.instagram.com/p/DJoguXdSDYI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "37.619379129478", // todo
+    lng: "127.058263354527", // todo
+  },
+  {
+    id: 48,
+    name: "2025 DAEGU CATHOLIC UNIVERSITY FESTIVAL - BLUE MING",
+    location: "Daegu Catholic University",
+    date: ["2025-05-28 (Wed)"],
+    startTime: "21:05", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "10CM"],
+    poster: "/image/show/2025/250528_DAEGU_CATHOLIC_UNIVERSITY.jpg",
+    ticketOpen: { date: "2025-05-28", time: "00:00" }, // todo 시간 확인 필요
+    ticketLink: "https://www.instagram.com/p/DJozACsJLDg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "35.914618874906175",
+    lng: "128.8106252352991",
+  },
+  {
+    id: 49,
+    name: "2025 JEONJU UNIVERSITY FESTIVAL - TripLog: Record of Youth",
+    location: "Jeonju University",
+    date: ["2025-05-29 (Thu)"],
+    startTime: "00:00", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "Lee Hi", "HEIZE", "WENDY"],
+    poster: "/image/show/2025/250529_JEONJU_UNIVERSITY_FESTIVAL.jpg",
+    ticketOpen: { date: "2025-05-29", time: "00:00" }, // todo 시간 확인 필요
+    ticketLink: "https://www.instagram.com/p/DJqPYBLPtEV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "35.8161584000594", // todo
+    lng: "127.088882125299", // todo
+  },
+  {
+    id: 50,
+    name: "BMW M FEST 2025.",
+    location: "BMW Driving Center",
+    date: ["2025-05-31 (Sat)"],
+    startTime: "18:30", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "Beenzino"],
+    poster: "/image/show/2025/250531_BMW_M_FEST_2025.jpg",
+    ticketOpen: { date: "2025-05-15", time: "14:00" },
+    ticketLink: "https://www.bmw.co.kr/ko/discover/bmw-m-fest-2025.html#ticket",
+    lat: "37.4623830994969",
+    lng: "126.485449864857",
+  },
 ];

@@ -534,8 +534,8 @@ export const concertsData = [
     name: "뷰티풀 민트 라이프 2025",
     location: "올림픽공원 88잔디마당",
     date: ["2025-06-14(토)"],
-    startTime: "00:00", // todo
-    durationMinutes: 0, // todo
+    startTime: "19:30",
+    durationMinutes: 60,
     type: "페스티벌",
     performanceType: "출연",
     artists: ["N.Flying", "실리카겔", "너드커넥션", "정승환", "소수빈", "..."],
@@ -613,15 +613,15 @@ export const concertsData = [
     id: 35,
     name: "2025 N.Flying LIVE &CON4 : FULL CIRCLE (부산)",
     location: "부산 KBS홀",
-    date: ["2025-07-05(토)"],
-    startTime: "16:00",
+    date: ["2025-07-04(금)", "2025-07-05(토)"],
+    startTime: "금 19:30, 토 16:00",
     durationMinutes: 120,
     type: "콘서트",
     performanceType: "단독",
     artists: ["N.Flying"],
-    poster: "/image/show/2025/250705_&CON4_FULL_CIRCLE_BUSAN_NF.jpg",
-    ticketOpen: { date: "2025-04-23", time: "20:00" },
-    ticketLink: "https://tickets.interpark.com/goods/25005712",
+    poster: "/image/show/2025/250704-250705_&CON4_FULL_CIRCLE_BUSAN_NF_v2.jpg",
+    ticketOpen: { date: "2025-05-26", time: "20:00" }, // todo 추가 회차 선예매 - 일반예매
+    ticketLink: "https://tickets.interpark.com/goods/25005712", // todo 확인
     lat: "35.145093252451666",
     lng: "129.10867582979586",
   },
@@ -759,7 +759,7 @@ export const concertsData = [
     location: "단국대학교 죽전캠퍼스",
     date: ["2025-05-14(수)"],
     startTime: "20:45",
-    durationMinutes: 75,
+    durationMinutes: 60,
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "10CM", "권은비"],
@@ -769,20 +769,100 @@ export const concertsData = [
     lat: "37.31974425558333",
     lng: "127.12748542066663",
   },
-  // {
-  //   id: 45,
-  //   name: "경인여자대학교 축제 - 청솔제",
-  //   location: "경인여자대학교 잔디광장",
-  //   date: ["2025-05-21(수)"],
-  //   startTime: "18:30", // todo 확인 필요
-  //   durationMinutes: 0, // todo 확인 필요
-  //   type: "행사",
-  //   performanceType: "출연",
-  //   artists: ["N.Flying", "..."],
-  //   poster: "/image/show/2025/250521_KYUNG-IN_WOMEN'S_UNIVERSITY_FESTIVAL.png",
-  //   ticketOpen: { date: "2025-05-21", time: "18:30" }, // todo 링크&시간 확인 필요
-  //   ticketLink: "https://www.instagram.com/p/DJY7WRjp4R8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-  //   lat: "37.54794749358135",
-  //   lng: "126.72206304823997",
-  // },
+  {
+    id: 45,
+    name: "경인여자대학교 축제 - 청솔제",
+    location: "경인여자대학교 잔디광장",
+    date: ["2025-05-21(수)"],
+    startTime: "18:30", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "행사",
+    performanceType: "출연",
+    artists: ["N.Flying", "앰퍼샌드원", "Billie", "pH-1"],
+    poster: "/image/show/2025/250521_KYUNG-IN_WOMEN'S_UNIVERSITY_FESTIVAL.jpg",
+    ticketOpen: { date: "2025-05-21", time: "18:30" }, // todo 시간 확인 필요
+    ticketLink: "https://www.instagram.com/p/DJncLc0TCSY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "37.54794749358135",
+    lng: "126.72206304823997",
+  },
+  {
+    id: 46,
+    name: "2025 가톨릭대학교 축제 - 아우름제",
+    location: "가톨릭대학교 성심교정 대운동장",
+    date: ["2025-05-22(목)"],
+    startTime: "00:00", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "행사",
+    performanceType: "출연",
+    artists: ["N.Flying", "크러쉬"],
+    poster: "/image/show/2025/250522_Catholic_University_Festival.png",
+    ticketOpen: { date: "2025-05-22", time: "00:00" }, // todo 시간 확인 필요
+    ticketLink: "https://www.instagram.com/p/DJn-FngyRa_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "37.4877220550605",
+    lng: "126.80117586442704",
+  },
+  {
+    id: 47,
+    name: "2025 광운대학교 축제 - AINES : 조각",
+    location: "광운대학교", // todo
+    date: ["2025-05-23(금)"],
+    startTime: "00:00", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "행사",
+    performanceType: "출연",
+    artists: ["N.Flying", "10CM", "YdBB"],
+    poster: "/image/show/2025/250523_KWU_FESTIVAL.jpg",
+    ticketOpen: { date: "2025-05-23", time: "00:00" }, // todo 시간 확인 필요
+    ticketLink: "https://www.instagram.com/p/DJoguXdSDYI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "37.619379129478", // todo
+    lng: "127.058263354527", // todo
+  },
+  {
+    id: 48,
+    name: "2025 대구가톨릭대학교 축제 - BLUE MING",
+    location: "대구가톨릭대학교 대운동장",
+    date: ["2025-05-28(수)"],
+    startTime: "00:00", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "행사",
+    performanceType: "출연",
+    artists: ["N.Flying", "10CM"],
+    poster: "/image/show/2025/250528_DAEGU_CATHOLIC_UNIVERSITY.jpg",
+    ticketOpen: { date: "2025-05-28", time: "00:00" }, // todo 시간 확인 필요
+    ticketLink: "https://www.instagram.com/p/DJozACsJLDg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "35.914618874906175",
+    lng: "128.8106252352991",
+  },
+  {
+    id: 49,
+    name: "2025 전주대학교 축제 - TripLog: 청춘의 기록",
+    location: "전주대학교 캠퍼스 일대",
+    date: ["2025-05-29(목)"],
+    startTime: "00:00", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "행사",
+    performanceType: "출연",
+    artists: ["N.Flying", "이하이", "HEIZE", "WENDY"],
+    poster: "/image/show/2025/250529_JEONJU_UNIVERSITY_FESTIVAL.jpg",
+    ticketOpen: { date: "2025-05-29", time: "00:00" }, // todo 시간 확인 필요
+    ticketLink: "https://www.instagram.com/p/DJqPYBLPtEV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "35.8161584000594", // todo
+    lng: "127.088882125299", // todo
+  },
+  {
+    id: 50,
+    name: "BMW M FEST 2025.",
+    location: "BMW 드라이빙 센터",
+    date: ["2025-05-31(토)"],
+    startTime: "18:30", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "행사",
+    performanceType: "출연",
+    artists: ["N.Flying", "빈지노"],
+    poster: "/image/show/2025/250531_BMW_M_FEST_2025.jpg",
+    ticketOpen: { date: "2025-05-15", time: "14:00" },
+    ticketLink: "https://www.bmw.co.kr/ko/discover/bmw-m-fest-2025.html#ticket",
+    lat: "37.4623830994969",
+    lng: "126.485449864857",
+  },
 ];

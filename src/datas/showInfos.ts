@@ -924,8 +924,8 @@ export const showInfos = [
       "6/14(토) - 엔플라잉 @Cafe Blossom House(KSPO DOME)",
       "6/13(금) - AxMxP with 이승협,서동성 of N.Flying",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_NF.jpg",
-      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Final_LineUp.jpg",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Stage_Sat_Final.jpg",
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_TIME_TABLE.jpg",
     ],
     capacity: "",
     seats: [],
@@ -1085,6 +1085,9 @@ export const showInfos = [
       "N.Fia 4기 인증 기간: 2025년 4월 18일(금) 14:00 – 4월 22일(화) 23:59까지 [KST]",
       "N.Fia 4기 선예매 기간: 2025년 4월 21일(월) 20:00 – 4월 22일(화) 23:59까지 [KST]",
       "일반 예매 오픈 : 2025년 4월 23일(수) 20:00 [KST]",
+      "7월 4일(금) 공연 추가 회차 오픈 공지 : 2025.05.15",
+      "추가회차 선예매: 2025년 5월 26일 (월) 20:00- 5월 28일(수) 23:59까지 [KST]",
+      "추가회차 일반예매: 2025년 5월 29일 (목) 20:00",
     ],
     capacity: "2,847석",
     seats: [
@@ -1221,10 +1224,17 @@ export const showInfos = [
       "",
     ],
     setlist: [
-      "",
+      "Monster",
+      "Firefly",
+      "Blue Moon",
+      "아 진짜요. (Oh really.)",
+      "4242",
+      "ANYWAY",
+      "옥탑방 (Rooftop)",
+      "Sunset - 앵콜",
     ],
     ootd: [
-      "",
+      "/image/show_detail/ootd/2025/250515_KYUNG_HEE_UNIVERSITY_FESTIVAL_OOTD.jpeg",
     ],
   },
   {
@@ -1277,28 +1287,130 @@ export const showInfos = [
       "",
     ],
     setlist: [
+      "Blue Moon",
+      "네가 내 마음에 자리 잡았다 (Into You)",
+      "옥탑방 (Rooftop)",
+      "피었습니다. (Into Bloom)",
+      "아 진짜요. (Oh really.)",
+      "Sunset",
+      "ANYWAY - 앵콜",
+      "Songbird (Korean Ver.) - 앵콜",
+      "4242 - 앵콜",
+    ],
+    ootd: [
+      "/image/show_detail/ootd/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL_OOTD.jpeg",
+    ],
+  },
+  {
+    id: 45,
+    name: "경인여자대학교 축제 - 청솔제",
+    address: "인천 계양구 계양산로 63 경인여자대학교",
+    note: [
+      "",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
       "",
     ],
     ootd: [
       "",
     ],
   },
-  // {
-  //   id: 45,
-  //   name: "경인여자대학교 축제 - 청솔제",
-  //   address: "인천 계양구 계양산로 63 경인여자대학교",
-  //   note: [
-  //     // "/image/show_detail/note/2025/",
-  //   ],
-  //   capacity: "",
-  //   seats: [
-  //     "",
-  //   ],
-  //   setlist: [
-  //     "",
-  //   ],
-  //   ootd: [
-  //     "",
-  //   ],
-  // },
+  {
+    id: 46,
+    name: "2025 가톨릭대학교 축제 - 아우름제",
+    address: "경기 부천시 원미구 지봉로 43 가톨릭대학교 성심교정",
+    note: [
+      "/image/show_detail/note/2025/250522_Catholic_University_Festival_LineUp.png",
+      "/image/show_detail/note/2025/250522_Catholic_University_Festival_TIME_TABLE.png",
+      "/image/show_detail/note/2025/250522_Catholic_University_Festival_Map.png",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 47,
+    name: "2025 광운대학교 축제 - AINES : 조각",
+    address: "서울 노원구 광운로 20",
+    note: [
+      "/image/show_detail/note/2025/250523_KWU_FESTIVAL_NF.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 48,
+    name: "2025 대구가톨릭대학교 축제 - BLUE MING",
+    address: "경북 경산시 하양읍 하양로 13-13",
+    note: [
+      "/image/show_detail/note/2025/250528_DAEGU_CATHOLIC_UNIVERSITY_NF.jpg",
+      "/image/show_detail/note/2025/250528_DAEGU_CATHOLIC_UNIVERSITY_TIME_TABLE.jpg",
+      "/image/show_detail/note/2025/250528_DAEGU_CATHOLIC_UNIVERSITY_MAP.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 49,
+    name: "2025 전주대학교 축제 - TripLog: 청춘의 기록",
+    address: "전북 전주시 완산구 천잠로 303",
+    note: [
+      "/image/show_detail/note/2025/250529_JEONJU_UNIVERSITY_FESTIVAL_NF.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 50,
+    name: "BMW M FEST 2025.",
+    address: "인천 중구 공항동로 136 BMW 드라이빙 센터",
+    note: [
+      "BMW M FEST 2025 입장권 - 10,000원",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];

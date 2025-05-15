@@ -958,8 +958,8 @@ export const showInfosEng = [
       "6/14(Sat) - N.Flying @Cafe Blossom House(KSPO DOME)",
       "6/13(Fri) - AxMxP with Seung-hyub & Dong-sung of N.Flying",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_NF.jpg",
-      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Final_LineUp.jpg",
       "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_Stage_Sat_Final.jpg",
+      "/image/show_detail/note/2025/250614_Beautiful_Mint_Life_2025_TIME_TABLE.jpg",
     ],
     capacity: "",
     seats: [],
@@ -1120,6 +1120,9 @@ export const showInfosEng = [
       "N.Fia 4th Membership Verification Period: April 18, 2025 (Fri) 14:00 – April 22, 2025 (Tue) 23:59 [KST].",
       "N.Fia 4th Presale Period: April 21, 2025 (Mon) 20:00 – April 22, 2025 (Tue) 23:59 [KST].",
       "General Ticket Sale Opens : April 23, 2025 (Wed) 20:00 [KST]",
+      "Additional Show on July 4 (Fri) – Announcement of Ticket Opening : 2025.05.15",
+      "Additional Show Fan Club Presale: May 26, 2025 (Mon) 20:00 – May 28, 2025 (Wed) 23:59 [KST]",
+      "Additional Show General Ticket Sale: May 29, 2025 (Thu) 20:00 [KST]",
     ],
     capacity: "2,847 seats",
     seats: [
@@ -1256,10 +1259,17 @@ export const showInfosEng = [
       "",
     ],
     setlist: [
-      "",
+      "Monster",
+      "Firefly",
+      "Blue Moon",
+      "아 진짜요. (Oh really.)",
+      "4242",
+      "ANYWAY",
+      "옥탑방 (Rooftop)",
+      "Sunset - Encore",
     ],
     ootd: [
-      "",
+      "/image/show_detail/ootd/2025/250515_KYUNG_HEE_UNIVERSITY_FESTIVAL_OOTD.jpeg",
     ],
   },
   {
@@ -1312,28 +1322,130 @@ export const showInfosEng = [
       "",
     ],
     setlist: [
+      "Blue Moon",
+      "네가 내 마음에 자리 잡았다 (Into You)",
+      "옥탑방 (Rooftop)",
+      "피었습니다. (Into Bloom)",
+      "아 진짜요. (Oh really.)",
+      "Sunset",
+      "ANYWAY - Encore",
+      "Songbird (Korean Ver.) - Encore",
+      "4242 - Encore",
+    ],
+    ootd: [
+      "/image/show_detail/ootd/2025/250514_DANKOOK_UNIVERSITY_FESTIVAL_OOTD.jpeg",
+    ],
+  },
+  {
+    id: 45,
+    name: "KYUNG-IN WOMEN'S UNIVERSITY FESTIVAL",
+    address: "63, Gyeyangsan-ro, Gyeyang-gu, Incheon, South Korea",
+    note: [
+      "",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
       "",
     ],
     ootd: [
       "",
     ],
   },
-  // {
-  //   id: 45,
-  //   name: "KYUNG-IN WOMEN'S UNIVERSITY FESTIVAL",
-  //   address: "63, Gyeyangsan-ro, Gyeyang-gu, Incheon, South Korea",
-  //   note: [
-  //     // "/image/show_detail/note/2025/",
-  //   ],
-  //   capacity: "",
-  //   seats: [
-  //     "",
-  //   ],
-  //   setlist: [
-  //     "",
-  //   ],
-  //   ootd: [
-  //     "",
-  //   ],
-  // },
+  {
+    id: 46,
+    name: "CATHOLIC_UNIVERSITY_FESTIVAL - AUREUM FESTIVAL",
+    address: "43, Jibong-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, South Korea",
+    note: [
+      "/image/show_detail/note/2025/250522_Catholic_University_Festival_LineUp.png",
+      "/image/show_detail/note/2025/250522_Catholic_University_Festival_TIME_TABLE.png",
+      "/image/show_detail/note/2025/250522_Catholic_University_Festival_Map.png",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 47,
+    name: "2025 KWANGWOON UNIVERSITY FESTIVAL - AINES: PIECE",
+    address: "20, Gwangun-ro, Nowon-gu, Seoul, South Korea",
+    note: [
+      "/image/show_detail/note/2025/250523_KWU_FESTIVAL_NF.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 48,
+    name: "2025 DAEGU CATHOLIC UNIVERSITY FESTIVAL - BLUE MING",
+    address: "13-13, Hayang-ro, Hayang-eup, Gyeongsan-si, Gyeongsangbuk-do, South Korea",
+    note: [
+      "/image/show_detail/note/2025/250528_DAEGU_CATHOLIC_UNIVERSITY_NF.jpg",
+      "/image/show_detail/note/2025/250528_DAEGU_CATHOLIC_UNIVERSITY_TIME_TABLE.jpg",
+      "/image/show_detail/note/2025/250528_DAEGU_CATHOLIC_UNIVERSITY_MAP.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 49,
+    name: "2025 JEONJU UNIVERSITY FESTIVAL - TripLog: Record of Youth",
+    address: "303, Cheonjam-ro, Wansan-gu, Jeonju-si, Jeonbuk-do, South Korea",
+    note: [
+      "/image/show_detail/note/2025/250529_JEONJU_UNIVERSITY_FESTIVAL_NF.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 50,
+    name: "BMW M FEST 2025.",
+    address: "136, Gonghangdong-ro, Jung-gu, Incheon, South Korea",
+    note: [
+      "BMW M FEST 2025 Admission - ₩10,000",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];
