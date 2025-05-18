@@ -1138,10 +1138,19 @@ export const showInfos = [
       "/image/show_detail/seats/2025/250517_ISEGYE_FESTIVAL SEOUL_2025.png",
     ],
     setlist: [
-      "",
+      "Monster",
+      "Songbird",
+      "Star",
+      "Blue Moon",
+      "옥탑방(Rooftop)",
+      "아 진짜요.(Oh really.)",
+      "4242",
+      "The World Is Mine",
+      "Sunset",
+      "Flashback",
     ],
     ootd: [
-      "",
+      "", // todo
     ],
   },
   {
@@ -1401,6 +1410,61 @@ export const showInfos = [
     address: "인천 중구 공항동로 136 BMW 드라이빙 센터",
     note: [
       "BMW M FEST 2025 입장권 - 10,000원",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 51,
+    name: "2025년 울산대학교 축제 - 설렘은 봄처럼, 열정은 여름처럼",
+    address: "울산광역시 남구 대학로 93 울산대학교",
+    note: [
+      "/image/show_detail/note/2025/250523_ULSAN_UNIVERSITY_FESTIVAL_NF.jpg",
+      "/image/show_detail/note/2025/250523_ULSAN_UNIVERSITY_FESTIVAL_TIME_TABLE.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 52,
+    name: "2025 MyK FESTA",
+    address: "서울특별시 송파구 올림픽로 424",
+    note: [
+      "",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 53,
+    name: "2025 청강대학교 축제 - 청강 대축제 '피어날'",
+    address: "경기도 이천시 마장면 청강가창로 389-94",
+    note: [
+      "",
     ],
     capacity: "",
     seats: [

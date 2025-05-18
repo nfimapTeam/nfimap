@@ -423,4 +423,394 @@ export const globalShowInfosEng = [
       "",
     ],
   },
+  {
+    id: 1012,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - MACAU",
+    address:
+        "Broadway Theatre, Broadway Macau, Estrada do Istmo, Cotai, Macau",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1013,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - OSAKA",
+    address:
+        "Zepp Namba 2 Chome-1-39 Shikitsuhigashi, Naniwa Ward, Osaka, 556-0012 Japan",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1014,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - TOKYO",
+    address:
+        "TACHIKAWA STAGE GARDEN Ｎ１, 3-3 Midoricho, Tachikawa, Tokyo 190-0014 Japan",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1015,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - NEW YORK",
+    address:
+        "Palladium Times Square 1515 Broadway, New York, NY 10036 United States",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1016,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - ATLANTA",
+    address:
+        "Center Stage Theater 1374 W Peachtree St NW, Atlanta, GA 30309 United States",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1017,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - CHICAGO",
+    address:
+        "The Riviera Theatre 4746 N Racine Ave, Chicago, IL 60640 United States",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1018,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - DALLAS",
+    address:
+        "House of Blues Dallas 2200 N Lamar St, Dallas, TX 75202 United States",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1019,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - LOS ANGELES",
+    address:
+        "Wilshire Ebell Theatre 4401 W 8th St, Los Angeles, CA 90005 United States",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1020,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - SAN FRANCISCO",
+    address:
+        "Palace of Fine Arts 3601 Lyon St, San Francisco, CA 94123 United States",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1021,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - SEATTLE",
+    address:
+        "Showbox SoDo 1700 1st Ave S, Seattle, WA 98134 United States",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1022,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - HONG KONG",
+    address:
+        "MacPherson Stadium 38號 Nelson St, Mong Kok, Hong Kong",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1023,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - MELBOURNE",
+    address:
+        "Palais Theatre Lower Esplanade, St Kilda VIC 3182 Australia",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1024,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - SYDNEY",
+    address:
+        "Enmore Theatre 118-132 Enmore Rd, Newtown NSW 2042 Australia",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1025,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - LONDON",
+    address:
+        "Indigo at The O₂ 205 Peninsula Square, London SE10 0ES United Kingdom",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1026,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - PARIS",
+    address:
+        "Salle Pleyel 252 Rue du Faubourg Saint-Honoré, 75008 Paris, France",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1027,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - TILBURG",
+    address:
+        "", // todo
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1028,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - FRANKFURT",
+    address:
+        "Batschkapp Gwinnerstraße 5, 60388 Frankfurt am Main, Germany",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1029,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - BARCELONA",
+    address:
+        "Sala Razzmatazz, Carrer dels Almogàvers 122, 08018 Barcelona, Spain",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1030,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - HELSINKI",
+    address:
+        "House of Culture, Sturenkatu 4, 00510 Helsinki, Finland",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1031,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - WARSAW",
+    address:
+        "Progresja Fort Wola 22, 01-258 Warszawa, Poland",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1032,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - KAOHSIUNG",
+    address:
+        "Kaohsiung Music Center, No. 1, Zhen'ai Road, Yancheng District, Kaohsiung City 803003, Taiwan",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1033,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - SINGAPORE",
+    address:
+        "The Theatre at Mediacorp, 1 Stars Avenue, Singapore 138507, Singapore",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1034,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - MEXICO CITY",
+    address:
+        "",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1035,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - SANTIAGO",
+    address:
+        "",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1036,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - SÃO PAULO",
+    address:
+        "",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 1037,
+    name: "2025 N.Flying LIVE WORLD TOUR '&CON4 : FULL CIRCLE' - TAIPEI",
+    address:
+        "TICC No. 1, Section 5, Xinyi Rd, Xinyi District, Taipei City, TAIPEI 110",
+    note: [""],
+    capacity: "",
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];

@@ -872,4 +872,53 @@ export const concertsDataEng = [
     lat: "37.4623830994969",
     lng: "126.485449864857",
   },
+  {
+    id: 51,
+    name: "2025 'S/S' UNIVERSITY OF ULSAN FESTIVAL",
+    location: "Ulsan University",
+    date: ["2025-05-26(Mon)"],
+    startTime: "21:00",
+    durationMinutes: 0, // todo 확인 필요
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying"],
+    poster: "/image/show/2025/250523_ULSAN_UNIVERSITY_FESTIVAL.jpg",
+    ticketOpen: { date: "2025-05-26", time: "21:00" },
+    ticketLink: "https://www.instagram.com/p/DJtGSsohz7k/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    lat: "35.54379039502877",
+    lng: "129.25697693198597",
+  },
+  {
+    id: 52,
+    name: "2025 MyK FESTA",
+    location: "KSPO DOME, Olympic Handball Gymnasium",
+    date: ["2025-06-19(Thu)"],
+    startTime: "00:00", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying"], // todo 확인 필요
+    poster: "/image/show/2025/250619_My_K_FESTA.jpg",
+    ticketOpen: { date: "2025-06-19", time: "00:00" }, // todo 확인 필요
+    ticketLink: "https://mykfesta.com/kor/program/live.php",  // todo 확인 필요
+    lat: "37.5193130678592", // todo 확인 필요
+    lng: "127.12737452683746", // todo 확인 필요
+  },
+  {
+    id: 53,
+    name: "2025 CHUNGKANG COLLEGE FESTIVAL",
+    location: "ChungKang College of Cultural Industries",
+    date: ["2025-05-22(Wed)"],
+    startTime: "00:00", // todo 확인 필요
+    durationMinutes: 0, // todo 확인 필요
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying"],  // todo 확인 필요
+    poster: "/image/show/2025/250522_ChungKang_College_Festival.png",
+    ticketOpen: { date: "2025-05-00", time: "00:00" },  // todo 확인 필요
+    ticketLink: "",  // todo 확인 필요
+    // https://cafe.naver.com/chungkangsa?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D24472798%2526articleid%3D34100%2526referrerAllArticles%3Dtrue
+    lat: "37.20521906388576",  // todo 확인 필요
+    lng: "127.35691137517532", // todo 확인 필요
+  },
 ];

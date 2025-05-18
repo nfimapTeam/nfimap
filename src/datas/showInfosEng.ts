@@ -1173,10 +1173,19 @@ export const showInfosEng = [
       "/image/show_detail/seats/2025/250517_ISEGYE_FESTIVAL SEOUL_2025.png",
     ],
     setlist: [
-      "",
+      "Monster",
+      "Songbird",
+      "Star",
+      "Blue Moon",
+      "옥탑방(Rooftop)",
+      "아 진짜요.(Oh really.)",
+      "4242",
+      "The World Is Mine",
+      "Sunset",
+      "Flashback",
     ],
     ootd: [
-      "",
+      "", // todo
     ],
   },
   {
@@ -1436,6 +1445,61 @@ export const showInfosEng = [
     address: "136, Gonghangdong-ro, Jung-gu, Incheon, South Korea",
     note: [
       "BMW M FEST 2025 Admission - ₩10,000",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 51,
+    name: "2025 'S/S' UNIVERSITY OF ULSAN FESTIVAL",
+    address: "93, Daehak-ro, Nam-gu, Ulsan, South Korea",
+    note: [
+      "/image/show_detail/note/2025/250523_ULSAN_UNIVERSITY_FESTIVAL_NF.jpg",
+      "/image/show_detail/note/2025/250523_ULSAN_UNIVERSITY_FESTIVAL_TIME_TABLE.jpg",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 52,
+    name: "2025 MyK FESTA",
+    address: "424, Olympic-ro, Songpa-gu, Seoul, South Korea",
+    note: [
+      "",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
+  {
+    id: 53,
+    name: "2025 CHUNGKANG COLLEGE FESTIVAL",
+    address: "389-94, Cheongganggachang-ro, Majang-myeon, Icheon-si, Gyeonggi-do, South Korea",
+    note: [
+      "",
     ],
     capacity: "",
     seats: [
