@@ -1350,7 +1350,7 @@ export const showInfosEng = [
     name: "KYUNG-IN WOMEN'S UNIVERSITY FESTIVAL",
     address: "63, Gyeyangsan-ro, Gyeyang-gu, Incheon, South Korea",
     note: [
-      "",
+      "/image/show_detail/note/2025/250521_KYUNG-IN_WOMEN'S_UNIVERSITY_FESTIVAL_TIME_TABLE.jpg",
     ],
     capacity: "",
     seats: [
@@ -1389,6 +1389,7 @@ export const showInfosEng = [
     address: "20, Gwangun-ro, Nowon-gu, Seoul, South Korea",
     note: [
       "/image/show_detail/note/2025/250523_KWU_FESTIVAL_NF.jpg",
+      "/image/show_detail/note/2025/250523_KWU_FESTIVAL_TIME_TABLE.jpg",
     ],
     capacity: "",
     seats: [
@@ -1499,7 +1500,8 @@ export const showInfosEng = [
     name: "2025 CHUNGKANG COLLEGE FESTIVAL",
     address: "389-94, Cheongganggachang-ro, Majang-myeon, Icheon-si, Gyeonggi-do, South Korea",
     note: [
-      "",
+      "/image/show_detail/note/2025/250522_ChungKang_College_Festival_NF.png",
+      "/image/show_detail/note/2025/250522_ChungKang_College_Festival_TIME_TABLE.png",
     ],
     capacity: "",
     seats: [

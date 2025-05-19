@@ -781,8 +781,8 @@ export const concertsDataEng = [
     name: "KYUNG-IN WOMEN'S UNIVERSITY FESTIVAL",
     location: "Kyung-In Women's University",
     date: ["2025-05-21(Wed)"],
-    startTime: "18:30", // todo 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    startTime: "21:30",
+    durationMinutes: 30,
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "Ampersand", "Billie", "pH-1", "..."],
@@ -811,25 +811,25 @@ export const concertsDataEng = [
   {
     id: 47,
     name: "2025 KWANGWOON UNIVERSITY FESTIVAL - AINES: PIECE",
-    location: "Kwangwoon University", // todo
+    location: "Kwangwoon University",
     date: ["2025-05-23(Fri)"],
-    startTime: "00:00", // todo 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    startTime: "20:10",
+    durationMinutes: 60,
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "10CM", "YdBB"],
     poster: "/image/show/2025/250523_KWU_FESTIVAL.jpg",
-    ticketOpen: { date: "2025-05-23", time: "00:00" }, // todo 시간 확인 필요
+    ticketOpen: { date: "2025-05-23", time: "20:10" },
     ticketLink: "https://www.instagram.com/p/DJoguXdSDYI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    lat: "37.619379129478", // todo
-    lng: "127.058263354527", // todo
+    lat: "37.620229129478",
+    lng: "127.060363354527",
   },
   {
     id: 48,
     name: "2025 DAEGU CATHOLIC UNIVERSITY FESTIVAL - BLUE MING",
     location: "Daegu Catholic University",
     date: ["2025-05-28 (Wed)"],
-    startTime: "21:05", // todo 확인 필요
+    startTime: "00:00", // todo 확인 필요
     durationMinutes: 0, // todo 확인 필요
     type: "Event",
     performanceType: "Guest",
@@ -909,16 +909,15 @@ export const concertsDataEng = [
     name: "2025 CHUNGKANG COLLEGE FESTIVAL",
     location: "ChungKang College of Cultural Industries",
     date: ["2025-05-22(Wed)"],
-    startTime: "00:00", // todo 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    startTime: "19:00",
+    durationMinutes: 30,
     type: "Event",
     performanceType: "Guest",
-    artists: ["N.Flying"],  // todo 확인 필요
+    artists: ["N.Flying", "JAURIM", "Ampersand"],
     poster: "/image/show/2025/250522_ChungKang_College_Festival.png",
-    ticketOpen: { date: "2025-05-00", time: "00:00" },  // todo 확인 필요
-    ticketLink: "",  // todo 확인 필요
-    // https://cafe.naver.com/chungkangsa?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D24472798%2526articleid%3D34100%2526referrerAllArticles%3Dtrue
-    lat: "37.20521906388576",  // todo 확인 필요
-    lng: "127.35691137517532", // todo 확인 필요
+    ticketOpen: { date: "2025-05-22", time: "19:00" },
+    ticketLink: "https://cafe.naver.com/chungkangsa?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D24472798%2526articleid%3D34103%2526referrerAllArticles%3Dtrue",
+    lat: "37.20521906388576",
+    lng: "127.35691137517532",
   },
 ];

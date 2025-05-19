@@ -774,8 +774,8 @@ export const concertsData = [
     name: "경인여자대학교 축제 - 청솔제",
     location: "경인여자대학교 잔디광장",
     date: ["2025-05-21(수)"],
-    startTime: "18:30", // todo 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    startTime: "21:30",
+    durationMinutes: 30,
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "앰퍼샌드원", "Billie", "pH-1"],
@@ -804,18 +804,18 @@ export const concertsData = [
   {
     id: 47,
     name: "2025 광운대학교 축제 - AINES : 조각",
-    location: "광운대학교", // todo
+    location: "광운대학교 노천극장",
     date: ["2025-05-23(금)"],
-    startTime: "00:00", // todo 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    startTime: "20:10",
+    durationMinutes: 60,
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "10CM", "YdBB"],
     poster: "/image/show/2025/250523_KWU_FESTIVAL.jpg",
-    ticketOpen: { date: "2025-05-23", time: "00:00" }, // todo 시간 확인 필요
+    ticketOpen: { date: "2025-05-23", time: "20:10" },
     ticketLink: "https://www.instagram.com/p/DJoguXdSDYI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    lat: "37.619379129478", // todo
-    lng: "127.058263354527", // todo
+    lat: "37.620229129478",
+    lng: "127.060363354527",
   },
   {
     id: 48,
@@ -902,16 +902,15 @@ export const concertsData = [
     name: "2025 청강대학교 축제 - 청강 대축제 '피어날'",
     location: "청강문화산업대학교",
     date: ["2025-05-22(수)"],
-    startTime: "00:00", // todo 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    startTime: "19:00",
+    durationMinutes: 30,
     type: "행사",
     performanceType: "출연",
-    artists: ["N.Flying"],  // todo 확인 필요
+    artists: ["N.Flying", "자우림", "앰퍼샌드원"],
     poster: "/image/show/2025/250522_ChungKang_College_Festival.png",
-    ticketOpen: { date: "2025-05-00", time: "00:00" },  // todo 확인 필요
-    ticketLink: "",  // todo 확인 필요
-    // https://cafe.naver.com/chungkangsa?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D24472798%2526articleid%3D34100%2526referrerAllArticles%3Dtrue
-    lat: "37.20521906388576",  // todo 확인 필요
-    lng: "127.35691137517532", // todo 확인 필요
+    ticketOpen: { date: "2025-05-22", time: "19:00" },
+    ticketLink: "https://cafe.naver.com/chungkangsa?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D24472798%2526articleid%3D34103%2526referrerAllArticles%3Dtrue",
+    lat: "37.20521906388576",
+    lng: "127.35691137517532",
   },
 ];

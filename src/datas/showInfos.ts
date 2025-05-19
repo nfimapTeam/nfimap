@@ -1315,7 +1315,7 @@ export const showInfos = [
     name: "경인여자대학교 축제 - 청솔제",
     address: "인천 계양구 계양산로 63 경인여자대학교",
     note: [
-      "",
+      "/image/show_detail/note/2025/250521_KYUNG-IN_WOMEN'S_UNIVERSITY_FESTIVAL_TIME_TABLE.jpg",
     ],
     capacity: "",
     seats: [
@@ -1354,6 +1354,7 @@ export const showInfos = [
     address: "서울 노원구 광운로 20",
     note: [
       "/image/show_detail/note/2025/250523_KWU_FESTIVAL_NF.jpg",
+      "/image/show_detail/note/2025/250523_KWU_FESTIVAL_TIME_TABLE.jpg",
     ],
     capacity: "",
     seats: [
@@ -1464,7 +1465,8 @@ export const showInfos = [
     name: "2025 청강대학교 축제 - 청강 대축제 '피어날'",
     address: "경기도 이천시 마장면 청강가창로 389-94",
     note: [
-      "",
+      "/image/show_detail/note/2025/250522_ChungKang_College_Festival_NF.png",
+      "/image/show_detail/note/2025/250522_ChungKang_College_Festival_TIME_TABLE.png",
     ],
     capacity: "",
     seats: [
