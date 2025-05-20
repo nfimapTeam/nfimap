@@ -1514,4 +1514,23 @@ export const showInfosEng = [
       "",
     ],
   },
+  {
+    id: 54,
+    name: "N.Flying Special Live 'Everlasting'",
+    address: "173, Wolgye-ro, Gangbuk-gu, Seoul, South Korea",
+    note: [
+      "You can attend the event without registering your name in advance.",
+      "Registration is only required for those who wish to sit in the designated seating area.",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];

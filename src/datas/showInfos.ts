@@ -1479,4 +1479,23 @@ export const showInfos = [
       "",
     ],
   },
+  {
+    id: 54,
+    name: "N.Flying Special Live 'Everlasting'",
+    address: "서울 강북구 월계로 173 창포원",
+    note: [
+      "해당 행사는 명단 신청을 하지 않고 오셔도 관람 가능.",
+      "명단 신청은 착석 구역에 착석을 희망하시는 분들만 신청.",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];

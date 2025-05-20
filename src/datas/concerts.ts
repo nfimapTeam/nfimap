@@ -913,4 +913,20 @@ export const concertsData = [
     lat: "37.20521906388576",
     lng: "127.35691137517532",
   },
+  {
+    id: 54,
+    name: "N.Flying Special Live 'Everlasting'",
+    location: "북서울꿈의숲 창포원",
+    date: ["2025-06-01(일)"],
+    startTime: "17:00",
+    durationMinutes: 0, // todo
+    type: "공연",
+    performanceType: "단독",
+    artists: ["N.Flying"],
+    poster: "/image/show/2025/250601_NFlying_Special_Live_Everlasting.jpeg",
+    ticketOpen: { date: "2025-05-21", time: "19:00" },
+    ticketLink: "https://cafe.daum.net/N.Flying/Wkpq/575",
+    lat: "37.6222664651195",
+    lng: "127.03974804816869",
+  },
 ];
