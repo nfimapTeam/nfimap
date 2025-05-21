@@ -1185,7 +1185,7 @@ export const showInfosEng = [
       "Flashback",
     ],
     ootd: [
-      "", // todo
+      "image/show_detail/ootd/2025/250517_ISEGYE_FESTIVAL SEOUL_2025_OOTD.png",
     ],
   },
   {
@@ -1357,10 +1357,19 @@ export const showInfosEng = [
       "",
     ],
     setlist: [
-      "",
+      "Star",
+      "피었습니다. (Into Bloom)",
+      "Blue Moon",
+      "아 진짜요. (Oh really.)",
+      "Sunset",
+      "옥탑방 (Rooftop)",
+      "4242 - Encore",
+      "ANYWAY - Encore",
+      "Songbird - Encore",
     ],
     ootd: [
-      "",
+      "image/show_detail/ootd/2025/250521_KYUNG-IN_WOMEN'S_UNIV_FESTIVAL_OOTD_01.png",
+      "image/show_detail/ootd/2025/250521_KYUNG-IN_WOMEN'S_UNIV_FESTIVAL_OOTD_02.png",
     ],
   },
   {
@@ -1428,6 +1437,7 @@ export const showInfosEng = [
     address: "303, Cheonjam-ro, Wansan-gu, Jeonju-si, Jeonbuk-do, South Korea",
     note: [
       "/image/show_detail/note/2025/250529_JEONJU_UNIVERSITY_FESTIVAL_NF.jpg",
+      "/image/show_detail/note/2025/250529_JEONJU_UNIVERSITY_FESTIVAL_TIME_TABLE.jpg",
     ],
     capacity: "",
     seats: [
