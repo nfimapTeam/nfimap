@@ -797,8 +797,8 @@ export const concertsDataEng = [
     name: "CATHOLIC_UNIVERSITY_FESTIVAL - AUREUM FESTIVAL",
     location: "Catholic University",
     date: ["2025-05-22(Thu)"],
-    startTime: "00:00", // todo 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    startTime: "21:40",
+    durationMinutes: 45,
     type: "Event",
     performanceType: "Guest",
     artists: ["N.Flying", "Crush"],
@@ -893,14 +893,14 @@ export const concertsDataEng = [
     name: "2025 MyK FESTA",
     location: "KSPO DOME, Olympic Handball Gymnasium",
     date: ["2025-06-19(Thu)"],
-    startTime: "00:00", // todo 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    startTime: "18:30", // todo 확인 필요
+    durationMinutes: 240, // todo 확인 필요
     type: "Event",
     performanceType: "Guest",
-    artists: ["N.Flying"], // todo 확인 필요
+    artists: ["N.Flying", "WayV", "Lee Young Ji", "aespa", "ILLIT", "Hearts2Hearts", "NEWBEAT", "AHOF"], // todo 확인 필요
     poster: "/image/show/2025/250619_My_K_FESTA.jpg",
     ticketOpen: { date: "2025-06-19", time: "00:00" }, // todo 확인 필요
-    ticketLink: "https://mykfesta.com/kor/program/live.php",  // todo 확인 필요
+    ticketLink: "https://x.com/myk_festa",
     lat: "37.5193130678592", // todo 확인 필요
     lng: "127.12737452683746", // todo 확인 필요
   },
@@ -936,4 +936,20 @@ export const concertsDataEng = [
     lat: "37.6222664651195",
     lng: "127.03974804816869",
   },
+  /*{
+    id: 55,
+    name: "2025 KONGJU NATIONAL UNIVERSITY FESTIVAL - Princess WonderLand", // todo
+    location: "KONGJU NATIONAL UNIVERSITY",
+    date: ["2025-06-04(Wed)"],
+    startTime: "00:00", // todo
+    durationMinutes: 0, // todo
+    type: "Event",
+    performanceType: "Guest",
+    artists: ["N.Flying", "..."],
+    poster: "/image/show/2025/", // todo
+    ticketOpen: { date: "2025-06-04", time: "00:00" },
+    ticketLink: "https://www.instagram.com/knu_episode56/",
+    lat: "36.468671605450645",
+    lng: "127.13895334665185",
+  },*/
 ];

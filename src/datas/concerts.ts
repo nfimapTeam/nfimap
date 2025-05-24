@@ -790,8 +790,8 @@ export const concertsData = [
     name: "2025 가톨릭대학교 축제 - 아우름제",
     location: "가톨릭대학교 성심교정 대운동장",
     date: ["2025-05-22(목)"],
-    startTime: "00:00", // todo 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    startTime: "21:40",
+    durationMinutes: 45,
     type: "행사",
     performanceType: "출연",
     artists: ["N.Flying", "크러쉬"],
@@ -886,14 +886,14 @@ export const concertsData = [
     name: "2025 MyK FESTA",
     location: "KSPO DOME, 핸드볼경기장",
     date: ["2025-06-19(목)"],
-    startTime: "00:00", // todo 확인 필요
-    durationMinutes: 0, // todo 확인 필요
+    startTime: "18:30", // todo 확인 필요
+    durationMinutes: 240, // todo 확인 필요
     type: "행사",
     performanceType: "출연",
-    artists: ["N.Flying"], // todo 확인 필요
+    artists: ["N.Flying", "웨이션브이", "이영지", "에스파", "아일릿", "하츠투하츠", "뉴비트", "아홉",], // todo 확인 필요
     poster: "/image/show/2025/250619_My_K_FESTA.jpg",
     ticketOpen: { date: "2025-06-19", time: "00:00" }, // todo 확인 필요
-    ticketLink: "https://mykfesta.com/kor/program/live.php",  // todo 확인 필요
+    ticketLink: "https://x.com/myk_festa",
     lat: "37.5193130678592", // todo 확인 필요
     lng: "127.12737452683746", // todo 확인 필요
   },
@@ -929,4 +929,20 @@ export const concertsData = [
     lat: "37.6222664651195",
     lng: "127.03974804816869",
   },
+  /*{
+    id: 55,
+    name: "2025 국립공주대학교 축제 - Princess WonderLand", // todo
+    location: "국립공주대학교",
+    date: ["2025-06-04(수)"],
+    startTime: "00:00", // todo
+    durationMinutes: 0, // todo
+    type: "행사",
+    performanceType: "출연",
+    artists: ["N.Flying", "..."],
+    poster: "/image/show/2025/", // todo
+    ticketOpen: { date: "2025-06-04", time: "00:00" },
+    ticketLink: "https://www.instagram.com/knu_episode56/",
+    lat: "36.468671605450645",
+    lng: "127.13895334665185",
+  },*/
 ];

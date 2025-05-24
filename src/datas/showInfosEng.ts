@@ -1248,8 +1248,8 @@ export const showInfosEng = [
       "Star",
       "4242",
       "Sunset",
-      "아 진짜요. (Oh really.)",
-      "ANYWAY",
+      "아 진짜요. (Oh really.) - Encore",
+      "ANYWAY - Encore",
     ],
     ootd: [
       "image/show_detail/ootd/2025/250507_INCHEON_NAT'L_UNIVERSITY_FESTIVAL_OOTD.jpeg",
@@ -1492,7 +1492,9 @@ export const showInfosEng = [
     name: "2025 MyK FESTA",
     address: "424, Olympic-ro, Songpa-gu, Seoul, South Korea",
     note: [
-      "",
+      "/image/show_detail/note/2025/250619_My_K_FESTA_NF.jpg",
+      "/image/show_detail/note/2025/250619_My_K_FESTA_3rd_LineUp.jpeg",
+      "This performance is open only to those who have made advance",
     ],
     capacity: "",
     seats: [
@@ -1543,4 +1545,22 @@ export const showInfosEng = [
       "",
     ],
   },
+  /*{
+    id: 55,
+    name: "2025 KONGJU NATIONAL UNIVERSITY FESTIVAL - Princess WonderLand", // todo
+    address: "56, Gongjudaehak-ro, Gongju-si, Chungcheongnam-do, South Korea",
+    note: [
+      "",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },*/
 ];

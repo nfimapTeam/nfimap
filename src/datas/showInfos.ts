@@ -1213,8 +1213,8 @@ export const showInfos = [
       "Star",
       "4242",
       "Sunset",
-      "아 진짜요. (Oh really.)",
-      "ANYWAY",
+      "아 진짜요. (Oh really.) - 앵콜",
+      "ANYWAY - 앵콜",
     ],
     ootd: [
       "image/show_detail/ootd/2025/250507_INCHEON_NAT'L_UNIVERSITY_FESTIVAL_OOTD.jpeg",
@@ -1457,7 +1457,9 @@ export const showInfos = [
     name: "2025 MyK FESTA",
     address: "서울특별시 송파구 올림픽로 424",
     note: [
-      "",
+      "/image/show_detail/note/2025/250619_My_K_FESTA_NF.jpg",
+      "/image/show_detail/note/2025/250619_My_K_FESTA_3rd_LineUp.jpeg",
+      "본 공연은 사전 예매자 및 이벤트 당첨자에 한해 관람 가능",
     ],
     capacity: "",
     seats: [
@@ -1508,4 +1510,22 @@ export const showInfos = [
       "",
     ],
   },
+  /*{
+    id: 55,
+    name: "2025 국립공주대학교 축제 - Princess WonderLand", // todo
+    address: "충남 공주시 공주대학로 56",
+    note: [
+      "",
+    ],
+    capacity: "",
+    seats: [
+      "",
+    ],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },*/
 ];

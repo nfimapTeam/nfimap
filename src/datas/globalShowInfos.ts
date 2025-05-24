@@ -814,4 +814,19 @@ export const globalShowInfos = [
       "",
     ],
   },
+  {
+    id: 1038,
+    name: "2025 FNC KINGDOM 10TH ANNIVERSARY - AMAZING WONDERLAND",
+    address:
+        "PIA ARENA MM 3 Chome-2-2 Minatomirai, Nishi Ward, Yokohama, Kanagawa 220-0012 Japan",
+    note: [""], // todo
+    capacity: "", // todo
+    seats: [""],
+    setlist: [
+      "",
+    ],
+    ootd: [
+      "",
+    ],
+  },
 ];

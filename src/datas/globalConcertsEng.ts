@@ -607,4 +607,20 @@ export const globalConcertsEng = [
         lat: "25.0335925",
         lng: "121.5609091",
     },
+    {
+        id: 1038,
+        name: "2025 FNC KINGDOM 10TH ANNIVERSARY - AMAZING WONDERLAND",
+        location: "PIA ARENA MM",
+        date: ["2025-12-13(Sat)", "2025-12-14(Sun)"],
+        startTime: "Sat 16:00, Sun 15:00", // todo
+        durationMinutes: 0, // todo
+        type: "Concert",
+        performanceType: "Guest",
+        artists: ["N.Flying", "FTISLAND", "CNBLUE", "..."],
+        poster: "/image/show/world/2025/251213-251214_2025_FNC_KINGDOM_10TH_ANNIVERSARY - AMAZING_WONDERLAND.jpeg", // todo
+        ticketOpen: { date: "2025-06-09", time: "18:00" }, // todo
+        ticketLink: "https://www.fnckingdom.jp/single-post/250523", // todo
+        lat: "35.4558831",
+        lng: "139.6287427",
+    },
 ];
