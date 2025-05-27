@@ -57,7 +57,7 @@ export const nfiRoadDataEng = [
         lat: "37.4948475341971",
         lng: "127.030367339339",
         naverLink: "https://maps.app.goo.gl/8p8d33ZgM6HAhyebA",
-        note : "Visited by 2IDIOTS"
+        note : "The steamed monkfish restaurant visited by Seunghyub"
     },
     {
         id: 7,
@@ -218,7 +218,7 @@ export const nfiRoadDataEng = [
         lat: "35.1622100514759",
         lng: "129.163126552708",
         naverLink: "https://maps..app.goo.gl/ZhKJYqZUK7XXaB5GA",
-        note : "The famous hotteok (Korean pancake) shop visited by Seunghyub and Hweseung."
+        note : "A famous hotteok (Korean pancake) shop visited by Seunghyub and Hweseung."
     },
     {
         id: 23,
@@ -228,7 +228,7 @@ export const nfiRoadDataEng = [
         lat: "37.5618364940379",
         lng: "126.924050688833",
         naverLink: "https://maps.app.goo.gl/q5DCXSo9Y2tgTCyd8",
-        note : "The restaurant that Seunghyub has been visiting since his trainee days."
+        note : "A restaurant that Seunghyub has been visiting since his trainee days."
     },
     {
         id: 24,
@@ -238,7 +238,7 @@ export const nfiRoadDataEng = [
         lat: "37.5376693827344",
         lng: "127.053399481711",
         naverLink: "https://maps.app.goo.gl/f8apCDEvW2fcDLeu6",
-        note : "The raw fish restaurant that N.Flying visited on the first snowy day."
+        note : "A raw fish restaurant that N.Flying visited on the first snowy day."
     },
     {
         id: 25,
@@ -259,115 +259,5 @@ export const nfiRoadDataEng = [
         lng: "127.054348975494",
         naverLink: "https://maps.app.goo.gl/sXjW9XP4v72vjZSdA",
         note : "The shabu-shabu restaurant where Dongsung had a meal with his father."
-    },
-    {
-        "id": 27,
-        "name": "Chupungnyeong Kal Samgyeopsal",
-        "location": "1F, 41, Dosan-daero 51-gil, Gangnam-gu, Seoul, South Korea",
-        "category": "Food",
-        "lat": "37.5259447243218",
-        "lng": "127.038100978755",
-        "naverLink": "https://maps.app.goo.gl/vufPx8z9nKpAFmhu6",
-        "note": "The restaurant that Seunghyub frequented."
-    },
-    {
-        "id": 28,
-        "name": "Saengsaeng Nakji BEXCO Branch",
-        "location": "101, Centum Makers Building, 29, Centum 2-ro, Haeundae-gu, Busan, South Korea",
-        "category": "Food",
-        "lat": "35.1666539973508",
-        "lng": "129.133204693814",
-        "naverLink": "https://maps.app.goo.gl/KfTx86oCxPX4dgks8",
-        "note": "The restaurant visited by N.Flying after the Busan concert."
-    },
-    {
-        "id": 29,
-        "name": "Surim Hoetjip",
-        "location": "1F, Building A, 15, Haeundaehaebyeon-ro 221beon-gil, Haeundae-gu, Busan, South Korea",
-        "category": "Food",
-        "lat": "35.1599145493419",
-        "lng": "129.156008091841",
-        "naverLink": "https://maps.app.goo.gl/sva93wKp8hEVGM5X9",
-        "note": "The restaurant where N.Flying ate mulhoe after the Busan concert."
-    },
-    {
-        id: 30,
-        name: "Chinese Traditional Cuisine Ling Ling",
-        location: "Chinese Traditional Cuisine Ling Ling Dosan-daero, Gangnam-gu, Seoul, South Korea",
-        category: "Food",
-        lat: "37.5248722572746",
-        lng: "127.050379366946",
-        naverLink: "https://maps.app.goo.gl/fK64R1q1W8SQiuxeA",
-        note : "The Chinese restaurant that Hweseung visited."
-    },
-    {
-        id: 31,
-        name: "MitBord Seoul",
-        location: "1F, 1, Seongsuil-ro, Seongdong-gu, Seoul, South Korea",
-        category: "Food",
-        lat: "37.5408654463888",
-        lng: "127.047850218608",
-        naverLink: "https://maps.app.goo.gl/4hLCvXwwsxRwGHey8",
-        note : "2025.03.08 Seunghyub's Instagram"
-    },
-    {
-        id: 32,
-        name: "Seobook Myeonok",
-        location: "Seobook Myeonok, 199-1, Jayang-ro, Gwangjin-gu, Seoul, South Korea",
-        category: "Food",
-        lat: "37.5453748311268",
-        lng: "127.085295421877",
-        naverLink: "https://maps.app.goo.gl/QNLTkNkJKbEfWEbh6",
-        note : "Seunghyub's favorite Pyeongyang Naengmyeon restaurant"
-    },
-    {
-        id: 33,
-        name: "Daewon Restaurant",
-        location: "16-1, Hangang-daero 62na-gil, Yongsan-gu, Seoul, South Korea",
-        category: "Food",
-        lat: "37.5343464871621",
-        lng: "126.974708922854",
-        naverLink: "https://maps.app.goo.gl/qzjNQhPpRaTKBjrm7",
-        note : "The charcoal-grilled fish was so delicious that N.Flying visited the place again."
-    },
-    {
-        id: 34,
-        name: "Mongchon Dakgalbi",
-        location: "298, Seokchonhosu-ro, Songpa-gu, Seoul, South Korea",
-        category: "Food",
-        lat: "37.5115694532177",
-        lng: "127.10815851038",
-        naverLink: "https://maps.app.goo.gl/1iEQnv6RzZudQkZw9",
-        note : "The place Jaehyun visited with friends."
-    },
-    {
-        id: 35,
-        name: "Shabu in Seoul Seongsu",
-        location: "53, Seongsuil-ro 6-gil, Seongdong-gu, Seoul, South Korea",
-        category: "Food",
-        lat: "37.5442146717831",
-        lng: "127.055789372886",
-        naverLink: "https://maps.app.goo.gl/SKPuNHBgWZDp9FZB8",
-        note : "The shabu-shabu restaurant Dongsung visited."
-    },
-    {
-        id: 36,
-        name: "NUDAKE HAUS DOSAN",
-        location: "50, Apgujeong-ro 46-gil, Gangnam-gu, Seoul, South Korea",
-        category: "Cafe",
-        lat: "37.5253703709931",
-        lng: "127.035679523304",
-        naverLink: "https://maps.app.goo.gl/MuoR1gCpM9zmPwvQ7",
-        note : "2025.03.15 Seunghyub’s Instagram."
-    },
-    {
-        id: 37,
-        name: "Wonjo Goonamjip",
-        location: "11, Gunam-ro 24beon-gil, Haeundae-gu, Busan, South Korea",
-        category: "Food",
-        lat: "35.161521984038316",
-        lng: "129.15964044052708",
-        naverLink: "https://maps.app.goo.gl/docwEZjYb5ccNQ5d8",
-        note : "2025.03.02 Dinner after N.Flying’s first full-member concert at Busan Awesome Stage"
     },
 ];

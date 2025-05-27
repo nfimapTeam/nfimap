@@ -7,25 +7,46 @@ import {
   Image,
   Text,
   VStack,
+  FormControl,
+  Menu,
+  MenuButton,
+  Button,
+  MenuList,
+  MenuItem,
 } from "@chakra-ui/react";
-import { Select } from "antd";
 import NoData from "./NoData";
 import { useTranslation } from "react-i18next"; // useTranslation 훅 임포트
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
-type Concert = {
+interface ConcertDate {
+  date: string;
+  start_time: string;
+  duration_minutes: number;
+}
+
+interface TicketOpen {
+  date: string;
+  time: string;
+}
+
+interface Concert {
+  id: number;
   name: string;
   location: string;
-  type: string;
-  durationMinutes: number;
-  date: string[];
   startTime: string;
+  concertDate: ConcertDate[];
+  type: string;
+  performanceType: string;
   artists: string[];
-  ticketLink: string;
   poster: string;
-  lat: string;
-  lng: string;
-  ticketOpen?: any;
-};
+  EventState: number;
+  ticketOpen: TicketOpen;
+  ticketLink: string;
+  lat: number;
+  lng: number;
+  globals: boolean;
+  isTicketOpenDate: boolean;
+}
 
 type ConcertInfoProps = {
   concerts: Concert[];
@@ -59,13 +80,13 @@ const ConcertInfo = ({
     setSelectedConcert(concert);
   };
 
-  const isConcertPast = (concert: Concert) => {
-    const currentDate = new Date();
-    return concert.date.every((dateString) => {
-      const datePart = dateString.split("(")[0]; // 날짜 문자열에서 "(요일)" 부분 제거
-      const concertDate = new Date(datePart);
-      concertDate.setHours(0, 0, 0, 0); // 날짜만 비교
-      currentDate.setHours(0, 0, 0, 0);
+  const isConcertPast = (concert: Concert): boolean => {
+    const currentDate: Date = new Date();
+    currentDate.setHours(0, 0, 0, 0); // 현재 날짜의 시간 초기화
+
+    return concert.concertDate.every((concertDateItem: ConcertDate): boolean => {
+      const concertDate: Date = new Date(concertDateItem.date);
+      concertDate.setHours(0, 0, 0, 0); // 콘서트 날짜의 시간 초기화
       return concertDate < currentDate;
     });
   };
@@ -73,36 +94,119 @@ const ConcertInfo = ({
   return (
     <VStack spacing={4} align="start" height="100%">
       <Input
+        borderColor="purple.200"
         ref={searchInputRef}
         placeholder={t("mapSearchPlaceholder")} // JSON 파일에서 번역된 문자열
         value={query}
+        focusBorderColor="purple.500"
         onChange={handleInputChange}
         size="md"
       />
       <Flex width="100%" align="center" justifyContent="space-between">
-        <Select
-          placeholder={t("mapSelectPlaceholder")}
-          value={selectedType}
-          onChange={(value) => setSelectedType(value)}
-          style={{ width: 120, height: 30 }}
-          dropdownStyle={{
-            backgroundColor: "#ffffff",
-            borderColor: "#4BA4F2",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-          }}
-        >
-          <option value="">{t("mapTypeOptions.mapAll")}</option>
-          <option value={t("concertVal")}>{t("mapTypeOptions.mapConcert")}</option>
-          <option value={t("festivalVal")}>{t("mapTypeOptions.mapFestival")}</option>
-          <option value={t("eventVal")}>{t("mapTypeOptions.mapEvent")}</option>
-        </Select>
-        <Flex align="center">
+        <Menu>
+          <MenuButton
+            minW="100px"
+            as={Button}
+            rightIcon={<ChevronDownIcon />}
+            bg="white"
+            borderWidth="1px"
+            borderColor="purple.200"
+            color="gray.800"
+            fontSize="sm"
+            fontWeight="medium"
+            height="40px"
+            borderRadius="md"
+            boxShadow="sm"
+            _hover={{
+              borderColor: "purple.400",
+              boxShadow: "md",
+            }}
+            _active={{
+              bg: "purple.50",
+              borderColor: "purple.500",
+            }}
+            _focus={{
+              borderColor: "purple.500",
+              boxShadow: "0 0 0 1px #9F7AEA",
+            }}
+            textAlign="left"
+            justifyContent="space-between"
+            px={3}
+          >
+            {t(selectedType) || t("mapSelectPlaceholder")}
+          </MenuButton>
+          <MenuList
+            bg="white"
+            borderColor="purple.200"
+            borderRadius="md"
+            boxShadow="lg"
+            minW="200px"
+            zIndex={10}
+            py={1}
+            mt={1}
+          >
+            <MenuItem
+              onClick={() => setSelectedType("")}
+              bg="white"
+              color="gray.800"
+              fontSize="sm"
+              _hover={{ bg: "purple.50", color: "purple.700" }}
+              _focus={{ bg: "purple.50" }}
+              px={4}
+              py={2}
+            >
+              {t("mapTypeOptions.mapAll")}
+            </MenuItem>
+            <MenuItem
+              onClick={() => setSelectedType("concert")}
+              bg="white"
+              color="gray.800"
+              fontSize="sm"
+              _hover={{ bg: "purple.50", color: "purple.700" }}
+              _focus={{ bg: "purple.50" }}
+              px={4}
+              py={2}
+            >
+              {t("mapTypeOptions.mapConcert")}
+            </MenuItem>
+            <MenuItem
+              onClick={() => setSelectedType("festival")}
+              bg="white"
+              color="gray.800"
+              fontSize="sm"
+              _hover={{ bg: "purple.50", color: "purple.700" }}
+              _focus={{ bg: "purple.50" }}
+              px={4}
+              py={2}
+            >
+              {t("mapTypeOptions.mapFestival")}
+            </MenuItem>
+            <MenuItem
+              onClick={() => setSelectedType("event")}
+              bg="white"
+              color="gray.800"
+              fontSize="sm"
+              _hover={{ bg: "purple.50", color: "purple.700" }}
+              _focus={{ bg: "purple.50" }}
+              px={4}
+              py={2}
+            >
+              {t("mapTypeOptions.mapEvent")}
+            </MenuItem>
+          </MenuList>
+        </Menu>
+
+        <Flex align="center" gap={1}>
           <Text fontSize="10px">{t("mapShowPastConcerts")}</Text>
           <Switch
-            id="toggle"
+            id="show-past-events"
             isChecked={showPastConcerts}
             onChange={() => setShowPastConcerts(!showPastConcerts)}
-            ml="10px"
+            sx={{
+              ".chakra-switch__track": {
+                bg: showPastConcerts ? "#9F7AEA" : "gray.200",
+              },
+            }}
           />
         </Flex>
       </Flex>
@@ -130,6 +234,7 @@ const ConcertInfo = ({
               p="10px"
               margin="10px 0"
               border="1px solid #eee"
+              borderColor="purple.200"
               borderRadius="4px"
               w="100%"
               _hover={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}

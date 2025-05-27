@@ -1,24 +1,39 @@
 import React, { useEffect } from "react";
-import { Box, Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
+import { Box, Tabs, TabList, Tab, TabPanels, TabPanel, useBreakpointValue } from "@chakra-ui/react";
 import ConcertInfo from "./ConcertInfo";
 import NfiRoad from "./NfiRoad";
 import NoData from "./NoData";
 import { useTranslation } from "react-i18next";
 
-type Concert = {
+interface ConcertDate {
+  date: string;
+  start_time: string;
+  duration_minutes: number;
+}
+
+interface TicketOpen {
+  date: string;
+  time: string;
+}
+
+interface Concert {
+  id: number;
   name: string;
   location: string;
-  type: string;
-  durationMinutes: number;
-  date: string[];
   startTime: string;
+  concertDate: ConcertDate[];
+  type: string;
+  performanceType: string;
   artists: string[];
-  ticketLink: string;
   poster: string;
-  lat: string;
-  lng: string;
-  ticketOpen?: any;
-};
+  EventState: number;
+  ticketOpen: TicketOpen;
+  ticketLink: string;
+  lat: number;
+  lng: number;
+  globals: boolean;
+  isTicketOpenDate: boolean;
+}
 
 type NfiRoadType = {
   id: number;
@@ -83,12 +98,13 @@ const Sidebar = ({
   setSelectedGlobalType,
 }: SidebarProps) => {
   const { t, i18n } = useTranslation();
+  const isMobileOrTablet = useBreakpointValue({ base: true, md: true, lg: false });
 
   return (
     <Box
       w="340px"
       bg="#fff"
-      h="calc(100vh - 120px)"
+      h={isMobileOrTablet ? "calc(100vh - 120px)" : "calc(100svh - 70px)"}
       boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
       borderRight="1px solid #ddd"
       display="flex"
@@ -106,7 +122,7 @@ const Sidebar = ({
             fontSize="18px"
             fontWeight="600"
             textAlign="center"
-            _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
+            _selected={{ borderBottom: "2px solid #9F7AEA", color: "purple.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
             p="16px 4px"
@@ -117,7 +133,7 @@ const Sidebar = ({
             fontSize="18px"
             fontWeight="600"
             textAlign="center"
-            _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
+            _selected={{ borderBottom: "2px solid #9F7AEA", color: "purple.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
             p="16px 4px"
@@ -128,7 +144,7 @@ const Sidebar = ({
             fontSize="18px"
             fontWeight="600"
             textAlign="center"
-            _selected={{ borderBottom: "2px solid #0597F2", color: "blue.500" }}
+            _selected={{ borderBottom: "2px solid #9F7AEA", color: "purple.500" }}
             _focus={{ boxShadow: "none" }}
             flex="1"
             p="16px 4px"

@@ -5,8 +5,14 @@ import { useTranslation } from "react-i18next";
 const NoData = () => {
   const { t } = useTranslation();
   return (
-    <VStack spacing={4} align="center" justify="center" height="100%">
-      <Box position="relative" width="200px" height="200px">
+    <VStack
+      spacing={4}
+      align="center"
+      justify="center"
+      height="100%"
+      position="relative"
+    >
+      <Box width="200px" height="200px">
         <Image
           src="/image/logo/logo.svg"
           alt="No Data"

@@ -1,22 +1,37 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useDisclosure } from "@chakra-ui/react";
+import { useBreakpointValue, useDisclosure } from "@chakra-ui/react";
 import CustomModal from "./CustomModal";
 import { useTranslation } from "react-i18next";
 
-type Concert = {
+interface ConcertDate {
+  date: string;
+  start_time: string;
+  duration_minutes: number;
+}
+
+interface TicketOpen {
+  date: string;
+  time: string;
+}
+
+interface Concert {
+  id: number;
   name: string;
   location: string;
-  type: string;
-  durationMinutes: number;
-  date: string[];
   startTime: string;
+  concertDate: ConcertDate[];
+  type: string;
+  performanceType: string;
   artists: string[];
-  ticketLink: string;
   poster: string;
-  lat: string;
-  lng: string;
-  ticketOpen?: any;
-};
+  EventState: number;
+  ticketOpen: TicketOpen;
+  ticketLink: string;
+  lat: number;
+  lng: number;
+  globals: boolean;
+  isTicketOpenDate: boolean;
+}
 
 type NfiRoad = {
   id: number;
@@ -56,12 +71,9 @@ const NaverMap = ({
   const [currentInfoWindow, setCurrentInfoWindow] = useState<any>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { t, i18n } = useTranslation();
+  const isMobileOrTablet = useBreakpointValue({ base: true, md: true, lg: false });
 
   const ZOOM_LEVEL = 3;
-
-  useEffect(() => {
-    console.log(currentInfoWindow)
-  }, [concerts, nfiRoad]);
 
   const getCategoryImage = (category: string): string => {
     switch (category) {
@@ -194,8 +206,9 @@ const NaverMap = ({
         let isToday = false;
         let isPast = false;
 
-        (item as Concert).date.forEach((dateString) => {
-          const concertDate = new Date(dateString.split("(")[0]);
+        (item as Concert).concertDate.forEach((concertDateItem: ConcertDate) => {
+          const concertDate: Date = new Date(concertDateItem.date);
+          concertDate.setHours(0, 0, 0, 0); // 시간 초기화
           if (concertDate.toDateString() === today.toDateString()) {
             isToday = true;
           } else if (concertDate < today) {
@@ -295,7 +308,7 @@ const NaverMap = ({
               </p>
             </div>
             </div>
-            <button class="detailBtn" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #0597F2; color: white; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
+            <button class="detailBtn" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #9F7AEA; color: white; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
               ${t("View Details")}
             </button>
           </div>
@@ -369,8 +382,9 @@ const NaverMap = ({
         let isToday = false;
         let isPast = false;
 
-        (selectedItem as Concert).date.forEach((dateString) => {
-          const concertDate = new Date(dateString.split("(")[0]);
+        (selectedItem as Concert).concertDate.forEach((concertDateItem: ConcertDate) => {
+          const concertDate: Date = new Date(concertDateItem.date);
+          concertDate.setHours(0, 0, 0, 0); // 시간 초기화
           if (concertDate.toDateString() === today.toDateString()) {
             isToday = true;
           } else if (concertDate < today) {
@@ -419,7 +433,7 @@ const NaverMap = ({
       ref={mapContainerRef}
       style={{
         width: "100%",
-        height: "calc(100vh - 120px)",
+        height: isMobileOrTablet ? "calc(100svh - 140px)" : "calc(100svh - 70px)",
         overflow: "hidden",
         position: "relative",
       }}

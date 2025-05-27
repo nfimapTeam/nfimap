@@ -5,7 +5,7 @@
   "festival": "페스티벌",
   "event": "행사",
   "searchPlaceholder": "공연명 또는 공연장을 검색하세요.",
-  "showPastEvents": "지난 공연 보기",
+  "showPastEvents": "지난공연",
   "selectDate": "날짜 선택",
   "helmettitle": "엔피맵 - 엔플라잉 콘서트 정보를 확인하세요!",
   "helmetdescription": "N.Fimap은 팬덤 N.Fia의 덕질을 응원합니다.",
@@ -95,5 +95,18 @@
   "concertVal": "콘서트",
   "festivalVal": "페스티벌",
   "eventVal": "행사",
-  "today_concert": "오늘 공연"
+  "today_concert": "오늘 공연",
+  "no_setlist_available": "아직 공연 전입니다",
+  "view_ticket_sites": "예매처 보기",
+  "copy_setlist": "셋리스트 복사",
+  "setlist_copied": "셋리스트가 복사되었습니다",
+  "setlist_copied_description": "이제 원하는 곳에 붙여넣을 수 있어요.",
+  "copy_failed": "복사 실패",
+  "copy_failed_description": "셋리스트 복사 중 문제가 발생했어요.",
+  "no_ootd_available": "아직 OOTD가 등록되지 않았습니다",
+  "show_details": "공연 상세",
+  "show_record": "공연 기록",
+  "selectTicketProvider": "예매처 선택",
+  "content": "콘텐츠",
+  "npart": "엔퍄트"
 }

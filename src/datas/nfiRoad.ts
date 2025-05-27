@@ -57,7 +57,7 @@ export const nfiRoadData = [
     lat: "37.4948475341971",
     lng: "127.030367339339",
     naverLink: "https://naver.me/GiHaTeI1",
-    note : "두얼간이 촬영지"
+    note : "승협이 다녀간 아구찜"
   },
   {
     id: 7,
@@ -259,115 +259,5 @@ export const nfiRoadData = [
     lng: "127.054348975494",
     naverLink: "https://naver.me/x3qBfyKS",
     note : "동성이가 아버지와 식사하고 간 샤브샤브 집"
-  },
-  {
-    id: 27,
-    name: "추풍령칼삼겹살",
-    location: "서울 강남구 도산대로51길 41 1층",
-    category: "맛집",
-    lat: "37.5259447243218",
-    lng: "127.038100978755",
-    naverLink: "https://naver.me/xNLZNOIT",
-    note : "승협 단골 식당"
-  },
-  {
-    id: 28,
-    name: "생생낙지 벡스코점",
-    location: "부산 해운대구 센텀2로 29 센텀 메커스빌딩 101호",
-    category: "맛집",
-    lat: "35.1666539973508",
-    lng: "129.133204693814",
-    naverLink: "https://naver.me/5fIpso5O",
-    note : "부산 공연 후 멤버들이 다녀간 식당"
-  },
-  {
-    id: 29,
-    name: "수림횟집",
-    location: "부산 해운대구 해운대해변로221번길 15 A동 1층",
-    category: "맛집",
-    lat: "35.1599145493419",
-    lng: "129.156008091841",
-    naverLink: "https://naver.me/x4FLm33t",
-    note : "부산 공연 후 멤버들이 물회 먹고 간 집"
-  },
-  {
-    id: 30,
-    name: "중국전통요리링링",
-    location: "서울 강남구 도산대로 521",
-    category: "맛집",
-    lat: "37.5248722572746",
-    lng: "127.050379366946",
-    naverLink: "https://naver.me/GG7PPLeh",
-    note : "회승이가 다녀간 중식당"
-  },
-  {
-    id: 31,
-    name: "밋보어 서울",
-    location: "서울 성동구 성수일로 1 1층",
-    category: "맛집",
-    lat: "37.5408654463888",
-    lng: "127.047850218608",
-    naverLink: "https://naver.me/Fr7xIC0U",
-    note : "2025.03.08 승협 인스타그램"
-  },
-  {
-    id: 32,
-    name: "서북면옥",
-    location: "서울 광진구 자양로 199-1 서북면옥",
-    category: "맛집",
-    lat: "37.5453748311268",
-    lng: "127.085295421877",
-    naverLink: "https://naver.me/FUhsArTw",
-    note : "우얘합에서 얘기한 승협이 최애 평양냉면 집"
-  },
-  {
-    id: 33,
-    name: "대원식당",
-    location: "서울 용산구 한강대로62나길 16-1",
-    category: "맛집",
-    lat: "37.5343464871621",
-    lng: "126.974708922854",
-    naverLink: "https://naver.me/Fmf6lZhA",
-    note : "연탄불에 구워주는 생선구이가 맛있는 엔플라잉의 또간집"
-  },
-  {
-    id: 34,
-    name: "몽촌 닭갈비",
-    location: "서울 송파구 석촌호수로 298 104호, 105호",
-    category: "맛집",
-    lat: "37.5115694532177",
-    lng: "127.10815851038",
-    naverLink: "https://naver.me/xgNS9hG9",
-    note : "재현이가 훈련소 동기들과 다녀간 식당"
-  },
-  {
-    id: 35,
-    name: "샤브인서울 성수점",
-    location: "서울 성동구 성수일로6길 53 유원지식산업센터 1층",
-    category: "맛집",
-    lat: "37.5442146717831",
-    lng: "127.055789372886",
-    naverLink: "https://naver.me/xWTneveP",
-    note : "동성이가 다녀간 샤브샤브 집"
-  },
-  {
-    id: 36,
-    name: "누데이크 하우스 도산",
-    location: "서울 강남구 압구정로46길 50 하우스 도산 B1",
-    category: "카페",
-    lat: "37.5253703709931",
-    lng: "127.035679523304",
-    naverLink: "https://naver.me/FG7xht84",
-    note : "2025.03.15 승협 인스타그램 속 카페"
-  },
-  {
-    id: 37,
-    name: "원조구남집",
-    location: "부산 해운대구 구남로24번길 11 1,2층",
-    category: "맛집",
-    lat: "35.161521984038316",
-    lng: "129.15964044052708",
-    naverLink: "https://naver.me/FxF8vPPL",
-    note : "2025.03.02 부산 어썸스테이지 엔플라잉 완전체 첫 공연 후 저녁 식사"
   },
 ];

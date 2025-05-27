@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { useDisclosure } from "@chakra-ui/react";
+import { useBreakpointValue, useDisclosure } from "@chakra-ui/react";
 import CustomModal from "./CustomModal";
 import { useTranslation } from "react-i18next";
 
@@ -9,20 +9,35 @@ declare global {
   }
 }
 
-type Concert = {
+interface ConcertDate {
+  date: string;
+  start_time: string;
+  duration_minutes: number;
+}
+
+interface TicketOpen {
+  date: string;
+  time: string;
+}
+
+interface Concert {
+  id: number;
   name: string;
   location: string;
-  type: string;
-  durationMinutes: number;
-  date: string[];
   startTime: string;
+  concertDate: ConcertDate[];
+  type: string;
+  performanceType: string;
   artists: string[];
-  ticketLink: string;
   poster: string;
-  lat: string;
-  lng: string;
-  ticketOpen?: any;
-};
+  EventState: number;
+  ticketOpen: TicketOpen;
+  ticketLink: string;
+  lat: number;
+  lng: number;
+  globals: boolean;
+  isTicketOpenDate: boolean;
+}
 
 interface GoogleMapProps {
   globalConcerts: Concert[];
@@ -43,6 +58,7 @@ const GoogleMap = ({
   const markersRef = useRef<any[]>([]);
   const [currentInfoWindow, setCurrentInfoWindow] = useState<any>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const isMobileOrTablet = useBreakpointValue({ base: true, md: true, lg: false });
 
   const handleDetailClick = useCallback(() => {
     onOpen();
@@ -81,19 +97,22 @@ const GoogleMap = ({
       let isPast = false;
       let isToday = false;
 
-      // Check if the concert is in the past or today
-      concert.date.forEach((dateString) => {
-        const concertDate = dateString.split("(")[0].trim();
-        if (concertDate === todayString) {
-          isToday = true;
-        } else if (new Date(concertDate) < today) {
-          isPast = true;
+      
+      concert.concertDate.forEach((concertDateItem: ConcertDate) => {
+        const concertDate: Date = new Date(concertDateItem.date);
+        concertDate.setHours(0, 0, 0, 0); // 콘서트 날짜의 시간 초기화
+  
+        if (concertDateItem.date === todayString) {
+          isToday = true; // 오늘 날짜와 일치하면 isToday를 true로 설정
+        }
+        if (concertDate >= today) {
+          isPast = false; // 미래 또는 오늘 날짜가 있으면 isPast는 false
         }
       });
 
       const position = {
-        lat: parseFloat(concert.lat),
-        lng: parseFloat(concert.lng),
+        lat: concert.lat,
+        lng: concert.lng,
        };
        
         const infoWindowContent = `
@@ -135,7 +154,7 @@ const GoogleMap = ({
               </p>
             </div>
             </div>
-            <button id="detailBtn-${concert.name.replace(/\s+/g, "-")}" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #0597F2; color: white; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
+            <button id="detailBtn-${concert.name.replace(/\s+/g, "-")}" style="margin-top: 5px; padding: 4px 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background-color: #9F7AEA; color: white; cursor: pointer; transition: background-color 0.3s, color 0.3s;">
               ${t("View Details")}
             </button>
           </div>
@@ -289,7 +308,7 @@ const GoogleMap = ({
       ref={mapContainerRef}
       style={{
         width: "100%",
-        height: "calc(100vh - 120px)",
+        height: isMobileOrTablet ? "calc(100svh - 140px)" : "calc(100svh - 70px)",
         overflow: "hidden",
         position: "relative",
       }}
