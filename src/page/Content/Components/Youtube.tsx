@@ -13,6 +13,7 @@ import {
   ModalBody,
   chakra,
   useDisclosure,
+  Skeleton,
 } from "@chakra-ui/react";
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -57,28 +58,28 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
 
   type ImageFileName = { [key: string]: string };
 
-const imageFileNames: ImageFileName[] = [
-  { "Everlasting.jpeg": "만년설(Everlasting)" },
-  { "RunLikeThis.jpeg": "Run Like This" },
-  { "BornToBe.jpeg": "Born To Be" },
-  { "Moebius.jpeg": "뫼비우스(Moebius)" },
-  { "LoveYouLikeThat.jpeg": "Love You Like That" },
-  { "RiseAgain.jpeg": "사랑을 마주하고(Rise Again)" },
-  { "Flowerwork.jpeg": "불놀이(Flowerwork)" },
-  { "4242.jpeg": "4242" },
-  { "Anyway.jpeg": "ANYWAY" },
-  { "E-YO.jpeg": "에요(E-YO)" },
-  { "SunSet.jpeg": "Sunset" },
-  { "Good-Bam.jpeg": "굿밤(GOOD BAM)" },
-  { "i'm-gonna.jpeg": "아무거나(I'M GONNA)" },
-  { "ILikeYou.jpeg": "폭망(I Like You)" },
-  { "IntoYou.jpeg": "네가 내 마음에 자리 잡았다(Into You)" },
-  { "MoonShot.jpeg": "Moonshot" },
-  { "oh-really.jpeg": "아 진짜요.(Oh really.)" },
-  { "Pardon.jpeg": "ㅈㅅ(Pardon?)" },
-  { "Preview.jpeg": "Preview" },
-  { "UP-ALL-NIGHT.jpeg": "UP ALL NIGHT" },
-];
+  const imageFileNames: ImageFileName[] = [
+    { "Everlasting.jpeg": "만년설(Everlasting)" },
+    { "RunLikeThis.jpeg": "Run Like This" },
+    { "BornToBe.jpeg": "Born To Be" },
+    { "Moebius.jpeg": "뫼비우스(Moebius)" },
+    { "LoveYouLikeThat.jpeg": "Love You Like That" },
+    { "RiseAgain.jpeg": "사랑을 마주하고(Rise Again)" },
+    { "Flowerwork.jpeg": "불놀이(Flowerwork)" },
+    { "4242.jpeg": "4242" },
+    { "Anyway.jpeg": "ANYWAY" },
+    { "E-YO.jpeg": "에요(E-YO)" },
+    { "SunSet.jpeg": "Sunset" },
+    { "Good-Bam.jpeg": "굿밤(GOOD BAM)" },
+    { "i'm-gonna.jpeg": "아무거나(I'M GONNA)" },
+    { "ILikeYou.jpeg": "폭망(I Like You)" },
+    { "IntoYou.jpeg": "네가 내 마음에 자리 잡았다(Into You)" },
+    { "MoonShot.jpeg": "Moonshot" },
+    { "oh-really.jpeg": "아 진짜요.(Oh really.)" },
+    { "Pardon.jpeg": "ㅈㅅ(Pardon?)" },
+    { "Preview.jpeg": "Preview" },
+    { "UP-ALL-NIGHT.jpeg": "UP ALL NIGHT" },
+  ];
 
   // Generate ImageItem array from imageFileNames
   const generateNpartImages = (): ImageItem[] => {
@@ -187,7 +188,7 @@ const imageFileNames: ImageFileName[] = [
         <Grid templateColumns={isMobile ? "1fr" : "repeat(3, 1fr)"} gap={4} w="100%">
           {mediaType === "videos" &&
             category !== "music" &&
-            videos.map((video) => (
+            videos.map((video, index) => (
               <MotionBox
                 key={video.videoId}
                 bg="white"
@@ -197,12 +198,22 @@ const imageFileNames: ImageFileName[] = [
                 borderRadius="lg"
                 overflow="hidden"
                 cursor="pointer"
-                mt={category === "video"? "64px" : 0}
+                mt={category === "video" ? "64px" : 0}
                 whileHover={{ scale: 1.05, boxShadow: "xl" }}
                 onClick={() => openVideo(video)}
               >
-                <Image src={video.thumbnail} alt={video.title} w="100%" />
-                <Box p={3}>
+                <Skeleton isLoaded={!!video.thumbnail} height="300px">
+                  <Image
+                    src={video.thumbnail}
+                    alt={video.title}
+                    w="100%"
+                    h="300px"
+                    objectFit="cover"
+                    loading={index < 3 ? "eager" : "lazy"} // Eager load first 3, lazy load others
+                    fallback={<Box bg="gray.200" w="100%" h="300px" />}
+                  />
+                </Skeleton>
+                <Box p={4}>
                   <Text fontWeight="bold" noOfLines={2}>
                     {video.title}
                   </Text>
@@ -228,14 +239,18 @@ const imageFileNames: ImageFileName[] = [
                 whileHover={{ scale: 1.05, boxShadow: "xl" }}
                 onClick={() => openImage(index)}
               >
-                <Image
-                  src={image.imageUrl}
-                  alt={image.alt}
-                  w="100%"
-                  maxH="400px"
-                  objectFit="contain"
-                />
-                <Box p={3}>
+                <Skeleton isLoaded={!!image.imageUrl} height="300px">
+                  <Image
+                    src={image.imageUrl}
+                    alt={image.alt}
+                    w="100%"
+                    h="300px"
+                    objectFit="cover"
+                    loading={index < 3 ? "eager" : "lazy"} // Eager load first 3, lazy load others
+                    fallback={<Box bg="gray.200" w="100%" h="300px" />}
+                  />
+                </Skeleton>
+                <Box p={4}>
                   <Text fontWeight="bold" noOfLines={2}>
                     {image.alt}
                   </Text>
