@@ -21,6 +21,7 @@ import { youtubeData } from "../Data/youtubeData";
 import { npart } from "../Data/npart";
 import { RepeatIcon, ChevronLeftIcon, ChevronRightIcon, CloseIcon, AddIcon, MinusIcon } from "@chakra-ui/icons";
 import { useTranslation } from "react-i18next";
+import { TransformWrapper, TransformComponent, ReactZoomPanPinchRef } from "react-zoom-pan-pinch";
 
 // Interfaces for videos and images
 interface Video {
@@ -51,14 +52,12 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
   const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);
   const [videos, setVideos] = useState<Video[]>([]);
   const [images, setImages] = useState<ImageItem[]>([]);
-  const [zoomLevel, setZoomLevel] = useState(1); // Zoom scale (1x to 3x)
+  const [zoomLevel, setZoomLevel] = useState(1);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { t } = useTranslation();
-  const imageRef = useRef<HTMLImageElement>(null);
+  const transformWrapperRef = useRef<ReactZoomPanPinchRef>(null); // Proper typing for TransformWrapper
 
-  type ImageFileName = { [key: string]: string };
-
-  const imageFileNames: ImageFileName[] = [
+  const imageFileNames: { [key: string]: string }[] = [
     { "Everlasting.jpeg": "만년설(Everlasting)" },
     { "RunLikeThis.jpeg": "Run Like This" },
     { "BornToBe.jpeg": "Born To Be" },
@@ -84,12 +83,12 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
   // Generate ImageItem array from imageFileNames
   const generateNpartImages = (): ImageItem[] => {
     return imageFileNames.map((item) => {
-      const filename = Object.keys(item)[0]; // Get the filename (e.g., "Everlasting.jpeg")
-      const displayName = item[filename]; // Get the display name (e.g., "만년설(Everlasting)")
+      const filename = Object.keys(item)[0];
+      const displayName = item[filename];
       return {
-        imageId: filename.split(".")[0], // Extract ID without extension
-        imageUrl: `/image/npart/${filename}`, // Construct image URL
-        alt: displayName, // Use display name as alt text
+        imageId: filename.split(".")[0],
+        imageUrl: `/image/npart/${filename}`,
+        alt: displayName,
       };
     });
   };
@@ -126,65 +125,60 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
     } else if (category === "npart") {
       loadNpartMedia();
     }
-    setZoomLevel(1); // Reset zoom when category changes
+    setZoomLevel(1);
   }, [category, isMobile]);
 
   const openVideo = (video: Video) => {
     setCurrentVideo(video);
     setCurrentImageIndex(null);
-    setZoomLevel(1); // Reset zoom
+    setZoomLevel(1);
     onOpen();
   };
 
   const openImage = (index: number) => {
     setCurrentImageIndex(index);
     setCurrentVideo(null);
-    setZoomLevel(1); // Reset zoom
+    setZoomLevel(1);
     onOpen();
   };
 
-  // Handle image navigation
   const goToPreviousImage = () => {
     if (currentImageIndex !== null) {
       setCurrentImageIndex((prev: any) => (prev === 0 ? images.length - 1 : prev - 1));
-      setZoomLevel(1); // Reset zoom on navigation
+      setZoomLevel(1);
+      transformWrapperRef.current?.resetTransform();
     }
   };
 
   const goToNextImage = () => {
     if (currentImageIndex !== null) {
       setCurrentImageIndex((prev: any) => (prev === images.length - 1 ? 0 : prev + 1));
-      setZoomLevel(1); // Reset zoom on navigation
+      setZoomLevel(1);
+      transformWrapperRef.current?.resetTransform();
     }
   };
 
-  // Zoom controls
   const handleZoomIn = () => {
-    setZoomLevel((prev) => Math.min(prev + 0.5, 3)); // Max zoom: 3x
+    transformWrapperRef.current?.zoomIn(0.5);
+    setZoomLevel((prev) => Math.min(prev + 0.5, 3));
   };
 
   const handleZoomOut = () => {
-    setZoomLevel((prev) => Math.max(prev - 0.5, 1)); // Min zoom: 1x
+    transformWrapperRef.current?.zoomOut(0.5);
+    setZoomLevel((prev) => Math.max(prev - 0.5, 1));
   };
 
-  // Mouse wheel zoom
-  const handleWheel = (event: React.WheelEvent) => {
-    event.preventDefault();
-    if (event.deltaY < 0) {
-      handleZoomIn(); // Scroll up to zoom in
-    } else {
-      handleZoomOut(); // Scroll down to zoom out
-    }
-  };
-
-  // Double-tap to toggle zoom on mobile
   const handleDoubleTap = () => {
-    setZoomLevel((prev) => (prev === 1 ? 2 : 1)); // Toggle between 1x and 2x
+    if (transformWrapperRef.current) {
+      const newZoom = zoomLevel === 1 ? 2 : 1;
+      transformWrapperRef.current.setTransform(0, 0, newZoom);
+      setZoomLevel(newZoom);
+    }
   };
 
   return (
     <MotionBox initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <VStack spacing={6} mx="auto">
+      <VStack spacing={6} mx="auto" maxW="100%">
         <Grid templateColumns={isMobile ? "1fr" : "repeat(3, 1fr)"} gap={4} w="100%">
           {mediaType === "videos" &&
             category !== "music" &&
@@ -209,7 +203,7 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
                     w="100%"
                     h="300px"
                     objectFit="cover"
-                    loading={index < 3 ? "eager" : "lazy"} // Eager load first 3, lazy load others
+                    loading={index < 3 ? "eager" : "lazy"}
                     fallback={<Box bg="gray.200" w="100%" h="300px" />}
                   />
                 </Skeleton>
@@ -246,7 +240,7 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
                     w="100%"
                     h="300px"
                     objectFit="cover"
-                    loading={index < 3 ? "eager" : "lazy"} // Eager load first 3, lazy load others
+                    loading={index < 3 ? "eager" : "lazy"}
                     fallback={<Box bg="gray.200" w="100%" h="300px" />}
                   />
                 </Skeleton>
@@ -272,9 +266,9 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
           />
         )}
 
-        <Modal isOpen={isOpen} onClose={onClose} size="4xl" isCentered>
-          <ModalOverlay />
-          <ModalContent bg="black" p={0} position="relative">
+        <Modal isOpen={isOpen} onClose={onClose} size="full" isCentered>
+          <ModalOverlay bg="blackAlpha.800" />
+          <ModalContent bg="transparent" maxW="90vw" maxH="90vh" m="auto">
             <IconButton
               icon={<CloseIcon />}
               aria-label="Close"
@@ -284,16 +278,16 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
               size="sm"
               borderRadius="full"
               onClick={onClose}
-              zIndex={2}
+              zIndex={10}
               bg="blackAlpha.600"
               color="white"
               _hover={{ bg: "blackAlpha.800" }}
             />
-            <ModalBody p={0}>
+            <ModalBody p={0} display="flex" alignItems="center" justifyContent="center">
               {currentVideo && (
-                <Box w="100%" aspectRatio={16 / 9}>
+                <Box w="100%" maxW="1200px" aspectRatio={16 / 9}>
                   <iframe
-                    src={`https://www.youtube.com/embed/${currentVideo.videoId}`}
+                    src={`https://www.youtube.com/embed/${currentVideo.videoId}?autoplay=1`}
                     frameBorder="0"
                     allow="autoplay; encrypted-media"
                     allowFullScreen
@@ -304,13 +298,13 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
               )}
               {currentImageIndex !== null && (
                 <Flex
+                  direction="column"
                   align="center"
                   justify="center"
                   position="relative"
+                  w="100%"
                   h="100%"
-                  overflow="hidden"
-                  onWheel={handleWheel}
-                  onDoubleClick={handleDoubleTap}
+                  maxH="90vh"
                 >
                   <IconButton
                     icon={<ChevronLeftIcon />}
@@ -322,7 +316,7 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
                     size="lg"
                     borderRadius="full"
                     onClick={goToPreviousImage}
-                    zIndex={2}
+                    zIndex={10}
                     bg="blackAlpha.600"
                     color="white"
                     _hover={{ bg: "blackAlpha.800" }}
@@ -336,7 +330,7 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
                     size="sm"
                     borderRadius="full"
                     onClick={handleZoomIn}
-                    zIndex={2}
+                    zIndex={10}
                     bg="blackAlpha.600"
                     color="white"
                     _hover={{ bg: "blackAlpha.800" }}
@@ -351,7 +345,7 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
                     size="sm"
                     borderRadius="full"
                     onClick={handleZoomOut}
-                    zIndex={2}
+                    zIndex={10}
                     bg="blackAlpha.600"
                     color="white"
                     _hover={{ bg: "blackAlpha.800" }}
@@ -360,9 +354,9 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={currentImageIndex}
-                      initial={{ opacity: 0, x: 100 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -100 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
                       style={{
                         width: "100%",
@@ -370,19 +364,50 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        overflow: "hidden",
                       }}
                     >
-                      <Image
-                        ref={imageRef}
-                        src={images[currentImageIndex].imageUrl}
-                        alt={images[currentImageIndex].alt}
-                        maxH="80vh"
-                        maxW="90vw"
-                        objectFit="contain"
-                        style={{ transform: `scale(${zoomLevel})` }}
-                        transition="transform 0.2s ease"
-                      />
+                      <TransformWrapper
+                        ref={transformWrapperRef}
+                        initialScale={1}
+                        minScale={1}
+                        maxScale={3}
+                        doubleClick={{ mode: "toggle", step: 2 }}
+                        wheel={{ disabled: false, step: 0.1 }}
+                        pinch={{ step: 10, disabled: false }}
+                        smooth={true}
+                        velocityAnimation={{ sensitivity: 1, animationTime: 400 }}
+                        centerOnInit={true}
+                        centerZoomedOut={true}
+                        panning={{ disabled: zoomLevel === 1 }}
+                        onZoom={(ref) => setZoomLevel(ref.state.scale)}
+                      >
+                        <TransformComponent
+                          wrapperStyle={{
+                            width: "100%",
+                            height: "80vh",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                          contentStyle={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "100%",
+                            height: "100%",
+                          }}
+                        >
+                          <Image
+                            src={images[currentImageIndex].imageUrl}
+                            alt={images[currentImageIndex].alt}
+                            maxH="80vh"
+                            maxW="90vw"
+                            objectFit="contain"
+                            mx="auto"
+                            display="block"
+                          />
+                        </TransformComponent>
+                      </TransformWrapper>
                     </motion.div>
                   </AnimatePresence>
                   <IconButton
@@ -395,7 +420,7 @@ const YouTubePlayer = ({ category, mediaType, scrollToTop }: YouTubePlayerProps)
                     size="lg"
                     borderRadius="full"
                     onClick={goToNextImage}
-                    zIndex={2}
+                    zIndex={10}
                     bg="blackAlpha.600"
                     color="white"
                     _hover={{ bg: "blackAlpha.800" }}
