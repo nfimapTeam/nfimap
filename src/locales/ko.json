@@ -108,5 +108,8 @@
   "show_record": "공연 기록",
   "selectTicketProvider": "예매처 선택",
   "content": "콘텐츠",
-  "npart": "엔퍄트"
+  "npart": "엔퍄트",
+  "pwa_prompt": "앱을 설치하여 더 편리하게 사용하세요!",
+  "install": "설치하기",
+  "view_mobile_web": "모바일 웹 보기"
 }

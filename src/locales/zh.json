@@ -108,5 +108,8 @@
   "show_record": "演唱会记录",
   "selectTicketProvider": "选择购票渠道",
   "content": "内容",
-  "npart": "N-part"
+  "npart": "N-part",
+  "pwa_prompt": "安装应用程序以获得更便捷的体验！",
+  "install": "安装",
+  "view_mobile_web": "查看移动网页"
 }
