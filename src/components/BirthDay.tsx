@@ -26,14 +26,14 @@ const members: Member[] = [
 
 const images: { [key: string]: string[] } = {
   이승협: [
-    "/image/toro/seunghyub_01.jpg",
-    "/image/toro/seunghyub_02.jpg",
-    "/image/toro/seunghyub_03.jpg",
+    "/image/toro/seunghyub_01.webp",
+    "/image/toro/seunghyub_02.webp",
+    "/image/toro/seunghyub_03.webp",
   ],
-  차훈: ["/image/toro/chahun.png"],
-  김재현: ["/image/toro/jaehyun1.png", "/image/toro/jaehyun2.png"],
-  유회승: ["/image/toro/hs.jpeg"],
-  서동성: ["/image/toro/ds.png"],
+  차훈: ["/image/toro/chahun.webp"],
+  김재현: ["/image/toro/jaehyun1.webp", "/image/toro/jaehyun2.webp"],
+  유회승: ["/image/toro/hs.webp"],
+  서동성: ["/image/toro/ds.webp"],
 };
 
 // 생일 축하 메시지 배열
