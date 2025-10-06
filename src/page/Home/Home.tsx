@@ -84,7 +84,7 @@ const Home = () => {
   // 2024년부터 현재 연도까지의 배열 생성
   const currentYear = moment().year();
   const yearOptions = Array.from(
-    { length: currentYear - 2024 + 1 },
+    { length: currentYear - 2024 + 2 },
     (_, i) => 2024 + i
   );
 
